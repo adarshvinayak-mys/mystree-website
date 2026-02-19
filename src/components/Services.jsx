@@ -53,7 +53,7 @@ export default function Services() {
                     {services.map((service, index) => (
                         <div key={index} className="group bg-uranian-blue/20 dark:bg-blue-900/10 rounded-3xl p-6 hover:bg-uranian-blue/40 transition duration-300 border border-transparent hover:border-uranian-blue flex flex-col items-center text-center relative">
                             {service.badge && (
-                                <span className="absolute top-4 right-4 bg-rose-100 text-rose-600 text-xs font-bold px-2 py-1 rounded-full uppercase tracking-wide">
+                                <span className="absolute top-2 right-2 bg-rose-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm z-10 border border-white">
                                     {service.badge}
                                 </span>
                             )}

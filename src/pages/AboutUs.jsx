@@ -1,211 +1,270 @@
-import { useState, useEffect, useRef } from 'react';
-import founderImage from '../assets/docimage.png';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AboutUs() {
-    const [showButton, setShowButton] = useState(false);
-    const scrollContainerRef = useRef(null);
-
-    const scroll = (scrollOffset) => {
-        if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({
-                left: scrollOffset,
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 300) {
-                setShowButton(true);
-            } else {
-                setShowButton(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
     return (
-        <div className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300 overflow-x-hidden pb-0">
+        <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white">
 
-            {/* Header/Hero Section */}
-            <header className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 px-6 lg:px-12 overflow-hidden min-h-[90vh] flex flex-col justify-center bg-corn-silk dark:bg-gray-900">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] lg:w-[800px] lg:h-[800px] bg-sky-200/20 dark:bg-sky-900/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] bg-primary/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"></div>
-
-                <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-                    <div className="lg:col-span-5 order-2 lg:order-1 slide-in-bottom">
-                        <h1 className="font-display font-semibold text-6xl lg:text-8xl text-slate-800 dark:text-white leading-[0.9] mb-8">
-                            A safe<br /><span className="italic text-primary">haven</span>.
+            {/* 1. Redefining Women’s Healthcare (From Concept 1) */}
+            <section className="relative pt-20 pb-24 lg:pt-32 lg:pb-32 bg-[#FCF4D9] dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+                <div className="container mx-auto px-6 lg:px-12">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <span className="inline-block py-1 px-3 border border-primary/30 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-6 rounded-sm bg-white dark:bg-gray-800">
+                            Holistic Health & Care
+                        </span>
+                        <h1 className="font-display text-5xl lg:text-7xl font-medium text-gray-900 dark:text-white leading-tight mb-8">
+                            Redefining Women’s Healthcare with <span className="italic text-primary">Precision</span> & Empathy.
                         </h1>
-                        <p className="text-lg lg:text-xl text-slate-600 dark:text-gray-300 font-light leading-relaxed max-w-md mb-12">
-                            My Stree is dedicated to supporting every woman’s physical, emotional, and hormonal well-being. From adolescence to pregnancy, fertility wellness to menopause, we’re here to walk with you through every milestone.
+                        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto font-light">
+                            My Stree combines medical excellence with a deep understanding of the female physiology to deliver comprehensive care that empowers.
                         </p>
-                        <div className="flex items-center gap-4">
-                            <span className="h-[1px] w-12 bg-slate-400/50"></span>
-                            <span className="font-display italic text-slate-600 dark:text-gray-400">Est. 2021</span>
-                        </div>
                     </div>
-                    <div className="lg:col-span-7 order-1 lg:order-2 relative slide-in-right delay-200">
-                        <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-indigo-100 dark:shadow-none transform rotate-1 hover:rotate-0 transition-transform duration-700 ease-out">
-                            <img alt="Candid consultation in cozy clinic" className="w-full h-[400px] lg:h-[600px] object-cover" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+            </section>
+
+            {/* 2. Vision & Mission (From Concept 2) */}
+            <section className="py-20 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+                <div className="container mx-auto px-6 lg:px-12">
+                    <div className="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100 dark:divide-gray-800 border border-gray-100 dark:border-gray-800 rounded-lg bg-[#FFFFF0]/30 dark:bg-gray-800/30 overflow-hidden">
+                        <div className="p-12 md:p-16">
+                            <span className="material-symbols-outlined text-4xl text-primary mb-6">visibility</span>
+                            <h3 className="font-display text-3xl text-gray-900 dark:text-white mb-4">Our Vision</h3>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                                To be the most trusted authority in women's health, creating a sanctuary where medical expertise meets holistic wellness, ensuring every woman feels empowered, informed, and prioritized throughout her life journey.
+                            </p>
                         </div>
-                        <div className="absolute -bottom-8 -left-8 lg:-bottom-12 lg:-left-12 z-20 bg-[#FDFBF7] dark:bg-gray-800 p-8 rounded-tr-[3rem] rounded-bl-[3rem] shadow-xl max-w-xs hidden lg:block animate-bounce-slow">
-                            <span className="material-symbols-outlined text-4xl text-primary mb-2">favorite</span>
-                            <p className="font-display text-xl text-slate-800 dark:text-white italic">"Finally, a doctor who looked me in the eye and really listened."</p>
+                        <div className="p-12 md:p-16">
+                            <span className="material-symbols-outlined text-4xl text-primary mb-6">flag</span>
+                            <h3 className="font-display text-3xl text-gray-900 dark:text-white mb-4">Our Mission</h3>
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                                To bridge the gap in specialized women's healthcare by integrating advanced obstetrics, gynecology, and nutritional science with a deeply empathetic, patient-centric approach that respects individual choices and needs.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </header>
+            </section>
 
-            {/* Story Section */}
-            <section className="py-24 px-6 lg:px-12 relative bg-white dark:bg-gray-800/50">
-                <div className="max-w-7xl mx-auto space-y-32">
+            {/* 3. Leadership Team (From Concept 2) */}
+            <section className="py-24 bg-[#FFFFF0] dark:bg-gray-900">
+                <div className="container mx-auto px-6 lg:px-12">
+                    <div className="mb-16">
+                        <h2 className="font-display text-4xl text-gray-900 dark:text-white mb-2">Leadership Team</h2>
+                        <p className="text-gray-500 dark:text-gray-400">Guided by decades of medical excellence and innovation.</p>
+                    </div>
+
+                    {/* Featured Leader: Dr. Smitha */}
+                    <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-8 lg:p-12 mb-12 shadow-sm flex flex-col lg:flex-row gap-12 items-center">
+                        <div className="lg:w-1/3 flex-shrink-0">
+                            <div className="relative">
+                                <img
+                                    alt="Dr. Smitha A.P."
+                                    className="w-full aspect-[3/4] object-cover rounded-lg shadow-sm grayscale hover:grayscale-0 transition-all duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeBh-feUpwpNHYOOtFgWw0VA00c_Ajmcb4pG9fGHHvAzNno0rSvkK8AhdvFcmE9-uzi5U6n_uHo6JWDelWNFVAk351NzFyCnIWHNuA6kfy7gTZKZ2Ux3_uHz16BALONsaNhXr3xO6FDFcxiQfysgd5XarQ7T0gxCFAoMqtcxe19EybXcahr68RBFaDol5Z3URnmTCmafiqjAQ09k_E9ccg6so6qr5YJIQkeD7SMCci4KNRMSGcpNmOz9VxeszFhXJkoHjco-ZyFRV"
+                                />
+                                <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-lg shadow-md">
+                                    <span className="block text-2xl font-display font-bold">23+</span>
+                                    <span className="text-xs uppercase tracking-wider opacity-90">Years Exp.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="lg:w-2/3 space-y-6">
+                            <div>
+                                <h3 className="font-display text-4xl text-gray-900 dark:text-white mb-1">Dr. Smitha A.P.</h3>
+                                <p className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Co-Founder & Chief Medical Officer</p>
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded uppercase">MBBS</span>
+                                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded uppercase">MS (OBG)</span>
+                                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded uppercase">DNB</span>
+                                </div>
+                            </div>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                                A visionary leader in women's health, Dr. Smitha brings over two decades of clinical mastery in high-risk obstetrics and gynecological care. Her philosophy combines rigorous medical standards with a profound commitment to patient dignity. She founded My Stree to address the systemic gaps in women's healthcare, ensuring that complex medical needs are met with precision and empathy.
+                            </p>
+                            <div className="grid grid-cols-2 gap-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                <div>
+                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">Specialization</h4>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">High-Risk Obstetrics, Laparoscopy</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">Focus</h4>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">Patient Safety & Clinical Governance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Team Grid */}
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Dr. Surbhi */}
+                        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm hover:border-primary/30 group">
+                            <div className="mb-6 overflow-hidden rounded-md h-64">
+                                <img
+                                    alt="Dr. Surbhi Sinha"
+                                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zankYA7kmO9U8yfYU0EPLCz7JTEDg8QnF-8wUrhkAvKBsDjEErRT94uxbGT2miNT0GJ5uEYCVlINgrLIE6fCo3rjZ_pMm9ACnRAP5_ezJD4NY7QdvhUdd9B7PoVZyzrMRmlB7iL15duo4G3_8Id68dlpYM9UMqENBIj5ar-NAvyeNAmJZfGkOQpI2BtazNSqKxSDiQeUkfIK12b9WtgVAl9NMHUKj6wn8n732cHV82TLD7RvGsle38uVja8bzII8vMUk9oM5G9aY"
+                                />
+                            </div>
+                            <h3 className="font-display text-2xl text-gray-900 dark:text-white">Dr. Surbhi Sinha</h3>
+                            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Lead Specialist</p>
+                            <div className="flex gap-2 mb-4">
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">MRCOG (UK)</span>
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">OBGYN</span>
+                            </div>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                Expert in fertility and reproductive medicine with international credentials. Dr. Sinha champions evidence-based protocols for complex fertility challenges.
+                            </p>
+                        </div>
+
+                        {/* Priyanka Savina */}
+                        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm hover:border-primary/30 group">
+                            <div className="mb-6 overflow-hidden rounded-md h-64">
+                                <img
+                                    alt="Priyanka Savina"
+                                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYhs011brymt1W_yAjt8a6IkmM24aPTrXDLTtk3qfTwxtx-uH3bP41BDxjkrOBaC0eYNNniYzXCKcemzXjZ6Bz445adRf1cB8PL4jiuNW9UZroQq_0chc2XbLnYbbIi_W-hvNW0a0abbQTTRJdeYVY4zhvl2eCk_dY0jSzwRd1og_CBXT_clXcwOP_Lx1WOwZuFCH3Cer7WX-SMaF6RLqGePn3VkRLYklNmjkeawe_LA6G9jqRQ7eQNTc9qN_FLz-oPyu2Pk4fi-Ew"
+                                />
+                            </div>
+                            <h3 className="font-display text-2xl text-gray-900 dark:text-white">Priyanka Savina</h3>
+                            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Wellness Lead</p>
+                            <div className="flex gap-2 mb-4">
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">M.Sc Nutrition</span>
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">PCOS Expert</span>
+                            </div>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                Specializing in nutritional interventions for PCOS and postpartum recovery, Priyanka integrates lifestyle medicine into our core treatment plans.
+                            </p>
+                        </div>
+
+                        {/* Adarsh Vinayak */}
+                        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm hover:border-primary/30 group">
+                            <div className="mb-6 overflow-hidden rounded-md h-64 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                                <img
+                                    alt="Adarsh Vinayak"
+                                    className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 transition-all opacity-80"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzX3O4uUVEN_1AMVJEuW-5VBIHHDBvVMCi619bIhkt6I1_jc8JocPWRHbdpGyjIAP5BbpnT-ddabcTgmgRI7N_kEuKB29joJ54aN7tU1dKFrHALru_vTldkpp_wBtAhm1jfDFcYXasFiQROuYfCyJnYnTROtlxC362XmOLmCDGL8oZ3r-ApQeAcLAZLfLbNBH4ZzK4YX95XCvci2LnX9BLodH7lkKNrq4LjG3XDnedYq2yq_sa5A_MUZxZ5ic2-hMMPEMj0gRxczW8"
+                                />
+                            </div>
+                            <h3 className="font-display text-2xl text-gray-900 dark:text-white">Adarsh Vinayak</h3>
+                            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Technology Lead</p>
+                            <div className="flex gap-2 mb-4">
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">CTO</span>
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">Digital Health</span>
+                            </div>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                Spearheading the digital transformation of patient care, Adarsh ensures seamless, secure, and accessible technology integration for modern healthcare delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Our Ethos (From Concept 1) */}
+            <section className="py-24 bg-[#FCF4D9] dark:bg-gray-900 overflow-hidden">
+                <div className="container mx-auto px-6 lg:px-12">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            <div className="w-full h-[500px] relative rounded-t-full rounded-b-[10rem] overflow-hidden shadow-xl">
-                                <img alt="Founder Story" className="w-full h-full object-cover transition-all duration-700" src={founderImage} />
+                        <div>
+                            <span className="text-primary font-bold tracking-widest text-sm uppercase mb-4 block">Our Ethos</span>
+                            <h2 className="font-display text-5xl lg:text-6xl text-gray-900 dark:text-white leading-none mb-8">
+                                Guided by <br />
+                                <span className="italic text-gray-500">Unwavering</span> <br />
+                                Principles.
+                            </h2>
+                        </div>
+                        <div className="space-y-12">
+                            <div className="flex gap-6 items-start border-l-2 border-primary pl-8">
+                                <div>
+                                    <h3 className="font-display text-3xl text-gray-900 dark:text-white mb-2">Clinical Integrity</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-lg">We adhere to the highest standards of medical ethics, ensuring every decision is evidence-based and patient-first.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="space-y-6 lg:pl-12">
-                            <span className="text-primary font-bold tracking-widest text-xs uppercase">The Beginning</span>
-                            <h2 className="font-display text-4xl lg:text-5xl text-slate-800 dark:text-white">Our Story</h2>
-                            <p className="text-lg leading-relaxed text-slate-600 dark:text-gray-300">
-                                The journey of My Stree began with a simple yet profound realization—women’s healthcare is often fragmented, impersonal, and limited to clinical interactions. Despite advances in medicine, the emotional, psychological, and lifestyle aspects are often overlooked.
-                            </p>
-                            <p className="text-lg leading-relaxed text-slate-600 dark:text-gray-300">
-                                Our founders, driven by experience and a deep understanding of women’s needs, set out to create something different—a safe space where women can speak freely about their concerns without judgment.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-6 lg:pr-12 order-2 lg:order-1">
-                            <span className="text-primary font-bold tracking-widest text-xs uppercase">Our Mission</span>
-                            <h2 className="font-display text-4xl lg:text-5xl text-slate-800 dark:text-white">Changing the Narrative</h2>
-                            <p className="text-lg leading-relaxed text-slate-600 dark:text-gray-300">
-                                We aim to change the narrative of women’s healthcare—where the focus is not just on treating symptoms but on empowering women to live healthier, happier, and more fulfilling lives. We provide comprehensive, compassionate, and personalized care.
-                            </p>
-                        </div>
-                        <div className="relative order-1 lg:order-2">
-                            <div className="w-full h-[500px] relative rounded-[2rem] overflow-hidden shadow-xl transform rotate-2 hover:-rotate-1 transition-transform duration-500">
-                                <img alt="Clinic Interior Detail" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" />
+                            <div className="flex gap-6 items-start border-l-2 border-secondary pl-8">
+                                <div>
+                                    <h3 className="font-display text-3xl text-gray-900 dark:text-white mb-2">Empathetic Care</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-lg">Medicine treats the body; empathy treats the person. We integrate emotional well-being into clinical practice.</p>
+                                </div>
                             </div>
-                            <div className="absolute -top-10 -right-10 bg-sky-100 dark:bg-sky-900/50 backdrop-blur-md p-6 rounded-full w-40 h-40 flex items-center justify-center animate-pulse-slow z-20 shadow-lg">
-                                <span className="font-display font-bold text-center text-slate-800 dark:text-white text-lg leading-tight">No White<br />Coats<br />Syndrome</span>
+                            <div className="flex gap-6 items-start border-l-2 border-gray-300 dark:border-gray-600 pl-8">
+                                <div>
+                                    <h3 className="font-display text-3xl text-gray-900 dark:text-white mb-2">Sustainable Wellness</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-lg">Beyond quick fixes, we focus on long-term health outcomes and preventative strategies for women.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Philosophy Section */}
-            <section className="py-32 px-6 lg:px-12 relative overflow-hidden bg-corn-silk dark:bg-gray-900">
-                <div className="max-w-7xl mx-auto text-center mb-20">
-                    <h2 className="font-display text-5xl text-slate-800 dark:text-white mb-6">What We Stand For</h2>
-                    <p className="text-slate-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Your health, your happiness, your journey—My Stree is here for it all.</p>
+            {/* 5. Core Values (From Concept 2) */}
+            <section className="py-24 bg-white dark:bg-gray-800 border-y border-gray-100 dark:border-gray-700">
+                <div className="container mx-auto px-6 lg:px-12">
+                    <div className="text-center max-w-2xl mx-auto mb-16">
+                        <h2 className="font-display text-3xl text-gray-900 dark:text-white mb-4">Core Values</h2>
+                        <p className="text-gray-500 dark:text-gray-400">The principles that define our practice and promise.</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-700 border border-gray-200 dark:border-gray-700">
+                        {/* Value 1 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">diversity_1</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Empathy</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Understanding the emotional context of every medical need.</p>
+                        </div>
+                        {/* Value 2 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">fingerprint</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Personalized Care</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Tailoring treatments to individual biology and lifestyle.</p>
+                        </div>
+                        {/* Value 3 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">gpp_good</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Safe Space</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">A judgment-free environment prioritizing privacy and trust.</p>
+                        </div>
+                        {/* Value 4 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">spa</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Holistic</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Integrating mind, body, and nutrition into recovery.</p>
+                        </div>
+                        {/* Value 5 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">accessible</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Accessibility</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Making expert care reachable and understandable.</p>
+                        </div>
+                        {/* Value 6 */}
+                        <div className="bg-white dark:bg-gray-900 p-10 flex flex-col items-center text-center hover:bg-orange-50/30 dark:hover:bg-gray-800 transition-colors">
+                            <span className="material-icons text-3xl text-primary mb-4">volunteer_activism</span>
+                            <h4 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">Empowerment</h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">Educating women to take charge of their own health.</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
-                    <div className="group relative">
-                        <div className="absolute inset-0 bg-sky-200/40 dark:bg-sky-900/20 rounded-[42%_58%_70%_30%/45%_45%_55%_55%] transform group-hover:scale-105 transition-transform duration-500"></div>
-                        <div className="relative p-12 text-center h-full flex flex-col items-center justify-center min-h-[400px]">
-                            <span className="material-symbols-outlined text-5xl text-slate-700 dark:text-white mb-6">psychology</span>
-                            <h3 className="font-display text-2xl font-bold text-slate-800 dark:text-white mb-4">Holistic Approach</h3>
-                            <p className="text-slate-600 dark:text-gray-300 leading-relaxed">We combine medical expertise with care for your mind, body, and soul. From nutrition and mental health to physical wellness, we provide integrated solutions.</p>
-                        </div>
-                    </div>
-                    <div className="group relative mt-12 md:mt-0">
-                        <div className="absolute inset-0 bg-gray-200/60 dark:bg-gray-700/30 rounded-[68%_32%_43%_57%/37%_57%_43%_63%] transform group-hover:scale-105 transition-transform duration-500"></div>
-                        <div className="relative p-12 text-center h-full flex flex-col items-center justify-center min-h-[400px]">
-                            <span className="material-symbols-outlined text-5xl text-slate-700 dark:text-white mb-6">favorite</span>
-                            <h3 className="font-display text-2xl font-bold text-slate-800 dark:text-white mb-4">Empathy First</h3>
-                            <p className="text-slate-600 dark:text-gray-300 leading-relaxed">We practice active listening. We understand that sometimes, you just need someone to listen, validate, and guide you—not rush through your concerns.</p>
-                        </div>
-                    </div>
-                    <div className="group relative">
-                        <div className="absolute inset-0 bg-primary/10 dark:bg-primary/20 rounded-[35%_65%_31%_69%/57%_39%_61%_43%] transform group-hover:scale-105 transition-transform duration-500"></div>
-                        <div className="relative p-12 text-center h-full flex flex-col items-center justify-center min-h-[400px]">
-                            <span className="material-symbols-outlined text-5xl text-slate-700 dark:text-white mb-6">school</span>
-                            <h3 className="font-display text-2xl font-bold text-slate-800 dark:text-white mb-4">Empowerment</h3>
-                            <p className="text-slate-600 dark:text-gray-300 leading-relaxed">Knowledge builds confidence. We empower women with the information, tools, and guidance they need to make informed choices for themselves.</p>
+            </section>
+
+            {/* 6. Your Health, Our Priority (From Concept 1) */}
+            <section className="py-32 bg-white dark:bg-gray-900 text-center">
+                <div className="container mx-auto px-6 lg:px-12">
+                    <div className="max-w-3xl mx-auto">
+                        <span className="material-icons text-primary text-5xl mb-6">verified</span>
+                        <h2 className="font-display text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8">
+                            Your Health, <span className="italic text-primary">Our Priority.</span>
+                        </h2>
+                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
+                            Partner with a team that values your trust as much as your health. Experience the difference of leadership-driven care.
+                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-6">
+                            <Link to="/booking-gateway" className="bg-primary text-white px-10 py-5 rounded text-lg font-bold shadow-lg hover:bg-orange-700 uppercase tracking-wide">
+                                Book Consultation
+                            </Link>
+                            <Link to="/contact-us" className="border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white px-10 py-5 rounded text-lg font-bold hover:bg-gray-50 dark:hover:bg-gray-800 uppercase tracking-wide">
+                                Contact Support
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-
-
-            {/* Visit Us Section */}
-            <section className="relative bg-background-light dark:bg-background-dark py-0 mb-0">
-                <div className="flex flex-col md:flex-row h-auto md:h-[600px]">
-                    <div className="md:w-1/3 bg-cadet-gray text-white p-12 flex flex-col justify-center relative z-10">
-                        <span className="font-bold uppercase tracking-wider text-sm text-corn-silk mb-2">Visit Us</span>
-                        <h2 className="text-4xl font-display font-bold mb-8">What to Expect</h2>
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-white/20 p-2 rounded-full"><span className="material-symbols-outlined text-white">description</span></div>
-                                <div>
-                                    <p className="font-bold text-lg">No long forms</p>
-                                    <p className="text-white/80 text-sm">Quick digital check-in before you arrive.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <div className="bg-white/20 p-2 rounded-full"><span className="material-symbols-outlined text-white">door_front</span></div>
-                                <div>
-                                    <p className="font-bold text-lg">Private rooms</p>
-                                    <p className="text-white/80 text-sm">Soundproofed spaces for your privacy.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <div className="bg-white/20 p-2 rounded-full"><span className="material-symbols-outlined text-white">coffee</span></div>
-                                <div>
-                                    <p className="font-bold text-lg">Warm environment</p>
-                                    <p className="text-white/80 text-sm">Comfortable lounge, not a waiting room.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4 pt-4 border-t border-white/20 mt-4">
-                                <span className="material-symbols-outlined mt-1">location_on</span>
-                                <div>
-                                    <p className="font-bold text-base">My Stree Clinic</p>
-                                    <p className="text-white/80 text-sm">Whitefield, Bengaluru</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="md:w-2/3 relative bg-gray-200 min-h-[400px]">
-                        <img alt="Map Location of My Stree Clinic" className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition duration-500" onError={(e) => { e.target.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMeJwUSE8_I6drByML0s6ptvLOEkBJNCIrM20qSk9cGn09e9fUUya6UCv-Ljlz3KQv3csbVk827kO87k4wxhVIeTOo8zBTgsA9oXroOMwBpWaHKQbU4FGTGfbbhdvb1L-Y6NP73mYWvMaXpWs6_t37j2g0kGcnfgiJXDxTxQlpm6N0osjr2KCUdBCEQYzvIQK71DLPrEuIljMHiAj8zT_SjVxeZlTR799QH0iOvXShfcXtlVg6leddHkT7O52_OjYA1daYNeAyrP5r'; e.target.style.objectFit = 'cover' }} src="https://lh3.googleusercontent.com/aida-public/AB6AXuCla6y3FQE6qjRHwnEMvdtNI24mOUnacAR041hdHAyw5dPEE-gUH0e8KpLrtZGUapAAsZ3ndt8EYbfD0NLveKwBDGjQl9PiOdMwrUIaut077sHaBHJkMuGnSIu_dhIOXuStMac24SnFGm0e2m-hntPytnKhrbwjNBKPvFj1hbKR_NScCap2RHlNHInGaqwBudcd56mloYp8vn0PSXALYOKv0ptMg8k7ElH5DdO6THS7Eblzk9edpJkRqcWKLuHAhnqc0WNjSXA854l_" />
-                        <a className="absolute bottom-8 right-8 bg-[#FDFBF7] text-gray-900 px-6 py-3 rounded-lg shadow-lg font-bold flex items-center gap-2 hover:bg-gray-50 transition z-10" href="https://maps.app.goo.gl/r5462Mpbnn15Q3Ar5" target="_blank" rel="noopener noreferrer">
-                            <span className="material-symbols-outlined text-primary">directions</span>
-                            Get Directions
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Sticky Bottom Buttons */}
-            <div className="fixed bottom-0 left-0 w-full bg-white/80 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 p-4 z-40 md:hidden pb-safe">
-                <button className="w-full bg-gradient-to-r from-primary to-orange-600 text-white rounded-full px-6 py-3.5 font-bold text-base shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transition-transform active:scale-95">
-                    <span className="material-symbols-outlined text-[20px]">calendar_month</span>
-                    <span>Book Appointment</span>
-                </button>
-            </div>
-            <div className={`hidden md:block fixed bottom-8 right-24 z-50 group transition-all duration-500 transform ${showButton ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}>
-                {/* Tooltip */}
-                <div className="absolute bottom-full right-0 mb-3 w-max bg-gray-900 text-white text-xs font-medium px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-                    Schedule a visit
-                    <div className="absolute top-full right-6 -mt-1 border-4 border-transparent border-t-gray-900"></div>
-                </div>
-
-                <button className="bg-white/90 dark:bg-gray-800/90 backdrop-blur text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary rounded-full pl-5 pr-2 py-2 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 hover:border-primary/20 flex items-center gap-3 transition-all duration-300 group-hover:shadow-[0_8px_30px_rgb(237,91,45,0.2)]">
-                    <span className="font-bold text-sm tracking-wide">Book Appointment</span>
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center text-white shadow-md transform group-hover:rotate-12 transition-transform duration-300">
-                        <span className="material-symbols-outlined text-lg">calendar_month</span>
-                    </div>
-                </button>
-            </div>
         </div>
     );
 }

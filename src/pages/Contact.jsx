@@ -52,7 +52,7 @@ const Contact = () => {
             </style>
 
             {/* Hero Section */}
-            <section className="relative w-full py-20 px-6 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
+            <section className="relative w-full py-14 px-4 sm:px-6 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80"
@@ -67,7 +67,7 @@ const Contact = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-[#1b110e] dark:text-white text-5xl md:text-8xl font-serif font-medium leading-[1.1] tracking-tight"
+                        className="text-[#1b110e] dark:text-white text-4xl sm:text-5xl md:text-8xl font-serif font-medium leading-[1.1] tracking-tight"
                     >
                         Let&apos;s Start Your <br />
                         <span className="italic text-primary">Chapter of Care.</span>
@@ -85,8 +85,8 @@ const Contact = () => {
             </section>
 
             {/* Action Hub - Creative Tiles */}
-            <section className="relative z-10 w-full px-6 -mt-8 mb-24">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <section className="relative z-10 w-full px-4 sm:px-6 -mt-6 sm:-mt-8 mb-16 sm:mb-24">
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
                     {[
                         {
                             title: "Talk to Us",
@@ -123,7 +123,7 @@ const Contact = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 + (i * 0.1) }}
                             whileHover={{ y: -8 }}
-                            className={`glass-panel rounded-[2.5rem] p-10 flex flex-col items-center text-center gap-6 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group relative overflow-hidden ${tile.primary ? 'border-primary/30 ring-1 ring-primary/10' : ''}`}
+                            className={`glass-panel rounded-[1.75rem] sm:rounded-[2.5rem] p-6 sm:p-10 flex flex-col items-center text-center gap-5 sm:gap-6 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group relative overflow-hidden ${tile.primary ? 'border-primary/30 ring-1 ring-primary/10' : ''}`}
                         >
                             {tile.primary && <div className="absolute top-0 right-0 bg-primary/10 text-primary text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase tracking-tighter">Preferred</div>}
 
@@ -148,7 +148,7 @@ const Contact = () => {
                 </div>
 
                 {/* Social Hub - Creative Rotation */}
-                <div className="flex flex-col items-center gap-8 mt-16 text-center">
+                <div className="flex flex-col items-center gap-8 mt-12 sm:mt-16 text-center">
                     <p className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">Follow Our Care Journey</p>
                     <div className="flex justify-center gap-6">
                         {[
@@ -193,26 +193,26 @@ const Contact = () => {
                     </div>
                 </div>
 
-            </section >
+            </section>
 
             {/* Map Experience */}
-            < section className="relative w-full h-[560px] md:h-[700px] overflow-hidden" >
+            <section className="relative w-full h-[460px] sm:h-[560px] md:h-[700px] overflow-hidden">
                 {/* Simulated High-Res Map */}
-                < div className="absolute inset-0 bg-slate-100 dark:bg-slate-900 group" >
+                <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900 group">
                     <img
                         src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80"
                         alt="Map"
                         className="w-full h-full object-cover opacity-60 grayscale-[50%] sepia-[20%] group-hover:grayscale-0 transition-all duration-[2s]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent"></div>
-                </div >
+                </div>
 
                 {/* Floating Address Card */}
                 < motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="absolute top-6 left-1/2 -translate-x-1/2 md:top-12 md:left-20 md:translate-x-0 z-20 w-full px-4 md:px-0 max-w-[420px]"
+                    className="absolute top-4 left-1/2 -translate-x-1/2 md:top-12 md:left-20 md:translate-x-0 z-20 w-[calc(100%-1.5rem)] sm:w-full px-0 md:px-0 max-w-[420px]"
                 >
                     <div className="glass-card-white dark:bg-slate-800/90 rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-2xl border border-white/50 backdrop-blur-2xl">
                         <div className="space-y-6">
@@ -255,10 +255,10 @@ const Contact = () => {
                             </button>
                         </div>
                     </div>
-                </motion.div >
+                </motion.div>
 
                 {/* Animated Marker - Adjusted to India/Bangalore */}
-                < div className="hidden md:block absolute top-[58%] left-[72%] -translate-x-1/2 -translate-y-1/2 z-10" >
+                <div className="hidden md:block absolute top-[58%] left-[72%] -translate-x-1/2 -translate-y-1/2 z-10">
                     <div className="relative flex flex-col items-center">
 
                         <motion.div
@@ -270,11 +270,11 @@ const Contact = () => {
                         </motion.div>
                         <div className="w-2 h-2 bg-primary/40 rounded-full blur-[2px] mt-4 scale-x-150 animate-pulse"></div>
                     </div>
-                </div >
-            </section >
+                </div>
+            </section>
 
             {/* Creative Trust Section */}
-            < section className="py-24 bg-white dark:bg-background-dark relative overflow-hidden" >
+            <section className="py-16 md:py-24 bg-white dark:bg-background-dark relative overflow-hidden">
                 <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -286,7 +286,7 @@ const Contact = () => {
                             <span className="italic text-primary">is Our Priority.</span>
                         </h2>
                         <p className="text-xl text-slate-500 dark:text-gray-400 font-light leading-relaxed">
-                            We respond to every query within 2 working hours. Because we know that when it comes to your health, every minute matters.
+                            Prompt and compassionate communication is at the heart of our care. We prioritize your health and well-being in every interaction.
                         </p>
                     </motion.div>
 
@@ -306,9 +306,9 @@ const Contact = () => {
                         ))}
                     </div>
                 </div>
-            </section >
+            </section>
 
-        </div >
+        </div>
     );
 };
 

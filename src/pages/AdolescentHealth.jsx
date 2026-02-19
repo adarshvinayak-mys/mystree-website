@@ -29,8 +29,8 @@ const reviews = [
 
 const topicDetails = {
     menstrual: {
-        title: "Menstrual Wellness",
-        subtitle: "Period care that is evidence-based and judgment-free.",
+        title: "Periods, But Make It Chill",
+        subtitle: "Menstruation myths, cramps, cycle tracking — no more hush-hush.",
         icon: "water_drop",
         accent: "text-primary",
         bg: "bg-primary/10",
@@ -40,8 +40,8 @@ const topicDetails = {
         whenToConsult: "If pain affects school or daily life, cycles are very irregular, or bleeding feels excessive."
     },
     hormonal: {
-        title: "Hormonal Health",
-        subtitle: "Structured support for acne, mood shifts, and cycle imbalance.",
+        title: "Hormones Be Wildin’",
+        subtitle: "Puberty is basically your body’s software update. Acne, growth spurts, random tears — we got you.",
         icon: "spa",
         accent: "text-cadet-gray",
         bg: "bg-uranian-blue/30",
@@ -51,8 +51,8 @@ const topicDetails = {
         whenToConsult: "If symptoms are persistent for 2-3 cycles or beginning to impact confidence, sleep, or focus."
     },
     sexual: {
-        title: "Sexual Health",
-        subtitle: "Private, safe, and medically accurate guidance.",
+        title: "Situationships & Safe Love",
+        subtitle: "Crushes, consent, contraception, boundaries — not just Bollywood fantasy.",
         icon: "health_and_safety",
         accent: "text-teal-900",
         bg: "bg-mint/40",
@@ -62,8 +62,8 @@ const topicDetails = {
         whenToConsult: "Any time you are unsure, anxious, or need private clarity before making health decisions."
     },
     mental: {
-        title: "Mental Fit",
-        subtitle: "Emotional wellness support tailored for teens and young adults.",
+        title: "Brain on Vibes",
+        subtitle: "Stress? Anxiety? Mood swings? Let’s talk “main character energy” without burnout.",
         icon: "psychology",
         accent: "text-purple-900",
         bg: "bg-lavender/40",
@@ -180,32 +180,32 @@ export default function AdolescentHealth() {
                         <div className="group cursor-pointer" onClick={() => setActiveTopic('menstrual')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setActiveTopic('menstrual')}>
                             <div className="w-64 h-64 rounded-full bg-primary/10 backdrop-blur-sm border-2 border-primary/20 flex flex-col items-center justify-center p-6 text-center transform transition-all duration-300 group-hover:scale-105 group-hover:bg-primary group-hover:border-cadet-gray shadow-lg hover:shadow-xl">
                                 <span className="material-icons text-4xl text-primary mb-3 group-hover:text-white transition-colors">water_drop</span>
-                                <h3 className="text-xl font-bold text-cadet-gray group-hover:text-white transition-colors font-serif mb-2">Menstrual Wellness</h3>
-                                <p className="text-sm text-cadet-gray/70 group-hover:text-white/90 transition-colors leading-tight">Period pain, heavy flow, or just "is this normal?"</p>
+                                <h3 className="text-xl font-bold text-cadet-gray group-hover:text-white transition-colors font-serif mb-2 leading-tight">Periods, But Make It Chill</h3>
+                                <p className="text-sm text-cadet-gray/70 group-hover:text-white/90 transition-colors leading-tight">Cycle tracking — no more hush-hush.</p>
                             </div>
                         </div>
                         {/* Bubble 2 */}
                         <div className="group cursor-pointer" onClick={() => setActiveTopic('hormonal')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setActiveTopic('hormonal')}>
                             <div className="w-64 h-64 rounded-full bg-uranian-blue/30 backdrop-blur-sm border-2 border-uranian-blue flex flex-col items-center justify-center p-6 text-center transform transition-all duration-300 group-hover:scale-105 group-hover:bg-uranian-blue group-hover:border-cadet-gray shadow-lg hover:shadow-xl">
                                 <span className="material-icons text-4xl text-cadet-gray mb-3">spa</span>
-                                <h3 className="text-xl font-bold text-cadet-gray font-serif mb-2">Hormonal Health</h3>
-                                <p className="text-sm text-cadet-gray/70 leading-tight">PCOS, acne, mood swings. Let's balance it out.</p>
+                                <h3 className="text-xl font-bold text-cadet-gray font-serif mb-2 leading-tight">Hormones Be Wildin’</h3>
+                                <p className="text-sm text-cadet-gray/70 leading-tight">Body software update. No random tears.</p>
                             </div>
                         </div>
                         {/* Bubble 3 */}
                         <div className="group cursor-pointer" onClick={() => setActiveTopic('sexual')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setActiveTopic('sexual')}>
                             <div className="w-64 h-64 rounded-full bg-mint/40 backdrop-blur-sm border-2 border-mint flex flex-col items-center justify-center p-6 text-center transform transition-all duration-300 group-hover:scale-105 group-hover:bg-mint group-hover:border-cadet-gray shadow-lg hover:shadow-xl">
                                 <span className="material-icons text-4xl text-teal-700 mb-3">health_and_safety</span>
-                                <h3 className="text-xl font-bold text-teal-900 font-serif mb-2">Sexual Health</h3>
-                                <p className="text-sm text-teal-800/70 leading-tight">Contraception, questions, and safe guidance.</p>
+                                <h3 className="text-xl font-bold text-teal-900 font-serif mb-2 leading-tight">Situationships & Safe Love</h3>
+                                <p className="text-sm text-teal-800/70 leading-tight">Crushes, consent, not just Bollywood.</p>
                             </div>
                         </div>
                         {/* Bubble 4 */}
                         <div className="group cursor-pointer" onClick={() => setActiveTopic('mental')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setActiveTopic('mental')}>
                             <div className="w-64 h-64 rounded-full bg-lavender/40 backdrop-blur-sm border-2 border-lavender flex flex-col items-center justify-center p-6 text-center transform transition-all duration-300 group-hover:scale-105 group-hover:bg-lavender group-hover:border-cadet-gray shadow-lg hover:shadow-xl">
                                 <span className="material-icons text-4xl text-purple-700 mb-3">psychology</span>
-                                <h3 className="text-xl font-bold text-purple-900 font-serif mb-2">Mental Fit</h3>
-                                <p className="text-sm text-purple-800/70 leading-tight">Anxiety & stress support.</p>
+                                <h3 className="text-xl font-bold text-purple-900 font-serif mb-2 leading-tight">Brain on Vibes</h3>
+                                <p className="text-sm text-purple-800/70 leading-tight">Main character energy without burnout.</p>
                             </div>
                         </div>
                     </div>
@@ -307,6 +307,91 @@ export default function AdolescentHealth() {
                                     <li>Clear next steps for both sides</li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* The Adolescent Flex (Remaining Gen Z Slang Sections) */}
+            <section className="py-20 px-6 md:px-12 lg:px-20 bg-corn-silk/20">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16 relative">
+                        <div className="absolute top-[-20px] left-1/2 transform -translate-x-1/2 rotate-1 text-primary/20 text-6xl font-bold opacity-10 select-none">LEVEL UP</div>
+                        <h2 className="text-4xl md:text-5xl font-bold text-cadet-gray font-serif relative z-10">The Adolescent Flex</h2>
+                        <p className="text-xl text-primary font-hand mt-2 transform -rotate-1">Your health glow-up starts here ✨</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {/* Glow-Up Nutrition */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-mint rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">restaurant</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Glow-Up Nutrition</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Fuel your body, don’t fight it. Protein &gt; crash diets. Always.</p>
+                        </div>
+
+                        {/* Sleep Is the Real Flex */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-primary/20 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">bedtime</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Sleep Is the Real Flex</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Pulling all-nighters? Not the flex you think it is. Rest = Power.</p>
+                        </div>
+
+                        {/* Screen Time Detox Era */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-uranian-blue rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">phonelink_off</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Screen Time Detox </h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Doom scrolling? Comparison culture? Give your brain a break era.</p>
+                        </div>
+
+                        {/* Move Your Body */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-mint/50 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">directions_run</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Move Your Body</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Fitness that isn’t punishment. Move because it feels good.</p>
+                        </div>
+
+                        {/* Growth Mode Activated */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-yellow-100 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">straighten</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Growth Mode</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Height, bones, strength — build the foundation now.</p>
+                        </div>
+
+                        {/* Shots & Shields */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                            <div className="w-12 h-12 bg-primary/10 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-cadet-gray">shield</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Shots & Shields</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Vaccines, hygiene, basic health protection. Be untouchable.</p>
+                        </div>
+
+                        {/* Red Flag Symptoms */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group border-rose-200">
+                            <div className="w-12 h-12 bg-rose-100 rounded-lg border-2 border-rose-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-rose-600">flag</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Red Flag Stats</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">When to tell a adult — no ghosting your health.</p>
+                        </div>
+
+                        {/* Ask the Doc */}
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group border-primary/30">
+                            <div className="w-12 h-12 bg-primary/20 rounded-lg border-2 border-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span className="material-icons text-primary">local_hospital</span>
+                            </div>
+                            <h3 className="font-bold text-lg text-cadet-gray mb-2">Ask the Doc</h3>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Not just Google. Talk to someone who actually knows.</p>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import doctor2 from '../assets/doctor2.jpg';
 import doctor3 from '../assets/doctor3.jpg';
 import doctor1 from '../assets/doctor1.jpg';
@@ -81,10 +82,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -117,10 +118,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2">
                                     Book with Dr. Sinha
                                     <span className="material-symbols-outlined text-sm">calendar_today</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -174,10 +175,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -214,10 +215,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm">calendar_today</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -270,10 +271,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">9 Years Specialist</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -307,10 +308,10 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
-                                <button className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                                <Link to="/booking-gateway" className="w-full sm:w-auto mt-4 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-lg">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -398,9 +399,9 @@ export default function OurTeam() {
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Experience Better Healthcare?</h2>
                     <p className="text-orange-50 text-lg mb-10">Join the thousands of patients who have trusted the mystree team with their health journey.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-white text-primary hover:bg-orange-50 font-bold py-4 px-10 rounded-lg shadow-lg transition-transform hover:-translate-y-1">
+                        <Link to="/booking-gateway" className="bg-white text-primary hover:bg-orange-50 font-bold py-4 px-10 rounded-lg shadow-lg transition-transform hover:-translate-y-1 inline-block">
                             Book Appointment
-                        </button>
+                        </Link>
                         <button className="bg-transparent border border-white/30 text-white hover:bg-white/10 font-bold py-4 px-10 rounded-lg transition-colors">
                             View Our Services
                         </button>

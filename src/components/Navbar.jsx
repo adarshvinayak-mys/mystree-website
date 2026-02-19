@@ -29,9 +29,7 @@ export default function Navbar() {
         };
     }, [lastScrollY]);
 
-    const toggleTheme = () => {
-        document.documentElement.classList.toggle('dark');
-    };
+
 
     const isActive = (path) => {
         if (path === '/') return location.pathname === '/';
@@ -39,7 +37,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md border-b border-orange-100/50 dark:border-gray-800 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
             <style>{`
                 /* Navigation Links */
                 .nav-link { position: relative; color: #4B5563; transition: color 0.3s ease; }
@@ -78,79 +76,77 @@ export default function Navbar() {
                 }
             `}</style>
 
-            <div className="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
+            {/* Main Navbar Background */}
+            <div className={`absolute inset-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-orange-100/50 dark:border-gray-800 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}></div>
 
-                {/* Image Logo */}
-                <Link to="/" className="flex items-center h-full group py-2">
-                    <img
-                        src="https://my-stree.com/assets/images/mystreelogo.svg"
-                        alt="MyStree Logo"
-                        className="h-10 sm:h-12 w-auto object-contain"
-                    />
+            <div className="container relative mx-auto px-4 lg:px-8 h-20 flex items-center justify-between z-10">
+
+                {/* Logo and Nav Links - These hide together */}
+                <div className={`flex items-center gap-12 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+                    <Link to="/" className="flex items-center h-full group py-2">
+                        <img
+                            src="https://my-stree.com/assets/images/mystreelogo.svg"
+                            alt="MyStree Logo"
+                            className="h-10 sm:h-12 w-auto object-contain"
+                        />
+                    </Link>
+
+                    <nav className={`hidden md:flex items-center gap-8 text-sm font-medium transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                        <Link className={`nav-link ${isActive('/') ? 'active' : ''}`} to="/">Home</Link>
+                        <Link className={`nav-link ${isActive('/about') ? 'active' : ''}`} to="/about">About Us</Link>
+                        <Link className={`nav-link ${isActive('/team') ? 'active' : ''}`} to="/team">Our Team</Link>
+                        <div className="relative group">
+                            <button className={`flex items-center gap-1 nav-link py-4 ${isActive('/services') ? 'active' : ''}`}>
+                                Services <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
+                            </button>
+                            <div className="absolute top-full left-0 w-56 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
+                                <ul className="space-y-1">
+                                    <li><Link to="/services/obgyn" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/obgyn' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>OBGYN Consults</Link></li>
+                                    <li><Link to="/services/fertility" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/fertility' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Fertility Clinic</Link></li>
+                                    <li><Link to="/services/adolescent-health" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/adolescent-health' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Adolescent Health Clinic</Link></li>
+                                    <li><Link to="/services/prenatal" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/prenatal' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Pre-Natal Clinic</Link></li>
+                                    <li><Link to="/services/menopause" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/menopause' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Menopausal Clinic</Link></li>
+                                    <li><Link to="/services/nutrition" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/nutrition' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Nutrition Counselling</Link></li>
+                                    <li><Link to="/services/physiotherapy" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/physiotherapy' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Physiotherapy & Recovery</Link></li>
+                                    <li><Link to="/services/dermatology" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/dermatology' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Dermatology & Skin Care</Link></li>
+                                    <li><Link to="/services/psychology" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/psychology' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Psychology & Psychiatry</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="relative group">
+                            <button className={`flex items-center gap-1 nav-link py-4 ${isActive('/showcase') ? 'active' : ''}`}>
+                                Show Case <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
+                            </button>
+                            <div className="absolute top-full left-0 w-48 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
+                                <ul className="space-y-1">
+                                    <li><Link to="/showcase/events" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/events' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Upcoming Events</Link></li>
+                                    <li><Link to="/showcase/gallery" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Gallery</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact">Contact Us</Link>
+                    </nav>
+                </div>
+
+
+
+                <Link className="hidden md:flex book-btn text-white px-8 py-3.5 rounded-full font-bold shadow-xl items-center gap-2.5 text-base" to="/booking-gateway">
+                    <span className="material-icons text-lg">calendar_month</span>
+                    Book Appointment
                 </Link>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <Link className={`nav-link ${isActive('/') ? 'active' : ''}`} to="/">Home</Link>
-                    <Link className={`nav-link ${isActive('/about') ? 'active' : ''}`} to="/about">About Us</Link>
-                    <Link className={`nav-link ${isActive('/team') ? 'active' : ''}`} to="/team">Our Team</Link>
-                    <div className="relative group">
-                        <button className={`flex items-center gap-1 nav-link py-4 ${isActive('/services') ? 'active' : ''}`}>
-                            Services <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
-                        </button>
-                        <div className="absolute top-full left-0 w-56 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
-                            <ul className="space-y-1">
-                                <li><Link to="/services/obgyn" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/obgyn' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>OBGYN Consults</Link></li>
-                                <li><Link to="/services/fertility" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/fertility' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Fertility Clinic</Link></li>
-                                <li><Link to="/services/adolescent-health" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/adolescent-health' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Adolescent Health Clinic</Link></li>
-                                <li><Link to="/services/prenatal" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/prenatal' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Pre-Natal Clinic</Link></li>
-                                <li><Link to="/services/menopause" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/menopause' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Menopausal Clinic</Link></li>
-                                <li><Link to="/services/nutrition" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/nutrition' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Nutrition Counselling</Link></li>
-                                <li><Link to="/services/physiotherapy" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/physiotherapy' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Physiotherapy & Recovery</Link></li>
-                                <li><Link to="/services/dermatology" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/dermatology' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Dermatology & Skin Care</Link></li>
-                                <li><Link to="/services/psychology" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/services/psychology' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Psychology & Psychiatry</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="relative group">
-                        <button className={`flex items-center gap-1 nav-link py-4 ${isActive('/showcase') ? 'active' : ''}`}>
-                            Show Case <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
-                        </button>
-                        <div className="absolute top-full left-0 w-48 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
-                            <ul className="space-y-1">
-                                <li><Link to="/showcase/events" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/events' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Upcoming Events</Link></li>
-                                <li><Link to="/showcase/gallery" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Gallery</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact">Contact Us</Link>
-
-                </nav>
-
-                <div className="flex items-center gap-4">
-                    <button aria-label="Toggle Dark Mode" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" id="theme-toggle" onClick={toggleTheme}>
-                        <span className="material-icons dark:hidden text-gray-600">dark_mode</span>
-                        <span className="material-icons hidden dark:block text-yellow-300">light_mode</span>
-                    </button>
-
-                    <a className="hidden md:flex book-btn text-white px-8 py-3.5 rounded-full font-bold shadow-xl items-center gap-2.5 text-base" href="#">
-                        <span className="material-icons text-lg">calendar_month</span>
-                        Book Appointment
-                    </a>
-
-                    {/* Mobile Menu Button */}
-                    <button className="md:hidden p-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-                        <span className="material-icons">{isOpen ? 'close' : 'menu'}</span>
-                    </button>
-                </div>
+                {/* Mobile Menu Button */}
+                <button className="md:hidden p-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+                    <span className="material-icons">{isOpen ? 'close' : 'menu'}</span>
+                </button>
             </div>
 
             {/* Mobile Menu Dropdown */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="md:hidden bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 absolute top-20 left-0 right-0 shadow-lg"
+                        className="md:hidden bg-surface-light dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute top-20 left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
@@ -179,7 +175,6 @@ export default function Navbar() {
                                     <Link to="/services/dermatology" className={`block py-2 pl-4 text-sm ${location.pathname === '/services/dermatology' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Dermatology & Skin Care</Link>
                                     <Link to="/services/psychology" className={`block py-2 pl-4 text-sm ${location.pathname === '/services/psychology' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Psychology & Psychiatry</Link>
                                 </motion.div>
-
                             </div>
                             <div className="border-b border-gray-100 dark:border-gray-800">
                                 <button onClick={() => setIsShowcaseOpen(!isShowcaseOpen)} className={`flex items-center justify-between w-full py-2 text-left ${location.pathname.startsWith('/showcase') ? 'text-primary font-bold' : 'hover:text-primary'}`}>
@@ -197,12 +192,10 @@ export default function Navbar() {
                             </div>
                             <Link to="/contact" className={`py-2 ${location.pathname === '/contact' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Contact Us</Link>
 
-
-
-                            <a className="book-btn text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 mt-2" href="#">
+                            <Link className="book-btn text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 mt-2" to="/booking-gateway" onClick={() => setIsOpen(false)}>
                                 <span className="material-icons text-sm">calendar_month</span>
                                 Book Appointment
-                            </a>
+                            </Link>
                         </nav>
                     </motion.div>
                 )}
