@@ -1,0 +1,497 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+@layer base {
+
+    body {
+        @apply font-body;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display;
+    }
+
+    p,
+    li,
+    a,
+    button,
+    input,
+    textarea,
+    label {
+        @apply font-body;
+    }
+}
+
+/* Route-specific typography variants */
+.page-font-home {
+    font-family: 'Source Serif 4', serif;
+}
+
+.page-font-about {
+    font-family: 'Lora', serif;
+}
+
+.page-font-team {
+    font-family: 'Mulish', sans-serif;
+}
+
+.page-font-obgyn {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.page-font-adolescent {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.page-font-prenatal {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.page-font-fertility {
+    font-family: 'Manrope', sans-serif;
+}
+
+.page-font-menopause {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.page-font-nutrition {
+    font-family: 'Assistant', sans-serif;
+}
+
+.page-font-physio {
+    font-family: 'Cabin', sans-serif;
+}
+
+.page-font-dermatology {
+    font-family: 'Figtree', sans-serif;
+}
+
+.page-font-psychology {
+    font-family: 'Hind', sans-serif;
+}
+
+.page-font-gallery {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.page-font-events {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.page-font-contact {
+    font-family: 'Karla', sans-serif;
+}
+
+.page-font-home h1,
+.page-font-home h2,
+.page-font-home h3,
+.page-font-home h4,
+.page-font-home h5,
+.page-font-home h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.page-font-home p,
+.page-font-home li,
+.page-font-home a,
+.page-font-home button,
+.page-font-home input,
+.page-font-home textarea,
+.page-font-home label {
+    font-family: 'Source Serif 4', serif;
+}
+
+.page-font-about h1,
+.page-font-about h2,
+.page-font-about h3,
+.page-font-about h4,
+.page-font-about h5,
+.page-font-about h6 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.page-font-about p,
+.page-font-about li,
+.page-font-about a,
+.page-font-about button,
+.page-font-about input,
+.page-font-about textarea,
+.page-font-about label {
+    font-family: 'Lora', serif;
+}
+
+.page-font-team h1,
+.page-font-team h2,
+.page-font-team h3,
+.page-font-team h4,
+.page-font-team h5,
+.page-font-team h6 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.page-font-team p,
+.page-font-team li,
+.page-font-team a,
+.page-font-team button,
+.page-font-team input,
+.page-font-team textarea,
+.page-font-team label {
+    font-family: 'Mulish', sans-serif;
+}
+
+.page-font-obgyn h1,
+.page-font-obgyn h2,
+.page-font-obgyn h3,
+.page-font-obgyn h4,
+.page-font-obgyn h5,
+.page-font-obgyn h6 {
+    font-family: 'Merriweather', serif;
+}
+
+.page-font-obgyn p,
+.page-font-obgyn li,
+.page-font-obgyn a,
+.page-font-obgyn button,
+.page-font-obgyn input,
+.page-font-obgyn textarea,
+.page-font-obgyn label {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.page-font-adolescent h1,
+.page-font-adolescent h2,
+.page-font-adolescent h3,
+.page-font-adolescent h4,
+.page-font-adolescent h5,
+.page-font-adolescent h6 {
+    font-family: 'Bree Serif', serif;
+}
+
+.page-font-adolescent p,
+.page-font-adolescent li,
+.page-font-adolescent a,
+.page-font-adolescent button,
+.page-font-adolescent input,
+.page-font-adolescent textarea,
+.page-font-adolescent label {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.page-font-prenatal h1,
+.page-font-prenatal h2,
+.page-font-prenatal h3,
+.page-font-prenatal h4,
+.page-font-prenatal h5,
+.page-font-prenatal h6 {
+    font-family: 'EB Garamond', serif;
+}
+
+.page-font-prenatal p,
+.page-font-prenatal li,
+.page-font-prenatal a,
+.page-font-prenatal button,
+.page-font-prenatal input,
+.page-font-prenatal textarea,
+.page-font-prenatal label {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.page-font-fertility h1,
+.page-font-fertility h2,
+.page-font-fertility h3,
+.page-font-fertility h4,
+.page-font-fertility h5,
+.page-font-fertility h6 {
+    font-family: 'Prata', serif;
+}
+
+.page-font-fertility p,
+.page-font-fertility li,
+.page-font-fertility a,
+.page-font-fertility button,
+.page-font-fertility input,
+.page-font-fertility textarea,
+.page-font-fertility label {
+    font-family: 'Manrope', sans-serif;
+}
+
+.page-font-menopause h1,
+.page-font-menopause h2,
+.page-font-menopause h3,
+.page-font-menopause h4,
+.page-font-menopause h5,
+.page-font-menopause h6 {
+    font-family: 'Cormorant Infant', serif;
+}
+
+.page-font-menopause p,
+.page-font-menopause li,
+.page-font-menopause a,
+.page-font-menopause button,
+.page-font-menopause input,
+.page-font-menopause textarea,
+.page-font-menopause label {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.page-font-nutrition h1,
+.page-font-nutrition h2,
+.page-font-nutrition h3,
+.page-font-nutrition h4,
+.page-font-nutrition h5,
+.page-font-nutrition h6 {
+    font-family: 'Spectral', serif;
+}
+
+.page-font-nutrition p,
+.page-font-nutrition li,
+.page-font-nutrition a,
+.page-font-nutrition button,
+.page-font-nutrition input,
+.page-font-nutrition textarea,
+.page-font-nutrition label {
+    font-family: 'Assistant', sans-serif;
+}
+
+.page-font-physio h1,
+.page-font-physio h2,
+.page-font-physio h3,
+.page-font-physio h4,
+.page-font-physio h5,
+.page-font-physio h6 {
+    font-family: 'Arvo', serif;
+}
+
+.page-font-physio p,
+.page-font-physio li,
+.page-font-physio a,
+.page-font-physio button,
+.page-font-physio input,
+.page-font-physio textarea,
+.page-font-physio label {
+    font-family: 'Cabin', sans-serif;
+}
+
+.page-font-dermatology h1,
+.page-font-dermatology h2,
+.page-font-dermatology h3,
+.page-font-dermatology h4,
+.page-font-dermatology h5,
+.page-font-dermatology h6 {
+    font-family: 'Vollkorn', serif;
+}
+
+.page-font-dermatology p,
+.page-font-dermatology li,
+.page-font-dermatology a,
+.page-font-dermatology button,
+.page-font-dermatology input,
+.page-font-dermatology textarea,
+.page-font-dermatology label {
+    font-family: 'Figtree', sans-serif;
+}
+
+.page-font-psychology h1,
+.page-font-psychology h2,
+.page-font-psychology h3,
+.page-font-psychology h4,
+.page-font-psychology h5,
+.page-font-psychology h6 {
+    font-family: 'Cardo', serif;
+}
+
+.page-font-psychology p,
+.page-font-psychology li,
+.page-font-psychology a,
+.page-font-psychology button,
+.page-font-psychology input,
+.page-font-psychology textarea,
+.page-font-psychology label {
+    font-family: 'Hind', sans-serif;
+}
+
+.page-font-gallery h1,
+.page-font-gallery h2,
+.page-font-gallery h3,
+.page-font-gallery h4,
+.page-font-gallery h5,
+.page-font-gallery h6 {
+    font-family: 'Fraunces', serif;
+}
+
+.page-font-gallery p,
+.page-font-gallery li,
+.page-font-gallery a,
+.page-font-gallery button,
+.page-font-gallery input,
+.page-font-gallery textarea,
+.page-font-gallery label {
+    font-family: 'Public Sans', sans-serif;
+}
+
+.page-font-events h1,
+.page-font-events h2,
+.page-font-events h3,
+.page-font-events h4,
+.page-font-events h5,
+.page-font-events h6 {
+    font-family: 'Newsreader', serif;
+}
+
+.page-font-events p,
+.page-font-events li,
+.page-font-events a,
+.page-font-events button,
+.page-font-events input,
+.page-font-events textarea,
+.page-font-events label {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.page-font-contact h1,
+.page-font-contact h2,
+.page-font-contact h3,
+.page-font-contact h4,
+.page-font-contact h5,
+.page-font-contact h6 {
+    font-family: 'Libre Caslon Text', serif;
+}
+
+.page-font-contact p,
+.page-font-contact li,
+.page-font-contact a,
+.page-font-contact button,
+.page-font-contact input,
+.page-font-contact textarea,
+.page-font-contact label {
+    font-family: 'Karla', sans-serif;
+}
+
+@layer utilities {
+    .text-shadow-soft {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-shadow-lg {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Custom classes from OBGYN template */
+    .bg-gradient-btn {
+        background: linear-gradient(90deg, #FF833C 0%, #ed592c 100%);
+    }
+
+    .text-shadow-sm {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .floating-video-btn {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .emergency-btn-pulse {
+        box-shadow: 0 0 0 0 rgba(237, 89, 44, 0.7);
+        animation: pulse-red 2s infinite;
+    }
+
+    @keyframes pulse-red {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(237, 89, 44, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(237, 89, 44, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(237, 89, 44, 0);
+        }
+    }
+
+
+    /* Override Material Symbols for thin specific styling */
+    .material-symbols-thin {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 200,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
+    /* Override Material Symbols for medium specific styling */
+    .material-symbols-medium {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 0,
+            'opsz' 48
+    }
+}
