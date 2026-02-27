@@ -411,6 +411,7 @@ export default function SoulTriage() {
     const activeSplineSection = useActiveSplineSection("scene-hero");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const heroTiltCardRef = useRef(null);
 
     useEffect(() => {
         if (typeof document === "undefined") return undefined;
@@ -438,6 +439,25 @@ export default function SoulTriage() {
             launchSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
+
+    const handleHeroCardPointerMove = (e) => {
+        if (!heroTiltCardRef.current || isMobile) return;
+        const card = heroTiltCardRef.current;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const resetHeroCardTilt = () => {
+        if (!heroTiltCardRef.current) return;
+        heroTiltCardRef.current.style.transform = "rotateX(3deg) rotateY(-3deg)";
+    };
+
     const scrollToBetaSession = () => {
         const betaSection = document.getElementById("soul-beta-session");
         if (betaSection) {
@@ -493,22 +513,20 @@ export default function SoulTriage() {
                     <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#07040f]/95 via-[#090612]/80 to-transparent" />
                 </div>
 
-                <div className="relative z-50 px-4 sm:px-6 md:px-10 pt-6 md:pt-10">
+                <div className="relative z-50 px-4 sm:px-6 md:px-10 pt-6 md:pt-8">
                     <div className="mx-auto max-w-7xl flex items-center justify-between gap-4">
-                        <Link to="/" className="soul-brand-font text-xs sm:text-sm md:text-xl font-normal tracking-[0.18em]">
+                        <Link to="/" className="soul-brand-font text-sm md:text-xl font-normal tracking-[0.16em] text-white">
                             MYSTREE
                         </Link>
 
-                        {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center gap-6">
-                            <Link to="/mystree-soul" className="relative flex items-center gap-1.5 font-bold">
-                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500 animate-pulse text-lg">MyStree Soul</span>
-                                <span className="absolute -top-3 -right-6 flex items-center justify-center">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-4 w-8 bg-pink-500 text-[8px] text-white font-bold items-center justify-center shadow-lg uppercase">BETA</span>
-                                </span>
-                            </Link>
-                        </nav>
+                        <div className="hidden md:flex items-center gap-3">
+                            <span className="inline-flex items-center rounded-full bg-[#ED5B2D] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#FCF4D9]">
+                                Beta
+                            </span>
+                            <span className="text-2xl font-semibold bg-gradient-to-r from-[#ef6a40] to-[#8ba4bf] bg-clip-text text-transparent">
+                                MyStree Soul
+                            </span>
+                        </div>
 
                         {/* Mobile Hamburger Button */}
                         <button
@@ -551,62 +569,83 @@ export default function SoulTriage() {
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, ease: "easeOut" }}
-                    className="relative z-10 px-4 sm:px-6 md:px-10 pb-8 md:pb-12"
+                    className="relative z-20 mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-10 pt-3 pb-4 md:pb-6 flex-1 flex flex-col justify-center"
                 >
-                    <div className="mx-auto max-w-5xl text-center rounded-3xl bg-[#8BA4BF]/14 border border-[#8BA4BF]/40 px-4 sm:px-6 md:px-8 py-5 sm:py-6 md:py-10">
-                        <p className="soul-brand-font mb-5 text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#BFE2FE] font-medium drop-shadow-md">
+                    <div className="text-center">
+                        <p className="soul-brand-font text-[11px] sm:text-xs uppercase tracking-[0.24em] text-[#BFE2FE]/90 mb-4">
                             Launching in Private Beta | March 8th, 2026
                         </p>
-
-                        <h1 className="text-[clamp(2.2rem,10vw,6.5rem)] font-serif font-bold leading-[1.05] tracking-tight text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]">
-                            Healthcare
-                            <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/75">Finally Listens.</span>
+                        <h1 className="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.02] text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+                            Healthcare Finally Listens.
                         </h1>
+                    </div>
 
-                        <h2 className="mt-2 text-[clamp(1.7rem,6.4vw,4.5rem)] font-serif italic tracking-wide text-[#BFE2FE] drop-shadow-xl">
-                            MyStree Soul
-                        </h2>
-
-                        <motion.div
-                            whileHover={lowPowerMode ? undefined : { scale: 1.04, rotateX: 5, rotateY: -5 }}
-                            transition={{ type: "spring", stiffness: 220, damping: 16 }}
-                            className="mt-8 mx-auto w-fit rounded-3xl border border-[#BFE2FE]/40 bg-[#8BA4BF]/20 px-8 py-6 sm:px-10 sm:py-8 md:px-14 md:py-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_20px_36px_rgba(10,6,24,0.35)] will-change-transform"
-                            style={{ transformStyle: "preserve-3d" }}
+                    <div
+                        className="mt-8 sm:mt-10 perspective-[1000px]"
+                        onMouseMove={handleHeroCardPointerMove}
+                        onMouseLeave={resetHeroCardTilt}
+                    >
+                        <div
+                            ref={heroTiltCardRef}
+                            className="relative mx-auto w-full max-w-4xl min-h-[320px] sm:min-h-[420px] rounded-[2rem] bg-gradient-to-br from-[#FF833C]/92 via-[#EF6A40]/90 to-[#ED5B2D]/92 p-6 sm:p-8 md:p-10 shadow-[0_26px_60px_rgba(8,5,24,0.4)] transition-transform duration-300"
+                            style={{ transform: "rotateX(3deg) rotateY(-3deg)", transformStyle: "preserve-3d" }}
                         >
-                            <p className="soul-brand-font text-xs md:text-sm tracking-[0.28em] text-[#BFE2FE] font-medium drop-shadow-md">PRIVATE BETA</p>
-                            <p className="soul-brand-font mt-3 text-2xl md:text-3xl font-bold tracking-[0.14em] text-white drop-shadow-lg">MYSTREE SOUL</p>
-                        </motion.div>
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(255,255,255,0.22),transparent_36%),radial-gradient(circle_at_80%_72%,rgba(191,226,254,0.24),transparent_38%)]" />
 
-                        <div className="mt-8 flex flex-col items-center justify-center gap-6">
-                            <button
-                                type="button"
-                                onClick={scrollToExplore}
-                                className="group flex flex-col items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
-                            >
-                                <motion.span
-                                    animate={lowPowerMode ? undefined : { y: [0, 8, 0] }}
-                                    transition={lowPowerMode ? undefined : { repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                                    className="text-3xl leading-none text-[#BFE2FE] group-hover:text-white transition-colors drop-shadow-xl"
-                                >
-                                    ↓
-                                </motion.span>
-                            </button>
+                            <div className="relative z-10 h-full flex flex-col items-center text-center">
+                                <div className="w-16 h-16 rounded-full bg-white/18 flex items-center justify-center mb-5">
+                                    <span className="material-icons text-white text-3xl">spa</span>
+                                </div>
 
-                            <button
-                                type="button"
-                                onClick={() => setIsModalOpen(true)}
-                                data-no-booking-intercept="true"
-                                className="w-full max-w-xs rounded-xl bg-[#FCF4D9] px-8 py-3.5 sm:px-10 sm:py-4 text-sm sm:text-base md:text-lg font-bold text-[#ED5B2D] shadow-[0_8px_25px_rgba(252,244,217,0.2)] transition-all duration-300 hover:scale-[1.04] hover:bg-white hover:text-[#EF6A40] border border-[#FCF4D9]/80"
-                            >
-                                Join the Waitlist
-                            </button>
+                                <h2 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+                                    MyStree Soul
+                                </h2>
+                                <p className="mt-3 max-w-2xl text-[#FCF4D9]/95 text-base sm:text-lg leading-relaxed">
+                                    An exclusive sanctuary for women&apos;s health. Where data meets empathy, and science meets soul.
+                                </p>
+
+                                <div className="mt-8 w-full max-w-2xl bg-white/12 rounded-xl p-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                                    <input
+                                        type="email"
+                                        placeholder="Enter your email for access"
+                                        className="w-full bg-transparent border-none outline-none focus:outline-none focus:ring-0 px-4 py-3 text-white placeholder:text-[#FCF4D9]/65 text-sm sm:text-base"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsModalOpen(true)}
+                                        data-no-booking-intercept="true"
+                                        className="shrink-0 rounded-lg bg-[#FCF4D9] px-6 py-3 text-sm uppercase tracking-[0.08em] font-semibold text-[#ED5B2D] hover:bg-white transition-colors"
+                                    >
+                                        Join Waitlist
+                                    </button>
+                                </div>
+
+                                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[#FCF4D9]/70">
+                                    Private Beta Access Only
+                                </p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div className="mt-7 flex justify-center">
+                        <button
+                            type="button"
+                            onClick={scrollToExplore}
+                            className="group flex flex-col items-center text-[#BFE2FE]/85 hover:text-white transition-colors"
+                        >
+                            <motion.span
+                                animate={lowPowerMode ? undefined : { y: [0, 8, 0] }}
+                                transition={lowPowerMode ? undefined : { repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                className="material-icons text-4xl"
+                            >
+                                keyboard_arrow_down
+                            </motion.span>
+                        </button>
                     </div>
                 </motion.div>
 
                 <div className="relative z-10 px-4 sm:px-6 md:px-10 pb-6 md:pb-8">
-                    <div className="mx-auto max-w-7xl rounded-xl border border-[#8BA4BF]/40 bg-[#8BA4BF]/16 px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 pr-16 sm:pr-20 md:pr-44">
+                    <div className="mx-auto max-w-7xl rounded-xl bg-[#8BA4BF]/16 px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 pr-16 sm:pr-20 md:pr-44">
                         <p className="soul-brand-font text-[10px] sm:text-xs text-[#BFE2FE]/90 uppercase tracking-[0.18em]">
                             MyStree Soul | Private Beta
                         </p>

@@ -185,9 +185,9 @@ export default function Hero() {
 
                         <div className="flex items-center gap-5 pt-4">
                             <div className="flex -space-x-4">
-                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhm0VjHOTKl2AXwuuQL4MPiZcJk-pBaPFNYQ_st4ohq296I4Fa0lRzJ0GD_r-faZeCh1USIU-qNdMD-9AUAnfG6YW5o-heUYHNar3SPdn3vBhsD0_wS097akZF4b_6K-WGEylzelH0dkZnP-DqCxttm5b5EhIhEOS4oRPpKHhUAX7G8BPWKORF7K3otSuxvCb-tpyGXjFj-6IFyisHdAc_-Dy0yhr_vrbo9zc_olizHcKUfXEbd1X0fGKwauZO3teS8VtknRRBpmh5" />
-                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADCcTfakd0Kvg-0BeXtLFQdR55UBO0MDv6ZfBNCMH-AP-nMI_DC6d-Tug0uqsKEk3hVoJOBJ6b_G9Kz-cBbNX0J5j3Ed0dq1v-Cjy8bYaIGNV7tKAR88oTOHuW6KVROqHBe12-xi4jbXs8qfgVOIg41UBsAevABxOF__YJ1X3uJSIrdv0CjMwmVey7kzZ9Izz2aIbKZtPGMWVu0-uKKk7ShHTN9tg6rs_IbSFVqR4u6IuvwQD0-7uge0N4Y4j3tfteEtjz7XqSAhsb" />
-                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJAe6dFtxFLelv4a2HxTd8ky5Iahy8780fNk8XodcYCLFzZag3rVUOOetG-HeckpNao_UZ1bBs8C99exVigdk8dWAVK_s52XMul1gpSQ1mD15MPEIaI-I4bp64l7d4_PwPVI22LPvO9SBm4EJI1AeoHPqKg8JsqIRzDJCCUy8Smqf9kjAsm_O-1n8XZ7Hkxh3qxIwVc-UiZ_VK-PdG_CAC_HGsbauMAgCfzq5B6UPQKCZkY6bc_ik6E4cEhOGwrBwad2xP4wwaMYW_" />
+                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhm0VjHOTKl2AXwuuQL4MPiZcJk-pBaPFNYQ_st4ohq296I4Fa0lRzJ0GD_r-faZeCh1USIU-qNdMD-9AUAnfG6YW5o-heUYHNar3SPdn3vBhsD0_wS097akZF4b_6K-WGEylzelH0dkZnP-DqCxttm5b5EhIhEOS4oRPpKHhUAX7G8BPWKORF7K3otSuxvCb-tpyGXjFj-6IFyisHdAc_-Dy0yhr_vrbo9zc_olizHcKUfXEbd1X0fGKwauZO3teS8VtknRRBpmh5" />
+                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADCcTfakd0Kvg-0BeXtLFQdR55UBO0MDv6ZfBNCMH-AP-nMI_DC6d-Tug0uqsKEk3hVoJOBJ6b_G9Kz-cBbNX0J5j3Ed0dq1v-Cjy8bYaIGNV7tKAR88oTOHuW6KVROqHBe12-xi4jbXs8qfgVOIg41UBsAevABxOF__YJ1X3uJSIrdv0CjMwmVey7kzZ9Izz2aIbKZtPGMWVu0-uKKk7ShHTN9tg6rs_IbSFVqR4u6IuvwQD0-7uge0N4Y4j3tfteEtjz7XqSAhsb" />
+                                <img alt="User Avatar" className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 object-cover ring-2 ring-transparent hover:ring-primary transition-all z-0 hover:z-10" loading="lazy" decoding="async" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJAe6dFtxFLelv4a2HxTd8ky5Iahy8780fNk8XodcYCLFzZag3rVUOOetG-HeckpNao_UZ1bBs8C99exVigdk8dWAVK_s52XMul1gpSQ1mD15MPEIaI-I4bp64l7d4_PwPVI22LPvO9SBm4EJI1AeoHPqKg8JsqIRzDJCCUy8Smqf9kjAsm_O-1n8XZ7Hkxh3qxIwVc-UiZ_VK-PdG_CAC_HGsbauMAgCfzq5B6UPQKCZkY6bc_ik6E4cEhOGwrBwad2xP4wwaMYW_" />
                                 <div className="w-12 h-12 rounded-full border-2 border-white dark:border-slate-800 bg-corn-silk flex items-center justify-center text-xs font-bold text-slate-700">5k+</div>
                             </div>
                             <div className="space-y-0.5">
@@ -211,6 +211,9 @@ export default function Hero() {
                                 alt="Smiling confident woman"
                                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                                 src={heroImage}
+                                fetchPriority="high"
+                                decoding="sync"
+                                loading="eager"
                             />
 
                         </div>

@@ -247,7 +247,7 @@ export default function BlogAndCommunity() {
                                 </button>
 
                                 <div className="flex items-center gap-4">
-                                    <img src={doctor2} alt="Dr. Smitha A.P." className="w-12 h-12 rounded-full object-cover border-2 border-white/20" />
+                                    <img src={doctor2} alt="Dr. Smitha A.P." className="w-12 h-12 rounded-full object-cover border-2 border-white/20" loading="lazy" decoding="async" />
                                     <div>
                                         <p className="font-bold text-white text-sm">Dr. Smitha A.P.</p>
                                         <p className="text-xs text-primary uppercase tracking-wider font-bold">Chief Medical Officer</p>
@@ -263,6 +263,8 @@ export default function BlogAndCommunity() {
                                     src={blog1}
                                     alt="Egg Freezing Article"
                                     className="w-full h-full object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
+                                    fetchPriority="high"
+                                    decoding="sync"
                                 />
                             </div>
                         </div>
@@ -310,7 +312,7 @@ export default function BlogAndCommunity() {
                             filteredArticles.map((article) => (
                                 <article key={article.id} className="group cursor-pointer flex flex-col h-full bg-white rounded-2xl border border-gray-100 p-4 hover:shadow-xl transition-shadow" onClick={() => setSelectedArticle(article)}>
                                     <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-6 relative shadow-md">
-                                        <img alt={article.title} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={article.image} />
+                                        <img alt={article.title} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={article.image} loading="lazy" decoding="async" />
                                         <div className="absolute top-4 left-4">
                                             <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-xs font-bold uppercase tracking-wider text-primary rounded-md shadow-sm">{article.category}</span>
                                         </div>
@@ -320,7 +322,7 @@ export default function BlogAndCommunity() {
                                             <span>{article.date}</span>
                                             <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                             <div className="flex items-center gap-2">
-                                                {article.doctorImage && <img src={article.doctorImage} alt={article.doctorName} className="w-5 h-5 rounded-full object-cover" />}
+                                                {article.doctorImage && <img src={article.doctorImage} alt={article.doctorName} className="w-5 h-5 rounded-full object-cover" loading="lazy" decoding="async" />}
                                                 <span className="font-medium text-gray-700">{article.doctorName}</span>
                                             </div>
                                         </div>
@@ -352,7 +354,7 @@ export default function BlogAndCommunity() {
                         </p>
                         <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
                         <div className="flex flex-col items-center">
-                            <img alt="Dr. Smitha A.P." className="w-20 h-20 rounded-full object-cover mb-3 grayscale-[50%] hover:grayscale-0 transition-all border-2 border-primary p-0.5" src={doctor2} />
+                            <img alt="Dr. Smitha A.P." className="w-20 h-20 rounded-full object-cover mb-3 grayscale-[50%] hover:grayscale-0 transition-all border-2 border-primary p-0.5" src={doctor2} loading="lazy" decoding="async" />
                             <h4 className="font-bold text-gray-900 text-lg">Dr. Smitha A.P.</h4>
                             <p className="text-sm text-gray-500 uppercase tracking-widest">Co-Founder & Chief Medical Officer</p>
                         </div>
@@ -485,6 +487,8 @@ export default function BlogAndCommunity() {
                                             src={slides[currentSlide].image}
                                             alt={slides[currentSlide].title}
                                             className="max-w-full max-h-[60vh] object-contain rounded-lg shadow-2xl"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div className="w-full md:w-1/2 text-white overflow-y-auto max-h-[60vh] pr-4 custom-scrollbar">
@@ -547,7 +551,7 @@ export default function BlogAndCommunity() {
 
                             <div className="overflow-y-auto custom-scrollbar flex-1 pb-12">
                                 <div className="w-full h-[30vh] sm:h-[40vh] relative">
-                                    <img src={selectedArticle.image} alt={selectedArticle.title} className="w-full h-full object-cover object-top" />
+                                    <img src={selectedArticle.image} alt={selectedArticle.title} className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     <div className="absolute bottom-6 left-6 right-6">
                                         <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-xs font-bold uppercase tracking-wider text-white rounded-md mb-3 inline-block">
@@ -561,7 +565,7 @@ export default function BlogAndCommunity() {
                                         <span className="w-1 h-1 rounded-full bg-gray-300"></span>
                                         <div className="flex items-center gap-2">
                                             {selectedArticle.doctorImage ? (
-                                                <img src={selectedArticle.doctorImage} alt={selectedArticle.doctorName} className="w-6 h-6 rounded-full object-cover" />
+                                                <img src={selectedArticle.doctorImage} alt={selectedArticle.doctorName} className="w-6 h-6 rounded-full object-cover" loading="lazy" decoding="async" />
                                             ) : (
                                                 <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center">
                                                     <span className="material-symbols-outlined text-[14px]">local_hospital</span>

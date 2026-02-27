@@ -45,7 +45,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-primary/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Smitha A.P." className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor2} />
+                                    <img alt="Dr. Smitha A.P." className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor2} fetchPriority="high" decoding="sync" />
                                 </div>
 
                             </div>
@@ -129,7 +129,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-secondary/10 rounded-2xl transform -rotate-3 transition-transform group-hover:-rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Surbhi Sinha" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor1} />
+                                    <img alt="Dr. Surbhi Sinha" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor1} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
@@ -142,7 +142,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-orange-400/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Priyanka Savina" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor3} />
+                                    <img alt="Priyanka Savina" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor3} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
@@ -226,7 +226,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-secondary/10 rounded-2xl transform -rotate-3 transition-transform group-hover:-rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Chaitra Nayak" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctorChaitra} />
+                                    <img alt="Dr. Chaitra Nayak" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctorChaitra} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
@@ -239,7 +239,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-rose-400/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png" />
+                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png" loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
@@ -319,7 +319,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-teal-400/10 rounded-2xl transform -rotate-3 transition-transform group-hover:-rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px] bg-white">
-                                    <img alt="Dr. Priyadarshini Sumanohar" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src={doctorPri} />
+                                    <img alt="Dr. Priyadarshini Sumanohar" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src={doctorPri} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
