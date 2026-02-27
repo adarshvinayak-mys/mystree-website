@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 
 import doctor1 from '../assets/doctor1.jpg';
@@ -55,6 +55,8 @@ export default function FertilityClinic() {
         window.scrollTo(0, 0);
     }, []);
 
+    const services = ["All Services", "IVF & IUI", "Egg Freezing", "Male Fertility", "Donor Program", "PCOS & Endometriosis", "Reproductive Medicine"];
+
     const doctors = [
         {
             id: 1,
@@ -68,6 +70,7 @@ export default function FertilityClinic() {
             badgeText: "Lead Fertility Consultant",
             consultationFee: "₹1000",
             badgeColorClass: "bg-warm-coral text-white",
+            services: ["IVF & IUI", "Male Fertility", "Donor Program", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         },
         {
             id: 2,
@@ -81,6 +84,7 @@ export default function FertilityClinic() {
             badgeText: "₹1000 Consultation",
             consultationFee: "₹1000",
             badgeColorClass: "bg-deep-green text-white",
+            services: ["IVF & IUI", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         },
         {
             id: 3,
@@ -94,8 +98,15 @@ export default function FertilityClinic() {
             badgeText: "₹1000 Consultation",
             consultationFee: "₹1000",
             badgeColorClass: "bg-deep-green text-white",
+            services: ["IVF & IUI", "Egg Freezing", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         }
     ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredDoctors = doctors.filter(doctor =>
+        doctor.services.includes(selectedService)
+    );
 
     return (
         <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up">
@@ -468,15 +479,33 @@ export default function FertilityClinic() {
             {/* Empowered Team (Doctors) */}
             <section className="py-24 bg-warm-ivory">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <span className="text-warm-coral font-bold tracking-wider uppercase text-xs mb-2 block">World-Class Care</span>
-                        <h2 className="font-display text-4xl text-deep-green mb-4">Meet Our Fertility Experts</h2>
-                        <p className="text-text-muted font-light max-w-2xl mx-auto">
-                            World-class specialists dedicated to making your dream of parenthood a reality.
-                        </p>
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+                        <div className="text-center md:text-left mb-6 md:mb-0">
+                            <span className="text-warm-coral font-bold tracking-wider uppercase text-xs mb-2 block">World-Class Care</span>
+                            <h2 className="font-display text-4xl text-deep-green mb-4">Meet Our Fertility Experts</h2>
+                            <p className="text-text-muted font-light max-w-2xl mx-auto md:mx-0">
+                                World-class specialists dedicated to making your dream of parenthood a reality.
+                            </p>
+                        </div>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-soft-sage/30 text-deep-green py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-warm-coral/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-deep-green">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-                        {doctors.map((doctor) => (
+                        {filteredDoctors.map((doctor) => (
                             <DoctorCard
                                 key={doctor.id}
                                 profileId={doctor.profileId}
@@ -530,52 +559,7 @@ export default function FertilityClinic() {
                 </div>
             </section>
 
-            {/* Footer (V1 Luxury) */}
-            <footer className="bg-deep-green text-warm-ivory border-t border-soft-sage/10 pt-16 pb-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                        <div className="col-span-1 md:col-span-2">
-                            <span className="font-display font-bold text-3xl text-warm-ivory block mb-6">My Stree</span>
-                            <p className="text-soft-sage/60 text-sm mb-6 max-w-sm font-light leading-relaxed">
-                                A sanctuary for fertility care where medical precision meets emotional safety. We are committed to your journey, every step of the way.
-                            </p>
-                            <div className="flex space-x-6">
-                                <a className="text-soft-sage/60 hover:text-warm-coral transition" href="#"><span className="material-icons">public</span></a>
-                                <a className="text-soft-sage/60 hover:text-warm-coral transition" href="#"><span className="material-icons">photo_camera</span></a>
-                                <a className="text-soft-sage/60 hover:text-warm-coral transition" href="#"><span className="material-icons">mail</span></a>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 className="font-display text-xl mb-6 text-soft-sage">Treatments</h4>
-                            <ul className="space-y-3 text-sm text-soft-sage/60 font-light">
-                                <li><a className="hover:text-warm-coral transition" href="#">IVF & ICSI</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">IUI</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Egg Freezing</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Genetic Testing</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Male Infertility</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-display text-xl mb-6 text-soft-sage">Institute</h4>
-                            <ul className="space-y-3 text-sm text-soft-sage/60 font-light">
-                                <li><a className="hover:text-warm-coral transition" href="#">About Us</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Our Experts</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Success Rates</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Patient Stories</a></li>
-                                <li><a className="hover:text-warm-coral transition" href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="border-t border-soft-sage/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-soft-sage/40 font-light">
-                        <p>© 2023 My Stree Fertility Institute. All rights reserved.</p>
-                        <div className="flex space-x-8 mt-4 md:mt-0">
-                            <a className="hover:text-warm-ivory transition" href="#">Privacy Policy</a>
-                            <a className="hover:text-warm-ivory transition" href="#">Terms of Service</a>
-                            <a className="hover:text-warm-ivory transition" href="#">Medical Disclaimer</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+
         </div>
     );
 }

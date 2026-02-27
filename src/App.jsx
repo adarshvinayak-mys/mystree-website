@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, useNavigationType } from 'react-router-dom';
 import { useEffect, useLayoutEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ChatButton from './components/ChatButton';
 import GlobalHealthCTAButton from './components/GlobalHealthCTAButton';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 
@@ -21,15 +22,21 @@ import Gallery from './pages/Gallery';
 import UpcomingEvents from './pages/UpcomingEvents';
 import Contact from './pages/Contact';
 import BookingGateway from './pages/BookingGateway';
-
-
+import BlogAndCommunity from './pages/BlogAndCommunity';
+import SoulTriage from './pages/SoulTriage';
 
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
+  const navigationType = useNavigationType();
+
   useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0);
-  }, [location.pathname]);
+    // Only scroll to top on new navigations, not on Back/Forward (POP)
+    if (navigationType !== "POP") {
+      document.documentElement.scrollTo(0, 0);
+    }
+  }, [location.pathname, navigationType]);
+
   return children
 }
 
@@ -62,8 +69,8 @@ function AppContent() {
   }, []);
 
   useEffect(() => {
-    const bookingPattern = /\b(book|appointment|consult|consultation|reserve|rsvp)\b/i;
-    const hrefPattern = /(book|appointment|consult|reserve|rsvp|#book)/i;
+    const bookingPattern = /\b(book|appointment|consult|consultation|reserve|rsvp|scheduling|session|package|assessment|start|enroll|register|talk|join|begin|healing|physiotherapy|rehab|rehabilitation|treatment)\b/i;
+    const hrefPattern = /(book|appointment|consult|reserve|rsvp|scheduling|session|package|assessment|#)/i;
 
     const hasBookingIntent = (element) => {
       if (!element) return false;
@@ -83,9 +90,7 @@ function AppContent() {
 
       event.preventDefault();
       event.stopPropagation();
-      if (location.pathname !== '/booking-gateway') {
-        navigate('/booking-gateway');
-      }
+      window.location.href = 'https://my-stree.com/booking';
     };
 
     const handleFormSubmitRedirect = (event) => {
@@ -94,9 +99,7 @@ function AppContent() {
       if (submitter.dataset?.noBookingIntercept === 'true') return;
       if (hasBookingIntent(submitter)) {
         event.preventDefault();
-        if (location.pathname !== '/booking-gateway') {
-          navigate('/booking-gateway');
-        }
+        window.location.href = 'https://my-stree.com/booking';
       }
     };
 
@@ -126,13 +129,15 @@ function AppContent() {
     if (pathname === '/showcase/events') return 'page-font-events';
     if (pathname === '/contact') return 'page-font-contact';
     if (pathname === '/booking-gateway') return 'page-font-contact';
+    if (pathname === '/blog') return 'page-font-blog';
+    if (pathname === '/mystree-soul') return 'page-font-soul';
     return 'page-font-home';
   };
 
   return (
     <Wrapper>
-      <Navbar />
-      <main className={`pt-20 overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
+      {location.pathname !== '/mystree-soul' && <Navbar />}
+      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -151,14 +156,17 @@ function AppContent() {
           <Route path="/showcase/events" element={<UpcomingEvents />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking-gateway" element={<BookingGateway />} />
+          <Route path="/blog" element={<BlogAndCommunity />} />
+          <Route path="/mystree-soul" element={<SoulTriage />} />
         </Routes>
 
 
 
       </main>
-      <Footer />
-      <GlobalHealthCTAButton />
-      <ChatButton />
+      {location.pathname !== '/mystree-soul' && <Footer />}
+      {location.pathname !== '/mystree-soul' && <GlobalHealthCTAButton />}
+      {location.pathname !== '/mystree-soul' && <ScrollToTopButton />}
+      {location.pathname !== '/mystree-soul' && <ChatButton />}
     </Wrapper>
   );
 }

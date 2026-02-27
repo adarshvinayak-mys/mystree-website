@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import heroImage from '../assets/hero-image.png';
 
 export default function Hero() {
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+
+    // Force clear search field on mount/reload to prevent sensitive data persistence via bfcache
+    useEffect(() => {
+        setSearchQuery('');
+    }, []);
+
 
     const serviceSearchData = [
         {
@@ -140,6 +146,8 @@ export default function Hero() {
                     {/* Left Content */}
                     <div className="space-y-8 order-2 lg:order-1">
 
+
+
                         <h1 className="font-display text-5xl lg:text-7xl font-bold leading-[1.1] text-slate-900 dark:text-white">
                             Health Solutions <br />
                             <span className="text-primary italic font-medium pr-2">Designed for You.</span>
@@ -149,7 +157,7 @@ export default function Hero() {
                             Specialized care in OBGYN, Fertility, Prenatal, Dermatology, Nutrition, Physiotherapy, and Mental Health. Your sanctuary for holistic wellness.
                         </p>
 
-                        <form onSubmit={handleSearch} className="bg-white dark:bg-surface-dark p-2 rounded-xl shadow-card border border-gray-100 dark:border-gray-700 max-w-md flex flex-col sm:flex-row gap-2 transition-shadow hover:shadow-lg">
+                        <form onSubmit={handleSearch} autoComplete="off" className="bg-white dark:bg-surface-dark p-2 rounded-xl shadow-card border border-gray-100 dark:border-gray-700 max-w-md flex flex-col sm:flex-row gap-2 transition-shadow hover:shadow-lg">
                             <div className="relative flex-grow group">
                                 <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">search</span>
                                 <input
@@ -157,6 +165,7 @@ export default function Hero() {
                                     placeholder="Search services (e.g., PCOS, Acne)..."
                                     type="text"
                                     list="service-search-suggestions"
+                                    autoComplete="off"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />

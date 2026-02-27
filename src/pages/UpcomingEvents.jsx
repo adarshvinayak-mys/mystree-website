@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import event1 from '../assets/mystreeevent1.jpeg';
 import event2 from '../assets/mystreeevent2.jpeg';
 import event3 from '../assets/mystreeevent3.jpeg';
+import mystreepro from '../assets/blog/mystreepro.jpg';
 import sanctuaryHero from '../assets/sanctuary_hero_bg_v2_1771307980803.png';
 
 const UpcomingEvents = () => {
@@ -12,14 +13,15 @@ const UpcomingEvents = () => {
 
     const upcomingEventsData = [
         {
-            date: "Mar 14",
-            time: "6:30 PM",
-            location: "MyStree Wellness Studio",
-            title: "Sound Healing Session",
-            quote: '"A restorative evening of guided sound bath, breathwork, and deep relaxation."',
-            image: event1,
+            date: "Mar 01",
+            time: "11:00 AM",
+            location: "HAL 2nd stage, Indiranagar",
+            title: "Heal with Sound, Align with Vibration",
+            quote: '"Step into a meditative experience that restores balance and inner peace."',
+            image: mystreepro,
             type: "Wellness",
-            registerUrl: "https://my-stree.com/contact"
+            price: "₹1200",
+            registerUrl: "https://my-stree.com/booking"
         },
         {
             date: "Oct 22",
@@ -96,21 +98,25 @@ const UpcomingEvents = () => {
                                 <span className="material-symbols-outlined">close</span>
                             </button>
                             <div className="md:w-1/2 relative h-64 md:h-auto">
-                                <img src={event1} alt="Wellness Retreat" className="absolute inset-0 w-full h-full object-cover" />
+                                <img src={mystreepro} alt="Sound Healing Session" className="absolute inset-0 w-full h-full object-cover" />
                                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-widest text-[#1b110e] font-sans">
-                                    Coming Soon
+                                    Mar 1st • 11 AM
                                 </div>
                             </div>
                             <div className="md:w-1/2 p-5 sm:p-6 md:p-12 flex flex-col justify-center">
-                                <span className="text-[#ED5B2D] font-bold tracking-widest uppercase text-xs mb-3 font-sans">Featured Event</span>
-                                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-display text-[#1b110e]">Winter Solstice <br />Wellness Retreat</h2>
-                                <p className="text-[#3c2a24] mb-10 leading-relaxed font-sans text-lg">Join us for a transformative weekend of reflection, renewal, and deep connection as we welcome the return of the light.</p>
+                                <span className="text-[#ED5B2D] font-bold tracking-widest uppercase text-xs mb-3 font-sans">Latest Event</span>
+                                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-display text-[#1b110e]">Heal with Sound, <br />Align with Vibration</h2>
+                                <p className="text-[#3c2a24] mb-4 leading-relaxed font-sans text-lg">Step into a meditative experience that restores balance and inner peace. Reduces stress, enhances clarity, and clears energetic blockages.</p>
+                                <div className="text-sm font-bold text-[#ED5B2D] mb-8">
+                                    <span className="line-through text-gray-400 mr-2">₹1800</span>
+                                    <span>₹1200 Introductory Offer</span>
+                                </div>
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <button className="bg-gradient-flame text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center font-sans">
-                                        Reserve Your Spot
-                                    </button>
-                                    <button onClick={() => setIsInitialModalOpen(false)} className="border border-neutral-300 hover:bg-neutral-50 text-[#1b110e] px-6 py-3 rounded-lg font-medium transition-colors w-full sm:w-auto text-center font-sans">
-                                        View Details
+                                    <a href="https://my-stree.com/booking" className="bg-gradient-flame text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center font-sans tracking-wide">
+                                        Register Now
+                                    </a>
+                                    <button onClick={() => setIsInitialModalOpen(false)} className="border border-neutral-300 hover:bg-neutral-50 text-[#1b110e] px-6 py-3 rounded-lg font-medium transition-colors w-full sm:w-auto text-center font-sans tracking-wide">
+                                        Dismiss
                                     </button>
                                 </div>
                             </div>

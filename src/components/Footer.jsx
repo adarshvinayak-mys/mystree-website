@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
 
     return (
-        <footer className="bg-cadet-gray text-white pt-12 pb-10">
+        <footer data-no-booking-intercept="true" className="bg-cadet-gray text-white pt-12 pb-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
                     <div>
@@ -17,9 +17,10 @@ export default function Footer() {
                             Compassionate, personalized healthcare for every stage of a woman's life. We are here to listen, support, and heal.
                         </p>
                         <div className="flex gap-4">
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="#"><span className="material-symbols-outlined text-lg">public</span></a>
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="#"><span className="material-symbols-outlined text-lg">photo_camera</span></a>
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="#"><span className="material-symbols-outlined text-lg">mail</span></a>
+                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in text-lg"></i></a>
+                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram text-lg"></i></a>
+                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://wa.me/+916366573772" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp text-lg"></i></a>
+                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="mailto:info@mystree.org"><span className="material-symbols-outlined text-lg">mail</span></a>
                         </div>
                     </div>
                     <div>

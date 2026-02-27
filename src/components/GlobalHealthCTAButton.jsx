@@ -9,8 +9,8 @@ export default function GlobalHealthCTAButton() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35 }}
             >
-                <Link
-                    to="/contact"
+                <a
+                    href="https://my-stree.com/booking"
                     className="group inline-flex items-center gap-2 md:gap-3 rounded-full bg-white/90 backdrop-blur-md border border-primary/20 shadow-[0_10px_30px_rgba(237,89,44,0.2)] px-3 py-3 md:px-5 md:py-3 hover:shadow-[0_14px_34px_rgba(237,89,44,0.3)] transition-all"
                     aria-label="Quick health consultation"
                 >
@@ -28,7 +28,7 @@ export default function GlobalHealthCTAButton() {
                         </span>
                     </span>
                     <span className="sm:hidden text-xs font-bold text-cadet-gray">Book</span>
-                </Link>
+                </a>
             </motion.div>
         </div>
     );

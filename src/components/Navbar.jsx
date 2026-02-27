@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
+    const [isBannerVisible, setIsBannerVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isShowcaseOpen, setIsShowcaseOpen] = useState(false);
@@ -28,6 +29,14 @@ export default function Navbar() {
             window.removeEventListener('scroll', controlNavbar);
         };
     }, [lastScrollY]);
+
+    // Reset mobile dropdown states when menu closes or route changes
+    useEffect(() => {
+        if (!isOpen) {
+            setIsServicesOpen(false);
+            setIsShowcaseOpen(false);
+        }
+    }, [isOpen, location.pathname]);
 
 
 
@@ -91,7 +100,7 @@ export default function Navbar() {
                         />
                     </Link>
 
-                    <nav className={`hidden md:flex items-center gap-8 text-sm font-medium transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                    <nav data-no-booking-intercept="true" className={`hidden md:flex items-center gap-8 text-sm font-medium transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
                         <Link className={`nav-link ${isActive('/') ? 'active' : ''}`} to="/">Home</Link>
                         <Link className={`nav-link ${isActive('/about') ? 'active' : ''}`} to="/about">About Us</Link>
                         <Link className={`nav-link ${isActive('/team') ? 'active' : ''}`} to="/team">Our Team</Link>
@@ -125,6 +134,44 @@ export default function Navbar() {
                             </div>
                         </div>
 
+                        <div className="relative flex items-center">
+                            <Link
+                                to="/mystree-soul"
+                                className={`nav-link relative flex items-center gap-2.5 pr-1 font-bold group ${isActive('/mystree-soul') ? 'active' : ''}`}
+                            >
+                                <span className="relative">
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ED5B2D] via-[#EF6A40] to-[#FF833C] drop-shadow-sm">
+                                        MyStree Soul
+                                    </span>
+                                    <motion.span
+                                        aria-hidden="true"
+                                        className="absolute -top-1.5 -left-2 text-[#FCF4D9] text-[10px]"
+                                        animate={{ opacity: [0.35, 1, 0.35], scale: [0.85, 1.08, 0.85], rotate: [0, 12, 0] }}
+                                        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                                    >
+                                        ✦
+                                    </motion.span>
+                                    <motion.span
+                                        aria-hidden="true"
+                                        className="absolute -bottom-1.5 -right-1 text-[#BFE2FE] text-[9px]"
+                                        animate={{ opacity: [0.25, 0.9, 0.25], scale: [0.9, 1.1, 0.9], rotate: [0, -14, 0] }}
+                                        transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut", delay: 0.2 }}
+                                    >
+                                        ✦
+                                    </motion.span>
+                                </span>
+
+                                <motion.span
+                                    whileHover={{ y: -1, scale: 1.03 }}
+                                    className="relative inline-flex items-center justify-center rounded-full h-5 min-w-[2.35rem] px-2 text-[9px] leading-none text-[#FCF4D9] font-bold uppercase tracking-[0.08em] shadow-md border border-[#FF833C]/60"
+                                    style={{ background: "linear-gradient(90deg, #ED5B2D, #EF6A40, #FF833C)" }}
+                                >
+                                    <span>BETA</span>
+                                </motion.span>
+                            </Link>
+                        </div>
+
+                        <Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog">Blog & Community</Link>
                         <Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact">Contact Us</Link>
                     </nav>
                 </div>
@@ -142,17 +189,50 @@ export default function Navbar() {
                 </button>
             </div>
 
+            {/* Announcement Banner */}
+            <AnimatePresence>
+                {location.pathname === '/' && isBannerVisible && window.scrollY <= 50 && (
+                    <motion.div
+                        initial={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0, overflow: 'hidden' }}
+                        className="relative w-full bg-[#FFC000] z-0 transition-transform duration-300 translate-y-0"
+                    >
+                        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+                            <span className="w-6 hidden sm:block"></span> {/* Spacer for centering */}
+                            <Link
+                                to="/mystree-soul"
+                                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 group hover:opacity-80 transition-opacity text-center sm:text-left"
+                            >
+                                <span className="flex items-center gap-1 bg-[#DE9A00] text-black font-extrabold text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full shadow-sm shrink-0">
+                                    <span className="text-[10px]">✨</span> NEW
+                                </span>
+                                <span className="text-black font-semibold text-[11px] sm:text-sm drop-shadow-[0_1px_1px_rgba(255,255,255,0.4)]">
+                                    MyStree Soul is here! Step into the next generation of intelligent healthcare
+                                </span>
+                            </Link>
+                            <button
+                                onClick={() => setIsBannerVisible(false)}
+                                className="text-black/60 hover:text-black hover:bg-black/10 rounded-full p-1 transition-colors shrink-0"
+                                aria-label="Dismiss banner"
+                            >
+                                <span className="material-icons text-lg block">close</span>
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Mobile Menu Dropdown */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="md:hidden bg-surface-light dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute top-20 left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden"
+                        className={`md:hidden bg-surface-light dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden transition-all duration-300 ${location.pathname === '/' && isBannerVisible && window.scrollY <= 50 ? "top-[7.6rem]" : "top-20"}`}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <nav className="flex flex-col p-4 gap-4 text-base font-medium text-slate-800 dark:text-slate-200">
+                        <nav data-no-booking-intercept="true" className="flex flex-col p-4 gap-4 text-base font-medium text-slate-800 dark:text-slate-200">
                             <Link to="/" className={`py-2 border-b border-gray-100 dark:border-gray-800 ${location.pathname === '/' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Home</Link>
                             <Link to="/about" className={`py-2 border-b border-gray-100 dark:border-gray-800 ${location.pathname === '/about' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>About Us</Link>
                             <Link to="/team" className={`py-2 border-b border-gray-100 dark:border-gray-800 ${location.pathname === '/team' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Our Team</Link>

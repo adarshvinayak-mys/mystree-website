@@ -34,6 +34,14 @@ export default {
         "mint": "#D1F2EB",
         "lavender": "#E8DAEF",
 
+        // God Mode Colors: Warm Glass & Sunset Gradients
+        "bg-warm": "#FCF4D9",
+        "glass-surface": "#BFE2FE",
+        "text-primary": "#EF6A40",
+        "text-secondary": "#8BA4BF",
+        "accent-flame": "#ED5B2D",
+        "accent-pumpkin": "#FF833C",
+
         // New Theme Additions
         tertiary: "#B2DDF7",
         quaternary: "#FFF8DC",

@@ -46,6 +46,56 @@ export default function PrenatalClinic() {
         };
     }, []);
 
+    const services = ["All Services", "High-Risk Pregnancy", "Fetal Medicine", "Fertility", "Lactation", "Nutrition", "Prenatal Care", "Gynecology"];
+
+    const doctors = [
+        {
+            id: 1,
+            profileId: "dr-smitha",
+            name: "Dr. Smitha A.P.",
+            specialty: "Gynecologist, Fetal Medicine Specialist & Obstetrician",
+            image: doctor2,
+            qualification: "MBBS, MS, DNB (OBG), FFM, FRM, MBA",
+            experience: "23+ Years Experience",
+            languages: "English, Kannada, Tamil",
+            badgeText: "₹1000 Consultation",
+            badgeColorClass: "bg-deep-green text-white",
+            services: ["High-Risk Pregnancy", "Fetal Medicine", "Prenatal Care", "Gynecology", "All Services"]
+        },
+        {
+            id: 2,
+            profileId: "dr-surbhi",
+            name: "Dr. Surbhi Sinha",
+            specialty: "OBGYN & Fertility Expert",
+            image: doctor1,
+            qualification: "MBBS, MS, DNB, MRCOG (UK), FRM",
+            experience: "12+ Years Experience",
+            languages: "English, Hindi, Kannada",
+            badgeText: "₹1000 Consultation",
+            badgeColorClass: "bg-deep-green text-white",
+            services: ["High-Risk Pregnancy", "Fertility", "Prenatal Care", "All Services"]
+        },
+        {
+            id: 3,
+            profileId: "priyanka-savina",
+            name: "Priyanka Savina",
+            specialty: "Lactation & Nutrition Consultant",
+            image: doctor3,
+            qualification: "M.Sc Nutrition & Dietetics",
+            experience: "10+ Years Experience",
+            languages: "English, Hindi, Kannada",
+            badgeText: "₹800 Consultation",
+            badgeColorClass: "bg-deep-green text-white",
+            services: ["Lactation", "Nutrition", "All Services"]
+        }
+    ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredDoctors = doctors.filter(doctor =>
+        doctor.services.includes(selectedService)
+    );
+
     return (
         <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary">
             <style>{`
@@ -816,8 +866,8 @@ export default function PrenatalClinic() {
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
 
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <div className="max-w-2xl">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+                        <div className="max-w-2xl text-center md:text-left">
                             <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Specialized Care</span>
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">
                                 Meet Your <span className="text-primary italic">Care Team</span>
@@ -826,49 +876,39 @@ export default function PrenatalClinic() {
                                 Dedicated specialists blending clinical precision with deep empathy for your journey.
                             </p>
                         </div>
-                        <a href="/experts" className="flex items-center gap-2 text-primary font-bold hover:text-secondary transition-all group/link text-sm uppercase tracking-wider">
-                            <span>View all doctors</span>
-                            <span className="material-icons group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-primary/30 text-gray-700 py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {/* Doctor 1 */}
-                        <DoctorCard
-                            profileId="dr-smitha"
-                            name="Dr. Smitha A.P."
-                            specialty="Gynecologist, Fetal Medicine Specialist & Obstetrician"
-                            image={doctor2}
-                            qualification="MBBS, MS, DNB (OBG), FFM, FRM, MBA"
-                            experience="23+ Years Experience"
-                            languages="English, Kannada, Tamil"
-                            badgeText="₹1000 Consultation"
-                            badgeColorClass="bg-deep-green text-white"
-                        />
-                        {/* Doctor 2 */}
-                        <DoctorCard
-                            profileId="dr-surbhi"
-                            name="Dr. Surbhi Sinha"
-                            specialty="OBGYN & Fertility Expert"
-                            image={doctor1}
-                            qualification="MBBS, MS, DNB, MRCOG (UK), FRM"
-                            experience="12+ Years Experience"
-                            languages="English, Hindi, Kannada"
-                            badgeText="₹1000 Consultation"
-                            badgeColorClass="bg-deep-green text-white"
-                        />
-                        {/* Doctor 3 */}
-                        <DoctorCard
-                            profileId="priyanka-savina"
-                            name="Priyanka Savina"
-                            specialty="Lactation & Nutrition Consultant"
-                            image={doctor3}
-                            qualification="M.Sc Nutrition & Dietetics"
-                            experience="10+ Years Experience"
-                            languages="English, Hindi, Kannada"
-                            badgeText="₹800 Consultation"
-                            badgeColorClass="bg-deep-green text-white"
-                        />
+                        {filteredDoctors.map((doctor) => (
+                            <DoctorCard
+                                key={doctor.id}
+                                profileId={doctor.profileId}
+                                name={doctor.name}
+                                specialty={doctor.specialty}
+                                image={doctor.image}
+                                qualification={doctor.qualification}
+                                experience={doctor.experience}
+                                languages={doctor.languages}
+                                badgeText={doctor.badgeText}
+                                badgeColorClass={doctor.badgeColorClass}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

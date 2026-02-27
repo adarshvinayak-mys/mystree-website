@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import contactHeroBg from '../assets/contactus.jpg';
 
 
 const Contact = () => {
@@ -55,11 +56,18 @@ const Contact = () => {
             <section className="relative w-full py-14 px-4 sm:px-6 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80"
-                        alt="Background"
+                        src={contactHeroBg}
+                        alt=""
+                        aria-hidden="true"
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-cover opacity-100"
+                        onError={(event) => {
+                            event.currentTarget.style.display = 'none';
+                        }}
                     />
-                    <div className="absolute inset-0 bg-white/30 dark:bg-background-dark/70 backdrop-blur-sm"></div>
+                    <div className="absolute inset-0 bg-white/50 dark:bg-background-dark/70 backdrop-blur-sm"></div>
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto space-y-8 flex flex-col items-center">
@@ -104,7 +112,7 @@ const Contact = () => {
                             icon: "chat",
                             btn: "Start Chat",
                             color: "text-green-500",
-                            type: "#"
+                            type: "https://wa.me/+916366573772"
                         },
                         {
                             title: "Book Online",
@@ -149,68 +157,107 @@ const Contact = () => {
 
                 {/* Social Hub - Creative Rotation */}
                 <div className="flex flex-col items-center gap-8 mt-12 sm:mt-16 text-center">
-                    <p className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">Follow Our Care Journey</p>
-                    <div className="flex justify-center gap-6">
+                    <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em]">Follow Our Care Journey</p>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6">
                         {[
                             {
                                 label: 'Instagram',
-                                icon: <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.79-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                link: 'https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==',
+                                iconColor: 'text-[#E1306C]',
+                                tint: 'from-[#E1306C]/20 via-[#F77737]/15 to-[#FCAF45]/15',
+                                hoverBorder: 'group-hover:border-[#E1306C]/35',
+                                hoverShadow: 'group-hover:shadow-[0_16px_30px_rgba(225,48,108,0.25)]',
+                                labelHover: 'group-hover:text-[#E1306C]',
+                                iconNode: <i className="fa-brands fa-instagram text-[30px] leading-none" aria-hidden="true"></i>
                             },
                             {
                                 label: 'LinkedIn',
+                                link: 'https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all',
+                                iconColor: 'text-[#0A66C2]',
+                                tint: 'from-[#0A66C2]/20 to-[#60A5FA]/15',
+                                hoverBorder: 'group-hover:border-[#0A66C2]/35',
+                                hoverShadow: 'group-hover:shadow-[0_16px_30px_rgba(10,102,194,0.25)]',
+                                labelHover: 'group-hover:text-[#0A66C2]',
                                 icon: <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
                             },
                             {
                                 label: 'YouTube',
+                                link: '#',
+                                iconColor: 'text-[#FF0000]',
+                                tint: 'from-[#FF0000]/20 to-[#F87171]/15',
+                                hoverBorder: 'group-hover:border-[#FF0000]/35',
+                                hoverShadow: 'group-hover:shadow-[0_16px_30px_rgba(255,0,0,0.2)]',
+                                labelHover: 'group-hover:text-[#FF0000]',
                                 icon: <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                             },
                             {
                                 label: 'WhatsApp',
-                                icon: <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.407 3.481 2.241 2.242 3.481 5.226 3.481 8.408 0 6.556-5.338 11.89-11.893 11.891-2.019 0-3.999-.512-5.753-1.478l-6.235 1.638zm6.236-4.143c1.611.957 3.23 1.462 4.84 1.463 5.429 0 9.847-4.417 9.848-9.847 0-2.63-1.025-5.101-2.887-6.963s-4.332-2.887-6.962-2.887c-5.43 0-9.848 4.417-9.85 9.848 0 1.77.491 3.407 1.411 4.819l-.117.203-1.128 4.121 4.237-1.112.208-.124zm10.644-2.894c-.274-.137-1.623-.801-1.874-.892-.252-.092-.435-.137-.618.137s-.71.892-.869 1.075-.32.206-.594.069c-.274-.138-1.159-.426-2.207-1.361-.815-.727-1.366-1.624-1.526-1.898-.16-.274-.017-.423.12-.559.123-.122.274-.32.411-.48s.183-.274.274-.457c.092-.183.046-.343-.023-.48-.069-.137-.618-1.487-.847-2.035-.222-.53-.448-.458-.618-.466-.16-.008-.344-.01-.527-.01s-.481.069-.732.343c-.252.274-.961.938-.961 2.29s.984 2.655 1.121 2.838c.137.183 1.935 2.954 4.688 4.141.655.283 1.166.452 1.565.578.658.209 1.258.18 1.732.109.529-.079 1.623-.664 1.852-1.304.229-.641.229-1.189.16-1.304-.069-.114-.251-.205-.526-.341z" />
+                                link: 'https://wa.me/+916366573772',
+                                iconColor: 'text-[#25D366]',
+                                tint: 'from-[#25D366]/20 to-[#86EFAC]/15',
+                                hoverBorder: 'group-hover:border-[#25D366]/35',
+                                hoverShadow: 'group-hover:shadow-[0_16px_30px_rgba(37,211,102,0.25)]',
+                                labelHover: 'group-hover:text-[#25D366]',
+                                iconNode: <i className="fa-brands fa-whatsapp text-[30px] leading-none" aria-hidden="true"></i>
                             }
 
                         ].map((social, i) => (
                             <motion.a
                                 key={i}
-                                whileHover={{ scale: 1.15, rotate: i % 2 === 0 ? 5 : -5 }}
-                                className="group flex flex-col items-center gap-3"
-                                href="#"
+                                whileHover={{ y: -6, scale: 1.04 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="group flex flex-col items-center gap-2.5"
+                                href={social.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label={`Visit Mystree on ${social.label}`}
                             >
-                                <div className="size-16 rounded-3xl bg-white dark:bg-slate-800 flex items-center justify-center text-[#1b110e] dark:text-white transition-all shadow-xl hover:shadow-primary/20 border border-slate-50 dark:border-slate-700 hover:text-primary dark:hover:text-primary">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        className="size-8 fill-current"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        {social.icon}
-                                    </svg>
+                                <div className={`relative w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-[1.5rem] bg-white border border-slate-100 flex items-center justify-center text-slate-800 transition-all duration-300 shadow-[0_12px_28px_rgba(15,23,42,0.08)] ${social.hoverBorder} ${social.hoverShadow}`}>
+                                    <span className={`absolute inset-0 rounded-[1.5rem] bg-gradient-to-br ${social.tint} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>
+                                    {social.iconNode ? (
+                                        <span className={`relative z-10 transition-transform duration-300 group-hover:scale-110 ${social.iconColor}`}>
+                                            {social.iconNode}
+                                        </span>
+                                    ) : (
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            className={`relative z-10 size-8 fill-current transition-transform duration-300 group-hover:scale-110 ${social.iconColor}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            {social.icon}
+                                        </svg>
+                                    )}
                                 </div>
-                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-primary transition-colors">{social.label}</span>
+                                <span className={`text-[10px] sm:text-[11px] font-black uppercase tracking-[0.22em] text-slate-500 transition-colors ${social.labelHover}`}>
+                                    {social.label}
+                                </span>
                             </motion.a>
                         ))}
                     </div>
                 </div>
-
             </section>
 
             {/* Map Experience */}
             <section className="relative w-full h-[460px] sm:h-[560px] md:h-[700px] overflow-hidden">
                 {/* Simulated High-Res Map */}
+                {/* Simulated High-Res Map */}
                 <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900 group">
-                    <img
-                        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80"
-                        alt="Map"
-                        className="w-full h-full object-cover opacity-60 grayscale-[50%] sepia-[20%] group-hover:grayscale-0 transition-all duration-[2s]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent"></div>
+                    <iframe
+                        src="https://maps.google.com/maps?q=13th%20Main%20Rd%2C%20Indiranagar%2C%20Bengaluru%2C%20Karnataka%20560038&t=m&z=15&output=embed&iwloc=near"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="MyStree Clinic Location"
+                        className="w-full h-full opacity-60 grayscale-[50%] group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[2s] object-cover pointer-events-none"
+                    ></iframe>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent pointer-events-none"></div>
                 </div>
 
                 {/* Floating Address Card */}
-                < motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                <motion.div
                     viewport={{ once: true }}
                     className="absolute top-4 left-1/2 -translate-x-1/2 md:top-12 md:left-20 md:translate-x-0 z-20 w-[calc(100%-1.5rem)] sm:w-full px-0 md:px-0 max-w-[420px]"
                 >
@@ -223,7 +270,7 @@ const Contact = () => {
                                 </div>
                                 <div className="bg-green-500 text-white px-3 py-1 rounded-xl flex items-center gap-1 shadow-lg shadow-green-100">
                                     <span className="material-symbols-outlined !text-sm">star</span>
-                                    <span className="text-xs font-black uppercase">4.9 Rare</span>
+                                    <span className="text-xs font-black uppercase">4.9</span>
                                 </div>
                             </div>
 
@@ -257,8 +304,8 @@ const Contact = () => {
                     </div>
                 </motion.div>
 
-                {/* Animated Marker - Adjusted to India/Bangalore */}
-                <div className="hidden md:block absolute top-[58%] left-[72%] -translate-x-1/2 -translate-y-1/2 z-10">
+                {/* Animated Marker - Centered */}
+                <div className="hidden md:block absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-[80%] z-10 pointer-events-none">
                     <div className="relative flex flex-col items-center">
 
                         <motion.div
@@ -274,7 +321,7 @@ const Contact = () => {
             </section>
 
             {/* Creative Trust Section */}
-            <section className="py-16 md:py-24 bg-white dark:bg-background-dark relative overflow-hidden">
+            < section className="py-16 md:py-24 bg-white dark:bg-background-dark relative overflow-hidden" >
                 <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -306,10 +353,11 @@ const Contact = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
-        </div>
+        </div >
     );
 };
 
 export default Contact;
+

@@ -87,6 +87,59 @@ export default function AdolescentHealth() {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [activeTopic]);
 
+    const services = ["All Services", "Adolescent Care", "PCOS & Hormonal Health", "Gynecology", "Nutrition & Wellness", "Mental Health"];
+
+    const doctors = [
+        {
+            id: 1,
+            profileId: "dr-smitha",
+            name: "Dr. Smitha A.P.",
+            specialty: "Consultant Obstetrician & Adolescent Gynecology Specialist",
+            image: doctor2,
+            qualification: "MBBS, MS, DNB (OBG)",
+            experience: "23+ Years Experience",
+            languages: "English, Kannada, Tamil",
+            badgeText: "Adolescent Care",
+            consultationFee: "₹1000",
+            badgeColorClass: "bg-white/90 text-gray-800",
+            services: ["Adolescent Care", "Gynecology", "All Services"]
+        },
+        {
+            id: 2,
+            profileId: "dr-surbhi",
+            name: "Dr. Surbhi Sinha",
+            specialty: "Consultant Obstetrician & Adolescent PCOS Specialist",
+            image: doctor1,
+            qualification: "MBBS, MS, MD (OBG)",
+            experience: "10+ Years Experience",
+            languages: "English, Hindi, Kannada",
+            badgeText: "Teen Health Specialist",
+            consultationFee: "₹1000",
+            badgeColorClass: "bg-white/90 text-gray-800",
+            services: ["Adolescent Care", "PCOS & Hormonal Health", "All Services"]
+        },
+        {
+            id: 3,
+            profileId: "priyanka-savina",
+            name: "Priyanka Savina",
+            specialty: "Clinical Nutritionist & Adolescent Wellness Consultant",
+            image: doctor3,
+            qualification: "M.Sc Nutrition & Dietetics",
+            experience: "Everything About What You Eat",
+            languages: "English, Hindi, Kannada",
+            badgeText: "Teen Nutrition Support",
+            consultationFee: "₹800",
+            badgeColorClass: "bg-white/90 text-gray-800",
+            services: ["Nutrition & Wellness", "Mental Health", "All Services"]
+        }
+    ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredDoctors = doctors.filter(doctor =>
+        doctor.services.includes(selectedService)
+    );
+
     return (
         <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-paper-texture">
             {/* 100% Confidential Badge */}
@@ -160,7 +213,7 @@ export default function AdolescentHealth() {
                                     <span className="material-icons text-green-500 text-sm">verified</span>
                                     <span className="text-xs font-bold">Bangalore Top Rated</span>
                                 </div>
-                                <p className="text-[10px] leading-tight text-gray-500">"Dr. Si made me feel totally heard."</p>
+                                <p className="text-[10px] leading-tight text-gray-500">"Dr. Surbhi made me feel totally heard."</p>
                             </div>
                         </div>
                     </div>
@@ -463,7 +516,7 @@ export default function AdolescentHealth() {
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
 
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6 text-center md:text-left">
                         <div className="max-w-2xl">
                             <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Allies</span>
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">
@@ -473,49 +526,40 @@ export default function AdolescentHealth() {
                                 Specialised experts in Bangalore dedicated to your health, privacy, and peace of mind.
                             </p>
                         </div>
-                        <a href="/experts" className="flex items-center gap-2 text-primary font-bold hover:text-secondary transition-all group/link text-sm uppercase tracking-wider">
-                            <span>View all doctors</span>
-                            <span className="material-icons group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-primary/30 text-gray-700 py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        <DoctorCard
-                            profileId="dr-smitha"
-                            name="Dr. Smitha A.P."
-                            specialty="Consultant Obstetrician & Adolescent Gynecology Specialist"
-                            image={doctor2}
-                            qualification="MBBS, MS, DNB (OBG)"
-                            experience="23+ Years Experience"
-                            languages="English, Kannada, Tamil"
-                            badgeText="Adolescent Care"
-                            consultationFee="₹1000"
-                            badgeColorClass="bg-white/90 text-gray-800"
-                        />
-                        <DoctorCard
-                            profileId="dr-surbhi"
-                            name="Dr. Surbhi Sinha (Dr. Si)"
-                            specialty="Consultant Obstetrician & Adolescent PCOS Specialist"
-                            image={doctor1}
-                            qualification="MBBS, MS, MD (OBG)"
-                            experience="10+ Years Experience"
-                            languages="English, Hindi, Kannada"
-                            badgeText="Teen Health Specialist"
-                            consultationFee="₹1000"
-                            badgeColorClass="bg-white/90 text-gray-800"
-                        />
-                        <DoctorCard
-                            profileId="priyanka-savina"
-                            name="Priyanka Savina"
-                            specialty="Clinical Nutritionist & Adolescent Wellness Consultant"
-                            image={doctor3}
-                            qualification="M.Sc Nutrition & Dietetics"
-                            experience="Everything About What You Eat"
-                            languages="English, Hindi, Kannada"
-                            badgeText="Teen Nutrition Support"
-                            consultationFee="₹800"
-                            badgeColorClass="bg-white/90 text-gray-800"
-                        />
+                        {filteredDoctors.map((doctor) => (
+                            <DoctorCard
+                                key={doctor.id}
+                                profileId={doctor.profileId}
+                                name={doctor.name}
+                                specialty={doctor.specialty}
+                                image={doctor.image}
+                                qualification={doctor.qualification}
+                                experience={doctor.experience}
+                                languages={doctor.languages}
+                                badgeText={doctor.badgeText}
+                                badgeColorClass={doctor.badgeColorClass}
+                                consultationFee={doctor.consultationFee}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

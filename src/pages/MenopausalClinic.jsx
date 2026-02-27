@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import doctor1 from '../assets/doctor1.jpg';
 import doctor2 from '../assets/doctor2.jpg';
 import doctor3 from '../assets/doctor3.jpg';
@@ -42,6 +42,8 @@ export default function MenopausalClinic() {
         "Hormone Replacement Therapy (HRT)"
     ];
 
+    const services = ["All Services", "Menopause Management", "Gynecology", "Pelvic Health", "Nutrition & Lifestyle"];
+
     const doctors = [
         {
             profileId: "dr-smitha",
@@ -54,6 +56,7 @@ export default function MenopausalClinic() {
             badgeText: "Menopause Specialist",
             consultationFee: "₹1000",
             badgeColorClass: "bg-orange-500 text-white",
+            services: ["Menopause Management", "Gynecology", "All Services"]
         },
         {
             profileId: "dr-surbhi",
@@ -66,6 +69,7 @@ export default function MenopausalClinic() {
             badgeText: "Hormonal Health Expert",
             consultationFee: "₹1000",
             badgeColorClass: "bg-blue-600 text-white",
+            services: ["Menopause Management", "Gynecology", "All Services"]
         },
         {
             profileId: "dr-jasmine",
@@ -78,6 +82,7 @@ export default function MenopausalClinic() {
             badgeText: "Pelvic Floor Rehabilitation",
             consultationFee: "₹900",
             badgeColorClass: "bg-teal-600 text-white",
+            services: ["Pelvic Health", "All Services"]
         },
         {
             profileId: "priyanka-savina",
@@ -89,9 +94,16 @@ export default function MenopausalClinic() {
             image: doctor3,
             badgeText: "Nutrition Counselling",
             consultationFee: "₹800",
-            badgeColorClass: "bg-amber-50 text-amber-700"
+            badgeColorClass: "bg-amber-50 text-amber-700",
+            services: ["Nutrition & Lifestyle", "All Services"]
         }
     ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredDoctors = doctors.filter(doc =>
+        doc.services.includes(selectedService)
+    );
 
     const reviews = [
         {
@@ -201,12 +213,31 @@ export default function MenopausalClinic() {
             {/* Doctors Section */}
             <section className="py-24 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-                    <div className="text-center mb-16">
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Expert Team</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 font-serif">Meet Our Specialists</h2>
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+                        <div className="text-center md:text-left">
+                            <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Expert Team</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 font-serif">Meet Our Specialists</h2>
+                        </div>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-primary/30 text-gray-700 py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </div>
+
                     <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-                        {doctors.map((doc, idx) => (
+                        {filteredDoctors.map((doc, idx) => (
                             <DoctorCard key={idx} {...doc} profileId={doc.profileId} />
                         ))}
                     </div>

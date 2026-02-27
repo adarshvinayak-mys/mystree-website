@@ -1,25 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import doctor1 from '../assets/doctor1.jpg';
+import doctor2 from '../assets/doctor2.jpg';
+import doctor3 from '../assets/doctor3.jpg';
+import adarsh from '../assets/adarsh.jpg';
+import bgImage from '../assets/background.jpg';
 
 export default function AboutUs() {
     return (
         <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white">
 
-            {/* 1. Redefining Women’s Healthcare (From Concept 1) */}
-            <section className="relative pt-20 pb-24 lg:pt-32 lg:pb-32 bg-[#FCF4D9] dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-                <div className="container mx-auto px-6 lg:px-12">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <span className="inline-block py-1 px-3 border border-primary/30 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-6 rounded-sm bg-white dark:bg-gray-800">
+            {/* 1. Redefining Women’s Healthcare (Hero Section) */}
+            <section
+                className="relative pt-24 pb-32 lg:pt-44 lg:pb-52 bg-cover bg-center bg-no-repeat overflow-hidden flex items-center"
+                style={{ backgroundImage: `url(${bgImage})` }}
+            >
+                {/* Sophisticated Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-white/75 dark:bg-gray-900/85 backdrop-blur-[1px]"></div>
+
+                <div className="container relative mx-auto px-6 lg:px-12 z-10">
+                    <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom duration-1000">
+                        <span className="inline-block py-1.5 px-4 border border-primary/20 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-10 rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm shadow-sm transition-all hover:border-primary/40">
                             Holistic Health & Care
                         </span>
-                        <h1 className="font-display text-5xl lg:text-7xl font-medium text-gray-900 dark:text-white leading-tight mb-8">
+                        <h1 className="font-display text-5xl lg:text-7xl font-medium text-gray-900 dark:text-white leading-[1.1] mb-10">
                             Redefining Women’s Healthcare with <span className="italic text-primary">Precision</span> & Empathy.
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto font-light">
+                        <div className="w-24 h-1 bg-primary/30 mx-auto mb-10 rounded-full"></div>
+                        <p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto font-light">
                             My Stree combines medical excellence with a deep understanding of the female physiology to deliver comprehensive care that empowers.
                         </p>
                     </div>
                 </div>
+
+                {/* Decorative fade at the bottom to transition into next section */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
             </section>
 
             {/* 2. Vision & Mission (From Concept 2) */}
@@ -59,7 +74,7 @@ export default function AboutUs() {
                                 <img
                                     alt="Dr. Smitha A.P."
                                     className="w-full aspect-[3/4] object-cover rounded-lg shadow-sm grayscale hover:grayscale-0 transition-all duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeBh-feUpwpNHYOOtFgWw0VA00c_Ajmcb4pG9fGHHvAzNno0rSvkK8AhdvFcmE9-uzi5U6n_uHo6JWDelWNFVAk351NzFyCnIWHNuA6kfy7gTZKZ2Ux3_uHz16BALONsaNhXr3xO6FDFcxiQfysgd5XarQ7T0gxCFAoMqtcxe19EybXcahr68RBFaDol5Z3URnmTCmafiqjAQ09k_E9ccg6so6qr5YJIQkeD7SMCci4KNRMSGcpNmOz9VxeszFhXJkoHjco-ZyFRV"
+                                    src={doctor2}
                                 />
                                 <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-lg shadow-md">
                                     <span className="block text-2xl font-display font-bold">23+</span>
@@ -101,7 +116,7 @@ export default function AboutUs() {
                                 <img
                                     alt="Dr. Surbhi Sinha"
                                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zankYA7kmO9U8yfYU0EPLCz7JTEDg8QnF-8wUrhkAvKBsDjEErRT94uxbGT2miNT0GJ5uEYCVlINgrLIE6fCo3rjZ_pMm9ACnRAP5_ezJD4NY7QdvhUdd9B7PoVZyzrMRmlB7iL15duo4G3_8Id68dlpYM9UMqENBIj5ar-NAvyeNAmJZfGkOQpI2BtazNSqKxSDiQeUkfIK12b9WtgVAl9NMHUKj6wn8n732cHV82TLD7RvGsle38uVja8bzII8vMUk9oM5G9aY"
+                                    src={doctor1}
                                 />
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 dark:text-white">Dr. Surbhi Sinha</h3>
@@ -121,7 +136,7 @@ export default function AboutUs() {
                                 <img
                                     alt="Priyanka Savina"
                                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYhs011brymt1W_yAjt8a6IkmM24aPTrXDLTtk3qfTwxtx-uH3bP41BDxjkrOBaC0eYNNniYzXCKcemzXjZ6Bz445adRf1cB8PL4jiuNW9UZroQq_0chc2XbLnYbbIi_W-hvNW0a0abbQTTRJdeYVY4zhvl2eCk_dY0jSzwRd1og_CBXT_clXcwOP_Lx1WOwZuFCH3Cer7WX-SMaF6RLqGePn3VkRLYklNmjkeawe_LA6G9jqRQ7eQNTc9qN_FLz-oPyu2Pk4fi-Ew"
+                                    src={doctor3}
                                 />
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 dark:text-white">Priyanka Savina</h3>
@@ -141,7 +156,7 @@ export default function AboutUs() {
                                 <img
                                     alt="Adarsh Vinayak"
                                     className="w-full h-full object-cover object-center filter grayscale group-hover:grayscale-0 transition-all opacity-80"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzX3O4uUVEN_1AMVJEuW-5VBIHHDBvVMCi619bIhkt6I1_jc8JocPWRHbdpGyjIAP5BbpnT-ddabcTgmgRI7N_kEuKB29joJ54aN7tU1dKFrHALru_vTldkpp_wBtAhm1jfDFcYXasFiQROuYfCyJnYnTROtlxC362XmOLmCDGL8oZ3r-ApQeAcLAZLfLbNBH4ZzK4YX95XCvci2LnX9BLodH7lkKNrq4LjG3XDnedYq2yq_sa5A_MUZxZ5ic2-hMMPEMj0gRxczW8"
+                                    src={adarsh}
                                 />
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 dark:text-white">Adarsh Vinayak</h3>

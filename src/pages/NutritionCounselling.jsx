@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import doctor3 from '../assets/doctor3.jpg';
 import nutritionHero from '../assets/nutritionpage.png';
 import nutritionPsychology from '../assets/nutritionpage2.png';
@@ -7,8 +8,12 @@ import wm1 from '../assets/weightmanagement1.png';
 import wm2 from '../assets/weightmanagement2.png';
 import wm3 from '../assets/weightmanagement3.png';
 import wm4 from '../assets/weightmanagement4.png';
+import nutrition1 from '../assets/nutrition1.jpg';
+import nutrition2 from '../assets/nutrition2.jpg';
+import nutrition3 from '../assets/nutrition3.jpg';
+import nutrition4 from '../assets/nutrition4.jpg';
 import weight12 from '../assets/weight12.png';
-import pcosMain from '../assets/image1.jpg';
+import pcosMain from '../assets/pcos_hormonal_balance.png';
 
 const focusAreas = [
     {
@@ -63,6 +68,7 @@ const methodology = [
 ];
 
 export default function NutritionCounselling() {
+    const navigate = useNavigate();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -96,9 +102,18 @@ export default function NutritionCounselling() {
                             Eat Better. Live Better. Personalised Nutrition for Your Health & Well-Being. No starving, just eating right.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button className="bg-gradient-to-r from-[#FF833C] to-[#ed592c] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group">
+                            <button
+                                onClick={() => navigate('/booking-gateway')}
+                                className="bg-gradient-to-r from-[#FF833C] to-[#ed592c] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group"
+                            >
                                 <span>Book Appointment</span>
                                 <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
+                            <button
+                                onClick={() => navigate('/booking-gateway')}
+                                className="bg-white text-cadet-gray border-2 border-primary/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/5 transition-all"
+                            >
+                                Learn More
                             </button>
                         </div>
                         <div className="flex items-center gap-6 pt-4">
@@ -182,7 +197,10 @@ export default function NutritionCounselling() {
                                             {area.description}
                                         </p>
                                         <div className="flex items-center gap-6 pt-4">
-                                            <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold px-8 py-3.5 rounded-2xl border border-white/30 flex items-center gap-3 group/btn transition-all hover:shadow-lg active:scale-95">
+                                            <button
+                                                onClick={() => navigate('/booking-gateway')}
+                                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold px-8 py-3.5 rounded-2xl border border-white/30 flex items-center gap-3 group/btn transition-all hover:shadow-lg active:scale-95"
+                                            >
                                                 <span>Consult</span>
                                                 <span className="material-icons text-primary-light group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                                             </button>
@@ -196,7 +214,7 @@ export default function NutritionCounselling() {
                 </div>
             </section>
 
-            {/* Weight Management Gallery - User Request for Variety */}
+            {/* Weight Management Gallery - Reverted and Updated */}
             <section className="pb-24 px-6 md:px-12 lg:px-20 bg-corn-silk">
                 <div className="max-w-7xl mx-auto">
                     <div className="bg-white/40 backdrop-blur-md rounded-[3rem] p-8 md:p-16 border border-white/60 shadow-sm">
@@ -220,18 +238,18 @@ export default function NutritionCounselling() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-4">
                                         <div className="rounded-3xl overflow-hidden h-48 md:h-64 shadow-lg transform hover:-rotate-1 transition-all duration-500">
-                                            <img src={wm2} alt="Variation 1" className="w-full h-full object-cover" />
+                                            <img src={nutrition1} alt="Variation 1" className="w-full h-full object-cover" />
                                         </div>
                                         <div className="rounded-3xl overflow-hidden h-32 md:h-48 shadow-lg transform hover:rotate-2 transition-all duration-500">
-                                            <img src={wm3} alt="Variation 2" className="w-full h-full object-cover" />
+                                            <img src={nutrition2} alt="Variation 2" className="w-full h-full object-cover" />
                                         </div>
                                     </div>
                                     <div className="space-y-4 pt-8">
                                         <div className="rounded-3xl overflow-hidden h-32 md:h-48 shadow-lg transform hover:rotate-1 transition-all duration-500">
-                                            <img src={wm4} alt="Variation 3" className="w-full h-full object-cover" />
+                                            <img src={nutrition3} alt="Variation 3" className="w-full h-full object-cover" />
                                         </div>
                                         <div className="rounded-3xl overflow-hidden h-48 md:h-64 shadow-lg transform hover:-rotate-2 transition-all duration-500">
-                                            <img src={wm1} alt="Variation 4" className="w-full h-full object-cover" />
+                                            <img src={nutrition4} alt="Variation 4" className="w-full h-full object-cover" />
                                         </div>
                                     </div>
                                 </div>

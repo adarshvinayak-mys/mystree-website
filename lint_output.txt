@@ -1,0 +1,113 @@
+
+> mystree-website@0.0.0 lint
+> eslint .
+
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\components\DoctorCard.jsx
+  34:26  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  32 |                 <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start text-center sm:text-left">
+  33 |                     <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm relative group-hover:scale-[1.02] transition-transform duration-500">
+> 34 |                         <ProfileLinkWrapper className="block w-full h-full cursor-pointer">
+     |                          ^^^^^^^^^^^^^^^^^^ This component is created during render
+  35 |                             <img
+  36 |                                 alt={name}
+  37 |                                 className="w-full h-full object-cover"
+
+  20 |     const titleDesignation = designation || specialty || "Consultant";
+  21 |
+> 22 |     const ProfileLinkWrapper = ({ children, className }) => {
+     |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |         if (profileId) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |             return <Link to={`/our-team#${profileId}`} className={className}>{children}</Link>;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |         return <div className={className}>{children}</div>;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |     };
+     | ^^^^^^ The component is created during render here
+  28 |
+  29 |     return (
+  30 |         <div className="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-200/70 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:shadow-lg group flex flex-col h-full">  react-hooks/static-components
+  44:26  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+  42 |
+  43 |                     <div className="flex-1 min-w-0 pt-1 space-y-2">
+> 44 |                         <ProfileLinkWrapper className="block cursor-pointer">
+     |                          ^^^^^^^^^^^^^^^^^^ This component is created during render
+  45 |                             <h2 className="text-xl sm:text-[1.7rem] font-bold text-slate-900 dark:text-white leading-tight">
+  46 |                                 {name}
+  47 |                             </h2>
+
+  20 |     const titleDesignation = designation || specialty || "Consultant";
+  21 |
+> 22 |     const ProfileLinkWrapper = ({ children, className }) => {
+     |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 23 |         if (profileId) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |             return <Link to={`/our-team#${profileId}`} className={className}>{children}</Link>;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |         return <div className={className}>{children}</div>;
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |     };
+     | ^^^^^^ The component is created during render here
+  28 |
+  29 |     return (
+  30 |         <div className="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-200/70 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:shadow-lg group flex flex-col h-full">                                                                                                                                                                                                                                                      react-hooks/static-components
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\components\GlobalHealthCTAButton.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\components\Navbar.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\BlogAndCommunity.jsx
+   3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+   8:8   error  'eggFreezing1' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+   9:8   error  'eggFreezing2' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  10:8   error  'eggFreezing3' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\Contact.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u           no-unused-vars
+  11:11  error  'fadeIn' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\DermatologySkinCare.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\FertilityClinic.jsx
+  6:8  error  'doctor3' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\Gallery.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\NutritionCounselling.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u    no-unused-vars
+  10:8   error  'weight12' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\OBGYNConsults.jsx
+  5:8  error  'doctorNiv' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\OurTeam.jsx
+  6:8  error  'doctorNiv' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\PrenatalClinic.jsx
+  29:12  error  'scrolled' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+  30:12  error  'animationPhase' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\PsychologyPsychiatry.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u               no-unused-vars
+  18:11  error  'focusAreas' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tilin Bijoy\Desktop\MyStree-Website\src\pages\UpcomingEvents.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 22 problems (22 errors, 0 warnings)
+

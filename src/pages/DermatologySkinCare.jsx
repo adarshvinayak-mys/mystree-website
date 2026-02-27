@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import doctor1 from '../assets/doctor1.jpg';
 import doctor3 from '../assets/doctor3.jpg';
@@ -9,6 +9,43 @@ export default function DermatologySkinCare() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const services = ["All Services", "Hormonal Skin Care", "Nutrition & Skin Wellness"];
+
+    const doctors = [
+        {
+            profileId: "dr-surbhi",
+            name: "Dr. Surbhi Sinha",
+            specialty: "Consultant Obstetrician & Hormonal Skin Specialist",
+            qualification: "MBBS, MS, DNB, MRCOG (UK), FRM",
+            experience: "12+ Years Experience",
+            languages: "English, Hindi, Kannada",
+            image: doctor1,
+            badgeText: "Hormonal Skin Care",
+            consultationFee: "₹1000",
+            badgeColorClass: "bg-blue-600 text-white",
+            services: ["Hormonal Skin Care", "All Services"]
+        },
+        {
+            profileId: "priyanka-savina",
+            name: "Priyanka Savina",
+            specialty: "Clinical Nutritionist & Skin Wellness Consultant",
+            qualification: "M.Sc Nutrition & Dietetics",
+            experience: "10+ Years Experience",
+            languages: "English, Hindi, Kannada",
+            image: doctor3,
+            badgeText: "Skin Nutrition Protocols",
+            consultationFee: "₹800",
+            badgeColorClass: "bg-orange-500 text-white",
+            services: ["Nutrition & Skin Wellness", "All Services"]
+        }
+    ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredDoctors = doctors.filter(doc =>
+        doc.services.includes(selectedService)
+    );
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
@@ -346,42 +383,39 @@ export default function DermatologySkinCare() {
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
-                        className="text-center mb-16"
+                        className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={fadeInUp}
                     >
-                        <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Hands</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-cadet-gray font-serif">Meet Our Skin Specialists</h2>
-                        <p className="text-cadet-gray/60 max-w-2xl mx-auto mt-4 text-lg">Leading experts dedicated to your dermatological and nutritional skin health.</p>
+                        <div className="text-center md:text-left">
+                            <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Hands</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-cadet-gray font-serif">Meet Our Skin Specialists</h2>
+                            <p className="text-cadet-gray/60 max-w-2xl mt-4 text-lg">Leading experts dedicated to your dermatological and nutritional skin health.</p>
+                        </div>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-primary/30 text-gray-700 py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        <DoctorCard
-                            profileId="dr-surbhi"
-                            name="Dr. Surbhi Sinha"
-                            specialty="Consultant Obstetrician & Hormonal Skin Specialist"
-                            qualification="MBBS, MS, DNB, MRCOG (UK), FRM"
-                            experience="12+ Years Experience"
-                            languages="English, Hindi, Kannada"
-                            image={doctor1}
-                            badgeText="Hormonal Skin Care"
-                            consultationFee="₹1000"
-                            badgeColorClass="bg-blue-600 text-white"
-                        />
-                        <DoctorCard
-                            profileId="priyanka-savina"
-                            name="Priyanka Savina"
-                            specialty="Clinical Nutritionist & Skin Wellness Consultant"
-                            qualification="M.Sc Nutrition & Dietetics"
-                            experience="10+ Years Experience"
-                            languages="English, Hindi, Kannada"
-                            image={doctor3}
-                            badgeText="Skin Nutrition Protocols"
-                            consultationFee="₹800"
-                            badgeColorClass="bg-orange-500 text-white"
-                        />
+                        {filteredDoctors.map((doc, idx) => (
+                            <DoctorCard key={idx} {...doc} profileId={doc.profileId} />
+                        ))}
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import doctor2 from '../assets/doctor2.jpg';
 import doctorPri from '../assets/drpriya.jpeg'; // Assuming this is Dr. Rupa's image based on previous context, or use a placeholder if unsure. Previous file had doctorPri for Dr. Rupa.
@@ -59,6 +59,8 @@ const PsychologyPsychiatry = () => {
         }
     ];
 
+    const services = ["All Services", "Integrated Women's Care", "Perinatal Mental Health", "Counselling"];
+
     const specialists = [
         {
             profileId: "dr-smitha",
@@ -70,21 +72,17 @@ const PsychologyPsychiatry = () => {
             image: doctor2,
             badgeText: "Integrated Women's Care",
             consultationFee: "₹1000",
-            badgeColorClass: "bg-purple-600 text-white"
+            badgeColorClass: "bg-purple-600 text-white",
+            services: ["Integrated Women's Care", "Perinatal Mental Health", "All Services"]
         },
-        {
-            profileId: "dr-rupa",
-            name: "Dr. Rupa",
-            specialty: "Consultant Psychologist - Art Therapy & Emotional Wellness",
-            qualification: "M.Phil Clinical Psychology, Expressive Arts Therapy",
-            experience: "Women-Centred Emotional Care Specialist",
-            languages: "English, Hindi, Kannada",
-            image: doctorPri,
-            badgeText: "Psychological Wellness Specialist",
-            consultationFee: "₹1000",
-            badgeColorClass: "bg-blue-600 text-white"
-        }
+
     ];
+
+    const [selectedService, setSelectedService] = useState("All Services");
+
+    const filteredSpecialists = specialists.filter(doc =>
+        doc.services.includes(selectedService)
+    );
 
     return (
         <div className="font-display text-slate-800 bg-white selection:bg-primary/30 selection:text-primary overflow-x-hidden">
@@ -283,7 +281,7 @@ const PsychologyPsychiatry = () => {
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
 
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
                         <div className="max-w-2xl">
                             <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Minds</span>
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">
@@ -293,14 +291,26 @@ const PsychologyPsychiatry = () => {
                                 Leading experts dedicated to your emotional well-being and clinical mental health care.
                             </p>
                         </div>
-                        <a href="/experts" className="flex items-center gap-2 text-primary font-bold hover:text-secondary transition-all group/link text-sm uppercase tracking-wider">
-                            <span>View all doctors</span>
-                            <span className="material-icons group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
+
+                        {/* Filter Dropdown */}
+                        <div className="relative z-20 w-full md:w-auto">
+                            <select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                className="appearance-none bg-white border border-primary/30 text-gray-700 py-3 pl-6 pr-12 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer font-medium min-w-[200px]"
+                            >
+                                {services.map((service, idx) => (
+                                    <option key={idx} value={service}>{service}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                                <span className="material-icons text-sm">expand_more</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {specialists.map((doc, i) => (
+                        {filteredSpecialists.map((doc, i) => (
                             <DoctorCard key={i} {...doc} profileId={doc.profileId} />
                         ))}
                     </div>

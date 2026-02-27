@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function DoctorCard({
     name,
@@ -13,6 +13,7 @@ export default function DoctorCard({
     onBook,
     profileId
 }) {
+    const navigate = useNavigate();
     const badgeValue = typeof badgeText === 'string' ? badgeText.trim() : '';
     const isFeeInBadge = /consultation|session|fee|₹|INR/i.test(badgeValue);
     const labelText = !isFeeInBadge ? badgeValue : '';
@@ -127,7 +128,7 @@ export default function DoctorCard({
                     </div>
 
                     <button
-                        onClick={onBook}
+                        onClick={() => navigate('/booking-gateway')}
                         className="group relative w-full bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-bold text-base shadow-md shadow-primary/20 transition-all active:scale-[0.98] overflow-hidden"
                     >
                         <span className="relative z-10 flex items-center justify-center gap-2">
