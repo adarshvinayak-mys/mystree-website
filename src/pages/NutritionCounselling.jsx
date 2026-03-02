@@ -74,7 +74,7 @@ export default function NutritionCounselling() {
     }, []);
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative pb-32 lg:pb-0">
 
             {/* Hero Section */}
             <header className="relative overflow-hidden pt-8 pb-12 px-6 md:px-12 lg:px-20 bg-corn-silk">
@@ -103,14 +103,14 @@ export default function NutritionCounselling() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <button
-                                onClick={() => navigate('/booking-gateway')}
+                                onClick={() => window.location.href = 'https://my-stree.com/booking'}
                                 className="bg-gradient-to-r from-[#FF833C] to-[#ed592c] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group"
                             >
                                 <span>Book Appointment</span>
                                 <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </button>
                             <button
-                                onClick={() => navigate('/booking-gateway')}
+                                onClick={() => window.location.href = 'https://my-stree.com/booking'}
                                 className="bg-white text-cadet-gray border-2 border-primary/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/5 transition-all"
                             >
                                 Learn More
@@ -198,7 +198,7 @@ export default function NutritionCounselling() {
                                         </p>
                                         <div className="flex items-center gap-6 pt-4">
                                             <button
-                                                onClick={() => navigate('/booking-gateway')}
+                                                onClick={() => window.location.href = 'https://my-stree.com/booking'}
                                                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold px-8 py-3.5 rounded-2xl border border-white/30 flex items-center gap-3 group/btn transition-all hover:shadow-lg active:scale-95"
                                             >
                                                 <span>Consult</span>

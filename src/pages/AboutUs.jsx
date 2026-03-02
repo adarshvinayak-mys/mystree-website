@@ -8,7 +8,7 @@ import bgImage from '../assets/background.jpg';
 
 export default function AboutUs() {
     return (
-        <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white">
+        <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white pb-32 lg:pb-0">
 
             {/* 1. Redefining Women’s Healthcare (Hero Section) */}
             <section
@@ -23,7 +23,7 @@ export default function AboutUs() {
                         <span className="inline-block py-1.5 px-4 border border-primary/20 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-10 rounded-full bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm shadow-sm transition-all hover:border-primary/40">
                             Holistic Health & Care
                         </span>
-                        <h1 className="font-display text-5xl lg:text-7xl font-medium text-gray-900 dark:text-white leading-[1.1] mb-10">
+                        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-medium text-gray-900 dark:text-white leading-[1.1] mb-10">
                             Redefining Women’s Healthcare with <span className="italic text-primary">Precision</span> & Empathy.
                         </h1>
                         <div className="w-24 h-1 bg-primary/30 mx-auto mb-10 rounded-full"></div>
@@ -179,7 +179,7 @@ export default function AboutUs() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <span className="text-primary font-bold tracking-widest text-sm uppercase mb-4 block">Our Ethos</span>
-                            <h2 className="font-display text-5xl lg:text-6xl text-gray-900 dark:text-white leading-none mb-8">
+                            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white leading-none mb-8">
                                 Guided by <br />
                                 <span className="italic text-gray-500">Unwavering</span> <br />
                                 Principles.
@@ -262,17 +262,17 @@ export default function AboutUs() {
                 <div className="container mx-auto px-6 lg:px-12">
                     <div className="max-w-3xl mx-auto">
                         <span className="material-icons text-primary text-5xl mb-6">verified</span>
-                        <h2 className="font-display text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8">
+                        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-8">
                             Your Health, <span className="italic text-primary">Our Priority.</span>
                         </h2>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed">
                             Partner with a team that values your trust as much as your health. Experience the difference of leadership-driven care.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-6">
-                            <Link to="/booking-gateway" className="bg-primary text-white px-10 py-5 rounded text-lg font-bold shadow-lg hover:bg-orange-700 uppercase tracking-wide">
+                            <a href="https://my-stree.com/booking" className="bg-primary text-white px-10 py-5 rounded text-lg font-bold shadow-lg hover:bg-orange-700 uppercase tracking-wide">
                                 Book Consultation
-                            </Link>
-                            <Link to="/contact-us" className="border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white px-10 py-5 rounded text-lg font-bold hover:bg-gray-50 dark:hover:bg-gray-800 uppercase tracking-wide">
+                            </a>
+                            <Link to="/contact" className="border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white px-10 py-5 rounded text-lg font-bold hover:bg-gray-50 dark:hover:bg-gray-800 uppercase tracking-wide">
                                 Contact Support
                             </Link>
                         </div>

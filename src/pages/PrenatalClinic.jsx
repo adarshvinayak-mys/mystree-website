@@ -97,7 +97,7 @@ export default function PrenatalClinic() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary">
+        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary pb-32 lg:pb-0">
             <style>{`
                 .font-serif-display {
                     font-family: 'Playfair Display', 'Cormorant Garamond', serif;
@@ -504,7 +504,7 @@ export default function PrenatalClinic() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-lg text-gray-600 leading-relaxed max-w-lg fade-in-up delay-200">
+                            <p className="text-lg text-gray-600 leading-relaxed max-w-md fade-in-up delay-200 text-pretty">
                                 Experience the warmth of expert care as you journey through motherhood.
                                 From the first heartbeat to the first breath, we're here in Indiranagar —
                                 <strong className="text-gray-800"> every step of the way</strong>.

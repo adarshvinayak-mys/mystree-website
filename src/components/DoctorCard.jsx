@@ -128,7 +128,7 @@ export default function DoctorCard({
                     </div>
 
                     <button
-                        onClick={() => navigate('/booking-gateway')}
+                        onClick={() => window.location.href = 'https://my-stree.com/booking'}
                         className="group relative w-full bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-bold text-base shadow-md shadow-primary/20 transition-all active:scale-[0.98] overflow-hidden"
                     >
                         <span className="relative z-10 flex items-center justify-center gap-2">

@@ -103,7 +103,7 @@ const UpcomingEvents = () => {
                                     Mar 1st • 11 AM
                                 </div>
                             </div>
-                            <div className="md:w-1/2 p-5 sm:p-6 md:p-12 flex flex-col justify-center">
+                            <div className="md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
                                 <span className="text-[#ED5B2D] font-bold tracking-widest uppercase text-xs mb-3 font-sans">Latest Event</span>
                                 <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-display text-[#1b110e]">Heal with Sound, <br />Align with Vibration</h2>
                                 <p className="text-[#3c2a24] mb-4 leading-relaxed font-sans text-lg">Step into a meditative experience that restores balance and inner peace. Reduces stress, enhances clarity, and clears energetic blockages.</p>
@@ -156,7 +156,7 @@ const UpcomingEvents = () => {
                                     <h2 className="text-3xl font-bold font-display">{selectedEvent?.title || "Event Details & Highlights"}</h2>
                                 </div>
                             </div>
-                            <div className="p-5 sm:p-8">
+                            <div className="p-6 md:p-10 lg:p-12">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     <div className="md:col-span-2 space-y-6">
                                         <div>
@@ -248,9 +248,9 @@ const UpcomingEvents = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight mb-6 drop-shadow-lg font-display"
+                        className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-6 drop-shadow-lg font-display text-balance"
                     >
-                        Step into the<br /><i className="font-light">Sanctuary</i>
+                        Step into the <i className="font-light md:block mt-2">Sanctuary</i>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

@@ -137,7 +137,7 @@ function AppContent() {
   return (
     <Wrapper>
       {location.pathname !== '/mystree-soul' && <Navbar />}
-      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
+      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 pb-24 lg:pb-0 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -158,6 +158,7 @@ function AppContent() {
           <Route path="/booking-gateway" element={<BookingGateway />} />
           <Route path="/blog" element={<BlogAndCommunity />} />
           <Route path="/mystree-soul" element={<SoulTriage />} />
+          <Route path="/soul-triage" element={<SoulTriage />} />
         </Routes>
 
 

@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ChatButton() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+
+    if (location.pathname === '/booking-gateway') {
+        return null;
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,7 +23,7 @@ export default function ChatButton() {
     }, []);
 
     return (
-        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-6 z-50 group">
+        <div className={`fixed bottom-20 right-4 md:bottom-8 md:right-6 z-50 flex flex-col items-end gap-3 pointer-events-none transition-all duration-300 ${isScrolled ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-4 opacity-0 pointer-events-none'}`}>
             {/* Tooltip */}
             <div className="absolute bottom-full right-0 mb-3 w-max bg-gray-900 text-white text-xs font-medium px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
                 Chat with us

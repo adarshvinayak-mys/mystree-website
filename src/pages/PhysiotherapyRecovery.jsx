@@ -34,7 +34,7 @@ export default function PhysiotherapyRecovery() {
     }, []);
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative pb-32 lg:pb-0">
 
             {/* Hero Section */}
             <header className="relative overflow-hidden pt-8 pb-12 px-6 md:px-12 lg:px-20 bg-corn-silk">

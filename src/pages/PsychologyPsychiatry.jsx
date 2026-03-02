@@ -85,7 +85,7 @@ const PsychologyPsychiatry = () => {
     );
 
     return (
-        <div className="font-display text-slate-800 bg-white selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+        <div className="font-display text-slate-800 bg-white selection:bg-primary/30 selection:text-primary overflow-x-hidden pb-32 lg:pb-0">
 
             {/* Hero Section - Refined with Pink Gradient */}
             <header className="relative pt-24 pb-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-corn-silk via-white to-white overflow-hidden">

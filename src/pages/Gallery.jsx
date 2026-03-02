@@ -32,7 +32,7 @@ const Gallery = () => {
     };
 
     return (
-        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/30 antialiased overflow-x-hidden pb-20">
+        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/30 antialiased overflow-x-hidden pb-32 lg:pb-20">
 
             {/* Gallery Hero - Shortened and optimized */}
             <header className="relative w-full bg-[#fdf8f0] py-16 px-6 lg:py-24 lg:px-20 flex flex-col items-center text-center overflow-hidden">
@@ -56,13 +56,13 @@ const Gallery = () => {
 
             {/* Masonry Showcase Section - Pulled up */}
             <section className="py-12 bg-white">
-                <div className="max-w-7xl mx-auto px-6 text-center mb-12">
-                    <div className="flex flex-wrap justify-center gap-3">
+                <div className="max-w-7xl mx-auto px-4 md:px-6 text-center mb-12">
+                    <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-3 pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
-                                className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${filter === cat ? 'bg-primary text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-100'}`}
+                                className={`snap-center shrink-0 px-4 sm:px-8 py-2 sm:py-3 whitespace-nowrap rounded-full text-xs sm:text-sm font-bold transition-all ${filter === cat ? 'bg-primary text-white shadow-lg' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-100'}`}
                             >
                                 {cat}
                             </button>

@@ -13,7 +13,7 @@ export default function OurTeam() {
     }, []);
 
     return (
-        <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-300">
+        <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-300 pb-32 lg:pb-0">
 
             {/* Hero Section */}
             <section className="relative pt-12 pb-20 overflow-hidden bg-primary/5 dark:bg-gray-900">
@@ -77,9 +77,9 @@ export default function OurTeam() {
                                         <span className="material-symbols-outlined text-primary text-sm">translate</span> Languages
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
                                 <a href="https://my-stree.com/booking/appointment/2" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
@@ -114,8 +114,8 @@ export default function OurTeam() {
                                         <span className="material-symbols-outlined text-secondary text-sm">translate</span> Languages
                                     </h4>
                                     <div className="flex flex-wrap gap-2 lg:justify-end">
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
                                     </div>
                                 </div>
                                 <a href="https://my-stree.com/booking/appointment/1" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
@@ -170,9 +170,9 @@ export default function OurTeam() {
                                         <span className="material-symbols-outlined text-orange-400 text-sm">translate</span> Languages
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
                                 <a href="https://my-stree.com/booking/appointment/3" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
@@ -209,10 +209,10 @@ export default function OurTeam() {
                                         <span className="material-symbols-outlined text-secondary text-sm">translate</span> Languages
                                     </h4>
                                     <div className="flex flex-wrap gap-2 lg:justify-end">
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
                                 <a href="https://my-stree.com/booking/appointment/4" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
@@ -303,9 +303,9 @@ export default function OurTeam() {
                                         <span className="material-symbols-outlined text-teal-400 text-sm">translate</span> Languages
                                     </h4>
                                     <div className="flex flex-wrap gap-2 lg:justify-end">
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
-                                        <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">English</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
+                                        <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
                                 <a href="https://my-stree.com/booking/appointment/6" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
@@ -399,9 +399,9 @@ export default function OurTeam() {
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Experience Better Healthcare?</h2>
                     <p className="text-orange-50 text-lg mb-10">Join the thousands of patients who have trusted the mystree team with their health journey.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link to="/booking-gateway" className="bg-white text-primary hover:bg-orange-50 font-bold py-4 px-10 rounded-lg shadow-lg transition-transform hover:-translate-y-1 inline-block">
+                        <a href="https://my-stree.com/booking" className="bg-white text-primary hover:bg-orange-50 font-bold py-4 px-10 rounded-lg shadow-lg transition-transform hover:-translate-y-1 inline-block">
                             Book Appointment
-                        </Link>
+                        </a>
                         <button className="bg-transparent border border-white/30 text-white hover:bg-white/10 font-bold py-4 px-10 rounded-lg transition-colors">
                             View Our Services
                         </button>

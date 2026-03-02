@@ -208,9 +208,9 @@ export default function BlogAndCommunity() {
     });
 
     return (
-        <div className="bg-ivory text-text-main font-body antialiased">
+        <div className="bg-ivory text-text-main font-body antialiased pb-32 lg:pb-0">
             {/* Massive Hero Section for Featured Editorial */}
-            <section className="relative w-full min-h-[85vh] flex flex-col justify-center bg-[#0a0a0a] group cursor-pointer overflow-hidden py-24 lg:py-32" onClick={() => { setIsModalOpen(true); setCurrentSlide(0); }}>
+            <section className="relative w-full min-h-[85vh] flex flex-col justify-center bg-[#0a0a0a] group cursor-pointer overflow-hidden pt-36 pb-24 lg:py-32" onClick={() => { setIsModalOpen(true); setCurrentSlide(0); }}>
                 {/* Background Decorative */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 right-0 w-[600px] lg:w-[800px] h-[600px] lg:h-[800px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
@@ -275,8 +275,8 @@ export default function BlogAndCommunity() {
             {/* Filter & Search Bar */}
             <section className="py-8 bg-white border-b border-gray-200 sticky top-20 z-40 shadow-sm">
                 <div className="container px-6 mx-auto">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                        <div className="flex items-center gap-3 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 space-y-4 md:space-y-0">
+                        <div className="flex items-center gap-3 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                             {["All Topics", "Nutrition", "Pregnancy", "Fertility", "Mental Wellness"].map((category) => (
                                 <button
                                     key={category}

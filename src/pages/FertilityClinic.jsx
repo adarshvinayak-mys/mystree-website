@@ -109,7 +109,7 @@ export default function FertilityClinic() {
     );
 
     return (
-        <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up">
+        <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up pb-32 lg:pb-0">
 
             {/* Cinematic Hero Section */}
             <header className="relative w-full min-h-[90vh] overflow-hidden flex items-center">
@@ -130,7 +130,7 @@ export default function FertilityClinic() {
                         <p className="text-xl md:text-2xl text-text-muted mb-10 max-w-lg leading-relaxed font-light">
                             Where clinical precision meets profound empathy. Experience the luxury of feeling understood while receiving world-class IVF care.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:gap-4">
                             <button className="bg-gradient-to-r from-warm-coral to-primary-light text-white px-10 py-4 rounded-2xl font-semibold w-full sm:w-auto text-center shadow-lg hover:shadow-warm-coral/40 hover:-translate-y-1 transition-all">
                                 Start Your Assessment
                             </button>
@@ -448,7 +448,7 @@ export default function FertilityClinic() {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1">
                         <span className="text-warm-coral font-bold uppercase tracking-widest text-xs mb-3 block">Future Planning</span>
-                        <h2 className="text-4xl md:text-5xl font-serif text-deep-green mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-serif text-deep-green mb-6 leading-tight text-balance">
                             Egg Freezing: <br /> <span className="italic text-warm-coral">Try It Before You Panic.</span>
                         </h2>
                         <p className="text-xl text-soft-charcoal/80 mb-8 font-light leading-relaxed">

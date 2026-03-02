@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function GlobalHealthCTAButton() {
+    const location = useLocation();
+
+    if (location.pathname === '/booking-gateway') {
+        return null;
+    }
     return (
-        <div className="fixed bottom-4 left-4 md:bottom-8 md:left-6 z-50">
+        <div className="fixed bottom-20 left-4 md:bottom-8 md:left-6 z-50">
             <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -27,7 +32,7 @@ export default function GlobalHealthCTAButton() {
                             Book Health Consult
                         </span>
                     </span>
-                    <span className="sm:hidden text-xs font-bold text-cadet-gray">Book</span>
+                    <span className="sm:hidden text-sm px-1.5 font-bold text-cadet-gray tracking-wide">Book</span>
                 </a>
             </motion.div>
         </div>

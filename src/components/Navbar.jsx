@@ -46,7 +46,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <header className="fixed top-0 left-0 right-0 z-[60] transition-all duration-300">
             <style>{`
                 /* Navigation Links */
                 .nav-link { position: relative; color: #4B5563; transition: color 0.3s ease; }
@@ -86,7 +86,7 @@ export default function Navbar() {
             `}</style>
 
             {/* Main Navbar Background */}
-            <div className={`absolute inset-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-orange-100/50 dark:border-gray-800 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}></div>
+            <div className={`absolute inset-0 bg-white dark:bg-slate-900 border-b border-orange-100/50 dark:border-gray-800 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}></div>
 
             <div className="container relative mx-auto px-4 lg:px-8 h-20 flex items-center justify-between z-10">
 
@@ -178,10 +178,10 @@ export default function Navbar() {
 
 
 
-                <Link className="hidden md:flex book-btn text-white px-8 py-3.5 rounded-full font-bold shadow-xl items-center gap-2.5 text-base" to="/booking-gateway">
+                <a className="hidden md:flex book-btn text-white px-8 py-3.5 rounded-full font-bold shadow-xl items-center gap-2.5 text-base" href="https://my-stree.com/booking">
                     <span className="material-icons text-lg">calendar_month</span>
                     Book Appointment
-                </Link>
+                </a>
 
                 {/* Mobile Menu Button */}
                 <button className="md:hidden p-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
@@ -226,7 +226,7 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={`md:hidden bg-surface-light dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden transition-all duration-300 ${location.pathname === '/' && isBannerVisible && window.scrollY <= 50 ? "top-[7.6rem]" : "top-20"}`}
+                        className={`md:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden transition-all duration-300 ${location.pathname === '/' && isBannerVisible && window.scrollY <= 50 ? "top-[7.6rem]" : "top-20"}`}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
@@ -270,12 +270,13 @@ export default function Navbar() {
                                     <Link to="/showcase/gallery" className={`block py-2 pl-4 text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Gallery</Link>
                                 </motion.div>
                             </div>
+                            <Link to="/blog" className={`py-2 border-b border-gray-100 dark:border-gray-800 ${location.pathname === '/blog' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Blog & Community</Link>
                             <Link to="/contact" className={`py-2 ${location.pathname === '/contact' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Contact Us</Link>
 
-                            <Link className="book-btn text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 mt-2" to="/booking-gateway" onClick={() => setIsOpen(false)}>
+                            <a className="book-btn text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center justify-center gap-2 mt-2" href="https://my-stree.com/booking" onClick={() => setIsOpen(false)}>
                                 <span className="material-icons text-sm">calendar_month</span>
                                 Book Appointment
-                            </Link>
+                            </a>
                         </nav>
                     </motion.div>
                 )}

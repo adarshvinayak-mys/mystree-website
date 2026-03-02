@@ -15,7 +15,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen overflow-x-hidden selection:bg-primary selection:text-white">
+        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen overflow-x-hidden selection:bg-primary selection:text-white pb-32 lg:pb-0">
             <style>
                 {`
                 .glass-panel {
@@ -212,7 +212,7 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 aria-label={`Visit Mystree on ${social.label}`}
                             >
-                                <div className={`relative w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-[1.5rem] bg-white border border-slate-100 flex items-center justify-center text-slate-800 transition-all duration-300 shadow-[0_12px_28px_rgba(15,23,42,0.08)] ${social.hoverBorder} ${social.hoverShadow}`}>
+                                <div className={`relative w-14 h-14 sm:w-[74px] sm:h-[74px] rounded-[1.5rem] bg-white border border-slate-100 flex items-center justify-center text-slate-800 transition-all duration-300 shadow-[0_12px_28px_rgba(15,23,42,0.08)] ${social.hoverBorder} ${social.hoverShadow}`}>
                                     <span className={`absolute inset-0 rounded-[1.5rem] bg-gradient-to-br ${social.tint} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>
                                     {social.iconNode ? (
                                         <span className={`relative z-10 transition-transform duration-300 group-hover:scale-110 ${social.iconColor}`}>

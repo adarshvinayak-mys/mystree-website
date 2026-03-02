@@ -71,20 +71,20 @@ export default function OBGYNConsults() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative pb-32 lg:pb-0">
             {/* Immediate Booking Button (Fixed) */}
 
 
             {/* Hero Section */}
-            <header className="relative overflow-hidden pt-12 pb-16 px-6 md:px-12 lg:px-20 bg-gradient-to-br from-white via-corn-silk/30 to-transparent">
+            <header className="relative overflow-hidden pt-12 pb-16 px-4 sm:px-6 md:px-12 lg:px-20 bg-gradient-to-br from-white via-corn-silk/30 to-transparent">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div className="relative z-10 space-y-6 lg:col-span-7">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white rounded-md border border-cadet-gray/10 w-fit shadow-sm">
                             <span className="material-icons text-primary text-sm">verified</span>
                             <span className="text-xs font-bold uppercase tracking-wider text-cadet-gray">NABH Accredited Facility</span>
                         </div>
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-cadet-gray leading-[1.1] tracking-tight font-serif">
-                            Bangalore’s Leading <br />
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-cadet-gray leading-[1.1] tracking-tight font-serif text-balance">
+                            Bangalore’s Leading <br className="hidden sm:block" />
                             <span className="text-primary-light bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-primary">OBGYN Care</span> in Indiranagar
                         </h1>
                         <p className="text-lg text-cadet-gray/80 max-w-lg leading-relaxed font-medium">
@@ -96,7 +96,7 @@ export default function OBGYNConsults() {
                         </div>
                     </div>
                     <div className="relative lg:col-span-5 flex justify-center lg:justify-end">
-                        <div className="relative rounded-t-[10rem] rounded-b-[3rem] overflow-hidden shadow-2xl border-4 border-white h-[500px] w-full max-w-md bg-white">
+                        <div className="relative rounded-t-[10rem] rounded-b-[3rem] overflow-hidden shadow-2xl border-4 border-white h-[400px] sm:h-[500px] w-full max-w-md bg-white">
                             <img className="w-full h-full object-cover object-top" alt="Senior medical specialist" src={doctor1} />
                             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border-l-4 border-primary">
                                 <p className="text-sm font-medium text-cadet-gray italic">
@@ -153,10 +153,10 @@ export default function OBGYNConsults() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Find Care Section */}
-            <section className="py-20 bg-white/60 px-6 md:px-12 lg:px-20 relative">
+            < section className="py-12 md:py-20 bg-white/60 px-6 md:px-12 lg:px-20 relative" >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
@@ -196,10 +196,10 @@ export default function OBGYNConsults() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Comprehensive Gynaecology Section */}
-            <section className="py-20 bg-white px-6 md:px-12 lg:px-20 border-t border-b border-gray-100/50">
+            < section className="py-12 md:py-20 bg-white px-6 md:px-12 lg:px-20 border-t border-b border-gray-100/50" >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                         <div>
@@ -252,10 +252,10 @@ export default function OBGYNConsults() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Meet Our Specialists */}
-            <section className="py-24 bg-corn-silk/50 dark:bg-slate-900/50 relative overflow-hidden" id="experts">
+            < section className="py-16 md:py-24 bg-corn-silk/50 dark:bg-slate-900/50 relative overflow-hidden" id="experts" >
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
 
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
@@ -322,10 +322,10 @@ export default function OBGYNConsults() {
                         )}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Testimonials Section (Updated with specific names) */}
-            <section className="py-16 bg-corn-silk/30 border-t border-corn-silk">
+            < section className="py-16 bg-corn-silk/30 border-t border-corn-silk" >
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
                     <h3 className="text-2xl font-bold text-cadet-gray font-serif mb-8">Trusted by 10,000+ Women in Bangalore</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -342,11 +342,11 @@ export default function OBGYNConsults() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Sticky Bottom Bar */}
             {/* Sticky Bottom Bar */}
 
-        </div>
+        </div >
     );
 }

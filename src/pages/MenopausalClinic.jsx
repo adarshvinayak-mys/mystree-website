@@ -119,7 +119,7 @@ export default function MenopausalClinic() {
     ];
 
     return (
-        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary">
+        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary pb-32 lg:pb-0">
 
             {/* Hero Section */}
             <header className="relative pt-12 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-b from-[#FFF5F1] to-white">
@@ -129,8 +129,8 @@ export default function MenopausalClinic() {
                             <span className="material-icons text-sm">spa</span>
                             Menopause Wellness Clinic
                         </div>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-[1.1] font-serif">
-                            Embrace the Change with <br />
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-[1.1] font-serif text-balance">
+                            Embrace the Change with <br className="hidden sm:block" />
                             <span className="text-primary italic">Confidence & Grace.</span>
                         </h1>
                         <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
@@ -158,7 +158,7 @@ export default function MenopausalClinic() {
             </header>
 
             {/* Focus Areas */}
-            <section className="py-20 px-6 md:px-12 lg:px-20 bg-white">
+            <section className="py-12 md:py-20 px-6 md:px-12 lg:px-20 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Holistic Care</span>
@@ -179,7 +179,7 @@ export default function MenopausalClinic() {
             </section>
 
             {/* What we address */}
-            <section className="py-20 bg-[#FDF2F8]">
+            <section className="py-12 md:py-20 bg-[#FDF2F8]">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
@@ -211,7 +211,7 @@ export default function MenopausalClinic() {
             </section>
 
             {/* Doctors Section */}
-            <section className="py-24 bg-white relative">
+            <section className="py-16 md:py-24 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
                     <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
                         <div className="text-center md:text-left">
@@ -245,7 +245,7 @@ export default function MenopausalClinic() {
             </section>
 
             {/* Reviews Section */}
-            <section className="py-24 bg-[#EBF5FF]/30 relative overflow-hidden">
+            <section className="py-16 md:py-24 bg-[#EBF5FF]/30 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
@@ -283,7 +283,7 @@ export default function MenopausalClinic() {
             </section>
 
             {/* Community Section */}
-            <section className="py-16 bg-gradient-to-r from-primary/10 to-primary/5">
+            <section className="py-12 md:py-16 bg-gradient-to-r from-primary/10 to-primary/5">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-serif">Join Our Menopause Community</h2>
                     <p className="text-gray-600 mb-8 text-lg">

@@ -141,7 +141,7 @@ export default function AdolescentHealth() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-paper-texture">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-paper-texture pb-32 lg:pb-0">
             {/* 100% Confidential Badge */}
             <a className="fixed top-32 right-6 z-[60] hidden lg:flex items-center gap-2 bg-white text-cadet-gray font-bold px-4 py-3 rounded-xl shadow-sticker border-2 border-cadet-gray hover:bg-uranian-blue transition-all sticker-hover rotate-2 origin-top-right cursor-pointer">
                 <span className="material-icons text-primary text-xl">lock</span>
@@ -160,7 +160,7 @@ export default function AdolescentHealth() {
                                 ✨ No Judgement Zone
                             </span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-bold text-cadet-gray leading-[1.05] tracking-tight font-serif">
+                        <h1 className="text-5xl md:text-7xl font-bold text-cadet-gray leading-[1.05] tracking-tight font-serif text-balance">
                             Your Body,<br />
                             <span className="relative inline-block">
                                 Your Rules.
