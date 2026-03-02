@@ -78,8 +78,15 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         <img
                             src="https://my-stree.com/assets/images/mystreelogo.svg"
                             alt="MyStree Logo"
-                            className="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+                            className="h-8 md:h-10 w-auto object-contain brightness-0 invert shadow-sm"
                         />
+                    </a>
+                    <a
+                        href="/"
+                        className="pointer-events-auto group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 backdrop-blur-md"
+                    >
+                        <span className="material-icons text-[16px] text-[#8FA295] group-hover:text-[#F4F1EB] group-hover:-translate-x-1 transition-all">west</span>
+                        <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.1em] font-medium text-[#8FA295] group-hover:text-[#F4F1EB] transition-colors">Return to Clinic</span>
                     </a>
                 </div>
             </nav>
