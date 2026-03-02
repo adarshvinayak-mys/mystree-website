@@ -29,8 +29,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
-    const titleWords1 = ["Join", "the", "AI", "revolution", "in"];
-    const titleWords2 = ["redefining", "healthcare", "with", "MyStree", "Soul."];
+    const titleWords1 = ["Join", "the", "revolution", "in", "redefining"];
+    const titleWords2 = ["healthcare", "with", "MyStree", "Soul."];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -85,17 +85,17 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
             </nav>
 
             {/* WOMENS DAY SCROLLING BANNER */}
-            <div className="absolute top-[80px] md:top-[96px] left-0 w-full z-40 overflow-hidden bg-[rgba(255,90,54,0.08)] border-y border-[rgba(255,90,54,0.15)] py-2.5 sm:py-3 shadow-sm pointer-events-none backdrop-blur-sm">
+            <div className="absolute bottom-0 left-0 w-full z-40 overflow-hidden bg-[rgba(255,90,54,0.08)] border-t border-[rgba(255,131,60,0.15)] py-3 sm:py-4 shadow-sm pointer-events-none backdrop-blur-md">
                 <motion.div
                     animate={{ x: [0, "-50%"] }}
-                    transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+                    transition={{ duration: 40, ease: "linear", repeat: Infinity }}
                     className="flex whitespace-nowrap w-max"
                 >
                     {[...Array(10)].map((_, i) => (
-                        <div key={i} className="flex items-center gap-4 px-6">
-                            <span className="material-icons text-[14px] text-[#FF5A36] animate-pulse">favorite</span>
-                            <span className="font-sans text-[11px] sm:text-xs font-semibold tracking-[0.15em] text-[#FF5A36] uppercase">
-                                Hi, I am your MyStree Soul. Happy Women's Day. I can help you by remembering all your health history.
+                        <div key={i} className="flex items-center gap-6 px-6">
+                            <span className="material-icons text-[14px] sm:text-[16px] text-[#FF5A36] animate-pulse">spa</span>
+                            <span className="font-sans text-[11px] sm:text-[12px] font-medium tracking-[0.2em] text-[#F4F1EB] uppercase">
+                                Happy Women's Day <span className="opacity-50 mx-2">•</span> MyStree Soul is here to effortlessly organize and secure your health history.
                             </span>
                         </div>
                     ))}
@@ -287,8 +287,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                 </div>
                             </motion.div>
                         )}
-                        <p className="font-sans text-xs text-[#8FA295] leading-relaxed max-w-[420px] mt-6">
-                            Our March 8 launch is an invite-only closed beta. Waitlist members will receive priority onboarding, a direct feedback loop with our team, and fast access.
+                        <p className="font-sans text-[11px] sm:text-xs text-[#8FA295]/80 leading-relaxed max-w-[420px] mt-8">
+                            * Our March 8 launch is an invite-only beta. Registered members receive priority onboarding, early platform access, and a direct line to our clinical team.
                         </p>
                     </motion.div>
                 </div>
