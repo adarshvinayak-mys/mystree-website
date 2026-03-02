@@ -270,6 +270,16 @@ export default function Navbar() {
                                     <Link to="/showcase/gallery" className={`block py-2 pl-4 text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Gallery</Link>
                                 </motion.div>
                             </div>
+
+                            <Link to="/mystree-soul" className={`py-2 border-b border-gray-100 dark:border-gray-800 flex items-center gap-2 ${location.pathname === '/mystree-soul' ? 'text-[#EA580C] font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ED5B2D] via-[#EF6A40] to-[#FF833C] font-bold">
+                                    MyStree Soul
+                                </span>
+                                <span className="inline-flex items-center justify-center rounded-full h-4 px-1.5 text-[8px] leading-none text-[#FCF4D9] font-bold uppercase tracking-[0.08em] shadow-sm" style={{ background: "linear-gradient(90deg, #ED5B2D, #FF833C)" }}>
+                                    BETA
+                                </span>
+                            </Link>
+
                             <Link to="/blog" className={`py-2 border-b border-gray-100 dark:border-gray-800 ${location.pathname === '/blog' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Blog & Community</Link>
                             <Link to="/contact" className={`py-2 ${location.pathname === '/contact' ? 'text-primary font-bold' : 'hover:text-primary'}`} onClick={() => setIsOpen(false)}>Contact Us</Link>
 
