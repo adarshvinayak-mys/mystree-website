@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const event1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent1.jpeg';
 const event2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent2.jpeg';
 const event3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent3.jpeg';
-const mystreepro = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/mystreepro.jpg';
+const mystreepro = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreepro.jpg';
 const sanctuaryHero = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/sanctuary_hero_bg_v2_1771307980803.png';
 
 const UpcomingEvents = () => {
