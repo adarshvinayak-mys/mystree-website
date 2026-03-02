@@ -245,7 +245,7 @@ export default function WaitlistMorph() {
                     </div>
                     <div>
                         <h4 className="font-sans text-[11px] uppercase tracking-[0.1em] text-[#F4F1EB] font-medium mb-2">What happens after I join?</h4>
-                        <p className="font-sans text-sm text-[#8FA295] font-light max-w-[250px] mx-auto md:mx-0">You'll receive priority onboarding and fast access post-launch.</p>
+                        <p className="font-sans text-sm text-[#8FA295] font-light max-w-[250px] mx-auto md:mx-0">You'll receive priority onboarding, direct feedback loop with our team, and fast access.</p>
                     </div>
                 </div>
 

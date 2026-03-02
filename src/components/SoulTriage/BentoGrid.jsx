@@ -87,45 +87,45 @@ const cardsData = [
     {
         icon: 'fingerprint',
         title: 'The Unique Fingerprint',
-        subtitle: 'A unified, scannable access point for your complete health profile.',
+        subtitle: 'One barcode access or scanner access to all your medical history and tests.',
         hoverGradient: 'bg-gradient-to-br from-[#FF5A36]/30 via-[#FF5A36]/5 to-transparent',
         bullets: [
-            'Single-scan access to all medical records',
-            'Seamless continuity of care',
-            'Clinical clarity across all touchpoints'
+            'One barcode access to all medical history and tests',
+            'Continuity of your history',
+            'Clinical clarity and escalation support'
         ]
     },
     {
         icon: 'psychology_alt',
-        title: 'Precision Triage',
-        subtitle: 'Advanced analysis to decode complex health patterns.',
+        title: 'AI Accuracy',
+        subtitle: 'Advanced triage to understand complex patterns.',
         hoverGradient: 'bg-gradient-to-br from-[#06B6D4]/30 via-[#06B6D4]/5 to-transparent',
         bullets: [
-            'Clinical-grade triage accuracy',
-            'Smart symptom mapping',
-            'Evidence-based health insights'
+            'Unmatched AI accuracy in triage',
+            'Intelligent symptom clustering',
+            'Evidence-based signal detection'
         ]
     },
     {
         icon: 'bolt',
-        title: 'Rapid & Reliable Care',
-        subtitle: 'Fast, expert-led escalation when you need it most.',
+        title: 'Time-Driven Care',
+        subtitle: 'Fast, reliable escalation directed by clinical expertise.',
         hoverGradient: 'bg-gradient-to-br from-[#8B5CF6]/30 via-[#8B5CF6]/5 to-transparent',
         bullets: [
-            '6-hour guaranteed clinical triage',
-            'Immediate escalation protocols',
-            'Real-time Partner Alert (SOS) network'
+            '6-hour TAT (Turnaround Time) for triage',
+            'Clinical expertise',
+            'Real-time Partner Alert (SOS) ecosystem'
         ]
     },
     {
         icon: 'spa',
-        title: 'Lifelong Wellness',
-        subtitle: 'Proactive healthcare designed for your journey forward.',
+        title: 'Longevity & Wellness',
+        subtitle: 'Healthcare designed for your entire journey forward.',
         hoverGradient: 'bg-gradient-to-br from-[#10B981]/30 via-[#10B981]/5 to-transparent',
         bullets: [
-            'Personalized longevity planning',
-            'Preventative clinical pathways',
-            'Bank-grade encrypted health storage'
+            'Personalized long-term wellness and longevity',
+            'Preventative care pathways',
+            'Secure, encrypted health storage'
         ]
     }
 ];

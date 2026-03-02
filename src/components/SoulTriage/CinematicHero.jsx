@@ -29,8 +29,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
-    const titleWords1 = ["Join", "the", "revolution", "in", "redefining"];
-    const titleWords2 = ["healthcare", "with", "MyStree", "Soul."];
+    const titleWords1 = ["Join", "the", "AI", "revolution"];
+    const titleWords2 = ["with", "MyStree", "Soul."];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -102,7 +102,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         <div key={i} className="flex items-center gap-6 px-6">
                             <span className="material-icons text-[14px] sm:text-[16px] text-[#FF5A36] animate-pulse">spa</span>
                             <span className="font-sans text-[11px] sm:text-[12px] font-medium tracking-[0.2em] text-[#F4F1EB] uppercase">
-                                Happy Women's Day <span className="opacity-50 mx-2">•</span> MyStree Soul is here to effortlessly organize and secure your health history.
+                                Hi, I am your MyStree Soul and I can help you by remembering all your health history.
                             </span>
                         </div>
                     ))}
@@ -295,7 +295,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                             </motion.div>
                         )}
                         <p className="font-sans text-[11px] sm:text-xs text-[#8FA295]/80 leading-relaxed max-w-[420px] mt-8">
-                            * Our March 8 launch is an invite-only beta. Registered members receive priority onboarding, early platform access, and a direct line to our clinical team.
+                            * Our March 8 launch is an invite-only closed beta. Waitlist members will receive priority onboarding, direct feedback loop with our team, and fast access.
                         </p>
                     </motion.div>
                 </div>
