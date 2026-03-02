@@ -97,7 +97,7 @@ export default function PrenatalClinic() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary pb-32 lg:pb-0">
+        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary ">
             <style>{`
                 .font-serif-display {
                     font-family: 'Playfair Display', 'Cormorant Garamond', serif;

@@ -71,7 +71,7 @@ export default function OBGYNConsults() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative pb-32 lg:pb-0">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative ">
             {/* Immediate Booking Button (Fixed) */}
 
 

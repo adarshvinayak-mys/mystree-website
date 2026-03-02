@@ -15,7 +15,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen overflow-x-hidden selection:bg-primary selection:text-white pb-32 lg:pb-0">
+        <div className="font-display text-slate-800 bg-background-light dark:bg-background-dark min-h-screen overflow-x-hidden selection:bg-primary selection:text-white ">
             <style>
                 {`
                 .glass-panel {

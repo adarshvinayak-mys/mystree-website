@@ -109,7 +109,7 @@ export default function FertilityClinic() {
     );
 
     return (
-        <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up pb-32 lg:pb-0">
+        <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up ">
 
             {/* Cinematic Hero Section */}
             <header className="relative w-full min-h-[90vh] overflow-hidden flex items-center">

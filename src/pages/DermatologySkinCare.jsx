@@ -67,7 +67,7 @@ export default function DermatologySkinCare() {
     };
 
     return (
-        <div className="font-display text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-corn-silk min-h-screen pb-32 lg:pb-0">
+        <div className="font-display text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-corn-silk min-h-screen ">
             <style>{`
                 .bg-gradient-flame {
                     background: linear-gradient(90deg, #ed592c 0%, #FF833C 100%);

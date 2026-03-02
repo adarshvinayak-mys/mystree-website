@@ -13,7 +13,7 @@ export default function OurTeam() {
     }, []);
 
     return (
-        <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-300 pb-32 lg:pb-0">
+        <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-300 ">
 
             {/* Hero Section */}
             <section className="relative pt-12 pb-20 overflow-hidden bg-primary/5 dark:bg-gray-900">

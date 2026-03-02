@@ -119,7 +119,7 @@ export default function MenopausalClinic() {
     ];
 
     return (
-        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary pb-32 lg:pb-0">
+        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary ">
 
             {/* Hero Section */}
             <header className="relative pt-12 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-b from-[#FFF5F1] to-white">

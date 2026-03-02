@@ -8,7 +8,7 @@ const bgImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/publ
 
 export default function AboutUs() {
     return (
-        <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white pb-32 lg:pb-0">
+        <div className="bg-white dark:bg-gray-900 text-slate-800 dark:text-white font-body selection:bg-primary selection:text-white ">
 
             {/* 1. Redefining Women’s Healthcare (Hero Section) */}
             <section

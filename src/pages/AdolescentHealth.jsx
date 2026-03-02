@@ -141,7 +141,7 @@ export default function AdolescentHealth() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-paper-texture pb-32 lg:pb-0">
+        <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-paper-texture ">
             {/* 100% Confidential Badge */}
             <a className="fixed top-32 right-6 z-[60] hidden lg:flex items-center gap-2 bg-white text-cadet-gray font-bold px-4 py-3 rounded-xl shadow-sticker border-2 border-cadet-gray hover:bg-uranian-blue transition-all sticker-hover rotate-2 origin-top-right cursor-pointer">
                 <span className="material-icons text-primary text-xl">lock</span>
@@ -271,13 +271,13 @@ export default function AdolescentHealth() {
                     onClick={() => setActiveTopic(null)}
                 >
                     <div
-                        className={`w-full max-w-3xl rounded-3xl border-2 ${activeTopicData.border} bg-white shadow-[10px_10px_0px_rgba(58,80,107,0.2)] overflow-hidden`}
+                        className={`w-full max-w-3xl rounded-3xl border-2 ${activeTopicData.border} bg-white shadow-[10px_10px_0px_rgba(58,80,107,0.2)] overflow-hidden flex flex-col max-h-[90vh]`}
                         onClick={(e) => e.stopPropagation()}
                         role="dialog"
                         aria-modal="true"
                         aria-label={`${activeTopicData.title} details`}
                     >
-                        <div className={`p-6 md:p-8 ${activeTopicData.bg} border-b border-cadet-gray/10`}>
+                        <div className={`p-6 md:p-8 ${activeTopicData.bg} border-b border-cadet-gray/10 shrink-0`}>
                             <div className="flex items-start justify-between gap-4">
                                 <div className="flex items-start gap-4">
                                     <span className={`material-icons text-3xl ${activeTopicData.accent}`}>{activeTopicData.icon}</span>
@@ -297,7 +297,7 @@ export default function AdolescentHealth() {
                             </div>
                         </div>
 
-                        <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-y-auto">
                             <div>
                                 <h4 className="text-sm uppercase tracking-wider font-bold text-cadet-gray/60 mb-3">Common concerns</h4>
                                 <ul className="space-y-2 text-cadet-gray/85">
@@ -321,7 +321,7 @@ export default function AdolescentHealth() {
                             </div>
                         </div>
 
-                        <div className="px-6 md:px-8 pb-7 flex flex-col sm:flex-row gap-3 justify-end">
+                        <div className="px-6 md:px-8 pb-7 pt-4 border-t border-cadet-gray/10 flex flex-col sm:flex-row gap-3 justify-end shrink-0 bg-white">
                             <button
                                 className="px-5 py-3 rounded-xl border-2 border-cadet-gray text-cadet-gray font-bold hover:bg-gray-50 transition-colors"
                                 onClick={() => setActiveTopic(null)}

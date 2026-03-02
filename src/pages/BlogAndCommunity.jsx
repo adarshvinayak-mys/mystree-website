@@ -208,7 +208,7 @@ export default function BlogAndCommunity() {
     });
 
     return (
-        <div className="bg-ivory text-text-main font-body antialiased pb-32 lg:pb-0">
+        <div className="bg-ivory text-text-main font-body antialiased ">
             {/* Massive Hero Section for Featured Editorial */}
             <section className="relative w-full min-h-[85vh] flex flex-col justify-center bg-[#0a0a0a] group cursor-pointer overflow-hidden pt-36 pb-24 lg:py-32" onClick={() => { setIsModalOpen(true); setCurrentSlide(0); }}>
                 {/* Background Decorative */}
