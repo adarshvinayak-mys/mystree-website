@@ -227,7 +227,7 @@ export default function WaitlistMorph() {
                             </motion.div>
                             <div>
                                 <h3 className="font-sans text-base font-medium text-[#F4F1EB] tracking-wide">Invitation Secured</h3>
-                                <p className="font-sans text-[11px] text-[#8FA295] tracking-[0.05em] uppercase mt-1">Founding member spot confirmed, {name.split(' ')[0]}.</p>
+                                <p className="font-sans text-[11px] text-[#8FA295] tracking-[0.05em] uppercase mt-1">Priority access spot confirmed, {name.split(' ')[0]}.</p>
                             </div>
                         </motion.div>
                     )}
@@ -245,7 +245,7 @@ export default function WaitlistMorph() {
                     </div>
                     <div>
                         <h4 className="font-sans text-[11px] uppercase tracking-[0.1em] text-[#F4F1EB] font-medium mb-2">What happens after I join?</h4>
-                        <p className="font-sans text-sm text-[#8FA295] font-light max-w-[250px] mx-auto md:mx-0">You'll receive a secure invitation email post-launch if selected.</p>
+                        <p className="font-sans text-sm text-[#8FA295] font-light max-w-[250px] mx-auto md:mx-0">You'll receive priority onboarding and fast access post-launch.</p>
                     </div>
                 </div>
 

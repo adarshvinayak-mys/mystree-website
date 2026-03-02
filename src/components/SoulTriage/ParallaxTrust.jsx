@@ -67,7 +67,7 @@ export default function ParallaxTrust({ trustImageUrl }) {
                         variants={itemVariants}
                         className="text-[#110F0E]/70 font-sans text-base lg:text-lg font-light leading-relaxed max-w-[500px]"
                     >
-                        MyStree Soul is your first step to feeling better, but it never replaces human expertise. Every health summary and priority alert is sent directly to our clinical team.
+                        MyStree Soul is your first step to feeling better, but it never replaces human expertise. There is always a consultant human in the loop, ensuring a gynec in the loop to review every AI triage and health summary.
                     </motion.p>
 
                     <div className="pl-6 border-l-2 border-[#110F0E]/10 max-w-[500px] flex flex-col gap-4 relative py-2">

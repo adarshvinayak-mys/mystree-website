@@ -29,8 +29,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
-    const titleWords1 = ["This", "International", "Women's", "Day,"];
-    const titleWords2 = ["healthcare", "finally", "listens."];
+    const titleWords1 = ["Join", "the", "AI", "revolution", "in"];
+    const titleWords2 = ["redefining", "healthcare", "with", "MyStree", "Soul."];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -83,6 +83,24 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                     </a>
                 </div>
             </nav>
+
+            {/* WOMENS DAY SCROLLING BANNER */}
+            <div className="absolute top-[80px] md:top-[96px] left-0 w-full z-40 overflow-hidden bg-[rgba(255,90,54,0.08)] border-y border-[rgba(255,90,54,0.15)] py-2.5 sm:py-3 shadow-sm pointer-events-none backdrop-blur-sm">
+                <motion.div
+                    animate={{ x: [0, "-50%"] }}
+                    transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+                    className="flex whitespace-nowrap w-max"
+                >
+                    {[...Array(10)].map((_, i) => (
+                        <div key={i} className="flex items-center gap-4 px-6">
+                            <span className="material-icons text-[14px] text-[#FF5A36] animate-pulse">favorite</span>
+                            <span className="font-sans text-[11px] sm:text-xs font-semibold tracking-[0.15em] text-[#FF5A36] uppercase">
+                                Hi, I am your MyStree Soul. Happy Women's Day. I can help you by remembering all your health history.
+                            </span>
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
 
             <motion.div
                 animate={shouldReduceMotion ? { scale: 1 } : { scale: [1.05, 1] }}
@@ -142,7 +160,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                 <motion.span
                                     key={i}
                                     variants={wordVariants}
-                                    className={i >= 1 ? "text-[#FF5A36] italic font-medium" : ""}
+                                    className={i >= 3 ? "text-[#FF5A36] italic font-medium" : ""}
                                 >
                                     {word}
                                 </motion.span>
@@ -270,7 +288,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                             </motion.div>
                         )}
                         <p className="font-sans text-xs text-[#8FA295] leading-relaxed max-w-[420px] mt-6">
-                            Our March 8 launch is an invite-only closed beta. Selected members will receive early access after launch.
+                            Our March 8 launch is an invite-only closed beta. Waitlist members will receive priority onboarding, a direct feedback loop with our team, and fast access.
                         </p>
                     </motion.div>
                 </div>

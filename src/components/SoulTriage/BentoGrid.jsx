@@ -85,47 +85,47 @@ const GlassCard = ({ icon, title, subtitle, bullets, hoverGradient }) => {
 
 const cardsData = [
     {
-        icon: 'history_edu',
-        title: 'Timeline Intelligence',
-        subtitle: 'Healthcare that understands your journey forward.',
+        icon: 'fingerprint',
+        title: 'The Unique Fingerprint',
+        subtitle: 'One seamless scanner access to your entire medical history.',
         hoverGradient: 'bg-gradient-to-br from-[#FF5A36]/30 via-[#FF5A36]/5 to-transparent',
         bullets: [
-            'Structured cycle history',
-            'Symptom clustering patterns',
-            'Secure clinical-grade storage'
+            'One barcode access to all medical history and tests',
+            'Continuity of your history',
+            'Clinical clarity across all touchpoints'
         ]
     },
     {
-        icon: 'bubble_chart',
-        title: 'Integrated Signal Analysis',
-        subtitle: 'Understanding hormonal, metabolic, and emotional patterns.',
+        icon: 'psychology_alt',
+        title: 'AI Accuracy & Precision',
+        subtitle: 'Advanced triage to understand complex metabolic patterns.',
         hoverGradient: 'bg-gradient-to-br from-[#06B6D4]/30 via-[#06B6D4]/5 to-transparent',
         bullets: [
-            'Hormonal cycle mapping',
-            'Metabolic pattern tracking',
-            'Emotional health overlay'
+            'Unmatched AI accuracy in triage',
+            'Intelligent symptom clustering',
+            'Evidence-based signal detection'
         ]
     },
     {
         icon: 'bolt',
-        title: 'Unified Care Pathways',
-        subtitle: 'Instant access to coordinated medical specialists.',
+        title: 'Time-Driven Care',
+        subtitle: 'Fast, reliable escalation directed by clinical expertise.',
         hoverGradient: 'bg-gradient-to-br from-[#8B5CF6]/30 via-[#8B5CF6]/5 to-transparent',
         bullets: [
-            'Fertility specialists',
-            'Hormonal endocrinology',
-            'Mental wellness advisors'
+            '6-hour TAT (Turnaround Time) for triage',
+            'Instant escalation support when needed',
+            'Real-time Partner Alert (SOS) ecosystem'
         ]
     },
     {
         icon: 'spa',
-        title: 'Safe Space Intelligence',
-        subtitle: 'Clinical care that listens to your natural voice.',
+        title: 'Longevity & Wellness',
+        subtitle: 'Healthcare designed for your entire journey forward.',
         hoverGradient: 'bg-gradient-to-br from-[#10B981]/30 via-[#10B981]/5 to-transparent',
         bullets: [
-            'Natural language symptom logs',
-            'Context-aware responses',
-            'Encrypted private storage'
+            'Personalized long-term wellness and longevity',
+            'Preventative care pathways',
+            'Secure, encrypted health storage'
         ]
     }
 ];
