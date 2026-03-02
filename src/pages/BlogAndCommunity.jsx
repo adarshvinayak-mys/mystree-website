@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import doctor1 from '../assets/doctor1.jpg'; // Dr. Surbhi
-import doctor2 from '../assets/doctor2.jpg'; // Dr. Smitha
-import doctor3 from '../assets/doctor3.jpg'; // Priyanka
-import doctorChaitra from '../assets/DrChaitraNayak.jpg';
-import eggFreezing1 from '../assets/blog/egg_freezing_1.png';
-import eggFreezing2 from '../assets/blog/egg_freezing_2.png';
-import eggFreezing3 from '../assets/blog/egg_freezing_3.png';
-import blog1 from '../assets/blog/blog1.jpg';
-import blog2 from '../assets/blog/blog2.jpg';
-import blog3 from '../assets/blog/blog3.jpg';
-import blog4 from '../assets/blog/blog4.jpg';
-import blog5 from '../assets/blog/blog5.jpg';
-import blog6 from '../assets/blog/blog6.jpg';
-import blog7 from '../assets/blog/blog7.jpg';
-import blog8 from '../assets/blog/blog8.jpg';
-import blog9 from '../assets/blog/blog9.jpg';
-import blog10 from '../assets/blog/blog10.jpg';
-import mystreee1 from '../assets/blog/mystreee1.jpg';
-import doctorPri from '../assets/drpriya.jpeg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg'; // Dr. Surbhi
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg'; // Dr. Smitha
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg'; // Priyanka
+const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
+const eggFreezing1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/egg_freezing_1.png';
+const eggFreezing2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/egg_freezing_2.png';
+const eggFreezing3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/egg_freezing_3.png';
+const blog1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog1.jpg';
+const blog2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog2.jpg';
+const blog3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog3.jpg';
+const blog4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog4.jpg';
+const blog5 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog5.jpg';
+const blog6 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog6.jpg';
+const blog7 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog7.jpg';
+const blog8 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog8.jpg';
+const blog9 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog9.jpg';
+const blog10 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/blog10.jpg';
+const mystreee1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/mystreee1.jpg';
+const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
 // Reuse imported doctorChaitra for the first new blog
 const doctorJasmineUrl = "https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png";
 

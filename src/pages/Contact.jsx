@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import contactHeroBg from '../assets/contactus.jpg';
+const contactHeroBg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/contactus.jpg';
 
 
 const Contact = () => {

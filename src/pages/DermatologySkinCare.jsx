@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import doctor1 from '../assets/doctor1.jpg';
-import doctor3 from '../assets/doctor3.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
 import DoctorCard from '../components/DoctorCard';
 
 

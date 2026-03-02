@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import doctor2 from '../assets/doctor2.jpg';
-import doctor3 from '../assets/doctor3.jpg';
-import doctor1 from '../assets/doctor1.jpg';
-import doctorNiv from '../assets/nivetha-vishnuvardhan-mbbs-md.jpg';
-import doctorPri from '../assets/drpriya.jpeg';
-import doctorChaitra from '../assets/DrChaitraNayak.jpg';
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
+const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
+const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
 
 export default function OurTeam() {
     useEffect(() => {

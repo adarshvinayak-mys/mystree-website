@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
-import doctor1 from '../assets/doctor1.jpg';
-import doctor2 from '../assets/doctor2.jpg';
-import doctorNiv from '../assets/nivetha-vishnuvardhan-mbbs-md.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
+const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
 
 const doctors = [
     {

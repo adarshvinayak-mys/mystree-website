@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import doctor3 from '../assets/doctor3.jpg';
-import nutritionHero from '../assets/nutritionpage.png';
-import nutritionPsychology from '../assets/nutritionpage2.png';
-import wm1 from '../assets/weightmanagement1.png';
-import wm2 from '../assets/weightmanagement2.png';
-import wm3 from '../assets/weightmanagement3.png';
-import wm4 from '../assets/weightmanagement4.png';
-import nutrition1 from '../assets/nutrition1.jpg';
-import nutrition2 from '../assets/nutrition2.jpg';
-import nutrition3 from '../assets/nutrition3.jpg';
-import nutrition4 from '../assets/nutrition4.jpg';
-import weight12 from '../assets/weight12.png';
-import pcosMain from '../assets/pcos_hormonal_balance.png';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
+const nutritionHero = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutritionpage.png';
+const nutritionPsychology = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutritionpage2.png';
+const wm1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement1.png';
+const wm2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement2.png';
+const wm3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement3.png';
+const wm4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement4.png';
+const nutrition1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition1.jpg';
+const nutrition2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition2.jpg';
+const nutrition3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition3.jpg';
+const nutrition4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition4.jpg';
+const weight12 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weight12.png';
+const pcosMain = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pcos_hormonal_balance.png';
 
 const focusAreas = [
     {

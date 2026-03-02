@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import doctor1 from '../assets/doctor1.jpg';
-import doctor2 from '../assets/doctor2.jpg';
-import doctor3 from '../assets/doctor3.jpg';
-import adarsh from '../assets/adarsh.jpg';
-import bgImage from '../assets/background.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
+const adarsh = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/adarsh.jpg';
+const bgImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/background.jpg';
 
 export default function AboutUs() {
     return (

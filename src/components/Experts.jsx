@@ -1,11 +1,11 @@
 import React from 'react';
 import DoctorCard from './DoctorCard';
-import doctor1 from '../assets/doctor1.jpg';
-import doctor2 from '../assets/doctor2.jpg';
-import doctor3 from '../assets/doctor3.jpg';
-import doctorNiv from '../assets/nivetha-vishnuvardhan-mbbs-md.jpg';
-import doctorPri from '../assets/drpriya.jpeg';
-import doctorChaitra from '../assets/DrChaitraNayak.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
+const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
+const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
+const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
 
 const experts = [
     {

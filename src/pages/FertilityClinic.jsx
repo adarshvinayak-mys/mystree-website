@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 
-import doctor1 from '../assets/doctor1.jpg';
-import doctor2 from '../assets/doctor2.jpg';
-import doctor3 from '../assets/doctor3.jpg'; // Priyanka
-import doctorChaitra from '../assets/DrChaitraNayak.jpg';
-import fert1 from '../assets/fert1.jpg';
-import fert3 from '../assets/fert3.jpg';
-import fert4 from '../assets/fert4.jpg';
+const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
+const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
+const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg'; // Priyanka
+const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
+const fert1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert1.jpg';
+const fert3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert3.jpg';
+const fert4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert4.jpg';
 
 // Reviews from verified patients (Dr. Chaitra Nayak)
 const reviews = [

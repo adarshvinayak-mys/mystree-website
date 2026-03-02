@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import obgynImage from '../assets/sexual_wellness.png';
-import fertilityImage from '../assets/pcos_hormonal_balance.png';
-import prenatalImage from '../assets/pregnancy_care.png';
-import nutritionImage from '../assets/adolescent_health.png';
+const obgynImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/sexual_wellness.png';
+const fertilityImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pcos_hormonal_balance.png';
+const prenatalImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pregnancy_care.png';
+const nutritionImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/adolescent_health.png';
 
 const services = [
     {

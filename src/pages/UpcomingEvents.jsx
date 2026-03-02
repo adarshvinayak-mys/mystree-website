@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import event1 from '../assets/mystreeevent1.jpeg';
-import event2 from '../assets/mystreeevent2.jpeg';
-import event3 from '../assets/mystreeevent3.jpeg';
-import mystreepro from '../assets/blog/mystreepro.jpg';
-import sanctuaryHero from '../assets/sanctuary_hero_bg_v2_1771307980803.png';
+const event1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent1.jpeg';
+const event2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent2.jpeg';
+const event3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreeevent3.jpeg';
+const mystreepro = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog/mystreepro.jpg';
+const sanctuaryHero = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/sanctuary_hero_bg_v2_1771307980803.png';
 
 const UpcomingEvents = () => {
     const [isInitialModalOpen, setIsInitialModalOpen] = useState(false);
