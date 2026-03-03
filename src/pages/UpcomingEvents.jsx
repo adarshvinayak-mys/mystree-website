@@ -211,7 +211,7 @@ const UpcomingEvents = () => {
                                                 <a
                                                     href={selectedEvent.registerUrl}
                                                     target="_blank"
-                                                    rel="noreferrer"
+                                                    rel="noopener noreferrer"
                                                     className="block w-full text-center bg-gradient-flame text-white py-3 rounded font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                                                 >
                                                     Register
@@ -320,7 +320,7 @@ const UpcomingEvents = () => {
                                         <a
                                             href={event.registerUrl}
                                             target="_blank"
-                                            rel="noreferrer"
+                                            rel="noopener noreferrer"
                                             onClick={(e) => e.stopPropagation()}
                                             className="text-[#1b110e] font-bold border-b-2 border-[#ED5B2D] hover:text-[#ED5B2D] transition-colors pb-0.5 text-sm uppercase tracking-wide font-sans"
                                         >
