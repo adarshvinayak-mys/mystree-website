@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-const heroImage = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/hero-image.png';
+import heroImage from '../assets/hero-image.png';
 
 export default function Hero() {
     const [searchQuery, setSearchQuery] = useState('');

@@ -8,9 +8,9 @@ import WaitlistMorph from '../components/SoulTriage/WaitlistMorph';
 import FloatingWaitlist from '../components/SoulTriage/FloatingWaitlist';
 
 // Import local assets
-const heroImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/traiage123.jpg';
-const empathyImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/traige12.jpg';
-const doctorImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/traige56.jpg';
+import heroImg from '../assets/triage/traiage123.jpg';
+import empathyImg from '../assets/triage/traige12.jpg';
+import doctorImg from '../assets/triage/traige56.jpg';
 
 export default function SoulTriage() {
     const nextSectionRef = useRef(null);
