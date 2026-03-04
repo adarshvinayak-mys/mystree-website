@@ -129,13 +129,10 @@ export default function DoctorCard({
 
                     <button
                         onClick={() => window.location.href = 'https://my-stree.com/booking'}
-                        className="group relative w-full bg-primary hover:bg-orange-600 text-white py-3 rounded-xl font-bold text-base shadow-md shadow-primary/20 transition-all active:scale-[0.98] overflow-hidden"
+                        className="w-full px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group"
                     >
-                        <span className="relative z-10 flex items-center justify-center gap-2">
-                            Book Appointment
-                            <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                        </span>
-                        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        Book Appointment
+                        <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
                     </button>
 
                     <p className="text-center text-[10px] text-slate-400 dark:text-slate-500 flex items-center justify-center gap-1">

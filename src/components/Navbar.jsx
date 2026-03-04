@@ -179,7 +179,7 @@ export default function Navbar() {
 
 
 
-                <a className="hidden md:flex book-btn text-white px-8 py-3.5 rounded-full font-bold shadow-xl items-center gap-2.5 text-base" href="https://my-stree.com/booking">
+                <a className="hidden md:inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 text-base" href="https://my-stree.com/booking">
                     <span className="material-icons text-lg">calendar_month</span>
                     Book Appointment
                 </a>

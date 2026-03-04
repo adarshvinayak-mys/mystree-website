@@ -102,13 +102,13 @@ export default function NutritionCounselling() {
                             Eat Better. Live Better. Personalised Nutrition for Your Health & Well-Being. No starving, just eating right.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button
-                                onClick={() => window.location.href = 'https://my-stree.com/booking'}
-                                className="bg-gradient-to-r from-[#FF833C] to-[#ed592c] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group"
+                            <a
+                                href="https://my-stree.com/booking"
+                                className="inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 group"
                             >
                                 <span>Book Appointment</span>
-                                <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </button>
+                                <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
+                            </a>
                             <button
                                 onClick={() => window.location.href = 'https://my-stree.com/booking'}
                                 className="bg-white text-cadet-gray border-2 border-primary/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/5 transition-all"
@@ -394,10 +394,10 @@ export default function NutritionCounselling() {
                                     </div>
                                 </div>
                                 <div className="flex flex-wrap gap-4 pt-4">
-                                    <button className="bg-cadet-gray text-white px-8 py-4 rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-lg flex items-center gap-2">
+                                    <a href="https://my-stree.com/booking" className="inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 group">
                                         Book Appointment
-                                        <span className="material-icons">calendar_today</span>
-                                    </button>
+                                        <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

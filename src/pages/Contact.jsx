@@ -147,7 +147,7 @@ const Contact = () => {
 
                             <a
                                 href={tile.type}
-                                className={`mt-4 w-full py-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 ${tile.primary ? 'bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary-light' : 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white border border-slate-100 dark:border-slate-600 hover:bg-slate-50'}`}
+                                className={`mt-4 w-full inline-flex px-8 py-3.5 rounded-full font-bold text-sm transition-all duration-300 items-center justify-center gap-2 ${tile.primary ? 'bg-primary text-white shadow-lg hover:bg-[#d0461f] hover:scale-105' : 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white border border-slate-100 dark:border-slate-600 hover:bg-slate-50 hover:scale-[1.02]'}`}
                             >
                                 {tile.btn} <span className="material-symbols-outlined !text-sm">arrow_forward</span>
                             </a>

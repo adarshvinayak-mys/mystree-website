@@ -12,8 +12,8 @@ export default function StickyBookingBar({
                     <p className="text-cadet-gray/70 text-sm">{subtitle}</p>
                 </div>
                 <div className="w-full md:w-auto flex justify-center md:justify-end">
-                    <button className="bg-gradient-to-r from-primary to-primary-light text-white w-full md:w-auto px-8 py-3 rounded-full font-bold text-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                        <span className="material-icons">calendar_today</span>
+                    <button className="w-full md:w-fit px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 text-lg">
+                        <span className="material-icons text-base">calendar_month</span>
                         <span>Book Appointment</span>
                     </button>
                 </div>

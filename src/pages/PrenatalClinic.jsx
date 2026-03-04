@@ -981,11 +981,9 @@ export default function PrenatalClinic() {
 
             {/* Floating CTA */}
             <div className="hidden md:block fixed bottom-24 right-6 z-50">
-                <a href="#book" className="flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white pl-6 pr-8 py-4 rounded-full font-bold shadow-2xl hover:shadow-orange-200 transition-all hover:scale-105 hover:-translate-y-1 group">
-                    <div className="bg-white/20 p-2 rounded-full">
-                        <span className="material-icons-round group-hover:animate-bounce">calendar_today</span>
-                    </div>
+                <a href="https://my-stree.com/booking" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 group">
                     Book Appointment
+                    <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
                 </a>
             </div>
 

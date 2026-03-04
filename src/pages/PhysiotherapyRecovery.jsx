@@ -62,10 +62,10 @@ export default function PhysiotherapyRecovery() {
                             Restore Movement. Reduce Pain. Regain Strength. Expert physiotherapy tailored for women.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button className="bg-gradient-to-r from-[#ed592c] to-[#FF833C] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group">
+                            <a href="https://my-stree.com/booking" className="inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 group">
                                 <span>Book Appointment</span>
-                                <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                            </button>
+                                <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
+                            </a>
                         </div>
                         <div className="flex items-center gap-6 pt-4">
                             <div className="flex -space-x-3">
@@ -287,10 +287,10 @@ export default function PhysiotherapyRecovery() {
                                     </div>
                                 </div>
                                 <div className="flex flex-wrap gap-4 pt-4">
-                                    <button className="bg-cadet-gray text-white px-8 py-4 rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-lg flex items-center gap-2">
+                                    <a href="https://my-stree.com/booking" className="inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 group">
                                         Book Appointment
-                                        <span className="material-icons">calendar_today</span>
-                                    </button>
+                                        <span className="material-icons text-base group-hover:rotate-12 transition-transform">calendar_month</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
