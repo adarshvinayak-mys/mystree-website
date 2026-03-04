@@ -93,7 +93,7 @@ const Gallery = () => {
                                     onClick={() => setSelectedImage(item)}
                                     className="relative group overflow-hidden rounded-[2.5rem] cursor-pointer break-inside-avoid shadow-sm"
                                 >
-                                    <img src={item.image} alt={item.title} className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" />
+                                    <img src={item.image} alt={item.title} className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                                     <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-8 backdrop-blur-sm">
                                         <span className="material-symbols-outlined text-white text-5xl mb-4">zoom_in</span>
                                         <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
@@ -137,6 +137,8 @@ const Gallery = () => {
                                 src={selectedImage.image}
                                 alt={selectedImage.title}
                                 className="w-full h-full object-contain rounded-2xl shadow-2xl"
+                                loading="eager"
+                                decoding="async"
                             />
                             <div className="mt-6 text-center">
                                 <h3 className="text-2xl font-bold text-white mb-1 font-serif">{selectedImage.title}</h3>
@@ -163,7 +165,7 @@ const Gallery = () => {
                             ].map((p, i) => (
                                 <motion.div key={i} whileHover={{ x: 10 }} className="flex gap-8 group cursor-pointer">
                                     <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-md">
-                                        <img src={p.image} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                        <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform group-hover:scale-110" loading="lazy" decoding="async" />
                                     </div>
                                     <div className="flex flex-col justify-center">
                                         <span className="text-slate-400 text-xs font-bold mb-2 uppercase">{p.date} • Featured Post</span>

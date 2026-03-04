@@ -37,6 +37,8 @@ export default function DoctorCard({
                                 alt={name}
                                 className="w-full h-full object-cover"
                                 src={image}
+                                loading="lazy"
+                                decoding="async"
                             />
                         </ProfileLinkWrapper>
                     </div>

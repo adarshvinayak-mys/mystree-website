@@ -265,6 +265,7 @@ export default function BlogAndCommunity() {
                                     className="w-full h-full object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
                                     fetchPriority="high"
                                     decoding="sync"
+                                    loading="eager"
                                 />
                             </div>
                         </div>

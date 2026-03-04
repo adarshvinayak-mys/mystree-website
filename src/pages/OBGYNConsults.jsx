@@ -97,7 +97,7 @@ export default function OBGYNConsults() {
                     </div>
                     <div className="relative lg:col-span-5 flex justify-center lg:justify-end">
                         <div className="relative rounded-t-[10rem] rounded-b-[3rem] overflow-hidden shadow-2xl border-4 border-white h-[400px] sm:h-[500px] w-full max-w-md bg-white">
-                            <img className="w-full h-full object-cover object-top" alt="Senior medical specialist" src={doctor1} />
+                            <img className="w-full h-full object-cover object-top" alt="Senior medical specialist" src={doctor1} loading="eager" decoding="async" fetchPriority="high" />
                             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border-l-4 border-primary">
                                 <p className="text-sm font-medium text-cadet-gray italic">
                                     "Empowering women through every stage of life, with care and compassion."
@@ -143,8 +143,8 @@ export default function OBGYNConsults() {
                     <div className="hidden md:block w-px h-10 bg-white/20"></div>
                     <div className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity">
                         <div className="flex -space-x-2">
-                            <img className="w-8 h-8 rounded-full border border-cadet-gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlvCb3FcN7H2hlAbGv4gTvziBYIKrKmqJWDW0Bgn7DfkVeh2MAuvPpdzk4ymfH6lHx1WPI6glZvAvoEyaRka6u0H_dsfhx21eWBGcH5ximK0JHEHgrkx4fK2LaYZYE08NoyASF9PbDydKTPC2iLlYIZ9nNpQvg-gtxKNhZuPeKQ9uaH-0JYF1wEwmDScXg5cxX14XomTA4B-HYmlQQvyZJenOEYkpCvxQBP_wKR541m7u9wJCDlA9xmnk2IluULNdWKkEkWfVpnAo" alt="Patient" />
-                            <img className="w-8 h-8 rounded-full border border-cadet-gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctlKe56NfafxJlTMh6lXhW8W1ozyc3X0I3-j0x4zuDw1KJEAV0d8ao0ffQfhLmavlWUihtf0ARowZG575RrKC07vszcmoNntVecPDY4OU8sMlvugRAf6bf92btBJ0rFjxBugh6iZIDb89ZIdA-k74M8gjbb1mo1YJBPsO7XgR109q7lmhGj_XIlv1DpkFOmsvR8Drmwuw_TPPv7VZGHyKTSiW9KKlZIMKwD56TRoq5uQPNtOufJsdIr46rK7r-4aC9SV6tIKYZ_Lc" alt="Patient" />
+                            <img className="w-8 h-8 rounded-full border border-cadet-gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnlvCb3FcN7H2hlAbGv4gTvziBYIKrKmqJWDW0Bgn7DfkVeh2MAuvPpdzk4ymfH6lHx1WPI6glZvAvoEyaRka6u0H_dsfhx21eWBGcH5ximK0JHEHgrkx4fK2LaYZYE08NoyASF9PbDydKTPC2iLlYIZ9nNpQvg-gtxKNhZuPeKQ9uaH-0JYF1wEwmDScXg5cxX14XomTA4B-HYmlQQvyZJenOEYkpCvxQBP_wKR541m7u9wJCDlA9xmnk2IluULNdWKkEkWfVpnAo" alt="Patient" loading="lazy" decoding="async" />
+                            <img className="w-8 h-8 rounded-full border border-cadet-gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctlKe56NfafxJlTMh6lXhW8W1ozyc3X0I3-j0x4zuDw1KJEAV0d8ao0ffQfhLmavlWUihtf0ARowZG575RrKC07vszcmoNntVecPDY4OU8sMlvugRAf6bf92btBJ0rFjxBugh6iZIDb89ZIdA-k74M8gjbb1mo1YJBPsO7XgR109q7lmhGj_XIlv1DpkFOmsvR8Drmwuw_TPPv7VZGHyKTSiW9KKlZIMKwD56TRoq5uQPNtOufJsdIr46rK7r-4aC9SV6tIKYZ_Lc" alt="Patient" loading="lazy" decoding="async" />
                             <div className="w-8 h-8 rounded-full border border-cadet-gray bg-white text-cadet-gray flex items-center justify-center text-[10px] font-bold">+2k</div>
                         </div>
                         <div>

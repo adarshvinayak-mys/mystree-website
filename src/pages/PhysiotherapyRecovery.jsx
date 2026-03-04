@@ -70,7 +70,7 @@ export default function PhysiotherapyRecovery() {
                         <div className="flex items-center gap-6 pt-4">
                             <div className="flex -space-x-3">
                                 {[4, 5, 6].map(i => (
-                                    <img key={i} alt="User" className="w-10 h-10 rounded-full border-2 border-corn-silk" src={`https://i.pravatar.cc/100?u=${i + 30}`} />
+                                    <img key={i} alt="User" className="w-10 h-10 rounded-full border-2 border-corn-silk" src={`https://i.pravatar.cc/100?u=${i + 30}`} loading="lazy" decoding="async" />
                                 ))}
                                 <div className="w-10 h-10 rounded-full border-2 border-corn-silk bg-uranian-blue flex items-center justify-center text-xs font-bold text-cadet-gray">+800</div>
                             </div>
@@ -89,6 +89,9 @@ export default function PhysiotherapyRecovery() {
                                     alt="Woman performing guided movement therapy"
                                     className="w-full h-full object-cover"
                                     src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=2069"
+                                    loading="eager"
+                                    decoding="async"
+                                    fetchPriority="high"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#3a506b]/40 to-transparent"></div>
                             </div>
@@ -155,6 +158,8 @@ export default function PhysiotherapyRecovery() {
                                     alt="Supportive therapist session"
                                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>
@@ -262,6 +267,8 @@ export default function PhysiotherapyRecovery() {
                                         alt="Dr. Jasmine Priyadarshini"
                                         className="w-full h-auto rounded-2xl relative shadow-md object-cover aspect-[4/5]"
                                         src={doctorJasmine}
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </div>

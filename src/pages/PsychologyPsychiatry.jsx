@@ -143,7 +143,7 @@ const PsychologyPsychiatry = () => {
                             <div className="flex -space-x-3">
                                 {[1, 2, 3, 4].map(i => (
                                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-uranian-blue overflow-hidden shadow-sm">
-                                        <img src={`https://i.pravatar.cc/100?u=pink${i}`} alt="Patient" />
+                                        <img src={`https://i.pravatar.cc/100?u=pink${i}`} alt="Patient" loading="lazy" decoding="async" />
                                     </div>
                                 ))}
                             </div>
@@ -160,6 +160,9 @@ const PsychologyPsychiatry = () => {
                                 alt="Peaceful landscape"
                                 className="w-full h-[500px] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                                 src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80"
+                                loading="eager"
+                                decoding="async"
+                                fetchPriority="high"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
 

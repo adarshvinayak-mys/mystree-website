@@ -119,7 +119,7 @@ export default function Experts() {
                                         {/* Left Side: Image */}
                                         <div className="w-[120px] sm:w-[140px] flex-shrink-0">
                                             <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
-                                                <img src={expert.image} alt={expert.name} className="w-full h-full object-cover object-top" />
+                                                <img src={expert.image} alt={expert.name} className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
                                             </div>
                                         </div>
 
