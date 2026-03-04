@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../../supabaseClient';
-const mystreelogo = '/logo.webp';
+import mystreelogo from '../../assets/mystreelogo.svg';
 
 export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const ref = useRef(null);
@@ -76,7 +76,11 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         <img
                             src={mystreelogo}
                             alt="MyStree Logo"
-                            className="h-8 md:h-10 w-auto object-contain brightness-0 invert shadow-sm"
+                            className="h-8 md:h-10 w-auto object-contain shadow-sm"
+                            onError={(event) => {
+                                event.currentTarget.onerror = null;
+                                event.currentTarget.src = '/mystreelogo.svg';
+                            }}
                         />
                     </a>
                     <a
