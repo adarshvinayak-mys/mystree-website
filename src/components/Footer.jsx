@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import mystreelogo from '../assets/mystreelogo.svg';
+const mystreelogo = '/logo.webp';
 
 
 export default function Footer() {

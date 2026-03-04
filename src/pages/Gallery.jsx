@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-import gallery1 from '../assets/gallery/gallery_1.jpeg';
-import gallery2 from '../assets/gallery/gallery_2.jpeg';
-import gallery3 from '../assets/gallery/gallery_3.jpeg';
-import gallery4 from '../assets/gallery/gallery_4.jpeg';
-import gallery5 from '../assets/gallery/gallery_5.jpeg';
-import gallery6 from '../assets/gallery/gallery_6.jpeg';
-import gallery7 from '../assets/gallery/gallery_7.jpeg';
-import gallery8 from '../assets/gallery/gallery_8.jpeg';
-import gallery9 from '../assets/gallery/gallery_9.jpeg';
-import gallery10 from '../assets/gallery/gallery_10.jpeg';
+const gallery1 = '/gallery/gallery_1.jpeg';
+const gallery2 = '/gallery/gallery_2.jpeg';
+const gallery3 = '/gallery/gallery_3.jpeg';
+const gallery4 = '/gallery/gallery_4.jpeg';
+const gallery5 = '/gallery/gallery_5.jpeg';
+const gallery6 = '/gallery/gallery_6.jpeg';
+const gallery7 = '/gallery/gallery_7.jpeg';
+const gallery8 = '/gallery/gallery_8.jpeg';
+const gallery9 = '/gallery/gallery_9.jpeg';
+const gallery10 = '/gallery/gallery_10.jpeg';
 
 const Gallery = () => {
     useEffect(() => {

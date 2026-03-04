@@ -1,11 +1,11 @@
 import React from 'react';
 import DoctorCard from './DoctorCard';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
-const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
-const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
-const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
+const doctor1 = '/doctor1.webp';
+const doctor2 = '/doctor2.webp';
+const doctor3 = '/doctor3.webp';
+const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
+const doctorPri = '/drpriya.webp';
+const doctorChaitra = '/DrChaitraNayak.webp';
 
 const experts = [
     {
@@ -54,7 +54,7 @@ const experts = [
         qualification: "MPT/MPTh - OBG Physiotherapy",
         experience: "21 years overall, 9 years specialist",
         languages: "English, Kannada",
-        image: "https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png",
+        image: '/drpriya.webp',
         badgeText: "Physiotherapist",
         badgeColorClass: "bg-teal-50 text-teal-700"
     },

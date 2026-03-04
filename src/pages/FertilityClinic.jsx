@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg'; // Priyanka
-const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
-const fert1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert1.jpg';
-const fert3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert3.jpg';
-const fert4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/fert4.jpg';
+const doctor1 = '/doctor1.webp';
+const doctor2 = '/doctor2.webp';
+const doctor3 = '/doctor3.webp'; // Priyanka
+const doctorChaitra = '/DrChaitraNayak.webp';
+const fert1 = '/fert1.webp';
+const fert3 = '/fert3.webp';
+const fert4 = '/fert4.webp';
 
 // Reviews from verified patients (Dr. Chaitra Nayak)
 const reviews = [

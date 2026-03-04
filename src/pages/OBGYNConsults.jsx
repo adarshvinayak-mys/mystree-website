@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
+const doctor1 = '/doctor1.webp';
+const doctor2 = '/doctor2.webp';
+const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
 
 const doctors = [
     {

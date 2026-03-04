@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
-const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
-const heroNew = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/menopausal_wellness_hero_new_1771300852077.png';
+const doctor1 = '/doctor1.webp';
+const doctor2 = '/doctor2.webp';
+const doctor3 = '/doctor3.webp';
+const doctorPri = '/drpriya.webp';
+const heroNew = '/menopausal_wellness_hero_new_1771300852077.webp';
 import DoctorCard from '../components/DoctorCard';
 
 export default function MenopausalClinic() {

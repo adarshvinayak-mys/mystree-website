@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-const pcosImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pcos_hormonal_balance.png';
-const pregnancyImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pregnancy_care.png';
-const menopauseImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/menopause_wellness.png';
-const dermatologyImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/dermatology.png';
-const pelvicHealthImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pelvic_health.png';
-const mentalWellnessImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mental_wellness.png';
-const adolescentHealthImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/adolescent_health.png';
-const sexualWellnessImg = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/sexual_wellness.png';
+const pcosImg = '/pcos_hormonal_balance.webp';
+const pregnancyImg = '/pregnancy_care.webp';
+const menopauseImg = '/menopause_wellness.webp';
+const dermatologyImg = '/dermatology.webp';
+const pelvicHealthImg = '/pelvic_health.webp';
+const mentalWellnessImg = '/mental_wellness.webp';
+const adolescentHealthImg = '/adolescent_health.webp';
+const sexualWellnessImg = '/sexual_wellness.webp';
 
 const conditions = [
     { title: "PCOS & Hormonal Balance", img: pcosImg, link: "/services/obgyn" },

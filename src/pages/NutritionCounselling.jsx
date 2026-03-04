@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
-const nutritionHero = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutritionpage.png';
-const nutritionPsychology = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutritionpage2.png';
-const wm1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement1.png';
-const wm2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement2.png';
-const wm3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement3.png';
-const wm4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weightmanagement4.png';
-const nutrition1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition1.jpg';
-const nutrition2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition2.jpg';
-const nutrition3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition3.jpg';
-const nutrition4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nutrition4.jpg';
-const weight12 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/weight12.png';
-const pcosMain = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/pcos_hormonal_balance.png';
+const doctor3 = '/doctor3.webp';
+const nutritionHero = '/nutritionpage.webp';
+const nutritionPsychology = '/nutritionpage2.webp';
+const wm1 = '/weightmanagement1.webp';
+const wm2 = '/weightmanagement2.webp';
+const wm3 = '/weightmanagement3.webp';
+const wm4 = '/weightmanagement4.webp';
+const nutrition1 = '/nutrition1.webp';
+const nutrition2 = '/nutrition2.webp';
+const nutrition3 = '/nutrition3.webp';
+const nutrition4 = '/nutrition4.webp';
+const weight12 = '/weight12.webp';
+const pcosMain = '/pcos_hormonal_balance.webp';
 
 const focusAreas = [
     {

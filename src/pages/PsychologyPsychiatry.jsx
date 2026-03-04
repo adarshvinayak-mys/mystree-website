@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg'; // Assuming this is Dr. Rupa's image based on previous context, or use a placeholder if unsure. Previous file had doctorPri for Dr. Rupa.
+const doctor2 = '/doctor2.webp';
+const doctorPri = '/drpriya.webp'; // Assuming this is Dr. Rupa's image based on previous context, or use a placeholder if unsure. Previous file had doctorPri for Dr. Rupa.
 import DoctorCard from '../components/DoctorCard';
 
 const PsychologyPsychiatry = () => {

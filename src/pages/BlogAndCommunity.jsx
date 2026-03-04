@@ -1,27 +1,27 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg'; // Dr. Surbhi
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg'; // Dr. Smitha
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg'; // Priyanka
-const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
-const eggFreezing1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/egg_freezing_1.png';
-const eggFreezing2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/egg_freezing_2.png';
-const eggFreezing3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/egg_freezing_3.png';
-const blog1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog1.jpg';
-const blog2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog2.jpg';
-const blog3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog3.jpg';
-const blog4 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog4.jpg';
-const blog5 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog5.jpg';
-const blog6 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog6.jpg';
-const blog7 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog7.jpg';
-const blog8 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog8.jpg';
-const blog9 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog9.jpg';
-const blog10 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/blog10.jpg';
-const mystreee1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/mystreee1.jpg';
-const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
+const doctor1 = '/doctor1.webp'; // Dr. Surbhi
+const doctor2 = '/doctor2.webp'; // Dr. Smitha
+const doctor3 = '/doctor3.webp'; // Priyanka
+const doctorChaitra = '/DrChaitraNayak.webp';
+const eggFreezing1 = '/blog/egg_freezing_1.webp';
+const eggFreezing2 = '/blog/egg_freezing_2.webp';
+const eggFreezing3 = '/blog/egg_freezing_3.webp';
+const blog1 = '/blog/blog1.webp';
+const blog2 = '/blog/blog2.webp';
+const blog3 = '/blog/blog3.webp';
+const blog4 = '/blog/blog4.webp';
+const blog5 = '/blog/blog5.webp';
+const blog6 = '/blog/blog6.webp';
+const blog7 = '/blog/blog7.webp';
+const blog8 = '/blog/blog8.webp';
+const blog9 = '/blog/blog9.webp';
+const blog10 = '/blog/blog10.webp';
+const mystreee1 = '/blog/mystreee1.webp';
+const doctorPri = '/drpriya.webp';
 // Reuse imported doctorChaitra for the first new blog
-const doctorJasmineUrl = "https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png";
+const doctorJasmineUrl = '/drpriya.webp';
 
 export default function BlogAndCommunity() {
     const [isModalOpen, setIsModalOpen] = useState(false);

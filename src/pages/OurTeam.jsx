@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctorNiv = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/nivetha-vishnuvardhan-mbbs-md.jpg';
-const doctorPri = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg';
-const doctorChaitra = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/DrChaitraNayak.jpg';
+const doctor2 = '/doctor2.webp';
+const doctor3 = '/doctor3.webp';
+const doctor1 = '/doctor1.webp';
+const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
+const doctorPri = '/drpriya.webp';
+const doctorChaitra = '/DrChaitraNayak.webp';
 
 export default function OurTeam() {
     useEffect(() => {
@@ -239,7 +239,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-rose-400/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png" loading="lazy" decoding="async" />
+                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/drpriya.webp" loading="lazy" decoding="async" />
                                 </div>
 
                             </div>

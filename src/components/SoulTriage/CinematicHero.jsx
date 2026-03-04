@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../../supabaseClient';
-import mystreelogo from '../../assets/mystreelogo.svg';
+const mystreelogo = '/logo.webp';
 
 export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const ref = useRef(null);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
-const doctor1 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor1.jpg';
-const doctor2 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor2.jpg';
-const doctor3 = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/doctor3.jpg';
+const doctor1 = '/doctor1.webp';
+const doctor2 = '/doctor2.webp';
+const doctor3 = '/doctor3.webp';
 
 // Note: Intentionally not using reusable components due to specific "sticker" aesthetic logic requested.
 

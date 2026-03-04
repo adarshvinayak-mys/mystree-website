@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-const doctorJasmine = 'https://zhianncgwtyylotoagqa.supabase.co/storage/v1/object/public/images1/drpriya.jpeg'; // Using existing asset for Dr. Jasmine Priyadarshini as used in other files
+const doctorJasmine = '/drpriya.webp'; // Using existing asset for Dr. Jasmine Priyadarshini as used in other files
 
 const treatmentAreas = [
     {

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import contactHeroBg from '../assets/contactus.jpg';
+const contactHeroBg = '/contactus.webp';
 
 
 const Contact = () => {
