@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-const gallery1 = '/gallery/gallery_1.jpeg';
-const gallery2 = '/gallery/gallery_2.jpeg';
-const gallery3 = '/gallery/gallery_3.jpeg';
-const gallery4 = '/gallery/gallery_4.jpeg';
-const gallery5 = '/gallery/gallery_5.jpeg';
-const gallery6 = '/gallery/gallery_6.jpeg';
-const gallery7 = '/gallery/gallery_7.jpeg';
-const gallery8 = '/gallery/gallery_8.jpeg';
-const gallery9 = '/gallery/gallery_9.jpeg';
-const gallery10 = '/gallery/gallery_10.jpeg';
+const gallery1 = '/mystreeevent1.webp';
+const gallery2 = '/mystreeevent2.webp';
+const gallery3 = '/mystreeevent3.webp';
+const gallery4 = '/blog/blog1.webp';
+const gallery5 = '/blog/blog2.webp';
+const gallery6 = '/blog/blog3.webp';
+const gallery7 = '/blog/blog4.webp';
+const gallery8 = '/blog/blog5.webp';
+const gallery9 = '/blog/blog6.webp';
+const gallery10 = '/blog/blog7.webp';
 
 const Gallery = () => {
     useEffect(() => {
