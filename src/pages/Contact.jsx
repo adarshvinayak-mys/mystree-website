@@ -112,7 +112,7 @@ const Contact = () => {
                             icon: "chat",
                             btn: "Start Chat",
                             color: "text-green-500",
-                            type: "https://wa.me/+916366573772"
+                            type: "https://wa.me/916366573772?text=Hi%20My%20Stree%2C%20I%20want%20to%20book%20a%20consultation."
                         },
                         {
                             title: "Book Online",
