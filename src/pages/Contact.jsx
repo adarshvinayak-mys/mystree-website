@@ -172,7 +172,7 @@ const Contact = () => {
                             },
                             {
                                 label: 'LinkedIn',
-                                link: 'https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all',
+                                link: 'https://www.linkedin.com/company/my-stree-for-you',
                                 iconColor: 'text-[#0A66C2]',
                                 tint: 'from-[#0A66C2]/20 to-[#60A5FA]/15',
                                 hoverBorder: 'group-hover:border-[#0A66C2]/35',
@@ -182,7 +182,7 @@ const Contact = () => {
                             },
                             {
                                 label: 'YouTube',
-                                link: '#',
+                                link: 'https://www.youtube.com/@Mystreeforyou',
                                 iconColor: 'text-[#FF0000]',
                                 tint: 'from-[#FF0000]/20 to-[#F87171]/15',
                                 hoverBorder: 'group-hover:border-[#FF0000]/35',

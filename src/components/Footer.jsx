@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import mystreelogo from '../assets/logo.png';
+const mystreelogo = '/mystreelogo.svg';
 import './Footer.css';
 
 const quickLinks = [
@@ -30,7 +30,7 @@ export default function Footer() {
               Compassionate, personalized healthcare for every stage of a woman&apos;s life.
             </p>
             <div className="ms-footer__socials">
-              <a className="ms-footer__social" href="https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a className="ms-footer__social" href="https://www.linkedin.com/company/my-stree-for-you" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
               </a>
               <a className="ms-footer__social" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
