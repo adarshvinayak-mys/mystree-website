@@ -5,6 +5,9 @@ const BOOKING_URL = 'https://my-stree.com/booking';
 const WHATSAPP_URL = 'https://wa.me/916366573772?text=Hi%20My%20Stree%2C%20I%20need%20help%20with%20my%20health%20query.';
 const CONTACT_PHONE = '+916366573772';
 const CONTACT_EMAIL = 'info@mystree.org';
+const INTRO_SEEN_KEY = 'mystree_chat_intro_seen_v2';
+const INTRO_SHOW_DELAY_MS = 1400;
+const INTRO_VISIBLE_MS = 9000;
 
 const services = [
     {
@@ -215,7 +218,7 @@ export default function ChatButton() {
     const location = useLocation();
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-    const [showWelcomeNudge, setShowWelcomeNudge] = useState(true);
+    const [showWelcomeNudge, setShowWelcomeNudge] = useState(false);
     const [input, setInput] = useState('');
     const [isFooterVisible, setIsFooterVisible] = useState(false);
     const [messages, setMessages] = useState([welcomeMessage()]);
@@ -227,10 +230,35 @@ export default function ChatButton() {
     );
 
     useEffect(() => {
-        if (hiddenOnRoute) return undefined;
-        const timer = setTimeout(() => setShowWelcomeNudge(false), 7000);
-        return () => clearTimeout(timer);
-    }, [hiddenOnRoute]);
+        if (hiddenOnRoute || isOpen) return undefined;
+
+        let showTimer;
+        let hideTimer;
+        let introAlreadySeen = false;
+
+        try {
+            introAlreadySeen = window.sessionStorage.getItem(INTRO_SEEN_KEY) === '1';
+        } catch {
+            introAlreadySeen = false;
+        }
+
+        if (introAlreadySeen) return undefined;
+
+        showTimer = window.setTimeout(() => {
+            setShowWelcomeNudge(true);
+            try {
+                window.sessionStorage.setItem(INTRO_SEEN_KEY, '1');
+            } catch {
+                // Ignore storage failures silently
+            }
+            hideTimer = window.setTimeout(() => setShowWelcomeNudge(false), INTRO_VISIBLE_MS);
+        }, INTRO_SHOW_DELAY_MS);
+
+        return () => {
+            window.clearTimeout(showTimer);
+            if (hideTimer) window.clearTimeout(hideTimer);
+        };
+    }, [hiddenOnRoute, isOpen, location.pathname]);
 
     useEffect(() => {
         const footer = document.querySelector('.ms-footer');
@@ -376,24 +404,39 @@ export default function ChatButton() {
             className={`fixed right-3 sm:right-5 md:right-6 isolate z-[2147483000] transition-all duration-300 ${isFooterVisible ? 'bottom-28 md:bottom-28' : 'bottom-4 md:bottom-6'}`}
         >
             {!isOpen && showWelcomeNudge && (
-                <div className="mb-2 w-[min(20rem,calc(100vw-2rem))] rounded-2xl border border-[#8BA4BF]/30 bg-white shadow-[0_14px_30px_rgba(47,62,70,0.16)] p-3">
-                    <p className="text-[13px] font-semibold text-[#2F3E46] leading-snug">
-                        Hello, I&apos;m your MyStree Care Assistant. How can I help you today?
-                    </p>
-                    <p className="mt-1 text-[11px] text-[#2F3E46]/75 leading-snug">
-                        Quick access to services, booking, and doctor support.
-                    </p>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            setIsOpen(true);
-                            setShowWelcomeNudge(false);
-                        }}
-                        className="mt-2 inline-flex items-center gap-1 rounded-full bg-[#ED5B2D] px-3 py-1.5 text-[11px] font-bold text-white hover:brightness-95 transition-all"
-                    >
-                        Start Chat
-                        <span className="material-symbols-outlined text-[14px] leading-none">arrow_forward</span>
-                    </button>
+                <div className="mb-2 w-[min(17rem,calc(100vw-2rem))] rounded-2xl border border-[#BFE2FE]/75 bg-white/95 backdrop-blur-sm shadow-[0_10px_24px_rgba(47,62,70,0.14)] p-2.5">
+                    <div className="flex items-start gap-2">
+                        <span className="mt-0.5 w-7 h-7 rounded-full bg-[#ED5B2D]/12 text-[#ED5B2D] inline-flex items-center justify-center">
+                            <span className="material-symbols-outlined text-[15px]">support_agent</span>
+                        </span>
+                        <div className="min-w-0 flex-1">
+                            <p className="text-[12px] font-semibold text-[#2F3E46] leading-snug">
+                                Need help finding the right care
+                            </p>
+                            <p className="mt-0.5 text-[10px] text-[#2F3E46]/75 leading-snug">
+                                Tap chat for booking, WhatsApp support, services, and doctor guidance
+                            </p>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setIsOpen(true);
+                                    setShowWelcomeNudge(false);
+                                }}
+                                className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-bold text-[#ED5B2D] hover:text-[#FF833C] transition-colors"
+                            >
+                                Open Assistant
+                                <span className="material-symbols-outlined text-[14px] leading-none">arrow_forward</span>
+                            </button>
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setShowWelcomeNudge(false)}
+                            aria-label="Dismiss assistant intro"
+                            className="mt-0.5 w-6 h-6 rounded-full text-[#2F3E46]/60 hover:text-[#2F3E46] hover:bg-[#BFE2FE]/45 transition-colors inline-flex items-center justify-center"
+                        >
+                            <span className="material-symbols-outlined text-[14px] leading-none">close</span>
+                        </button>
+                    </div>
                 </div>
             )}
 
@@ -512,10 +555,10 @@ export default function ChatButton() {
                     setIsOpen((prev) => !prev);
                     setShowWelcomeNudge(false);
                 }}
-                className="group w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-[0_8px_30px_rgb(16,185,129,0.35)] inline-flex items-center justify-center hover:scale-105 transition-all duration-300"
+                className={`group w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-[0_8px_30px_rgb(16,185,129,0.35)] inline-flex items-center justify-center hover:scale-105 transition-all duration-300 ${!isOpen && showWelcomeNudge ? 'ring-4 ring-[#BFE2FE]/70 ring-offset-2 ring-offset-white' : ''}`}
                 aria-label={isOpen ? 'Close care assistant chat' : 'Open care assistant chat'}
             >
-                <span className="w-10 h-10 rounded-full bg-white/20 inline-flex items-center justify-center backdrop-blur-sm">
+                <span className={`w-10 h-10 rounded-full bg-white/20 inline-flex items-center justify-center backdrop-blur-sm ${!isOpen && showWelcomeNudge ? 'animate-pulse' : ''}`}>
                     <span className="material-symbols-outlined text-[20px]">{isOpen ? 'close' : 'chat'}</span>
                 </span>
             </button>
