@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-const mystreelogo = '/logo.webp';
+const mystreelogo = '/mystreelogo.svg';
 
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center mb-6">
                             <div className="inline-block">
-                                <img src={mystreelogo} alt="Mystree Logo" className="h-16 w-auto object-contain brightness-0 invert" />
+                                <img src={mystreelogo} alt="Mystree Logo" className="h-16 w-auto object-contain" />
                             </div>
                         </div>
                         <p className="text-white/80 text-sm mb-6 leading-relaxed">

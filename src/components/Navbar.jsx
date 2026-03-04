@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-const mystreelogo = '/logo.webp';
+const mystreelogo = '/mystreelogo.svg';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -97,7 +97,7 @@ export default function Navbar() {
                         <img
                             src={mystreelogo}
                             alt="MyStree Logo"
-                            className="h-10 sm:h-12 w-auto object-contain"
+                            className="h-12 sm:h-14 w-auto object-contain"
                         />
                     </Link>
 
