@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 .ms-footer {
   --uranian: #bfe2fe;
@@ -39,9 +39,9 @@
 
 .ms-footer__title {
   margin: 0 0 0.8rem;
-  font-family: 'Rozha One', Georgia, serif;
+  font-family: Inter, sans-serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1;
   color: #0f2f4d;
 }

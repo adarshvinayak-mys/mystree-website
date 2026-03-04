@@ -54,6 +54,92 @@ function AppContent() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const root = document.body;
+    if (!root) return undefined;
+
+    let scheduled = false;
+    let isSanitizing = false;
+
+    const shouldSkipNode = (node) => {
+      const parent = node.parentElement;
+      if (!parent) return true;
+
+      const blockedTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'CODE', 'PRE', 'TEXTAREA'];
+      if (blockedTags.includes(parent.tagName)) return true;
+      if (parent.closest('[data-keep-punctuation="true"]')) return true;
+
+      const value = node.nodeValue;
+      return !value || !value.includes('.');
+    };
+
+    const sanitizeTrailingPeriods = () => {
+      if (isSanitizing) return;
+      isSanitizing = true;
+
+      try {
+        const walker = document.createTreeWalker(
+          root,
+          NodeFilter.SHOW_TEXT,
+          {
+            acceptNode(node) {
+              return shouldSkipNode(node)
+                ? NodeFilter.FILTER_REJECT
+                : NodeFilter.FILTER_ACCEPT;
+            }
+          }
+        );
+
+        const updates = [];
+
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          const original = node.nodeValue ?? '';
+          const trailingWhitespace = original.match(/\s*$/)?.[0] ?? '';
+          const content = original.slice(0, original.length - trailingWhitespace.length);
+
+          if (!content || content.endsWith('...')) continue;
+          if (!content.endsWith('.')) continue;
+
+          const updated = `${content.slice(0, -1)}${trailingWhitespace}`;
+          if (updated !== original) {
+            updates.push([node, updated]);
+          }
+        }
+
+        updates.forEach(([node, updated]) => {
+          node.nodeValue = updated;
+        });
+      } finally {
+        isSanitizing = false;
+      }
+    };
+
+    const scheduleSanitize = () => {
+      if (scheduled) return;
+      scheduled = true;
+      window.requestAnimationFrame(() => {
+        scheduled = false;
+        sanitizeTrailingPeriods();
+      });
+    };
+
+    sanitizeTrailingPeriods();
+    const bootTimer = window.setTimeout(sanitizeTrailingPeriods, 120);
+
+    const observer = new MutationObserver(() => {
+      if (isSanitizing) return;
+      scheduleSanitize();
+    });
+
+    observer.observe(root, { childList: true, subtree: true, characterData: true });
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(bootTimer);
+    };
+  }, [location.pathname]);
+
 
 
   useEffect(() => {
@@ -117,33 +203,12 @@ function AppContent() {
     };
   }, [location.pathname, navigate]);
 
-  const getPageFontClass = (pathname) => {
-    if (pathname === '/') return 'page-font-home';
-    if (pathname === '/about') return 'page-font-about';
-    if (pathname === '/team') return 'page-font-team';
-    if (pathname === '/experts') return 'page-font-experts';
-    if (pathname === '/services/obgyn') return 'page-font-obgyn';
-    if (pathname === '/services/adolescent-health') return 'page-font-adolescent';
-    if (pathname === '/services/prenatal') return 'page-font-prenatal';
-    if (pathname === '/services/fertility') return 'page-font-fertility';
-    if (pathname === '/services/menopause') return 'page-font-menopause';
-    if (pathname === '/services/nutrition') return 'page-font-nutrition';
-    if (pathname === '/services/physiotherapy') return 'page-font-physio';
-    if (pathname === '/services/dermatology') return 'page-font-dermatology';
-    if (pathname === '/services/psychology') return 'page-font-psychology';
-    if (pathname === '/showcase/gallery') return 'page-font-gallery';
-    if (pathname === '/showcase/events') return 'page-font-events';
-    if (pathname === '/contact') return 'page-font-contact';
-    if (pathname === '/booking-gateway') return 'page-font-contact';
-    if (pathname === '/blog') return 'page-font-blog';
-    if (pathname === '/mystree-soul') return 'page-font-soul';
-    return 'page-font-home';
-  };
+  const getPageFontClass = () => 'page-font-unified';
 
   return (
     <Wrapper>
       {location.pathname !== '/mystree-soul' && <Navbar />}
-      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
+      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass()}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />

@@ -53,9 +53,10 @@ export default {
         "text-dark": "#E5E7EB",
       },
       fontFamily: {
-        display: ["Playfair Display", "Cormorant Garamond", "serif"],
-        serif: ["Playfair Display", "Cormorant Garamond", "serif"],
-        body: ["Source Serif 4", "Inter", "Lato", "sans-serif"],
+        sans: ["Inter", "Source Sans 3", "Lato", "sans-serif"],
+        display: ["Inter", "Source Sans 3", "Lato", "sans-serif"],
+        serif: ["Inter", "Source Sans 3", "Lato", "sans-serif"],
+        body: ["Inter", "Source Sans 3", "Lato", "sans-serif"],
         hand: ["Gloria Hallelujah", "cursive"],
       },
       boxShadow: {
