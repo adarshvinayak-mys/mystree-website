@@ -6,6 +6,7 @@ import doctor1 from '../assets/supabase/doctor1.jpg';
 import doctorNiv from '../assets/supabase/nivetha-vishnuvardhan-mbbs-md.jpg';
 import doctorPri from '../assets/supabase/drpriya.jpeg';
 import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
+const doctorJasmine = '/drjasmineflora.webp';
 
 export default function OurTeam() {
     useEffect(() => {
