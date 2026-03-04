@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import mystreelogo from '../assets/mystreelogo.svg';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +95,7 @@ export default function Navbar() {
                 <div className={`flex items-center gap-12 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                     <Link to="/" className="flex items-center h-full group py-2">
                         <img
-                            src="https://my-stree.com/assets/images/mystreelogo.svg"
+                            src={mystreelogo}
                             alt="MyStree Logo"
                             className="h-10 sm:h-12 w-auto object-contain"
                         />

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../../supabaseClient';
+import mystreelogo from '../../assets/mystreelogo.svg';
 
 export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const ref = useRef(null);
@@ -76,7 +77,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                 <div className="max-w-6xl mx-auto flex items-center justify-between">
                     <a href="/" className="pointer-events-auto transition-opacity hover:opacity-80">
                         <img
-                            src="https://my-stree.com/assets/images/mystreelogo.svg"
+                            src={mystreelogo}
                             alt="MyStree Logo"
                             className="h-8 md:h-10 w-auto object-contain brightness-0 invert shadow-sm"
                         />

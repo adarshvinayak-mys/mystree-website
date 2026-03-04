@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import event1 from '../assets/mystreeevent1.jpeg';
 import event2 from '../assets/mystreeevent2.jpeg';
 import event3 from '../assets/mystreeevent3.jpeg';
-import mystreepro from '../assets/mystreepro.jpg';
+import mystreepro from '../assets/blog/mystreepro.jpg';
 import sanctuaryHero from '../assets/sanctuary_hero_bg_v2_1771307980803.png';
 
 const UpcomingEvents = () => {
