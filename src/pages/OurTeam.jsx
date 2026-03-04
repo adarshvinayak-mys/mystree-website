@@ -5,6 +5,7 @@ const doctor3 = '/doctor3.webp';
 const doctor1 = '/doctor1.webp';
 const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
 const doctorPri = '/drpriya.webp';
+const doctorJasmine = '/drjasmineflora.webp';
 const doctorChaitra = '/DrChaitraNayak.webp';
 
 export default function OurTeam() {
@@ -239,7 +240,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-rose-400/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="/drpriya.webp" loading="lazy" decoding="async" />
+                                    <img alt="Dr. Jasmine Flora" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctorJasmine} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>

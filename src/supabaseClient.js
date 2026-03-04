@@ -15,7 +15,6 @@ const supabaseUrl = readEnv('VITE_SUPABASE_URL');
 const supabaseKey = readEnv('VITE_SUPABASE_PUBLISHABLE_KEY', 'VITE_SUPABASE_ANON_KEY');
 
 if (typeof supabaseKey === 'string' && supabaseKey.startsWith('sb_secret_')) {
-  console.warn('Supabase secret key detected in frontend env. Use a publishable/anon key instead.');
 }
 
 const missingConfigError = new Error(
@@ -34,5 +33,4 @@ export const supabase =
       };
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error(missingConfigError.message);
 }

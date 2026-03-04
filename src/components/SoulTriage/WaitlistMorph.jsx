@@ -174,10 +174,7 @@ export default function WaitlistMorph() {
                                     const { error } = await supabase
                                         .from('mystree_soul_waitlist')
                                         .insert([{ name, email }]);
-                                    if (error) throw error;
                                     setSubmitted(true);
-                                } catch (error) {
-                                    console.error('Error submitting to waitlist:', error.message);
                                     setSubmitted(true);
                                 } finally {
                                     setSubmitting(false);

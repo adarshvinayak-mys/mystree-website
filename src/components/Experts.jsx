@@ -5,6 +5,7 @@ const doctor2 = '/doctor2.webp';
 const doctor3 = '/doctor3.webp';
 const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
 const doctorPri = '/drpriya.webp';
+const doctorJasmine = '/drjasmineflora.webp';
 const doctorChaitra = '/DrChaitraNayak.webp';
 
 const experts = [
@@ -54,7 +55,7 @@ const experts = [
         qualification: "MPT/MPTh - OBG Physiotherapy",
         experience: "21 years overall, 9 years specialist",
         languages: "English, Kannada",
-        image: '/drpriya.webp',
+        image: doctorJasmine,
         badgeText: "Physiotherapist",
         badgeColorClass: "bg-teal-50 text-teal-700"
     },

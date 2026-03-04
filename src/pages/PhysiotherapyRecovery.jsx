@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-const doctorJasmine = '/drpriya.webp'; // Using existing asset for Dr. Jasmine Priyadarshini as used in other files
+const doctorJasmine = '/drjasmineflora.webp';
 
 const treatmentAreas = [
     {

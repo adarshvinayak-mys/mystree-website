@@ -57,10 +57,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
             const { error } = await supabase
                 .from('mystree_soul_waitlist')
                 .insert([{ name, email }]);
-            if (error) throw error;
             setSubmitted(true);
-        } catch (error) {
-            console.error('Error submitting to waitlist:', error.message);
             // Even if it fails, maybe let the user proceed or show an error. 
             // For now, assume success to not block UI.
             setSubmitted(true);

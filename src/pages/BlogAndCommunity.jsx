@@ -21,7 +21,7 @@ const blog10 = '/blog/blog10.webp';
 const mystreee1 = '/blog/mystreee1.webp';
 const doctorPri = '/drpriya.webp';
 // Reuse imported doctorChaitra for the first new blog
-const doctorJasmineUrl = '/drpriya.webp';
+const doctorJasmineUrl = '/drjasmineflora.webp';
 
 export default function BlogAndCommunity() {
     const [isModalOpen, setIsModalOpen] = useState(false);
