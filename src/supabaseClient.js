@@ -14,12 +14,25 @@ const readEnv = (...keys) => {
 const supabaseUrl = readEnv('VITE_SUPABASE_URL');
 const supabaseKey = readEnv('VITE_SUPABASE_PUBLISHABLE_KEY', 'VITE_SUPABASE_ANON_KEY');
 
-if (!supabaseUrl || !supabaseKey) {
-  console.error('Supabase config missing. Check VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY/VITE_SUPABASE_ANON_KEY.');
-}
-
 if (typeof supabaseKey === 'string' && supabaseKey.startsWith('sb_secret_')) {
   console.warn('Supabase secret key detected in frontend env. Use a publishable/anon key instead.');
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+const missingConfigError = new Error(
+  'Supabase config missing. Check VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY/VITE_SUPABASE_ANON_KEY.'
+);
+
+export const supabase =
+  supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey)
+    : {
+        from() {
+          return {
+            insert: async () => ({ error: missingConfigError }),
+          };
+        },
+      };
+
+if (!supabaseUrl || !supabaseKey) {
+  console.error(missingConfigError.message);
+}

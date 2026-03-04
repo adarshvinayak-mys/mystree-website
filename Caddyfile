@@ -1,0 +1,16 @@
+:8080 {
+  root * /srv
+  encode zstd gzip
+
+  @booking path /booking /booking/*
+  handle @booking {
+    reverse_proxy https://booking-frontend.fly.dev {
+      header_up Host booking-frontend.fly.dev
+    }
+  }
+
+  handle {
+    try_files {path} /index.html
+    file_server
+  }
+}
