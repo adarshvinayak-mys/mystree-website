@@ -82,7 +82,7 @@ export default function OurTeam() {
                                         <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/2" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/2" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
@@ -118,7 +118,7 @@ export default function OurTeam() {
                                         <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Hindi</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/1" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/1" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
@@ -175,7 +175,7 @@ export default function OurTeam() {
                                         <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/3" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/3" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
@@ -215,7 +215,7 @@ export default function OurTeam() {
                                         <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Tamil</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/4" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/4" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
@@ -271,7 +271,7 @@ export default function OurTeam() {
                                         <span className="px-3 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">9 Years Specialist</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/5" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/5" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
@@ -308,7 +308,7 @@ export default function OurTeam() {
                                         <span className="px-4 py-1.5 sm:px-3 sm:py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-xs font-semibold text-slate-700 dark:text-gray-300">Kannada</span>
                                     </div>
                                 </div>
-                                <a href="https://my-stree.com/booking/appointment/6" className="w-full sm:w-auto mt-4 px-8 py-3.5 bg-gradient-to-r from-primary to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-booking">
+                                <a href="https://my-stree.com/booking/appointment/6" className="w-full sm:w-fit mt-4 px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 group-booking">
                                     Book Appointment
                                     <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">calendar_month</span>
                                 </a>
