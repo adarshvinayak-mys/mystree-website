@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-const obgynImage = '/sexual_wellness.webp';
-const fertilityImage = '/pcos_hormonal_balance.webp';
-const prenatalImage = '/pregnancy_care.webp';
-const nutritionImage = '/adolescent_health.webp';
+import obgynImage from '../assets/supabase/sexual_wellness.png';
+import fertilityImage from '../assets/supabase/pcos_hormonal_balance.png';
+import prenatalImage from '../assets/supabase/pregnancy_care.png';
+import nutritionImage from '../assets/supabase/adolescent_health.png';
 
 const services = [
     {

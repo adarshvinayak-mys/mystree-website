@@ -3,49 +3,57 @@ const facts = [
         icon: "favorite",
         color: "text-primary",
         bgColor: "bg-uranian-blue/30 dark:bg-blue-900/30",
-        text: "Our hearts beat faster than men's on average, and they're more likely to experience subtle heart attack symptoms like fatigue & nausea."
+        question: "Why do heart symptoms differ?",
+        text: "Women often show subtler signs like fatigue, breathlessness, or nausea instead of classic chest pain."
     },
     {
         icon: "female",
         color: "text-secondary",
         bgColor: "bg-secondary/10 dark:bg-orange-900/20",
-        text: "The average woman will have about 450 periods in her lifetime, equating to roughly 10 years of menstruation!"
+        question: "How many periods in a lifetime?",
+        text: "On average, around 450 periods occur across life stages, adding up to nearly 10 years."
     },
     {
         icon: "medication",
         color: "text-green-600",
         bgColor: "bg-green-100 dark:bg-green-900/20",
-        text: "Women are more prone to autoimmune diseases, making early diagnosis and management crucial for conditions like lupus and rheumatoid arthritis."
+        question: "Why prioritize early autoimmune checks?",
+        text: "Women have higher autoimmune risk, so early detection helps control flares and long-term complications."
     },
     {
         icon: "water_drop",
         color: "text-blue-600",
         bgColor: "bg-blue-100 dark:bg-blue-900/20",
-        text: "Hydration impacts women differently throughout their cycle. Estrogen levels can influence water retention and hydration needs."
+        question: "Does hydration change with the cycle?",
+        text: "Yes. Hormonal shifts can affect water retention and thirst, so hydration needs may vary through the month."
     },
     {
         icon: "bedtime",
         color: "text-purple-600",
         bgColor: "bg-purple-100 dark:bg-purple-900/20",
-        text: "Women require about 20 minutes more sleep than men on average due to complex multitasking brains and hormonal fluctuations."
+        question: "Do women need more sleep?",
+        text: "Many women benefit from slightly more sleep, especially during periods of hormonal change and stress."
     },
     {
         icon: "psychology",
         color: "text-pink-600",
         bgColor: "bg-pink-100 dark:bg-pink-900/20",
-        text: "Hormonal shifts during postpartum and menopause significantly impact mental health, requiring specialized care and understanding."
+        question: "How do hormones affect mood health?",
+        text: "Postpartum and menopause transitions can strongly influence mood, anxiety, and emotional resilience."
     },
     {
         icon: "healing",
         color: "text-teal-600",
         bgColor: "bg-teal-100 dark:bg-teal-900/20",
-        text: "Women possess a higher pain threshold in some contexts but are more sensitive to pain perception due to nerve density variations."
+        question: "Is pain felt differently by women?",
+        text: "Pain perception can differ due to hormonal and nerve-related factors, so personalized care matters."
     },
     {
         icon: "monitor_heart",
         color: "text-red-600",
         bgColor: "bg-red-100 dark:bg-red-900/20",
-        text: "Regular screenings for thyroid function are vital as women are 5-8 times more likely than men to have thyroid problems."
+        question: "Why are thyroid checks important?",
+        text: "Women are much more likely to develop thyroid disorders, and timely screening prevents delayed diagnosis."
     }
 ];
 
@@ -73,7 +81,7 @@ export default function Facts() {
                             <div className={`${fact.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${fact.color}`}>
                                 <span className="material-symbols-thin text-3xl">{fact.icon}</span>
                             </div>
-                            <h4 className="font-display font-bold text-lg mb-2 dark:text-white">Did You Know?</h4>
+                            <h4 className="font-display font-bold text-lg mb-2 dark:text-white">{fact.question}</h4>
                             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                                 {fact.text}
                             </p>

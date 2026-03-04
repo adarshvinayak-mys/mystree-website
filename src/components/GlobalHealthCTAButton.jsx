@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function GlobalHealthCTAButton() {
@@ -16,23 +16,23 @@ export default function GlobalHealthCTAButton() {
             >
                 <a
                     href="https://my-stree.com/booking"
-                    className="group inline-flex items-center gap-2 md:gap-3 rounded-full bg-white/90 backdrop-blur-md border border-primary/20 shadow-[0_10px_30px_rgba(237,89,44,0.2)] px-3 py-3 md:px-5 md:py-3 hover:shadow-[0_14px_34px_rgba(237,89,44,0.3)] transition-all"
+                    className="group inline-flex items-center gap-2.5 md:gap-3 rounded-full bg-white/95 backdrop-blur-xl border border-[#ED5B2D]/25 shadow-[0_10px_24px_rgba(237,91,45,0.24)] px-3 py-2.5 md:px-5 md:py-3.5 hover:shadow-[0_14px_30px_rgba(237,91,45,0.32)] hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ED5B2D]/35"
                     aria-label="Quick health consultation"
                 >
                     <motion.span
-                        className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-primary to-primary-light text-white flex items-center justify-center"
+                        className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-gradient-to-r from-[#ED5B2D] to-[#FF833C] text-white flex items-center justify-center shadow-[0_8px_18px_rgba(237,91,45,0.32)]"
                         animate={{ scale: [1, 1.06, 1] }}
                         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <span className="material-icons text-[18px]">favorite</span>
+                        <span className="material-icons text-[18px] md:text-[19px]">favorite</span>
                     </motion.span>
                     <span className="hidden sm:flex flex-col leading-tight text-left">
-                        <span className="text-[10px] uppercase tracking-wider font-semibold text-cadet-gray/70">Quick Care</span>
-                        <span className="text-sm md:text-[15px] font-bold text-cadet-gray group-hover:text-primary transition-colors">
+                        <span className="text-[10px] uppercase tracking-[0.13em] font-semibold text-[#8BA4BF]">Quick Care</span>
+                        <span className="text-[15px] md:text-[17px] font-bold text-[#2F3E46] group-hover:text-[#ED5B2D] transition-colors">
                             Book Health Consult
                         </span>
                     </span>
-                    <span className="sm:hidden text-sm px-1.5 font-bold text-cadet-gray tracking-wide">Book</span>
+                    <span className="sm:hidden text-sm pr-1 font-bold text-[#2F3E46] tracking-wide">Book</span>
                 </a>
             </motion.div>
         </div>

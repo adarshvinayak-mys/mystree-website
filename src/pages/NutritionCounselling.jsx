@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-const doctor3 = '/doctor3.webp';
-const nutritionHero = '/nutritionpage.webp';
-const nutritionPsychology = '/nutritionpage2.webp';
-const wm1 = '/weightmanagement1.webp';
-const wm2 = '/weightmanagement2.webp';
-const wm3 = '/weightmanagement3.webp';
-const wm4 = '/weightmanagement4.webp';
-const nutrition1 = '/nutrition1.webp';
-const nutrition2 = '/nutrition2.webp';
-const nutrition3 = '/nutrition3.webp';
-const nutrition4 = '/nutrition4.webp';
-const weight12 = '/weight12.webp';
-const pcosMain = '/pcos_hormonal_balance.webp';
+import doctor3 from '../assets/supabase/doctor3.jpg';
+import nutritionHero from '../assets/supabase/nutritionpage.png';
+import nutritionPsychology from '../assets/supabase/nutritionpage2.png';
+import wm1 from '../assets/supabase/weightmanagement1.png';
+import wm2 from '../assets/supabase/weightmanagement2.png';
+import wm3 from '../assets/supabase/weightmanagement3.png';
+import wm4 from '../assets/supabase/weightmanagement4.png';
+import nutrition1 from '../assets/supabase/nutrition1.jpg';
+import nutrition2 from '../assets/supabase/nutrition2.jpg';
+import nutrition3 from '../assets/supabase/nutrition3.jpg';
+import nutrition4 from '../assets/supabase/nutrition4.jpg';
+import weight12 from '../assets/supabase/weight12.png';
+import pcosMain from '../assets/supabase/pcos_hormonal_balance.png';
 
 const focusAreas = [
     {

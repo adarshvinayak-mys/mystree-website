@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-const doctor1 = '/doctor1.webp';
-const doctor2 = '/doctor2.webp';
-const doctor3 = '/doctor3.webp';
+import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor2 from '../assets/supabase/doctor2.jpg';
+import doctor3 from '../assets/supabase/doctor3.jpg';
 import DoctorCard from '../components/DoctorCard';
 
 const reviews = [

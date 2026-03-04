@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-const doctor1 = '/doctor1.webp';
-const doctor3 = '/doctor3.webp';
+import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor3 from '../assets/supabase/doctor3.jpg';
 import DoctorCard from '../components/DoctorCard';
 
 

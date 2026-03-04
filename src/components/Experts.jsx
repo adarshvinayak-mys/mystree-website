@@ -1,12 +1,12 @@
 import React from 'react';
 import DoctorCard from './DoctorCard';
-const doctor1 = '/doctor1.webp';
-const doctor2 = '/doctor2.webp';
-const doctor3 = '/doctor3.webp';
-const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
-const doctorPri = '/drpriya.webp';
+import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor2 from '../assets/supabase/doctor2.jpg';
+import doctor3 from '../assets/supabase/doctor3.jpg';
+import doctorNiv from '../assets/supabase/nivetha-vishnuvardhan-mbbs-md.jpg';
+import doctorPri from '../assets/supabase/drpriya.jpeg';
+import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
 const doctorJasmine = '/drjasmineflora.webp';
-const doctorChaitra = '/DrChaitraNayak.webp';
 
 const experts = [
     {

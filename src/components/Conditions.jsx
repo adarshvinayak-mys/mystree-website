@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-const pcosImg = '/pcos_hormonal_balance.webp';
-const pregnancyImg = '/pregnancy_care.webp';
-const menopauseImg = '/menopause_wellness.webp';
-const dermatologyImg = '/dermatology.webp';
-const pelvicHealthImg = '/pelvic_health.webp';
-const mentalWellnessImg = '/mental_wellness.webp';
-const adolescentHealthImg = '/adolescent_health.webp';
-const sexualWellnessImg = '/sexual_wellness.webp';
+import pcosImg from '../assets/supabase/pcos_hormonal_balance.png';
+import pregnancyImg from '../assets/supabase/pregnancy_care.png';
+import menopauseImg from '../assets/supabase/menopause_wellness.png';
+import dermatologyImg from '../assets/supabase/dermatology.png';
+import pelvicHealthImg from '../assets/supabase/pelvic_health.png';
+import mentalWellnessImg from '../assets/supabase/mental_wellness.png';
+import adolescentHealthImg from '../assets/supabase/adolescent_health.png';
+import sexualWellnessImg from '../assets/supabase/sexual_wellness.png';
 
 const conditions = [
     { title: "PCOS & Hormonal Balance", img: pcosImg, link: "/services/obgyn" },

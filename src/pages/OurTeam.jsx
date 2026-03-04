@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const doctor2 = '/doctor2.webp';
-const doctor3 = '/doctor3.webp';
-const doctor1 = '/doctor1.webp';
-const doctorNiv = '/nivetha-vishnuvardhan-mbbs-md.webp';
-const doctorPri = '/drpriya.webp';
-const doctorJasmine = '/drjasmineflora.webp';
-const doctorChaitra = '/DrChaitraNayak.webp';
+import doctor2 from '../assets/supabase/doctor2.jpg';
+import doctor3 from '../assets/supabase/doctor3.jpg';
+import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctorNiv from '../assets/supabase/nivetha-vishnuvardhan-mbbs-md.jpg';
+import doctorPri from '../assets/supabase/drpriya.jpeg';
+import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
 
 export default function OurTeam() {
     useEffect(() => {

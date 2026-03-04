@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 
-const doctor1 = '/doctor1.webp';
-const doctor2 = '/doctor2.webp';
-const doctor3 = '/doctor3.webp'; // Priyanka
-const doctorChaitra = '/DrChaitraNayak.webp';
-const fert1 = '/fert1.webp';
-const fert3 = '/fert3.webp';
-const fert4 = '/fert4.webp';
+import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor2 from '../assets/supabase/doctor2.jpg';
+import doctor3 from '../assets/supabase/doctor3.jpg'; // Priyanka
+import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
+import fert1 from '../assets/supabase/fert1.jpg';
+import fert3 from '../assets/supabase/fert3.jpg';
+import fert4 from '../assets/supabase/fert4.jpg';
 
 // Reviews from verified patients (Dr. Chaitra Nayak)
 const reviews = [
