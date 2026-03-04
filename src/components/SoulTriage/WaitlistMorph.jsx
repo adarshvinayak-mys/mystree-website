@@ -227,7 +227,7 @@ export default function WaitlistMorph() {
                             </motion.div>
                             <div>
                                 <h3 className="font-sans text-base font-medium text-[#F4F1EB] tracking-wide">Invitation Secured</h3>
-                                <p className="font-sans text-[11px] text-[#8FA295] tracking-[0.05em] uppercase mt-1">Priority access spot confirmed, {name.split(' ')[0]}.</p>
+                                <p className="font-sans text-[11px] text-[#8FA295] tracking-[0.05em] uppercase mt-1">Waitlist Confirmed. You'll be considered for priority-invite access as soon as a spot opens up, {name}.</p>
                             </div>
                         </motion.div>
                     )}

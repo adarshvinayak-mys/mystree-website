@@ -7,7 +7,6 @@ import mystreepro from '../assets/blog/mystreepro.jpg';
 import sanctuaryHero from '../assets/sanctuary_hero_bg_v2_1771307980803.png';
 
 const UpcomingEvents = () => {
-    const [isInitialModalOpen, setIsInitialModalOpen] = useState(false);
     const [isEventModalOpen, setIsEventModalOpen] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -20,8 +19,7 @@ const UpcomingEvents = () => {
             quote: '"Step into a meditative experience that restores balance and inner peace."',
             image: mystreepro,
             type: "Wellness",
-            price: "₹1200",
-            registerUrl: "https://my-stree.com/booking"
+            price: "₹1200"
         },
         {
             date: "Oct 22",
@@ -45,10 +43,6 @@ const UpcomingEvents = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        const timer = setTimeout(() => {
-            setIsInitialModalOpen(true);
-        }, 1000);
-        return () => clearTimeout(timer);
     }, []);
 
     const openEventModal = (event) => {
@@ -74,56 +68,7 @@ const UpcomingEvents = () => {
                 }
             `}} />
 
-            {/* Initial Load Modal */}
-            <AnimatePresence>
-                {isInitialModalOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-                        onClick={() => setIsInitialModalOpen(false)}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                            animate={{ scale: 1, opacity: 1, y: 0 }}
-                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="bg-white/85 backdrop-blur-2xl rounded-[1.5rem] md:rounded-[2rem] shadow-2xl border border-white/40 overflow-hidden max-w-4xl w-full flex flex-col md:flex-row relative"
-                        >
-                            <button
-                                onClick={() => setIsInitialModalOpen(false)}
-                                className="absolute top-4 right-4 z-10 p-2 bg-white/50 rounded-full hover:bg-white transition-colors"
-                            >
-                                <span className="material-symbols-outlined">close</span>
-                            </button>
-                            <div className="md:w-1/2 relative h-64 md:h-auto">
-                                <img src={mystreepro} alt="Sound Healing Session" className="absolute inset-0 w-full h-full object-cover" />
-                                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-widest text-[#1b110e] font-sans">
-                                    Mar 1st • 11 AM
-                                </div>
-                            </div>
-                            <div className="md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
-                                <span className="text-[#ED5B2D] font-bold tracking-widest uppercase text-xs mb-3 font-sans">Latest Event</span>
-                                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-display text-[#1b110e]">Heal with Sound, <br />Align with Vibration</h2>
-                                <p className="text-[#3c2a24] mb-4 leading-relaxed font-sans text-lg">Step into a meditative experience that restores balance and inner peace. Reduces stress, enhances clarity, and clears energetic blockages.</p>
-                                <div className="text-sm font-bold text-[#ED5B2D] mb-8">
-                                    <span className="line-through text-gray-400 mr-2">₹1800</span>
-                                    <span>₹1200 Introductory Offer</span>
-                                </div>
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <a href="https://my-stree.com/booking" className="bg-gradient-flame text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center font-sans tracking-wide">
-                                        Register Now
-                                    </a>
-                                    <button onClick={() => setIsInitialModalOpen(false)} className="border border-neutral-300 hover:bg-neutral-50 text-[#1b110e] px-6 py-3 rounded-lg font-medium transition-colors w-full sm:w-auto text-center font-sans tracking-wide">
-                                        Dismiss
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+
 
             {/* Event Detail Modal */}
             <AnimatePresence>
@@ -217,9 +162,9 @@ const UpcomingEvents = () => {
                                                     Register
                                                 </a>
                                             ) : (
-                                                <button className="w-full bg-gradient-flame text-white py-3 rounded font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                                                    Confirm RSVP
-                                                </button>
+                                                <div className="w-full bg-[#1b110e]/10 text-[#1b110e]/50 py-3 rounded font-bold text-center tracking-wide font-sans">
+                                                    Event Concluded
+                                                </div>
                                             )}
                                         </div>
                                     </div>
@@ -327,7 +272,7 @@ const UpcomingEvents = () => {
                                             Register
                                         </a>
                                     ) : (
-                                        <button className="text-[#1b110e] font-bold border-b-2 border-[#ED5B2D] hover:text-[#ED5B2D] transition-colors pb-0.5 text-sm uppercase tracking-wide font-sans">RSVP Now</button>
+                                        <div className="text-[#1b110e]/50 font-bold border-b-2 border-transparent pb-0.5 text-sm uppercase tracking-wide font-sans">Event Concluded</div>
                                     )}
                                 </div>
                             </div>
