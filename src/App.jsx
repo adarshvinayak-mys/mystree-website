@@ -78,6 +78,12 @@ function AppContent() {
       const ariaLabel = (element.getAttribute?.('aria-label') || '').toLowerCase();
       const title = (element.getAttribute?.('title') || '').toLowerCase();
       const href = (element.getAttribute?.('href') || '').toLowerCase();
+      const isDirectContactLink =
+        href.startsWith('tel:') ||
+        href.startsWith('mailto:') ||
+        href.includes('wa.me/') ||
+        href.includes('api.whatsapp.com/');
+      if (isDirectContactLink) return false;
       return bookingPattern.test(text) || bookingPattern.test(ariaLabel) || bookingPattern.test(title) || hrefPattern.test(href);
     };
 

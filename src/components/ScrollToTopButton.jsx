@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function ScrollToTopButton() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isChatOpen, setIsChatOpen] = useState(false);
 
     // Show button when page is scrolled down
     const toggleVisibility = () => {
@@ -25,12 +26,21 @@ export default function ScrollToTopButton() {
         return () => window.removeEventListener("scroll", toggleVisibility);
     }, []);
 
+    useEffect(() => {
+        const onChatToggle = (event) => {
+            setIsChatOpen(Boolean(event.detail?.open));
+        };
+
+        window.addEventListener('mystree-chat-toggle', onChatToggle);
+        return () => window.removeEventListener('mystree-chat-toggle', onChatToggle);
+    }, []);
+
     return (
         <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40">
             <button
                 type="button"
                 onClick={scrollToTop}
-                className={`flex items-center justify-center p-3 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] text-gray-700 hover:text-primary hover:bg-orange-50 transition-all duration-300 transform md:hover:scale-110 border border-gray-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+                className={`flex items-center justify-center p-3 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] text-gray-700 hover:text-primary hover:bg-orange-50 transition-all duration-300 transform md:hover:scale-110 border border-gray-100 ${(isVisible && !isChatOpen) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                     }`}
                 aria-label="Scroll to top"
             >

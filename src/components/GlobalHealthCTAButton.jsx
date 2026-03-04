@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 export default function GlobalHealthCTAButton() {
     const location = useLocation();
     const [isFooterVisible, setIsFooterVisible] = useState(false);
+    const [isChatOpen, setIsChatOpen] = useState(false);
 
     useEffect(() => {
         const footer = document.querySelector('.ms-footer');
@@ -19,7 +20,16 @@ export default function GlobalHealthCTAButton() {
         return () => observer.disconnect();
     }, [location.pathname]);
 
-    if (location.pathname === '/booking-gateway') {
+    useEffect(() => {
+        const onChatToggle = (event) => {
+            setIsChatOpen(Boolean(event.detail?.open));
+        };
+
+        window.addEventListener('mystree-chat-toggle', onChatToggle);
+        return () => window.removeEventListener('mystree-chat-toggle', onChatToggle);
+    }, []);
+
+    if (location.pathname === '/booking-gateway' || isChatOpen) {
         return null;
     }
     return (

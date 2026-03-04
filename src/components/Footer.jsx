@@ -101,9 +101,6 @@ export default function Footer() {
               <a className="ms-footer__social" href="https://www.youtube.com/@MyStreeForYou" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <i className="fa-brands fa-youtube" aria-hidden="true"></i>
               </a>
-              <a className="ms-footer__social" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i className="fa-brands fa-x-twitter" aria-hidden="true"></i>
-              </a>
               <a className="ms-footer__social" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i className="fa-brands fa-instagram" aria-hidden="true"></i>
               </a>
