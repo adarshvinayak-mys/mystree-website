@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import gallery1 from '../assets/gallery/gallery_1.jpeg';
+import gallery2 from '../assets/gallery/gallery_2.jpeg';
+import gallery3 from '../assets/gallery/gallery_3.jpeg';
+import gallery4 from '../assets/gallery/gallery_4.jpeg';
+import gallery5 from '../assets/gallery/gallery_5.jpeg';
+import gallery6 from '../assets/gallery/gallery_6.jpeg';
+import gallery7 from '../assets/gallery/gallery_7.jpeg';
+import gallery8 from '../assets/gallery/gallery_8.jpeg';
+import gallery9 from '../assets/gallery/gallery_9.jpeg';
+import gallery10 from '../assets/gallery/gallery_10.jpeg';
+
 const Gallery = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -12,16 +23,16 @@ const Gallery = () => {
     const categories = ['All', 'Facilities', 'Happy Moms', 'Our Tech', 'Team'];
 
     const galleryItems = [
-        { id: 1, category: 'Facilities', title: 'Modern Reception', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.18.jpeg" },
-        { id: 2, category: 'Team', title: 'Expert Consultation', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19%20(1).jpeg" },
-        { id: 3, category: 'Happy Moms', title: 'Joyful Moments', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19.jpeg" },
-        { id: 4, category: 'Our Tech', title: 'Advanced Diagnostics', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20%20(1).jpeg" },
-        { id: 5, category: 'Our Tech', title: 'Clinical Precision', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20.jpeg" },
-        { id: 6, category: 'Team', title: 'Care Coordination', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21%20(2).jpeg" },
-        { id: 7, category: 'Facilities', title: 'Serene Hallways', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21%20(1).jpeg" },
-        { id: 8, category: 'Facilities', title: 'Patient Suites', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21.jpeg" },
-        { id: 9, category: 'Facilities', title: 'Therapeutic Lounges', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.22%20(1).jpeg" },
-        { id: 10, category: 'Facilities', title: 'Wellness Spaces', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.22.jpeg" }
+        { id: 1, category: 'Facilities', title: 'Modern Reception', image: gallery1 },
+        { id: 2, category: 'Team', title: 'Expert Consultation', image: gallery2 },
+        { id: 3, category: 'Happy Moms', title: 'Joyful Moments', image: gallery3 },
+        { id: 4, category: 'Our Tech', title: 'Advanced Diagnostics', image: gallery4 },
+        { id: 5, category: 'Our Tech', title: 'Clinical Precision', image: gallery5 },
+        { id: 6, category: 'Team', title: 'Care Coordination', image: gallery6 },
+        { id: 7, category: 'Facilities', title: 'Serene Hallways', image: gallery7 },
+        { id: 8, category: 'Facilities', title: 'Patient Suites', image: gallery8 },
+        { id: 9, category: 'Facilities', title: 'Therapeutic Lounges', image: gallery9 },
+        { id: 10, category: 'Facilities', title: 'Wellness Spaces', image: gallery10 }
     ];
 
     const filteredItems = filter === 'All' ? galleryItems : galleryItems.filter(item => item.category === filter);
@@ -148,8 +159,8 @@ const Gallery = () => {
                         </div>
                         <div className="md:w-2/3 space-y-12">
                             {[
-                                { title: "Patient Success: Overcoming PCOS", date: "Jan 12", image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19.jpeg" },
-                                { title: "Clinical Standards in Lab Care", date: "Jan 05", image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20%20(1).jpeg" }
+                                { title: "Patient Success: Overcoming PCOS", date: "Jan 12", image: gallery3 },
+                                { title: "Clinical Standards in Lab Care", date: "Jan 05", image: gallery4 }
                             ].map((p, i) => (
                                 <motion.div key={i} whileHover={{ x: 10 }} className="flex gap-8 group cursor-pointer">
                                     <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-md">
