@@ -1,0 +1,235 @@
+.ms-footer {
+  background: #a7c7e7;
+  color: #2f3e46;
+  padding: 2.25rem 0 5.5rem;
+}
+
+.ms-footer__container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ms-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.ms-footer__col {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 1.25rem;
+  min-height: 100%;
+}
+
+.ms-footer__heading {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #2f3e46;
+}
+
+.ms-footer__logo {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.ms-footer__tagline {
+  margin: 0.9rem 0 0;
+  font-size: 1.03rem;
+  line-height: 1.55;
+  color: rgba(47, 62, 70, 0.95);
+  max-width: 24rem;
+}
+
+.ms-footer__socials {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.ms-footer__social {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.76);
+  color: #2f3e46;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.22s ease;
+}
+
+.ms-footer__social:hover {
+  transform: translateY(-1px);
+  color: #ed5b2d;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(237, 91, 45, 0.18);
+}
+
+.ms-footer__social .material-symbols-outlined {
+  font-size: 1.02rem;
+  line-height: 1;
+}
+
+.ms-footer__list {
+  list-style: none;
+  margin: 0.95rem 0 0;
+  padding: 0;
+}
+
+.ms-footer__list li + li {
+  margin-top: 0.42rem;
+}
+
+.ms-footer__link {
+  text-decoration: none;
+  color: rgba(47, 62, 70, 0.95);
+  font-size: 1.01rem;
+  line-height: 1.55;
+  transition: color 0.2s ease;
+}
+
+.ms-footer__link:hover {
+  color: #ed5b2d;
+}
+
+.ms-footer__link--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+}
+
+.ms-footer__link--with-icon .material-symbols-outlined {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.ms-footer__contact-card {
+  margin-top: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.28);
+  padding: 0.95rem;
+}
+
+.ms-footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.ms-footer__contact-item + .ms-footer__contact-item {
+  margin-top: 0.7rem;
+}
+
+.ms-footer__contact-icon {
+  color: #ed5b2d;
+  font-size: 1.15rem;
+  line-height: 1;
+  margin-top: 0.05rem;
+}
+
+.ms-footer__contact-label {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(47, 62, 70, 0.62);
+}
+
+.ms-footer__contact-value {
+  display: inline-block;
+  margin-top: 0.05rem;
+  color: #2f3e46;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.ms-footer__contact-value:hover {
+  color: #ed5b2d;
+}
+
+.ms-footer__contact-value--strong {
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.ms-footer__bottom {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: rgba(47, 62, 70, 0.9);
+}
+
+.ms-footer__copyright {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+.ms-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.ms-footer__legal a {
+  color: rgba(47, 62, 70, 0.95);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ms-footer__legal a:hover {
+  color: #ed5b2d;
+}
+
+@media (min-width: 768px) {
+  .ms-footer {
+    padding-bottom: 2.5rem;
+  }
+
+  .ms-footer__container {
+    padding: 0 1.5rem;
+  }
+
+  .ms-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .ms-footer__col {
+    padding: 1.35rem;
+  }
+
+  .ms-footer__bottom {
+    margin-top: 1.05rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ms-footer__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .ms-footer__col:not(:first-child) {
+    border-left-color: rgba(255, 255, 255, 0.42);
+  }
+}

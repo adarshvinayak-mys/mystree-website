@@ -1,83 +1,105 @@
 import { Link } from 'react-router-dom';
-const mystreelogo = '/mystreelogo.svg';
+import mystreelogo from '../assets/logo.png';
+import './Footer.css';
 
+const quickLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Our Doctors', to: '/team' },
+  { label: 'Resources', to: '/showcase/events' },
+  { label: 'Contact', to: '/contact' },
+];
+
+const services = [
+  { label: 'OBGYN Consults', to: '/services/obgyn' },
+  { label: 'Adolescent Health', to: '/services/adolescent-health' },
+  { label: 'Prenatal Care', to: '/services/prenatal' },
+  { label: 'Fertility Treatments', to: '/services/fertility' },
+  { label: 'Menopause Support', to: '/services/menopause' },
+  { label: 'Mental Wellness', to: '/services/psychology' },
+];
 
 export default function Footer() {
-
-    return (
-        <footer data-no-booking-intercept="true" className="bg-cadet-gray text-white pt-12 pb-24 md:pb-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
-                    <div>
-                        <div className="flex items-center mb-6">
-                            <div className="inline-block">
-                                <img src={mystreelogo} alt="Mystree Logo" className="h-16 w-auto object-contain" />
-                            </div>
-                        </div>
-                        <p className="text-white/80 text-sm mb-6 leading-relaxed">
-                            Compassionate, personalized healthcare for every stage of a woman's life. We are here to listen, support, and heal.
-                        </p>
-                        <div className="flex gap-4">
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in text-lg"></i></a>
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram text-lg"></i></a>
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="https://wa.me/+916366573772" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp text-lg"></i></a>
-                            <a className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-cadet-gray transition" href="mailto:info@mystree.org"><span className="material-symbols-outlined text-lg">mail</span></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-xl mb-6 font-display border-b border-white/20 pb-2 inline-block">Quick Links</h4>
-                        <ul className="space-y-3 text-sm text-white/80">
-                            <li><Link className="hover:text-white hover:translate-x-1 transition flex items-center gap-2" to="/"><span className="material-symbols-outlined text-xs">arrow_forward_ios</span> Home</Link></li>
-                            <li><Link className="hover:text-white hover:translate-x-1 transition flex items-center gap-2" to="/about"><span className="material-symbols-outlined text-xs">arrow_forward_ios</span> About Us</Link></li>
-                            <li><Link className="hover:text-white hover:translate-x-1 transition flex items-center gap-2" to="/team"><span className="material-symbols-outlined text-xs">arrow_forward_ios</span> Our Doctors</Link></li>
-                            <li><Link className="hover:text-white hover:translate-x-1 transition flex items-center gap-2" to="/showcase/events"><span className="material-symbols-outlined text-xs">arrow_forward_ios</span> Resources</Link></li>
-                            <li><Link className="hover:text-white hover:translate-x-1 transition flex items-center gap-2" to="/contact"><span className="material-symbols-outlined text-xs">arrow_forward_ios</span> Contact</Link></li>
-
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-xl mb-6 font-display border-b border-white/20 pb-2 inline-block">Our Services</h4>
-                        <ul className="space-y-3 text-sm text-white/80">
-                            <li><Link className="hover:text-white transition" to="/services/obgyn">OBGYN Consults</Link></li>
-                            <li><Link className="hover:text-white transition" to="/services/adolescent-health">Adolescent Health</Link></li>
-                            <li><Link className="hover:text-white transition" to="/services/prenatal">Prenatal Care</Link></li>
-                            <li><Link className="hover:text-white transition" to="/services/fertility">Fertility Treatments</Link></li>
-                            <li><Link className="hover:text-white transition" to="/services/menopause">Menopause Support</Link></li>
-                            <li><Link className="hover:text-white transition" to="/services/psychology">Mental Wellness</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-xl mb-6 font-display border-b border-white/20 pb-2 inline-block">Get in Touch</h4>
-                        <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/10">
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="material-symbols-outlined">call</span>
-                                <div>
-                                    <p className="text-xs uppercase opacity-70">Call Us</p>
-                                    <p className="font-bold text-lg">+91 63665 73772</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <span className="material-symbols-outlined">email</span>
-                                <div>
-                                    <p className="text-xs uppercase opacity-70">Email Us</p>
-                                    <p className="text-sm">info@mystree.org</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/60">
-                    <p>© 2024 My Stree - All Rights Reserved</p>
-                    <div className="flex gap-6 mt-4 md:mt-0 items-center">
-                        <span>Privacy Policy</span>
-                        <span>Terms of Service</span>
-                        <div className="flex gap-2 text-white/40">
-                            <span className="material-symbols-outlined">credit_card</span>
-                            <span className="material-symbols-outlined">lock</span>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <footer data-no-booking-intercept="true" className="ms-footer">
+      <div className="ms-footer__container">
+        <div className="ms-footer__grid">
+          <section className="ms-footer__col ms-footer__col--brand">
+            <img src={mystreelogo} alt="Mystree Logo" className="ms-footer__logo" />
+            <p className="ms-footer__tagline">
+              Compassionate, personalized healthcare for every stage of a woman&apos;s life.
+            </p>
+            <div className="ms-footer__socials">
+              <a className="ms-footer__social" href="https://www.linkedin.com/company/my-stree-for-you/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a className="ms-footer__social" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a className="ms-footer__social" href="https://wa.me/+916366573772" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+              <a className="ms-footer__social" href="mailto:info@mystree.org" aria-label="Email">
+                <span className="material-symbols-outlined" aria-hidden="true">mail</span>
+              </a>
             </div>
-        </footer>
-    );
+          </section>
+
+          <section className="ms-footer__col">
+            <h4 className="ms-footer__heading">Quick Links</h4>
+            <ul className="ms-footer__list">
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <Link className="ms-footer__link ms-footer__link--with-icon" to={item.to}>
+                    <span className="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="ms-footer__col">
+            <h4 className="ms-footer__heading">Our Services</h4>
+            <ul className="ms-footer__list">
+              {services.map((item) => (
+                <li key={item.label}>
+                  <Link className="ms-footer__link" to={item.to}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="ms-footer__col">
+            <h4 className="ms-footer__heading">Get in Touch</h4>
+            <div className="ms-footer__contact-card">
+              <div className="ms-footer__contact-item">
+                <span className="material-symbols-outlined ms-footer__contact-icon" aria-hidden="true">call</span>
+                <div>
+                  <p className="ms-footer__contact-label">CALL US</p>
+                  <a href="tel:+916366573772" className="ms-footer__contact-value ms-footer__contact-value--strong">+91 63665 73772</a>
+                </div>
+              </div>
+              <div className="ms-footer__contact-item">
+                <span className="material-symbols-outlined ms-footer__contact-icon" aria-hidden="true">mail</span>
+                <div>
+                  <p className="ms-footer__contact-label">EMAIL US</p>
+                  <a href="mailto:info@mystree.org" className="ms-footer__contact-value">info@mystree.org</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="ms-footer__bottom">
+          <p className="ms-footer__copyright">(c) My Stree - All Rights Reserved</p>
+          <div className="ms-footer__legal">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
