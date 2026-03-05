@@ -24,14 +24,10 @@ body {
     overflow-x: hidden;
 }
 
-:root {
-    --ms-font-unified: 'Inter', 'Source Sans 3', 'Lato', sans-serif;
-}
-
 @layer base {
 
     body {
-        font-family: var(--ms-font-unified);
+        @apply font-body;
     }
 
     h1,
@@ -40,7 +36,7 @@ body {
     h4,
     h5,
     h6 {
-        font-family: var(--ms-font-unified);
+        @apply font-display;
     }
 
     p,
@@ -50,7 +46,7 @@ body {
     input,
     textarea,
     label {
-        font-family: var(--ms-font-unified);
+        @apply font-body;
     }
 }
 
@@ -422,27 +418,6 @@ body {
 .page-font-soul .soul-brand-font {
     font-family: 'Fjalla One', 'Heebo', 'Source Sans 3', sans-serif;
     letter-spacing: 0.08em;
-}
-
-/* Single typography system for all routes */
-.page-font-unified {
-    font-family: var(--ms-font-unified);
-}
-
-.page-font-unified :is(h1, h2, h3, h4, h5, h6, p, li, a, button, input, textarea, label, small, strong) {
-    font-family: var(--ms-font-unified);
-}
-
-.page-font-unified [class*="font-display"],
-.page-font-unified [class*="font-serif"],
-.page-font-unified [class*="font-body"],
-.page-font-unified [class*="font-sans"] {
-    font-family: var(--ms-font-unified) !important;
-}
-
-header :is(a, button, p, li),
-.ms-footer :is(h1, h2, h3, h4, h5, h6, p, a, li, button, input, label, small, strong) {
-    font-family: var(--ms-font-unified) !important;
 }
 
 @layer utilities {

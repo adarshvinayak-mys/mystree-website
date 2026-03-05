@@ -100,7 +100,7 @@ export default function PrenatalClinic() {
         <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary ">
             <style>{`
                 .font-serif-display {
-                    font-family: 'Inter', 'Source Sans 3', 'Lato', sans-serif;
+                    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
                 }
                 
                 /* Mother & Womb Container */

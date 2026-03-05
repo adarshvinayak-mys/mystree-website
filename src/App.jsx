@@ -203,12 +203,33 @@ function AppContent() {
     };
   }, [location.pathname, navigate]);
 
-  const getPageFontClass = () => 'page-font-unified';
+  const getPageFontClass = (pathname) => {
+    if (pathname === '/') return 'page-font-home';
+    if (pathname === '/about') return 'page-font-about';
+    if (pathname === '/team') return 'page-font-team';
+    if (pathname === '/experts') return 'page-font-experts';
+    if (pathname === '/services/obgyn') return 'page-font-obgyn';
+    if (pathname === '/services/adolescent-health') return 'page-font-adolescent';
+    if (pathname === '/services/prenatal') return 'page-font-prenatal';
+    if (pathname === '/services/fertility') return 'page-font-fertility';
+    if (pathname === '/services/menopause') return 'page-font-menopause';
+    if (pathname === '/services/nutrition') return 'page-font-nutrition';
+    if (pathname === '/services/physiotherapy') return 'page-font-physio';
+    if (pathname === '/services/dermatology') return 'page-font-dermatology';
+    if (pathname === '/services/psychology') return 'page-font-psychology';
+    if (pathname === '/showcase/gallery') return 'page-font-gallery';
+    if (pathname === '/showcase/events') return 'page-font-events';
+    if (pathname === '/contact') return 'page-font-contact';
+    if (pathname === '/booking-gateway') return 'page-font-contact';
+    if (pathname === '/blog') return 'page-font-blog';
+    if (pathname === '/mystree-soul') return 'page-font-soul';
+    return 'page-font-home';
+  };
 
   return (
     <Wrapper>
       {location.pathname !== '/mystree-soul' && <Navbar />}
-      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass()}`}>
+      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
