@@ -143,7 +143,7 @@ export default function OurTeam() {
                             <div className="relative max-w-md w-full">
                                 <div className="absolute inset-0 bg-orange-400/10 rounded-2xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
                                 <div className="relative rounded-2xl shadow-2xl overflow-hidden h-[400px] lg:h-[500px]">
-                                    <img alt="Priyanka Savina" className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src={doctor3} loading="lazy" decoding="async" />
+                                    <img alt="Priyanka Savina" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src={doctor3} loading="lazy" decoding="async" />
                                 </div>
 
                             </div>
