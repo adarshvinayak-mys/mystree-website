@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { supabase } from '../../supabaseClient';
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const INDIA_PHONE_REGEX = /^[6-9]\d{9}$/;
+const COUNTRY_OPTIONS = [
+    { code: '+91', label: 'IN +91', minLength: 10, maxLength: 10 },
+    { code: '+1', label: 'US +1', minLength: 10, maxLength: 10 },
+    { code: '+44', label: 'UK +44', minLength: 10, maxLength: 10 },
+    { code: '+971', label: 'UAE +971', minLength: 9, maxLength: 9 }
+];
+
 const features = [
     { id: 'pcos', title: "PCOS Care", icon: "spa", deskX: 22, deskY: 22 },
     { id: 'hormonal', title: "Hormonal Balance", icon: "water_drop", deskX: 78, deskY: 22 },
@@ -14,9 +23,11 @@ export default function WaitlistMorph() {
     const [submitting, setSubmitting] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [countryCode, setCountryCode] = useState('+91');
     const [phone, setPhone] = useState('');
     const [submitError, setSubmitError] = useState('');
     const shouldReduceMotion = useReducedMotion();
+    const selectedCountry = COUNTRY_OPTIONS.find((opt) => opt.code === countryCode) || COUNTRY_OPTIONS[0];
 
     return (
         <section className="relative w-full py-24 lg:py-32 bg-[#110F0E] overflow-hidden flex flex-col items-center justify-center z-10 border-t border-white/5 will-change-transform">
@@ -175,9 +186,31 @@ export default function WaitlistMorph() {
                                 setSubmitting(true);
                                 setSubmitError('');
                                 try {
+                                    const trimmedName = name.trim();
+                                    const normalizedEmail = email.trim().toLowerCase();
+                                    const phoneDigits = phone.replace(/\D/g, '');
+
+                                    if (!trimmedName) {
+                                        setSubmitError('Please enter your full name.');
+                                        return;
+                                    }
+                                    if (!EMAIL_REGEX.test(normalizedEmail)) {
+                                        setSubmitError('Please enter a valid email address.');
+                                        return;
+                                    }
+                                    if (phoneDigits.length < selectedCountry.minLength || phoneDigits.length > selectedCountry.maxLength) {
+                                        setSubmitError(`Please enter a valid phone number for ${selectedCountry.label}.`);
+                                        return;
+                                    }
+                                    if (countryCode === '+91' && !INDIA_PHONE_REGEX.test(phoneDigits)) {
+                                        setSubmitError('Please enter a valid Indian mobile number.');
+                                        return;
+                                    }
+
+                                    const fullPhone = `${countryCode}${phoneDigits}`;
                                     const { error } = await supabase
                                         .from('mystree_soul_waitlist')
-                                        .insert([{ name, email, phone }]);
+                                        .insert([{ name: trimmedName, email: normalizedEmail, phone: fullPhone }]);
                                     if (error) {
                                         setSubmitError(error.message || 'Unable to join waitlist right now. Please try again.');
                                         return;
@@ -197,14 +230,34 @@ export default function WaitlistMorph() {
                                 placeholder="FULL NAME"
                                 className="w-full bg-transparent px-4 sm:px-6 py-3 outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/50 font-sans text-xs uppercase tracking-[0.1em] border-b border-white/10"
                             />
-                            <input
-                                type="tel"
-                                required
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                placeholder="PHONE NUMBER"
-                                className="w-full bg-transparent px-4 sm:px-6 py-3 outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/50 font-sans text-xs uppercase tracking-[0.1em] border-b border-white/10"
-                            />
+                            <div className="w-full flex items-center border-b border-white/10">
+                                <select
+                                    value={countryCode}
+                                    onChange={(e) => {
+                                        const nextCode = e.target.value;
+                                        const nextCountry = COUNTRY_OPTIONS.find((opt) => opt.code === nextCode) || COUNTRY_OPTIONS[0];
+                                        const digits = phone.replace(/\D/g, '').slice(0, nextCountry.maxLength);
+                                        setCountryCode(nextCode);
+                                        setPhone(digits);
+                                    }}
+                                    className="w-[112px] bg-transparent border-none outline-none text-[#F4F1EB] px-4 sm:px-6 py-3 font-sans text-xs uppercase tracking-[0.08em]"
+                                >
+                                    {COUNTRY_OPTIONS.map((opt) => (
+                                        <option key={opt.code} value={opt.code} className="text-[#110F0E]">
+                                            {opt.label}
+                                        </option>
+                                    ))}
+                                </select>
+                                <input
+                                    type="tel"
+                                    inputMode="numeric"
+                                    required
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, selectedCountry.maxLength))}
+                                    placeholder="PHONE NUMBER"
+                                    className="flex-1 bg-transparent px-2 sm:px-4 py-3 outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/50 font-sans text-xs uppercase tracking-[0.1em]"
+                                />
+                            </div>
                             <div className="flex flex-col sm:flex-row gap-2 w-full">
                                 <input
                                     type="email"
