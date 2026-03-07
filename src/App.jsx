@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ChatButton from './components/ChatButton';
 import GlobalHealthCTAButton from './components/GlobalHealthCTAButton';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import LaunchCountdownWidget from './components/LaunchCountdownWidget';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 
@@ -228,8 +229,8 @@ function AppContent() {
 
   return (
     <Wrapper>
-      {location.pathname !== '/mystree-soul' && <Navbar />}
-      <main className={`${location.pathname !== '/mystree-soul' ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
+      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <Navbar />}
+      <main className={`${!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -250,16 +251,17 @@ function AppContent() {
           <Route path="/booking-gateway" element={<BookingGateway />} />
           <Route path="/blog" element={<BlogAndCommunity />} />
           <Route path="/mystree-soul" element={<SoulTriage />} />
-          <Route path="/soul-triage" element={<SoulTriage />} />
         </Routes>
 
 
 
       </main>
-      {location.pathname !== '/mystree-soul' && <Footer />}
-      {location.pathname !== '/mystree-soul' && <GlobalHealthCTAButton />}
-      {location.pathname !== '/mystree-soul' && <ScrollToTopButton />}
-      {location.pathname !== '/mystree-soul' && <ChatButton />}
+      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <Footer />}
+      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <GlobalHealthCTAButton />}
+      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ScrollToTopButton />}
+      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ChatButton />}
+      <LaunchCountdownWidget />
+
     </Wrapper>
   );
 }

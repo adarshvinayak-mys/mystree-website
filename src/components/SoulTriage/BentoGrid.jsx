@@ -1,13 +1,55 @@
-import React, { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { motion, useMotionValue, useSpring, useReducedMotion, AnimatePresence } from 'framer-motion';
 
-const GlassCard = ({ icon, title, subtitle, bullets, hoverGradient }) => {
+// ─── Card Data ───────────────────────────────────────────────────────────────
+const cardsData = [
+    {
+        id: 'fingerprint',
+        icon: 'fingerprint',
+        title: 'The Health ID',
+        subtitle: 'One scanner. Your entire health story.',
+        themeColor: '#2563EB',
+        description: 'Your entire health journey — securely stored and accessible in one click. No more carrying files or repeating history to every new doctor.',
+        bullets: ['Digital Health Locker', 'Cross-clinic Data Sync', 'Global Access Token'],
+    },
+    {
+        id: 'accuracy',
+        icon: 'psychology_alt',
+        title: 'AI Precision',
+        subtitle: 'Advanced triage to detect complex patterns.',
+        themeColor: '#7C3AED',
+        description: 'Our AI detects subtle health changes before they become problems — early warnings, intelligent symptom grouping, and clinical peace of mind.',
+        bullets: ['99.8% Triage Accuracy', 'Intelligent Symptom Clustering', 'Early Warning Signals'],
+    },
+    {
+        id: 'timedriven',
+        icon: 'verified',
+        title: '6-Hour Triage',
+        subtitle: 'Scientifically validated. Physician verified.',
+        themeColor: '#DB2777',
+        description: 'AI-powered triage for women’s health with a 6-hour turnaround time, combining intelligent symptom analysis with a human-in-the-loop doctor verification system for fast, reliable, and clinically trusted responses.',
+        bullets: ['Guaranteed 6-Hour Response', 'Physician-Verified Analysis', 'Comprehensive Gynaecology Support'],
+    },
+    {
+        id: 'longevity',
+        icon: 'lock',
+        title: 'Luxury Longevity',
+        subtitle: 'Unlocking the future of long-term wellness.',
+        themeColor: '#059669',
+        description: 'Our elite longevity programs are currently in development. We are building the future of anti-ageing and personalized health storage.',
+        bullets: ['Next-gen Precision Testing', 'Anti-ageing Protocols', 'Elite Health Storage'],
+        isLocked: true,
+    },
+];
+
+// ─── Individual Glass Card ───────────────────────────────────────────────────
+const GlassCard = ({ id, icon, title, subtitle, bullets, themeColor, isLocked, onClick }) => {
     const cardRef = useRef(null);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     const [isHovered, setIsHovered] = useState(false);
 
-    // Smooth trailing for the mouse glow
     const smoothX = useSpring(mouseX, { stiffness: 300, damping: 30 });
     const smoothY = useSpring(mouseY, { stiffness: 300, damping: 30 });
 
@@ -24,177 +66,336 @@ const GlassCard = ({ icon, title, subtitle, bullets, hoverGradient }) => {
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="relative w-full h-full min-h-[400px] rounded-[32px] overflow-hidden border border-white/10 bg-[rgba(255,255,255,0.03)] backdrop-blur-2xl group cursor-pointer shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
+            onClick={isLocked ? undefined : onClick}
+            whileHover={isLocked ? {} : { y: -10, scale: 1.02 }}
+            whileTap={isLocked ? {} : { scale: 0.97 }}
+            transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
+            className={`relative w-full h-full min-h-[420px] rounded-[40px] overflow-hidden border-2 bg-white group transition-all duration-500 ${isLocked ? 'cursor-default opacity-90' : 'cursor-pointer shadow-[0_15px_45px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.12)]'}`}
+            style={{ borderColor: isHovered && !isLocked ? themeColor + '50' : 'rgba(0,0,0,0.06)' }}
         >
-            {/* Hover Gradient Overlay */}
+            {/* Locked Badge */}
+            {isLocked && (
+                <div className="absolute top-10 right-10 z-20 bg-black/5 backdrop-blur-md px-4 py-2 rounded-full border border-black/10 flex items-center gap-2">
+                    <span className="material-icons text-sm text-[#110F0E]">lock</span>
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[#110F0E]">Coming Soon</span>
+                </div>
+            )}
+
+            {/* Subtle color tint on hover */}
             <div
-                className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${hoverGradient}`}
+                className={`absolute inset-0 opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none ${isLocked ? 'hidden' : ''}`}
+                style={{ backgroundColor: themeColor }}
             />
 
-            {/* Mouse tracking spotlight */}
-            <motion.div
-                className="absolute w-[500px] h-[500px] rounded-full blur-[80px] pointer-events-none z-0"
-                style={{
-                    background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%)',
-                    left: smoothX,
-                    top: smoothY,
-                    x: '-50%',
-                    y: '-50%',
-                    opacity: isHovered ? 1 : 0
-                }}
-            />
+            {/* Mouse spotlight glow */}
+            {!isLocked && (
+                <motion.div
+                    className="absolute w-[500px] h-[500px] rounded-full blur-[90px] pointer-events-none z-0"
+                    style={{
+                        background: `radial-gradient(circle, ${themeColor}22 0%, transparent 70%)`,
+                        left: smoothX,
+                        top: smoothY,
+                        x: '-50%',
+                        y: '-50%',
+                        opacity: isHovered ? 1 : 0,
+                        transition: 'opacity 0.4s ease',
+                    }}
+                />
+            )}
 
-            {/* Inner Border Highlight */}
-            <div className="absolute inset-0 rounded-[32px] ring-1 ring-inset ring-white/5 pointer-events-none" />
-
-            {/* Content Container */}
-            <div className="relative z-10 p-8 md:p-12 h-full flex flex-col justify-between">
+            {/* Content */}
+            <div className="relative z-10 p-10 md:p-12 h-full flex flex-col justify-between">
                 <div>
-                    <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 group-hover:text-white transition-colors duration-500 mb-8 group-hover:scale-110 transform origin-left shadow-[0_4px_20px_rgba(0,0,0,0.2)] group-hover:bg-white/10">
-                        <span className="material-icons text-2xl">{icon}</span>
+                    <div
+                        className="w-16 h-16 rounded-[20px] flex items-center justify-center transition-all duration-500 mb-8 shadow-sm border border-black/5"
+                        style={{
+                            backgroundColor: isHovered && !isLocked ? themeColor : 'rgba(0,0,0,0.05)',
+                            color: isHovered && !isLocked ? 'white' : '#110F0E',
+                        }}
+                    >
+                        <span className="material-icons text-3xl">{isLocked ? 'lock_clock' : icon}</span>
                     </div>
 
-                    <h3 className="font-serif text-[28px] md:text-[32px] font-light text-[#F4F1EB] mb-3 leading-tight tracking-[-0.02em] group-hover:text-white transition-colors duration-500">
+                    <h3 className="font-serif text-[32px] md:text-[36px] font-bold text-[#110F0E] mb-4 leading-tight tracking-tight">
                         {title}
                     </h3>
 
-                    <p className="font-serif italic text-[16px] text-[#8FA295] mb-8 group-hover:text-white/90 transition-colors duration-500">
+                    <p className="font-serif italic text-lg text-[#2F3E46] mb-8 leading-relaxed">
                         "{subtitle}"
                     </p>
                 </div>
 
-                <div className="space-y-4 border-t border-white/5 pt-8">
+                <div className="space-y-4 border-t-2 border-black/5 pt-8">
                     {bullets.map((bullet, i) => (
-                        <div key={i} className="flex items-start gap-3 opacity-60 group-hover:opacity-100 transition-opacity duration-500" style={{ transitionDelay: `${i * 75}ms` }}>
-                            <span className="w-1.5 h-1.5 rounded-full bg-white/50 mt-2 shrink-0 group-hover:bg-white transition-colors duration-500" />
-                            <span className="font-sans text-[14px] md:text-[15px] font-light text-[#F4F1EB] leading-snug">{bullet}</span>
+                        <div key={i} className="flex items-start gap-4">
+                            <span
+                                className="w-2.5 h-2.5 rounded-full mt-2 shrink-0"
+                                style={{ backgroundColor: themeColor }}
+                            />
+                            <span className="font-sans text-lg font-bold leading-snug text-[#110F0E]">{bullet}</span>
                         </div>
                     ))}
                 </div>
 
-                {/* Right corner arrow */}
-                <div className="absolute top-12 right-10 md:right-12 opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 transition-all duration-500 text-white/50">
-                    <span className="material-icons text-2xl">arrow_forward_ios</span>
+                <div
+                    className={`mt-8 flex items-center gap-3 font-bold uppercase tracking-widest text-sm transition-transform duration-400 ${!isLocked ? 'group-hover:translate-x-2' : ''}`}
+                    style={{ color: themeColor }}
+                >
+                    <span>{isLocked ? 'Coming Soon' : 'Discover More'}</span>
+                    <span className="material-icons text-lg">{isLocked ? 'lock_reset' : 'east'}</span>
                 </div>
             </div>
         </motion.div>
     );
 };
 
-const cardsData = [
-    {
-        icon: 'fingerprint',
-        title: 'The Unique Fingerprint',
-        subtitle: 'One barcode access or scanner access to all your medical history and tests.',
-        hoverGradient: 'bg-gradient-to-br from-[#FF5A36]/30 via-[#FF5A36]/5 to-transparent',
-        bullets: [
-            'One barcode access to all medical history and tests',
-            'Continuity of your history',
-            'Clinical clarity and escalation support'
-        ]
-    },
-    {
-        icon: 'psychology_alt',
-        title: 'AI Accuracy',
-        subtitle: 'Advanced triage to understand complex patterns.',
-        hoverGradient: 'bg-gradient-to-br from-[#06B6D4]/30 via-[#06B6D4]/5 to-transparent',
-        bullets: [
-            'Unmatched AI accuracy in triage',
-            'Intelligent symptom clustering',
-            'Evidence-based signal detection'
-        ]
-    },
-    {
-        icon: 'bolt',
-        title: 'Time-Driven Care',
-        subtitle: 'Fast, reliable escalation directed by clinical expertise.',
-        hoverGradient: 'bg-gradient-to-br from-[#8B5CF6]/30 via-[#8B5CF6]/5 to-transparent',
-        bullets: [
-            '6-hour TAT (Turnaround Time) for triage',
-            'Clinical expertise',
-            'Real-time Partner Alert (SOS) ecosystem'
-        ]
-    },
-    {
-        icon: 'spa',
-        title: 'Longevity & Wellness',
-        subtitle: 'Healthcare designed for your entire journey forward.',
-        hoverGradient: 'bg-gradient-to-br from-[#10B981]/30 via-[#10B981]/5 to-transparent',
-        bullets: [
-            'Personalized long-term wellness and longevity',
-            'Preventative care pathways',
-            'Secure, encrypted health storage'
-        ]
-    }
-];
+// ─── Glassmorphic Modal (rendered via Portal to avoid crossovers) ─────────────
+const GlassModal = ({ card, onClose }) => {
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => { document.body.style.overflow = ''; };
+    }, []);
 
+    // Close on Escape key
+    useEffect(() => {
+        const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [onClose]);
+
+    const tc = card.themeColor;
+
+    return ReactDOM.createPortal(
+        <AnimatePresence>
+            {/* Full-screen fixed overlay — always above everything */}
+            <motion.div
+                key="modal-root"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8 md:p-12"
+                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+            >
+                {/* Backdrop — clicking it closes modal */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: `linear-gradient(135deg, ${tc}18 0%, rgba(17,15,14,0.55) 100%)`,
+                        backdropFilter: 'blur(20px)',
+                        WebkitBackdropFilter: 'blur(20px)',
+                    }}
+                    onClick={onClose}
+                />
+
+                {/* Modal panel */}
+                <motion.div
+                    key="modal-panel"
+                    initial={{ opacity: 0, scale: 0.88, y: 32 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.88, y: 32 }}
+                    transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+                    className="relative w-full max-w-[680px] md:max-w-[760px] rounded-[40px] md:rounded-[52px] overflow-hidden z-10"
+                    style={{
+                        background: 'rgba(255,255,255,0.72)',
+                        backdropFilter: 'blur(48px) saturate(180%)',
+                        WebkitBackdropFilter: 'blur(48px) saturate(180%)',
+                        border: `1.5px solid rgba(255,255,255,0.7)`,
+                        boxShadow: `0 30px 80px rgba(17,15,14,0.18), 0 0 0 1px rgba(255,255,255,0.15) inset, 0 -1px 0 rgba(255,255,255,0.25) inset`,
+                    }}
+                >
+                    {/* Color ambient glow strip at top */}
+                    <div
+                        className="absolute top-0 left-0 right-0 h-1.5 rounded-t-[52px]"
+                        style={{ background: `linear-gradient(90deg, transparent, ${tc}, ${tc}80, transparent)` }}
+                    />
+
+                    {/* Inner glass highlight edges */}
+                    <div
+                        className="absolute inset-0 pointer-events-none rounded-[52px]"
+                        style={{ border: '1px solid rgba(255,255,255,0.35)', borderRadius: 'inherit' }}
+                    />
+
+                    {/* Ambient color bloom behind content */}
+                    <div
+                        className="absolute -top-16 -right-16 w-72 h-72 rounded-full pointer-events-none"
+                        style={{
+                            background: `radial-gradient(circle, ${tc}20 0%, transparent 70%)`,
+                            filter: 'blur(40px)',
+                        }}
+                    />
+
+                    {/* Scrollable content area for small screens */}
+                    <div className="relative z-10 overflow-y-auto max-h-[90vh] p-8 sm:p-12 md:p-16 flex flex-col gap-7">
+                        {/* Close button */}
+                        <button
+                            onClick={onClose}
+                            className="absolute top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95"
+                            style={{
+                                background: 'rgba(17,15,14,0.06)',
+                                border: '1px solid rgba(17,15,14,0.08)',
+                            }}
+                        >
+                            <span className="material-icons text-xl text-[#110F0E]">close</span>
+                        </button>
+
+                        {/* Header */}
+                        <div className="flex items-start gap-5 sm:gap-7 pr-14">
+                            <div
+                                className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-[20px] sm:rounded-[24px] text-white flex items-center justify-center shadow-xl"
+                                style={{
+                                    backgroundColor: tc,
+                                    boxShadow: `0 12px 32px ${tc}40`,
+                                }}
+                            >
+                                <span className="material-icons text-3xl sm:text-4xl">{card.icon}</span>
+                            </div>
+                            <div className="min-w-0">
+                                <span
+                                    className="font-sans text-xs uppercase tracking-[0.35em] font-bold block mb-1"
+                                    style={{ color: tc }}
+                                >
+                                    Clinical Pillar
+                                </span>
+                                <h2 className="font-serif text-[30px] sm:text-[38px] md:text-[46px] font-bold text-[#110F0E] leading-tight tracking-tight">
+                                    {card.title}
+                                </h2>
+                            </div>
+                        </div>
+
+                        {/* Divider with color */}
+                        <div
+                            className="h-px w-full"
+                            style={{ background: `linear-gradient(90deg, ${tc}60, transparent)` }}
+                        />
+
+                        {/* Quote */}
+                        <p
+                            className="font-serif text-xl sm:text-2xl md:text-3xl text-[#110F0E] font-light italic leading-snug pl-6 border-l-4"
+                            style={{ borderColor: tc }}
+                        >
+                            "{card.subtitle}"
+                        </p>
+
+                        {/* Description */}
+                        <p className="font-sans text-base sm:text-lg md:text-xl text-[#110F0E]/75 leading-relaxed font-medium">
+                            {card.description}
+                        </p>
+
+                        {/* Feature bullets — glass inner card */}
+                        <div
+                            className="rounded-[28px] p-6 sm:p-8"
+                            style={{
+                                background: 'rgba(255,255,255,0.5)',
+                                backdropFilter: 'blur(12px)',
+                                WebkitBackdropFilter: 'blur(12px)',
+                                border: '1px solid rgba(255,255,255,0.7)',
+                                boxShadow: `inset 0 1px 0 rgba(255,255,255,0.5), 0 4px 20px ${tc}10`,
+                            }}
+                        >
+                            <span
+                                className="font-sans text-xs uppercase tracking-[0.3em] font-bold block mb-5"
+                                style={{ color: tc }}
+                            >
+                                What this means for you
+                            </span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                {card.bullets.map((bullet, i) => (
+                                    <div key={i} className="flex items-start gap-4">
+                                        <span
+                                            className="w-3 h-3 rounded-full mt-1.5 shrink-0 shadow-sm"
+                                            style={{ backgroundColor: tc }}
+                                        />
+                                        <span className="font-sans text-base sm:text-lg font-bold text-[#110F0E] leading-snug">{bullet}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* CTA Button */}
+                        <button
+                            onClick={onClose}
+                            className="w-full py-4 sm:py-5 text-white rounded-2xl font-bold uppercase tracking-[0.25em] text-sm active:scale-[0.98] transition-all duration-200"
+                            style={{
+                                backgroundColor: tc,
+                                boxShadow: `0 12px 36px ${tc}45`,
+                            }}
+                        >
+                            Got It
+                        </button>
+                    </div>
+                </motion.div>
+            </motion.div>
+        </AnimatePresence>,
+        document.body
+    );
+};
+
+// ─── Main Section ─────────────────────────────────────────────────────────────
 export default function BentoGrid() {
     const shouldReduceMotion = useReducedMotion();
+    const [selectedCard, setSelectedCard] = useState(null);
 
     const containerVariants = {
         hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.15
-            }
-        }
+        visible: { transition: { staggerChildren: 0.12 } },
     };
 
     const cardVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.8,
-                ease: [0.4, 0, 0.2, 1]
-            }
-        }
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } },
     };
 
     return (
-        <section className="relative w-full py-[100px] lg:py-[140px] px-6 lg:px-12 bg-[#0B0F19] z-10 border-t border-white/5 overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] pointer-events-none opacity-20 z-0 blur-[120px]"
-                style={{
-                    background: 'radial-gradient(circle at center, rgba(255,90,54,0.15) 0%, transparent 60%)'
-                }}
-            />
+        <section className="relative w-full py-[64px] lg:py-[80px] px-6 lg:px-12 bg-[#FCFBF7] border-t border-black/5 overflow-hidden">
+            {/* Decorative bg blobs */}
+            <div className="absolute top-0 left-1/4 w-[600px] h-[400px] pointer-events-none blur-[120px] opacity-30"
+                style={{ background: 'radial-gradient(circle, #2563EB15, transparent 70%)' }} />
+            <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] pointer-events-none blur-[120px] opacity-30"
+                style={{ background: 'radial-gradient(circle, #DB277715, transparent 70%)' }} />
 
-            <div className="max-w-[1200px] mx-auto flex flex-col gap-14 lg:gap-20 relative z-10">
+            <div className="max-w-[1360px] mx-auto flex flex-col gap-10 lg:gap-14 relative z-10">
+                {/* Section heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-10%" }}
+                    viewport={{ once: true, margin: '-10%' }}
                     transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                    className="max-w-[800px] mx-auto text-center"
+                    className="max-w-[900px] mx-auto text-center"
                 >
-                    <span className="font-sans text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#8FA295] font-medium border-l border-[#FF5A36] pl-4 mb-6 block w-max mx-auto">
-                        Our Care Pillars
+                    <span className="font-sans text-sm uppercase tracking-[0.4em] text-[#110F0E]/30 font-bold border-l-4 border-[#110F0E]/10 pl-5 mb-8 block w-max mx-auto">
+                        Pillars of Excellence
                     </span>
-                    <h2 className="font-serif text-[42px] md:text-5xl lg:text-6xl font-light text-[#F4F1EB] tracking-[-0.03em] leading-[1.1]">
-                        Healthcare that finally <br className="hidden md:block" />
-                        <span className="text-[#FF5A36] italic font-medium"> remembers you.</span>
+                    <h2 className="font-serif text-[48px] md:text-7xl lg:text-[88px] font-light text-[#110F0E] tracking-[-0.04em] leading-[1.05]">
+                        Healthcare that{' '}
+                        <span className="italic font-semibold text-[#FF5A36]">Remembers You.</span>
                     </h2>
+                    <p className="mt-6 font-sans text-lg md:text-xl text-[#110F0E]/50 font-medium max-w-[600px] mx-auto leading-relaxed">
+                        Tap any pillar to discover what truly personalized women's health looks like.
+                    </p>
                 </motion.div>
 
+                {/* Card grid */}
                 <motion.div
                     variants={shouldReduceMotion ? {} : containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-10%" }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 auto-rows-fr"
+                    viewport={{ once: true, margin: '-8%' }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
                 >
-                    {cardsData.map((card, i) => (
-                        <motion.div key={i} variants={shouldReduceMotion ? {} : cardVariants} className="h-full">
-                            <GlassCard {...card} />
+                    {cardsData.map((card) => (
+                        <motion.div key={card.id} variants={shouldReduceMotion ? {} : cardVariants}>
+                            <GlassCard {...card} onClick={() => setSelectedCard(card)} />
                         </motion.div>
                     ))}
                 </motion.div>
             </div>
+
+            {/* Modal rendered into document.body — no crossover possible */}
+            {selectedCard && (
+                <GlassModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+            )}
         </section>
     );
 }

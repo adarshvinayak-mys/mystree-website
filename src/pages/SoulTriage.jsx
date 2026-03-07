@@ -6,11 +6,12 @@ import BentoGrid from '../components/SoulTriage/BentoGrid';
 import ParallaxTrust from '../components/SoulTriage/ParallaxTrust';
 import WaitlistMorph from '../components/SoulTriage/WaitlistMorph';
 import FloatingWaitlist from '../components/SoulTriage/FloatingWaitlist';
+import soulLoadingImg from '../assets/supabase/mystreesoulloading.jpg';
+import smithaDoc from '../assets/smithadoctorai.jpg';
 
 // Import local assets
 const heroImg = '/triage/traiage123.webp';
 const empathyImg = '/triage/traige12.webp';
-const doctorImg = '/triage/traige56.webp';
 
 export default function SoulTriage() {
     const nextSectionRef = useRef(null);
@@ -22,7 +23,7 @@ export default function SoulTriage() {
     };
 
     return (
-        <div className="relative bg-[#110F0E] min-h-screen font-sans selection:bg-[#FF5A36] selection:text-white text-[#F4F1EB]">
+        <div className="relative bg-[#FCFBF7] min-h-screen font-sans selection:bg-[#FF5A36] selection:text-white text-[#110F0E]">
 
             {/* Global Tactile Cinematic Noise Overlay */}
             <div
@@ -31,7 +32,7 @@ export default function SoulTriage() {
             ></div>
 
             {/* --- 1. HERO SECTION --- */}
-            <CinematicHero heroImageUrl={heroImg} onScrollClick={scrollToNext} />
+            <CinematicHero heroImageUrl={soulLoadingImg} onScrollClick={scrollToNext} />
 
             <div ref={nextSectionRef} className="invisible h-0 w-0" />
 
@@ -42,7 +43,7 @@ export default function SoulTriage() {
             <BentoGrid />
 
             {/* --- 4. PARALLAX TRUST --- */}
-            <ParallaxTrust trustImageUrl={doctorImg} />
+            <ParallaxTrust trustImageUrl={smithaDoc} />
 
             {/* --- 5. BUBBLE CLIMAX --- */}
             <WaitlistMorph />

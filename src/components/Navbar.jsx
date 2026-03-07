@@ -6,7 +6,6 @@ import mystreelogo from '../assets/logo.png';
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
-    const [isBannerVisible, setIsBannerVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isShowcaseOpen, setIsShowcaseOpen] = useState(false);
@@ -193,44 +192,12 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Announcement Banner */}
-            <AnimatePresence>
-                {location.pathname === '/' && isBannerVisible && window.scrollY <= 50 && (
-                    <motion.div
-                        initial={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0, overflow: 'hidden' }}
-                        className="relative w-full bg-[#FFC000] z-0 transition-transform duration-300 translate-y-0"
-                    >
-                        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-                            <span className="w-6 hidden sm:block"></span> {/* Spacer for centering */}
-                            <Link
-                                to="/mystree-soul"
-                                className="flex-1 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 group hover:opacity-80 transition-opacity text-center sm:text-left"
-                            >
-                                <span className="flex items-center gap-1 bg-[#DE9A00] text-black font-extrabold text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full shadow-sm shrink-0">
-                                    <span className="text-[10px]">✨</span> NEW
-                                </span>
-                                <span className="text-black font-semibold text-[11px] sm:text-sm drop-shadow-[0_1px_1px_rgba(255,255,255,0.4)]">
-                                    MyStree Soul is here! Step into the next generation of intelligent healthcare
-                                </span>
-                            </Link>
-                            <button
-                                onClick={() => setIsBannerVisible(false)}
-                                className="text-black/60 hover:text-black hover:bg-black/10 rounded-full p-1 transition-colors shrink-0"
-                                aria-label="Dismiss banner"
-                            >
-                                <span className="material-icons text-lg block">close</span>
-                            </button>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
 
             {/* Mobile Menu Dropdown */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={`md:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden transition-all duration-300 ${location.pathname === '/' && isBannerVisible && window.scrollY <= 50 ? "top-[7.6rem]" : "top-20"}`}
+                        className={`md:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-gray-800 absolute left-0 right-0 shadow-lg rounded-b-3xl overflow-hidden transition-all duration-300 top-20`}
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}

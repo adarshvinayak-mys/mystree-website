@@ -38,8 +38,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
 
     const glowColor = activeTopic ? activeTopic.color : '#FF5A36';
 
-    const yText = useTransform(scrollYProgress, [0, 1], [0, 150]);
-    const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const yText = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const opacityText = useTransform(scrollYProgress, [0, 0.4, 0.9], [1, 0.95, 0.9]);
     const scaleBg = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
     const titleWords1 = ["Join", "the", "AI", "revolution"];
@@ -104,7 +104,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     };
 
     return (
-        <section ref={ref} className="relative w-full min-h-screen overflow-hidden bg-[#110F0E]">
+        <section ref={ref} className="relative w-full min-h-[100dvh] bg-[#FCFBF7] z-0">
 
             {/* Minimalist Logo Navbar for Beta Page */}
             <nav className="absolute top-0 left-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 pointer-events-none">
@@ -113,34 +113,35 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         <img
                             src={mystreelogo}
                             alt="MyStree Logo"
-                            className="h-8 md:h-10 w-auto object-contain shadow-sm"
+                            className="h-10 md:h-12 w-auto object-contain filter brightness-0"
                             onError={(event) => {
                                 event.currentTarget.onerror = null;
                                 event.currentTarget.src = '/mystreelogo.svg';
+                                event.currentTarget.className = "h-10 md:h-12 w-auto object-contain filter brightness-0";
                             }}
                         />
                     </a>
                     <a
                         href="/"
-                        className="pointer-events-auto group flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 backdrop-blur-md"
+                        className="pointer-events-auto group flex items-center gap-2 px-6 py-3 rounded-full bg-black/5 hover:bg-black/10 border border-black/10 transition-all duration-300 backdrop-blur-md"
                     >
-                        <span className="material-icons text-[16px] text-[#8FA295] group-hover:text-[#F4F1EB] group-hover:-translate-x-1 transition-all">west</span>
-                        <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.1em] font-medium text-[#8FA295] group-hover:text-[#F4F1EB] transition-colors">Return to Clinic</span>
+                        <span className="material-icons text-[20px] text-[#1B2C39] group-hover:text-black group-hover:-translate-x-1 transition-all">west</span>
+                        <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.15em] font-bold text-[#1B2C39] group-hover:text-black transition-colors">Return to Clinic</span>
                     </a>
                 </div>
             </nav>
 
             {/* WOMENS DAY SCROLLING BANNER */}
-            <div className="absolute bottom-0 left-0 w-full z-40 overflow-hidden bg-[rgba(255,90,54,0.08)] border-t border-[rgba(255,131,60,0.15)] py-3 sm:py-4 shadow-sm pointer-events-none backdrop-blur-md">
+            <div className="absolute bottom-0 left-0 w-full z-40 overflow-hidden bg-[#FF5A36]/10 border-t border-[#FF5A36]/20 py-4 sm:py-5 shadow-sm pointer-events-none backdrop-blur-md">
                 <motion.div
                     animate={{ x: [0, "-50%"] }}
                     transition={{ duration: 40, ease: "linear", repeat: Infinity }}
                     className="flex whitespace-nowrap w-max"
                 >
                     {[...Array(10)].map((_, i) => (
-                        <div key={i} className="flex items-center gap-6 px-6">
-                            <span className="material-icons text-[14px] sm:text-[16px] text-[#FF5A36] animate-pulse">spa</span>
-                            <span className="font-sans text-[11px] sm:text-[12px] font-medium tracking-[0.2em] text-[#F4F1EB] uppercase">
+                        <div key={i} className="flex items-center gap-8 px-8">
+                            <span className="material-icons text-[18px] sm:text-[22px] text-[#FF5A36] animate-pulse">spa</span>
+                            <span className="font-sans text-[13px] sm:text-[15px] font-bold tracking-[0.2em] text-[#1B2C39] uppercase">
                                 Hi, I am your MyStree Soul and I can help you by remembering all your health history.
                             </span>
                         </div>
@@ -155,38 +156,47 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                 className="absolute inset-0 z-0 w-full h-full will-change-transform"
             >
                 {heroImageUrl ? (
-                    <img src={heroImageUrl} alt="MyStree Soul" className="w-full h-full object-cover opacity-60 grayscale-[10%] contrast-110 mix-blend-luminosity will-change-transform" />
+                    <img
+                        src={heroImageUrl}
+                        alt="MyStree Soul"
+                        className="w-full h-full object-cover sm:object-center object-[75%] opacity-60 grayscale-[5%] contrast-[1.05] will-change-transform"
+                    />
                 ) : (
-                    <div className="w-full h-full bg-[#110F0E]" />
+                    <div className="w-full h-full bg-[#FCFBF7]" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#110F0E]/80 to-[#110F0E] z-10" />
+                {/* Sophisticated Light Glassmorphic Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-white/10 to-transparent backdrop-blur-[1px] z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FCFBF7] z-10" />
             </motion.div>
 
             <motion.div
                 style={{ y: yText, opacity: opacityText }}
-                className="relative z-20 min-h-screen flex flex-col justify-center px-6 lg:px-12 max-w-6xl mx-auto pt-24 pb-20 will-change-transform"
+                className="relative z-20 min-h-[100dvh] flex flex-col justify-center px-5 sm:px-6 lg:px-12 max-w-6xl mx-auto pt-32 pb-20 will-change-transform"
             >
-                <div className="flex flex-col items-start justify-center max-w-[800px] relative">
+                <div className="flex flex-col items-start justify-center max-w-[900px] relative">
 
                     {/* Breathing Ambient Glow Add-on */}
                     <motion.div
                         animate={
                             shouldReduceMotion
                                 ? { opacity: 0.1, backgroundColor: glowColor }
-                                : { scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1], backgroundColor: glowColor }
+                                : { scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1], backgroundColor: glowColor }
                         }
                         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", backgroundColor: { duration: 1.5, ease: "easeInOut" } }}
-                        className="absolute -z-10 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] left-[10%] top-1/2 -translate-y-1/2 rounded-full blur-[120px] pointer-events-none will-change-transform"
+                        className="absolute -z-10 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] left-[10%] top-1/2 -translate-y-1/2 rounded-full blur-[140px] pointer-events-none will-change-transform"
                     />
 
+
+                    {/* Professional Status Badge */}
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                        className="mb-8"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="mb-8 flex items-center gap-4"
                     >
-                        <span className="font-sans text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#8FA295] font-medium border-l border-[#FF5A36] pl-4">
-                            Launching in Private Beta | March 8, 2026
+                        <span className="w-12 h-[1px] bg-[#FF5A36]" />
+                        <span className="font-sans text-sm sm:text-base uppercase tracking-[0.3em] text-[#FF5A36] font-extrabold">
+                            Private Beta Launch | March 8, 2026
                         </span>
                     </motion.div>
 
@@ -194,14 +204,14 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="font-serif text-[40px] sm:text-5xl md:text-6xl lg:text-7xl font-light text-[#F4F1EB] leading-[1.1] tracking-[-0.03em] mb-8"
+                        className="font-serif text-[40px] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl font-light text-[#1B2C39] lg:leading-[1.05] tracking-[-0.04em] mb-8 lg:mb-10 drop-shadow-sm"
                     >
-                        <div className="flex flex-wrap gap-x-3 sm:gap-x-4">
+                        <div className="flex flex-wrap gap-x-4 sm:gap-x-6">
                             {titleWords1.map((word, i) => (
                                 <motion.span key={i} variants={wordVariants}>{word}</motion.span>
                             ))}
                         </div>
-                        <div className="flex flex-wrap gap-x-3 sm:gap-x-4">
+                        <div className="flex flex-wrap gap-x-4 sm:gap-x-6">
                             {titleWords2.map((word, i) => (
                                 <motion.span
                                     key={i}
@@ -218,12 +228,15 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                        className="text-[#8FA295] font-sans text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-[600px] mb-12"
+                        className="text-[#1B2C39] font-sans text-base sm:text-xl lg:text-2xl font-light leading-relaxed max-w-[700px] mb-10 lg:mb-14 drop-shadow-sm"
                     >
                         Meet MyStree Soul. <br />
-                        A women's health experience that remembers your history,<br />
-                        understands your symptoms,<br />
-                        and connects you directly to expert doctors.
+                        <span className="block sm:inline">A healthcare experience that </span>
+                        <span className="font-bold underline decoration-[#FF5A36]/40 text-[#1B2C39]">remembers your history</span>,
+                        <br />
+                        <span className="block sm:inline">understands your symptoms, and </span>
+                        <span className="block sm:inline">connects you directly to </span>
+                        <span className="font-bold text-[#110F0E]">expert doctors</span>.
                     </motion.p>
 
                     <motion.div
@@ -233,17 +246,20 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         className="w-full max-w-2xl"
                     >
                         {!submitted ? (
-                            <div className="flex flex-col gap-4">
-                                <h3 className="text-[#F4F1EB] font-serif text-xl sm:text-2xl font-light tracking-tight">I am looking for support with...</h3>
+                            <div className="flex flex-col gap-6">
+                                <h3 className="text-[#1B2C39] font-serif text-2xl sm:text-3xl font-light tracking-tight">I am looking for support with...</h3>
 
-                                <div className="flex flex-wrap gap-2 sm:gap-3 mb-2">
+                                <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
                                     {supportOptions.map(option => (
                                         <button
                                             key={option.id}
                                             type="button"
                                             onClick={() => setActiveTopic(option)}
-                                            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full border transition-all duration-300 font-sans text-[10px] sm:text-xs uppercase tracking-[0.1em] ${activeTopic?.id === option.id ? 'bg-[rgba(255,255,255,0.1)] border-white text-white' : 'border-white/10 text-[#8FA295] hover:border-white/30 hover:text-[#F4F1EB]'}`}
-                                            style={{ borderColor: activeTopic?.id === option.id ? option.color : '' }}
+                                            className={`px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 transition-all duration-300 font-sans text-xs sm:text-sm uppercase tracking-[0.15em] font-bold ${activeTopic?.id === option.id ? 'text-white shadow-lg' : 'bg-white/40 border-black/10 text-[#1B2C39] hover:border-[#FF5A36]/30 hover:text-black hover:bg-white/80'}`}
+                                            style={{
+                                                backgroundColor: activeTopic?.id === option.id ? option.color : '',
+                                                borderColor: activeTopic?.id === option.id ? option.color : ''
+                                            }}
                                         >
                                             {option.label}
                                         </button>
@@ -261,19 +277,19 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                         >
                                             <form
                                                 layoutId="hero-waitlist"
-                                                className="relative group flex flex-col bg-[rgba(255,255,255,0.05)] backdrop-blur-xl border border-white/10 p-1.5 focus-within:border-[#F4F1EB] transition-all duration-300 mb-3 gap-1.5 rounded-lg"
+                                                className="relative group flex flex-col bg-white/95 backdrop-blur-sm border-2 border-black/20 p-3 focus-within:border-black focus-within:ring-4 focus-within:ring-black/5 transition-all duration-300 mb-4 gap-3 rounded-2xl shadow-2xl"
                                                 onSubmit={handleSubmit}
                                             >
-                                                <div className="flex flex-col sm:flex-row gap-1.5 w-full">
+                                                <div className="flex flex-col sm:flex-row gap-2 w-full">
                                                     <input
                                                         type="text"
                                                         required
                                                         value={name}
                                                         onChange={(e) => setName(e.target.value)}
                                                         placeholder="FULL NAME"
-                                                        className="flex-1 bg-transparent border-none outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/60 px-4 sm:px-6 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.1em] border-b sm:border-b-0 sm:border-r border-white/10"
+                                                        className="flex-1 bg-white border-2 border-black/5 focus:border-[#FF5A36] outline-none text-[#110F0E] placeholder:text-[#2F3E46]/60 px-6 py-4 font-sans text-sm md:text-base font-bold uppercase tracking-[0.1em] rounded-xl transition-all"
                                                     />
-                                                    <div className="flex-1 flex items-center">
+                                                    <div className="flex-1 flex items-center bg-white border-2 border-black/5 focus-within:border-[#FF5A36] rounded-xl transition-all overflow-hidden">
                                                         <select
                                                             value={countryCode}
                                                             onChange={(e) => {
@@ -283,7 +299,8 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                                                 setCountryCode(nextCode);
                                                                 setPhone(digits);
                                                             }}
-                                                            className="w-[112px] bg-transparent border-none outline-none text-[#F4F1EB] px-3 sm:px-4 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.08em]"
+                                                            className="w-[100px] bg-black/5 border-none outline-none text-[#110F0E] px-4 py-4 font-sans text-xs sm:text-sm uppercase tracking-[0.08em] font-bold h-full appearance-none cursor-pointer hover:bg-black/10 transition-colors"
+                                                            style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23110F0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 8px center" }}
                                                         >
                                                             {COUNTRY_OPTIONS.map((opt) => (
                                                                 <option key={opt.code} value={opt.code} className="text-[#110F0E]">
@@ -298,24 +315,24 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                                             value={phone}
                                                             onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, selectedCountry.maxLength))}
                                                             placeholder="PHONE NUMBER"
-                                                            className="flex-1 bg-transparent border-none outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/60 px-2 sm:px-4 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.1em]"
+                                                            className="flex-1 bg-transparent border-none outline-none text-[#110F0E] placeholder:text-[#2F3E46]/60 px-4 py-4 font-sans text-sm md:text-base font-bold uppercase tracking-[0.1em]"
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col sm:flex-row gap-1.5 w-full">
+                                                <div className="flex flex-col sm:flex-row gap-2 w-full">
                                                     <input
                                                         type="email"
                                                         required
                                                         value={email}
                                                         onChange={(e) => setEmail(e.target.value)}
                                                         placeholder="EMAIL ADDRESS"
-                                                        className="flex-1 bg-transparent border-none outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/60 px-4 sm:px-6 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.1em]"
+                                                        className="flex-1 bg-white border-2 border-black/5 focus:border-[#FF5A36] outline-none text-[#110F0E] placeholder:text-[#2F3E46]/60 px-6 py-4 font-sans text-sm md:text-base font-bold uppercase tracking-[0.1em] rounded-xl transition-all"
                                                     />
                                                     <button
                                                         type="submit"
                                                         disabled={submitting}
                                                         data-no-booking-intercept="true"
-                                                        className="px-6 sm:px-8 py-3 sm:py-4 bg-[#F4F1EB] text-[#110F0E] font-sans text-xs uppercase tracking-[0.1em] font-medium hover:bg-white active:scale-95 transition-all whitespace-nowrap rounded-md disabled:opacity-70"
+                                                        className="px-8 py-4 bg-[#FF5A36] text-white font-sans text-sm uppercase tracking-[0.15em] font-bold hover:bg-[#E94E2B] active:scale-95 transition-all whitespace-nowrap rounded-xl shadow-lg shadow-[#FF5A36]/30 disabled:opacity-70"
                                                     >
                                                         {submitting ? 'Requesting...' : 'Request Access'}
                                                     </button>
@@ -328,16 +345,16 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                             ) : null}
 
                                             {/* Privacy Halo */}
-                                            <div className="flex items-center gap-2 mt-2 pl-2 text-[#8FA295]">
+                                            <div className="flex items-center gap-3 mt-3 pl-4 text-[#1B2C39]/70">
                                                 <motion.span
-                                                    animate={{ opacity: [0.4, 1, 0.4] }}
+                                                    animate={{ opacity: [0.6, 1, 0.6] }}
                                                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                                    className="material-icons text-sm"
+                                                    className="material-icons text-xl"
                                                     style={{ color: activeTopic.color }}
                                                 >
                                                     shield
                                                 </motion.span>
-                                                <p className="font-sans text-[10px] sm:text-xs tracking-[0.05em] uppercase">
+                                                <p className="font-sans text-[11px] sm:text-xs tracking-[0.1em] uppercase font-bold">
                                                     Encrypted Soul-Data. Your privacy is our foundation.
                                                 </p>
                                             </div>
@@ -348,27 +365,24 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         ) : (
                             <motion.div
                                 layoutId="hero-waitlist"
-                                className="bg-[rgba(255,90,54,0.1)] border border-[#FF5A36]/50 p-4 flex items-center gap-4 rounded-lg mb-4"
-                                style={{ backgroundColor: `rgba(${parseInt(activeTopic?.color.slice(1, 3), 16)}, ${parseInt(activeTopic?.color.slice(3, 5), 16)}, ${parseInt(activeTopic?.color.slice(5, 7), 16)}, 0.1)`, borderColor: `${activeTopic?.color}80` }}
+                                className="bg-white border-2 p-6 flex items-center gap-6 rounded-2xl mb-6 shadow-2xl"
+                                style={{ borderColor: activeTopic?.color }}
                             >
                                 <motion.div
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
                                     transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.1 }}
-                                    className="w-8 h-8 rounded-full flex items-center justify-center text-[#110F0E]"
+                                    className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"
                                     style={{ backgroundColor: activeTopic?.color || '#FF5A36' }}
                                 >
-                                    <span className="material-icons text-sm">check</span>
+                                    <span className="material-icons text-xl">check</span>
                                 </motion.div>
                                 <div>
-                                    <h3 className="font-sans text-sm font-medium text-[#F4F1EB] tracking-wide">Foundation Access Requested</h3>
-                                    <p className="font-sans text-[11px] text-[#8FA295] tracking-[0.05em] uppercase">We'll be in touch soon, {name.split(' ')[0]}.</p>
+                                    <h3 className="font-sans text-lg font-bold text-[#110F0E] tracking-tight">Foundation Access Requested</h3>
+                                    <p className="font-sans text-[12px] text-[#2F3E46] tracking-[0.1em] uppercase font-medium">We'll be in touch soon, {name.split(' ')[0]}.</p>
                                 </div>
                             </motion.div>
                         )}
-                        <p className="font-sans text-[11px] sm:text-xs text-[#8FA295]/80 leading-relaxed max-w-[420px] mt-8">
-                            * Our March 8 launch is an invite-only closed beta. Waitlist members will receive priority onboarding, direct feedback loop with our team, and fast access.
-                        </p>
                     </motion.div>
                 </div>
 
