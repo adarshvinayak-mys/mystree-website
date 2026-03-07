@@ -258,11 +258,11 @@ export default function BlogAndCommunity() {
 
                         {/* Image Container */}
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
-                            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(139,164,191,0.45)] border border-[#8BA4BF]/30 bg-[#FCF4D9] group-hover:-translate-y-2 transition-transform duration-500">
+                            <div className="relative w-full rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(139,164,191,0.45)] border border-[#8BA4BF]/30 bg-[#FCF4D9] group-hover:-translate-y-2 transition-transform duration-500">
                                 <img
                                     src={blog1}
                                     alt="Egg Freezing Article"
-                                    className="w-full h-full object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
+                                    className="w-full h-auto object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
                                     fetchPriority="high"
                                     decoding="sync"
                                     loading="eager"
@@ -379,7 +379,7 @@ export default function BlogAndCommunity() {
                         {/* Card 1 */}
                         <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Virtual</div>
+                                <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Virtual</div>
                                 <span className="text-gray-400 text-sm font-bold">Nov 15</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">PCOS Support Circle</h3>
@@ -393,7 +393,7 @@ export default function BlogAndCommunity() {
                         {/* Card 2 */}
                         <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#FF833C]/15 text-[#ED5B2D] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">In-Person</div>
+                                <div className="bg-[#FF833C]/15 text-[#ED5B2D] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">In-Person</div>
                                 <span className="text-gray-400 text-sm font-bold">Nov 22</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">Prenatal Yoga Workshop</h3>
@@ -407,7 +407,7 @@ export default function BlogAndCommunity() {
                         {/* Card 3 */}
                         <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                            <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Webinar</div>
+                                <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Webinar</div>
                                 <span className="text-gray-400 text-sm font-bold">Dec 05</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">Fertility Facts & Myths</h3>
@@ -539,7 +539,7 @@ export default function BlogAndCommunity() {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: 50, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                                className="bg-[#FCF4D9] rounded-3xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
+                            className="bg-[#FCF4D9] rounded-3xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close Button */}
