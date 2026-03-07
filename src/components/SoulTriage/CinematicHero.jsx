@@ -113,20 +113,20 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         <img
                             src={mystreelogo}
                             alt="MyStree Logo"
-                            className="h-10 md:h-12 w-auto object-contain filter brightness-0"
+                            className="h-10 md:h-12 w-auto object-contain filter brightness-[100] drop-shadow-md"
                             onError={(event) => {
                                 event.currentTarget.onerror = null;
                                 event.currentTarget.src = '/mystreelogo.svg';
-                                event.currentTarget.className = "h-10 md:h-12 w-auto object-contain filter brightness-0";
+                                event.currentTarget.className = "h-10 md:h-12 w-auto object-contain filter brightness-[100] drop-shadow-md";
                             }}
                         />
                     </a>
                     <a
                         href="/"
-                        className="pointer-events-auto group flex items-center gap-2 px-6 py-3 rounded-full bg-black/5 hover:bg-black/10 border border-black/10 transition-all duration-300 backdrop-blur-md"
+                        className="pointer-events-auto group flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all duration-300 backdrop-blur-md"
                     >
-                        <span className="material-icons text-[20px] text-[#1B2C39] group-hover:text-black group-hover:-translate-x-1 transition-all">west</span>
-                        <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.15em] font-bold text-[#1B2C39] group-hover:text-black transition-colors">Return to Clinic</span>
+                        <span className="material-icons text-[20px] text-white group-hover:-translate-x-1 transition-all">west</span>
+                        <span className="font-sans text-xs sm:text-sm uppercase tracking-[0.15em] font-bold text-white transition-colors">Return to Clinic</span>
                     </a>
                 </div>
             </nav>
@@ -159,13 +159,13 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                     <img
                         src={heroImageUrl}
                         alt="MyStree Soul"
-                        className="w-full h-full object-cover sm:object-center object-[75%] opacity-60 grayscale-[5%] contrast-[1.05] will-change-transform"
+                        className="w-full h-full object-cover sm:object-center object-[75%] opacity-85 grayscale-[5%] contrast-[1.05] will-change-transform"
                     />
                 ) : (
                     <div className="w-full h-full bg-[#FCFBF7]" />
                 )}
                 {/* Sophisticated Light Glassmorphic Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-white/10 to-transparent backdrop-blur-[1px] z-10" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-white/5 to-transparent backdrop-blur-[1px] z-10" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FCFBF7] z-10" />
             </motion.div>
 
@@ -204,7 +204,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="font-serif text-[40px] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl font-light text-[#1B2C39] lg:leading-[1.05] tracking-[-0.04em] mb-8 lg:mb-10 drop-shadow-sm"
+                        className="font-serif text-[40px] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl font-light text-white lg:leading-[1.05] tracking-[-0.04em] mb-8 lg:mb-10 text-shadow-xl"
                     >
                         <div className="flex flex-wrap gap-x-4 sm:gap-x-6">
                             {titleWords1.map((word, i) => (
@@ -216,7 +216,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                 <motion.span
                                     key={i}
                                     variants={wordVariants}
-                                    className={i >= 3 ? "text-[#FF5A36] italic font-medium" : ""}
+                                    className={i >= 3 ? "text-[#FF5A36] italic font-medium" : "drop-shadow-lg"}
                                 >
                                     {word}
                                 </motion.span>
@@ -228,15 +228,15 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                        className="text-[#1B2C39] font-sans text-base sm:text-xl lg:text-2xl font-light leading-relaxed max-w-[700px] mb-10 lg:mb-14 drop-shadow-sm"
+                        className="text-white/95 font-sans text-base sm:text-xl lg:text-2xl font-light leading-relaxed max-w-[700px] mb-10 lg:mb-14 drop-shadow-lg"
                     >
                         Meet MyStree Soul. <br />
                         <span className="block sm:inline">A healthcare experience that </span>
-                        <span className="font-bold underline decoration-[#FF5A36]/40 text-[#1B2C39]">remembers your history</span>,
+                        <span className="font-bold underline decoration-[#FF5A36] text-white text-shadow-md">remembers your history</span>,
                         <br />
                         <span className="block sm:inline">understands your symptoms, and </span>
                         <span className="block sm:inline">connects you directly to </span>
-                        <span className="font-bold text-[#110F0E]">expert doctors</span>.
+                        <span className="font-bold text-white text-shadow-md">expert doctors</span>.
                     </motion.p>
 
                     <motion.div
@@ -247,7 +247,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                     >
                         {!submitted ? (
                             <div className="flex flex-col gap-6">
-                                <h3 className="text-[#1B2C39] font-serif text-2xl sm:text-3xl font-light tracking-tight">I am looking for support with...</h3>
+                                <h3 className="text-white font-serif text-2xl sm:text-3xl font-light tracking-tight drop-shadow-md">I am looking for support with...</h3>
 
                                 <div className="flex flex-wrap gap-3 sm:gap-4 mb-4">
                                     {supportOptions.map(option => (
