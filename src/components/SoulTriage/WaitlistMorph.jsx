@@ -15,6 +15,7 @@ export default function WaitlistMorph() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [submitError, setSubmitError] = useState('');
     const shouldReduceMotion = useReducedMotion();
 
     return (
@@ -162,6 +163,7 @@ export default function WaitlistMorph() {
                     </h3>
 
                     {!submitted ? (
+                        <>
                         <motion.form
                             layoutId="footer-waitlist"
                             initial={{ opacity: 0, y: 20 }}
@@ -171,11 +173,15 @@ export default function WaitlistMorph() {
                             onSubmit={async (e) => {
                                 e.preventDefault();
                                 setSubmitting(true);
+                                setSubmitError('');
                                 try {
                                     const { error } = await supabase
                                         .from('mystree_soul_waitlist')
                                         .insert([{ name, email, phone }]);
-                                    setSubmitted(true);
+                                    if (error) {
+                                        setSubmitError(error.message || 'Unable to join waitlist right now. Please try again.');
+                                        return;
+                                    }
                                     setSubmitted(true);
                                 } finally {
                                     setSubmitting(false);
@@ -218,6 +224,12 @@ export default function WaitlistMorph() {
                                 </button>
                             </div>
                         </motion.form>
+                        {submitError ? (
+                            <p className="mt-2 px-2 text-[11px] sm:text-xs text-red-300 font-sans tracking-[0.04em] uppercase">
+                                {submitError}
+                            </p>
+                        ) : null}
+                        </>
                     ) : (
                         <motion.div
                             layoutId="footer-waitlist"

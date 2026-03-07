@@ -17,6 +17,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [submitError, setSubmitError] = useState('');
 
     const supportOptions = [
         { id: 'cycle', label: 'my cycle', color: '#FF5A36' },
@@ -54,13 +55,15 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitting(true);
+        setSubmitError('');
         try {
             const { error } = await supabase
                 .from('mystree_soul_waitlist')
                 .insert([{ name, email, phone }]);
-            setSubmitted(true);
-            // Even if it fails, maybe let the user proceed or show an error. 
-            // For now, assume success to not block UI.
+            if (error) {
+                setSubmitError(error.message || 'Unable to join waitlist right now. Please try again.');
+                return;
+            }
             setSubmitted(true);
         } finally {
             setSubmitting(false);
@@ -265,6 +268,11 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                                     </button>
                                                 </div>
                                             </form>
+                                            {submitError ? (
+                                                <p className="mt-2 px-2 text-[11px] sm:text-xs text-red-300 font-sans tracking-[0.04em] uppercase">
+                                                    {submitError}
+                                                </p>
+                                            ) : null}
 
                                             {/* Privacy Halo */}
                                             <div className="flex items-center gap-2 mt-2 pl-2 text-[#8FA295]">
