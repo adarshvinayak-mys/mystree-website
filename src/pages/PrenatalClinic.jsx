@@ -58,7 +58,7 @@ export default function PrenatalClinic() {
             qualification: "MBBS, MS, DNB (OBG), FFM, FRM, MBA",
             experience: "23+ Years Experience",
             languages: "English, Kannada, Tamil",
-            badgeText: "₹1000 Consultation",
+            badgeText: "₹600 Consultation",
             badgeColorClass: "bg-deep-green text-white",
             services: ["High-Risk Pregnancy", "Fetal Medicine", "Prenatal Care", "Gynecology", "All Services"]
         },
@@ -71,7 +71,7 @@ export default function PrenatalClinic() {
             qualification: "MBBS, MS, DNB, MRCOG (UK), FRM",
             experience: "12+ Years Experience",
             languages: "English, Hindi, Kannada",
-            badgeText: "₹1000 Consultation",
+            badgeText: "₹600 Consultation",
             badgeColorClass: "bg-deep-green text-white",
             services: ["High-Risk Pregnancy", "Fertility", "Prenatal Care", "All Services"]
         },
@@ -84,7 +84,7 @@ export default function PrenatalClinic() {
             qualification: "M.Sc Nutrition & Dietetics",
             experience: "10+ Years Experience",
             languages: "English, Hindi, Kannada",
-            badgeText: "₹800 Consultation",
+            badgeText: "₹600 Consultation",
             badgeColorClass: "bg-deep-green text-white",
             services: ["Lactation", "Nutrition", "All Services"]
         }

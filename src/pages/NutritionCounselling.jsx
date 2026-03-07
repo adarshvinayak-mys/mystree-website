@@ -389,7 +389,7 @@ export default function NutritionCounselling() {
                                         <p className="text-xs font-bold text-gray-400 tracking-widest uppercase">Families</p>
                                     </div>
                                     <div>
-                                        <p className="text-3xl font-bold text-cadet-gray font-serif">₹800</p>
+                                        <p className="text-3xl font-bold text-cadet-gray font-serif">₹600</p>
                                         <p className="text-xs font-bold text-gray-400 tracking-widest uppercase">Consultation</p>
                                     </div>
                                 </div>

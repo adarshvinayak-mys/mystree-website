@@ -68,7 +68,7 @@ export default function FertilityClinic() {
             specialty: "Senior Consultant - Reproductive Medicine & IVF",
             experience: "24+ Years Experience",
             badgeText: "Lead Fertility Consultant",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-warm-coral text-white",
             services: ["IVF & IUI", "Male Fertility", "Donor Program", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         },
@@ -81,8 +81,8 @@ export default function FertilityClinic() {
             image: doctor2,
             specialty: "Gynecologist, Fertility Expert & Obstetrician",
             experience: "23+ Years Experience",
-            badgeText: "₹1000 Consultation",
-            consultationFee: "₹1000",
+            badgeText: "₹600 Consultation",
+            consultationFee: "₹600",
             badgeColorClass: "bg-deep-green text-white",
             services: ["IVF & IUI", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         },
@@ -95,8 +95,8 @@ export default function FertilityClinic() {
             image: doctor1,
             specialty: "Reproductive Medicine",
             experience: "12+ Years Experience",
-            badgeText: "₹1000 Consultation",
-            consultationFee: "₹1000",
+            badgeText: "₹600 Consultation",
+            consultationFee: "₹600",
             badgeColorClass: "bg-deep-green text-white",
             services: ["IVF & IUI", "Egg Freezing", "PCOS & Endometriosis", "Reproductive Medicine", "All Services"]
         }

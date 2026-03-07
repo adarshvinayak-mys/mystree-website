@@ -14,6 +14,7 @@ export default function WaitlistMorph() {
     const [submitting, setSubmitting] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const shouldReduceMotion = useReducedMotion();
 
     return (
@@ -173,7 +174,7 @@ export default function WaitlistMorph() {
                                 try {
                                     const { error } = await supabase
                                         .from('mystree_soul_waitlist')
-                                        .insert([{ name, email }]);
+                                        .insert([{ name, email, phone }]);
                                     setSubmitted(true);
                                     setSubmitted(true);
                                 } finally {
@@ -188,6 +189,14 @@ export default function WaitlistMorph() {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="FULL NAME"
+                                className="w-full bg-transparent px-4 sm:px-6 py-3 outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/50 font-sans text-xs uppercase tracking-[0.1em] border-b border-white/10"
+                            />
+                            <input
+                                type="tel"
+                                required
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                placeholder="PHONE NUMBER"
                                 className="w-full bg-transparent px-4 sm:px-6 py-3 outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/50 font-sans text-xs uppercase tracking-[0.1em] border-b border-white/10"
                             />
                             <div className="flex flex-col sm:flex-row gap-2 w-full">

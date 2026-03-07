@@ -54,7 +54,7 @@ export default function MenopausalClinic() {
             languages: "English, Kannada, Tamil",
             image: doctor2,
             badgeText: "Menopause Specialist",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-orange-500 text-white",
             services: ["Menopause Management", "Gynecology", "All Services"]
         },
@@ -67,7 +67,7 @@ export default function MenopausalClinic() {
             languages: "English, Hindi, Kannada",
             image: doctor1,
             badgeText: "Hormonal Health Expert",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-blue-600 text-white",
             services: ["Menopause Management", "Gynecology", "All Services"]
         },
@@ -80,7 +80,7 @@ export default function MenopausalClinic() {
             languages: "English, Hindi, Kannada",
             image: doctorPri,
             badgeText: "Pelvic Floor Rehabilitation",
-            consultationFee: "₹900",
+            consultationFee: "₹600",
             badgeColorClass: "bg-teal-600 text-white",
             services: ["Pelvic Health", "All Services"]
         },
@@ -93,7 +93,7 @@ export default function MenopausalClinic() {
             languages: "English, Hindi, Kannada",
             image: doctor3,
             badgeText: "Nutrition Counselling",
-            consultationFee: "₹800",
+            consultationFee: "₹600",
             badgeColorClass: "bg-amber-50 text-amber-700",
             services: ["Nutrition & Lifestyle", "All Services"]
         }

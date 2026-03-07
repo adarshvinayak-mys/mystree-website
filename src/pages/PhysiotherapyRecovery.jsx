@@ -289,7 +289,7 @@ export default function PhysiotherapyRecovery() {
                                         <p className="text-xs text-cadet-gray/60 uppercase font-bold tracking-widest">Years Specialist</p>
                                     </div>
                                     <div>
-                                        <p className="text-3xl font-bold text-primary font-serif">₹900</p>
+                                        <p className="text-3xl font-bold text-primary font-serif">₹600</p>
                                         <p className="text-xs text-cadet-gray/60 uppercase font-bold tracking-widest">Consultation Fee</p>
                                     </div>
                                 </div>

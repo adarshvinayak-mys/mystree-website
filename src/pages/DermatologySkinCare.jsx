@@ -22,7 +22,7 @@ export default function DermatologySkinCare() {
             languages: "English, Hindi, Kannada",
             image: doctor1,
             badgeText: "Hormonal Skin Care",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-blue-600 text-white",
             services: ["Hormonal Skin Care", "All Services"]
         },
@@ -35,7 +35,7 @@ export default function DermatologySkinCare() {
             languages: "English, Hindi, Kannada",
             image: doctor3,
             badgeText: "Skin Nutrition Protocols",
-            consultationFee: "₹800",
+            consultationFee: "₹600",
             badgeColorClass: "bg-orange-500 text-white",
             services: ["Nutrition & Skin Wellness", "All Services"]
         }

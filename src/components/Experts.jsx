@@ -16,7 +16,7 @@ const experts = [
         experience: "23+ years experience",
         languages: "English, Kannada, Tamil",
         image: doctor2,
-        badgeText: "₹1000 Consultation",
+        badgeText: "₹600 Consultation",
         badgeColorClass: "bg-blue-50 text-blue-700"
     },
     {
@@ -26,7 +26,7 @@ const experts = [
         experience: "10+ years experience",
         languages: "English, Hindi",
         image: doctor1,
-        badgeText: "₹1000 Consultation",
+        badgeText: "₹600 Consultation",
         badgeColorClass: "bg-blue-50 text-blue-700"
     },
     {
@@ -36,7 +36,7 @@ const experts = [
         experience: "10+ years experience",
         languages: "English, Hindi, Kannada",
         image: doctor3,
-        badgeText: "₹800 Consultation",
+        badgeText: "₹600 Consultation",
         badgeColorClass: "bg-orange-50 text-orange-700"
     },
     {

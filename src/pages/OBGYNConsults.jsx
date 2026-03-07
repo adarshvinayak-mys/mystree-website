@@ -14,7 +14,7 @@ const doctors = [
         qualification: "High Risk Obstetrician and Fertility Specialist MBBS, MS, DNB(OBG) FFM FRM MBA",
         experience: "23+ Years Clinical Experience",
         languages: "English, Kannada, Tamil",
-        badgeText: "₹1000 Consultation",
+        badgeText: "₹600 Consultation",
         badgeColorClass: "bg-white/90 text-gray-800",
         services: ["All Services", "High-Risk Pregnancy", "General Gynecology", "Infertility", "Menopause", "Adolescent Health"]
     },
@@ -27,7 +27,7 @@ const doctors = [
         qualification: "MBBS, MD, Fellowship in Reproductive Med.",
         experience: "12+ Years Clinical Experience",
         languages: "English, Hindi",
-        badgeText: "₹1000 Consultation",
+        badgeText: "₹600 Consultation",
         badgeColorClass: "bg-white/90 text-gray-800",
         services: ["All Services", "PCOS / PCOD", "Fertility", "General Gynecology", "Adolescent Health"]
     }

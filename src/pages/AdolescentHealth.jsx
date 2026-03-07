@@ -100,7 +100,7 @@ export default function AdolescentHealth() {
             experience: "23+ Years Experience",
             languages: "English, Kannada, Tamil",
             badgeText: "Adolescent Care",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-white/90 text-gray-800",
             services: ["Adolescent Care", "Gynecology", "All Services"]
         },
@@ -114,7 +114,7 @@ export default function AdolescentHealth() {
             experience: "10+ Years Experience",
             languages: "English, Hindi, Kannada",
             badgeText: "Teen Health Specialist",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-white/90 text-gray-800",
             services: ["Adolescent Care", "PCOS & Hormonal Health", "All Services"]
         },
@@ -128,7 +128,7 @@ export default function AdolescentHealth() {
             experience: "Everything About What You Eat",
             languages: "English, Hindi, Kannada",
             badgeText: "Teen Nutrition Support",
-            consultationFee: "₹800",
+            consultationFee: "₹600",
             badgeColorClass: "bg-white/90 text-gray-800",
             services: ["Nutrition & Wellness", "Mental Health", "All Services"]
         }

@@ -17,7 +17,7 @@ export default function DoctorCard({
     const badgeValue = typeof badgeText === 'string' ? badgeText.trim() : '';
     const isFeeInBadge = /consultation|session|fee|₹|INR/i.test(badgeValue);
     const labelText = !isFeeInBadge ? badgeValue : '';
-    const feeValue = consultationFee || (isFeeInBadge ? badgeValue : "₹1000");
+    const feeValue = consultationFee || (isFeeInBadge ? badgeValue : "₹600");
     const titleDesignation = designation || specialty || "Consultant";
 
     const ProfileLinkWrapper = ({ children, className }) => {

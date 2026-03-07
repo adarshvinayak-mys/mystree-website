@@ -71,7 +71,7 @@ const PsychologyPsychiatry = () => {
             languages: "English, Kannada, Tamil",
             image: doctor2,
             badgeText: "Integrated Women's Care",
-            consultationFee: "₹1000",
+            consultationFee: "₹600",
             badgeColorClass: "bg-purple-600 text-white",
             services: ["Integrated Women's Care", "Perinatal Mental Health", "All Services"]
         },

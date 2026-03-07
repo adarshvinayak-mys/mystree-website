@@ -16,6 +16,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
     const [activeTopic, setActiveTopic] = useState(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     const supportOptions = [
         { id: 'cycle', label: 'my cycle', color: '#FF5A36' },
@@ -56,7 +57,7 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
         try {
             const { error } = await supabase
                 .from('mystree_soul_waitlist')
-                .insert([{ name, email }]);
+                .insert([{ name, email, phone }]);
             setSubmitted(true);
             // Even if it fails, maybe let the user proceed or show an error. 
             // For now, assume success to not block UI.
@@ -234,6 +235,14 @@ export default function CinematicHero({ heroImageUrl, onScrollClick }) {
                                                         value={name}
                                                         onChange={(e) => setName(e.target.value)}
                                                         placeholder="FULL NAME"
+                                                        className="flex-1 bg-transparent border-none outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/60 px-4 sm:px-6 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.1em] border-b sm:border-b-0 sm:border-r border-white/10"
+                                                    />
+                                                    <input
+                                                        type="tel"
+                                                        required
+                                                        value={phone}
+                                                        onChange={(e) => setPhone(e.target.value)}
+                                                        placeholder="PHONE NUMBER"
                                                         className="flex-1 bg-transparent border-none outline-none text-[#F4F1EB] placeholder:text-[#8FA295]/60 px-4 sm:px-6 py-3 sm:py-4 font-sans text-xs uppercase tracking-[0.1em]"
                                                     />
                                                 </div>
