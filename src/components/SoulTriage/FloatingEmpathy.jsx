@@ -26,7 +26,14 @@ export default function FloatingEmpathy({ empathyImageUrl }) {
     };
 
     return (
-        <section ref={sectionRef} className="relative w-full py-16 lg:py-20 px-6 lg:px-12 bg-[#FCFBF7] z-10 border-t border-black/5 flex items-center">
+        <section
+            ref={sectionRef}
+            className="relative z-10 -mt-[8vh] flex min-h-screen w-full items-center border-t border-black/5 bg-[#FCFBF7] px-6 pt-[calc(8vh+4rem)] pb-16 lg:-mt-[10vh] lg:px-12 lg:pt-[calc(10vh+5rem)] lg:pb-20"
+        >
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FCF4D9] via-[#FCFBF7]/90 to-[#FCFBF7]"
+            />
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
                 <div className="col-span-1 lg:col-span-6 flex flex-col gap-6 order-2 lg:order-1 pt-6 md:pt-0">

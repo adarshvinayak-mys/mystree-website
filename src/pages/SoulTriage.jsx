@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import CinematicHero from '../components/SoulTriage/CinematicHero';
+import BloopObserver from '../components/SoulTriage/BloopObserver';
 import FloatingEmpathy from '../components/SoulTriage/FloatingEmpathy';
 import BentoGrid from '../components/SoulTriage/BentoGrid';
 import ParallaxTrust from '../components/SoulTriage/ParallaxTrust';
+import FoundingBenefits from '../components/SoulTriage/FoundingBenefits';
 import WaitlistMorph from '../components/SoulTriage/WaitlistMorph';
 import FloatingWaitlist from '../components/SoulTriage/FloatingWaitlist';
 import soulLoadingImg from '../assets/supabase/mystreesoulloading.jpg';
@@ -23,7 +25,7 @@ export default function SoulTriage() {
     };
 
     return (
-        <div className="relative bg-[#FCFBF7] min-h-screen font-sans selection:bg-[#FF5A36] selection:text-white text-[#110F0E]">
+        <div className="relative min-h-screen overflow-x-hidden bg-[#FCFBF7] font-sans text-[#110F0E] selection:bg-[#FF5A36] selection:text-white">
 
             {/* Global Tactile Cinematic Noise Overlay */}
             <div
@@ -36,16 +38,24 @@ export default function SoulTriage() {
 
             <div ref={nextSectionRef} className="invisible h-0 w-0" />
 
-            {/* --- 2. NARRATIVE REVEAL --- */}
-            <FloatingEmpathy empathyImageUrl={empathyImg} />
+            {/* --- 2. BLOOP INTRODUCTION --- */}
+            <BloopObserver />
 
-            {/* --- 3. BENTO 3.0 --- */}
+            {/* --- 3. NARRATIVE REVEAL --- */}
+            <div className="relative z-10 w-full">
+                <FloatingEmpathy empathyImageUrl={empathyImg} />
+            </div>
+
+            {/* --- 4. BENTO 3.0 --- */}
             <BentoGrid />
 
-            {/* --- 4. PARALLAX TRUST --- */}
+            {/* --- 5. PARALLAX TRUST --- */}
             <ParallaxTrust trustImageUrl={smithaDoc} />
 
-            {/* --- 5. BUBBLE CLIMAX --- */}
+            {/* --- 6. FOUNDING BENEFITS --- */}
+            <FoundingBenefits />
+
+            {/* --- 7. BUBBLE CLIMAX --- */}
             <WaitlistMorph />
 
             {/* Persistent Waitlist CTA for Beta */}
