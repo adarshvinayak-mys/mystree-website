@@ -1,0 +1,68 @@
+<svg width="460" height="520" viewBox="0 0 460 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bloopBody" x1="124" y1="82" x2="334" y2="444" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F8F1E6" />
+      <stop offset="0.52" stop-color="#F2E2CE" />
+      <stop offset="1" stop-color="#EACFB6" />
+    </linearGradient>
+    <radialGradient id="bloopHighlight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(178 138) rotate(51.3) scale(198 163)">
+      <stop stop-color="#FFFDFC" stop-opacity="0.92" />
+      <stop offset="0.42" stop-color="#FFF8EE" stop-opacity="0.5" />
+      <stop offset="1" stop-color="#FFF3E2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="bloopBlush" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230 286) rotate(90) scale(110 114)">
+      <stop stop-color="#FFDDE8" stop-opacity="0.78" />
+      <stop offset="1" stop-color="#FFDDE8" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="heartFill" x1="174" y1="214" x2="288" y2="334" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD8EE" />
+      <stop offset="1" stop-color="#F5C6F2" />
+    </linearGradient>
+    <filter id="bodyShadow" x="40" y="16" width="380" height="486" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="26" stdDeviation="18" flood-color="#D2B79A" flood-opacity="0.26" />
+    </filter>
+    <filter id="heartGlow" x="94" y="188" width="274" height="218" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="eyeGlow" x="100" y="120" width="260" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#FFFFFF" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <g filter="url(#bodyShadow)">
+    <path d="M230 38C266 72 326 146 326 252C326 328 300 388 256 426C258 448 252 470 230 486C207 470 202 448 204 426C160 388 134 328 134 252C134 146 194 72 230 38Z" fill="url(#bloopBody)" />
+    <path d="M230 38C266 72 326 146 326 252C326 328 300 388 256 426C258 448 252 470 230 486C207 470 202 448 204 426C160 388 134 328 134 252C134 146 194 72 230 38Z" fill="url(#bloopHighlight)" />
+    <path d="M230 38C266 72 326 146 326 252C326 328 300 388 256 426C258 448 252 470 230 486C207 470 202 448 204 426C160 388 134 328 134 252C134 146 194 72 230 38Z" fill="url(#bloopBlush)" />
+    <path d="M171 370C152 386 143 404 146 428C160 420 174 404 188 386L171 370Z" fill="#E9CFB4" />
+    <path d="M289 370C308 386 317 404 314 428C300 420 286 404 272 386L289 370Z" fill="#E9CFB4" />
+    <path d="M207 436C188 449 181 468 190 488C207 482 219 466 223 446L207 436Z" fill="#E9CFB4" />
+    <path d="M253 436C272 449 279 468 270 488C253 482 241 466 237 446L253 436Z" fill="#E9CFB4" />
+  </g>
+
+  <g filter="url(#eyeGlow)">
+    <ellipse cx="186" cy="214" rx="35" ry="38" fill="#FFFDFD" />
+    <ellipse cx="274" cy="214" rx="35" ry="38" fill="#FFFDFD" />
+    <ellipse cx="186" cy="214" rx="14" ry="17" fill="#A76136" />
+    <ellipse cx="274" cy="214" rx="14" ry="17" fill="#A76136" />
+    <ellipse cx="186" cy="214" rx="7.5" ry="9.5" fill="#472614" />
+    <ellipse cx="274" cy="214" rx="7.5" ry="9.5" fill="#472614" />
+    <circle cx="191" cy="206" r="4.2" fill="#FFFFFF" />
+    <circle cx="279" cy="206" r="4.2" fill="#FFFFFF" />
+  </g>
+
+  <path d="M166 180C176 171 191 168 204 174" stroke="#D4B79F" stroke-width="8" stroke-linecap="round" />
+  <path d="M256 174C269 168 284 171 294 180" stroke="#D4B79F" stroke-width="8" stroke-linecap="round" />
+
+  <ellipse cx="150" cy="254" rx="18" ry="10" fill="#F0C1BE" opacity="0.76" />
+  <ellipse cx="310" cy="254" rx="18" ry="10" fill="#F0C1BE" opacity="0.76" />
+
+  <path d="M216 258C223 264 237 264 244 258" stroke="#C6758A" stroke-width="4" stroke-linecap="round" />
+
+  <g filter="url(#heartGlow)">
+    <path d="M230 246C230 224 248 209 268 209C289 209 305 225 305 246C305 283 271 304 230 336C189 304 155 283 155 246C155 225 171 209 192 209C212 209 230 224 230 246Z" fill="url(#heartFill)" />
+  </g>
+</svg>
