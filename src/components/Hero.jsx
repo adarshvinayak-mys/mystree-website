@@ -136,7 +136,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-background-light dark:bg-background-dark">
+        <section className="relative overflow-hidden pt-36 lg:pt-56 pb-16 lg:pb-24 bg-background-light dark:bg-background-dark">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-corn-silk/40 to-transparent dark:from-surface-dark/30 -z-10 rounded-bl-[100px]"></div>
             <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-gradient-to-tr from-tertiary/10 to-transparent -z-10 rounded-tr-[100px]"></div>
 
