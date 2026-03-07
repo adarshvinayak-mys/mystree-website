@@ -163,6 +163,7 @@ export default function OurTeam() {
                                     </h4>
                                     <ul className="space-y-2 text-slate-600 dark:text-gray-400 text-sm">
                                         <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-orange-400/50"></span>M.Sc Nutrition & Dietetics</li>
+                                        <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-orange-400/50"></span>M.Sc Psychological Counseling</li>
                                         <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-orange-400/50"></span>Certified Wellness Coach</li>
                                     </ul>
                                 </div>

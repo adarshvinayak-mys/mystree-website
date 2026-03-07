@@ -124,7 +124,7 @@ export default function AdolescentHealth() {
             name: "Priyanka Savina",
             specialty: "Clinical Nutritionist & Adolescent Wellness Consultant",
             image: doctor3,
-            qualification: "M.Sc Nutrition & Dietetics",
+            qualification: "M.Sc Nutrition & Dietetics, M.Sc Psychological Counseling",
             experience: "Everything About What You Eat",
             languages: "English, Hindi, Kannada",
             badgeText: "Teen Nutrition Support",

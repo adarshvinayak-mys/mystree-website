@@ -81,7 +81,7 @@ export default function PrenatalClinic() {
             name: "Priyanka Savina",
             specialty: "Lactation & Nutrition Consultant",
             image: doctor3,
-            qualification: "M.Sc Nutrition & Dietetics",
+            qualification: "M.Sc Nutrition & Dietetics, M.Sc Psychological Counseling",
             experience: "10+ Years Experience",
             languages: "English, Hindi, Kannada",
             badgeText: "₹600 Consultation",

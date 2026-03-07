@@ -32,7 +32,7 @@ const experts = [
     {
         name: "Priyanka Savina",
         specialty: "Nutritionist & Wellness Consultant",
-        qualification: "M.Sc Nutrition & Dietetics, Wellness Coach",
+        qualification: "M.Sc Nutrition & Dietetics, M.Sc Psychological Counseling",
         experience: "10+ years experience",
         languages: "English, Hindi, Kannada",
         image: doctor3,

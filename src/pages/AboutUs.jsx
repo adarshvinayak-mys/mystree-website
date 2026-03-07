@@ -143,6 +143,7 @@ export default function AboutUs() {
                             <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Wellness Lead</p>
                             <div className="flex gap-2 mb-4">
                                 <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">M.Sc Nutrition</span>
+                                <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">M.Sc Psychological Counseling</span>
                                 <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">PCOS Expert</span>
                             </div>
                             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">

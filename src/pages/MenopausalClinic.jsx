@@ -88,7 +88,7 @@ export default function MenopausalClinic() {
             profileId: "priyanka-savina",
             name: "Priyanka Savina",
             specialty: "Nutrition Counselling & Menopause Diet Support",
-            qualification: "M.Sc Nutrition & Dietetics",
+            qualification: "M.Sc Nutrition & Dietetics, M.Sc Psychological Counseling",
             experience: "10+ Years Experience",
             languages: "English, Hindi, Kannada",
             image: doctor3,
