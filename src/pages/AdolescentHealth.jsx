@@ -155,8 +155,8 @@ export default function AdolescentHealth() {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div className="relative z-10 space-y-6 lg:col-span-7">
-                        <div className="inline-block transform -rotate-1 origin-bottom-left">
-                            <span className="px-4 py-2 bg-mint text-cadet-gray text-sm font-bold border-2 border-cadet-gray rounded-lg shadow-[3px_3px_0px_#3a506b] font-hand">
+                        <div className="inline-block transform -rotate-1 origin-bottom-left max-w-full">
+                            <span className="inline-block px-4 py-2 bg-mint text-cadet-gray text-[13px] md:text-sm font-bold border-2 border-cadet-gray rounded-lg shadow-[3px_3px_0px_#3a506b] font-hand">
                                 ✨ No Judgement Zone | Your Body, Your Rules.
                             </span>
                         </div>
