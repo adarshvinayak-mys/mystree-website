@@ -123,7 +123,7 @@ function MobileVisualStrip() {
 
 export default function BloopObserver() {
     return (
-        <section className="relative z-0 w-full overflow-hidden bg-[linear-gradient(180deg,#FCF4D9_0%,#FCFBF7_52%,#EAF4FF_100%)] pt-10 pb-4 sm:pt-12 sm:pb-6 lg:pt-16 lg:pb-8">
+        <section className="relative z-0 w-full overflow-hidden bg-[linear-gradient(180deg,#FCF4D9_0%,#FCFBF7_52%,#EAF4FF_100%)] pt-10 pb-24 sm:pt-12 sm:pb-28 lg:pt-16 lg:pb-16">
             <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
                 <div className="relative overflow-hidden rounded-[28px] border border-white/72 bg-white/65 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-[14px] md:rounded-[32px] md:backdrop-blur-[16px]">
                     <div
