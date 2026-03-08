@@ -103,10 +103,68 @@ export default function FertilityClinic() {
     ];
 
     const [selectedService, setSelectedService] = useState("All Services");
+    const [activeModal, setActiveModal] = useState(null);
+
+    useEffect(() => {
+        if (activeModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+        return () => { document.body.style.overflow = 'auto'; };
+    }, [activeModal]);
 
     const filteredDoctors = doctors.filter(doctor =>
         doctor.services.includes(selectedService)
     );
+
+    const modalData = {
+        'ivf-optimization': {
+            title: "Advanced IVF Optimization for Complex Fertility Cases",
+            intro: "We specialize in finding answers where others haven't. Our expert-led clinical team utilizes advanced diagnostics to create custom pathways for poor responders and those with recurrent implantation failure.",
+            q1: "Why do IVF cycles fail, and how can we fix them?",
+            a1: "IVF cycles typically fail due to chromosomal abnormalities in the embryo, poor egg quality, or an unreceptive uterine environment. We fix recurrent failures by conducting comprehensive diagnostic mapping, including Endometrial Receptivity Analysis (ERA) and advanced genetic screening (PGT-A), to identify and resolve the exact root cause.",
+            q2: "What is the best IVF protocol for poor ovarian responders?",
+            a2: "For poor responders, the best IVF approach requires a bespoke stimulation protocol tailored to your unique hormonal fingerprint. We utilize advanced reproductive interventions like dual stimulation, Laser Assisted Hatching, and Reproductive Immunology to maximize egg yield and optimize implantation success rates in difficult cases.",
+            listTitle: "Our Precision Tools for IVF Optimization:",
+            listItems: [
+                <><strong className="text-deep-green">Endometrial Receptivity Analysis (ERA):</strong> Pinpointing your exact implantation window.</>,
+                <><strong className="text-deep-green">PGT-A Screening:</strong> Ensuring only genetically healthy embryos are transferred.</>,
+                <><strong className="text-deep-green">EmbryoGlue® Transfer:</strong> Using advanced mediums to assist embryo implantation.</>
+            ],
+            ctaText: "Schedule a Second Opinion Consultation"
+        },
+        'male-fertility': {
+            title: "Advanced Male Fertility Diagnostics & Treatment",
+            intro: "With male-factor issues accounting for 40% of all infertility cases, comprehensive evaluation is critical. We deploy cutting-edge andrological science to identify and treat male infertility at the microscopic level.",
+            q1: "What are the most effective treatments for male infertility?",
+            a1: "The most effective treatments for severe male infertility include advanced semen analysis, DNA fragmentation index (DFI) testing, and surgical retrieval methods like micro-TESE. By isolating the healthiest sperm, we significantly increase fertilization rates when paired with Intracytoplasmic Sperm Injection (ICSI) during an IVF cycle.",
+            q2: "How does sperm DNA fragmentation affect IVF success?",
+            a2: "High levels of sperm DNA fragmentation can lead to poor embryo development, lower fertilization rates, and recurrent miscarriages. By conducting specialized DFI testing, our fertility specialists can diagnose hidden sperm damage and implement advanced selection techniques to choose only the most structurally sound sperm for fertilization.",
+            listTitle: "Our Male Fertility Solutions Include:",
+            listItems: [
+                <><strong className="text-deep-green">Micro-TESE Surgery:</strong> Safe, precise extraction of sperm directly from testicular tissue.</>,
+                <><strong className="text-deep-green">Advanced Semen Analysis:</strong> Detailed mapping of sperm morphology, motility, and count.</>,
+                <><strong className="text-deep-green">Targeted Nutrition & Supplements:</strong> Holistic protocols to naturally improve sperm health.</>
+            ],
+            ctaText: "Book a Male Fertility Assessment"
+        },
+        'donor-program': {
+            title: "Ethical & Secure Donor Egg and Sperm Bank",
+            intro: "Building your family through our donor program means receiving legally compliant, strictly vetted, and deeply compassionate care. We handle the complexity so you can focus on parenthood.",
+            q1: "How does the donor screening process work for IVF?",
+            a1: "Our rigorous donor screening process ensures the highest clinical and ethical standards. Every egg and sperm donor undergoes comprehensive genetic testing, thorough psychological evaluations, and extensive infectious disease screenings. This strict vetting guarantees maximum safety, pristine genetic health, and higher success rates for parents.",
+            q2: "Is using donor eggs or sperm legally protected and anonymous?",
+            a2: "Yes, our premium donor program is entirely legally compliant, ethical, and strictly anonymous. We manage all comprehensive legal frameworks and confidentiality agreements, providing intended parents with complete peace of mind, security, and fully protected parental rights from the very beginning of their journey.",
+            listTitle: "Why Choose Our Donor Program:",
+            listItems: [
+                <><strong className="text-deep-green">Premium Genetic Screening:</strong> Eliminating hereditary risks before selection.</>,
+                <><strong className="text-deep-green">Diverse Donor Profiles:</strong> Providing detailed (yet anonymous) physical and educational backgrounds.</>,
+                <><strong className="text-deep-green">Zero Wait Times:</strong> Immediate access to our high-quality, frozen donor tissue banks.</>
+            ],
+            ctaText: "Explore Our Donor Options"
+        }
+    };
 
     const faqSchema = {
         "@context": "https://schema.org",
@@ -472,39 +530,45 @@ export default function FertilityClinic() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Card 1: IVF Optimization */}
-                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group">
+                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group flex flex-col h-full">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-deep-green">auto_graph</span>
                             </div>
                             <h3 className="font-display text-xl font-bold text-deep-green mb-3">IVF Optimization</h3>
-                            <p className="text-text-muted text-sm leading-relaxed mb-6">
+                            <p className="text-text-muted text-sm leading-relaxed mb-6 flex-grow">
                                 For those who have failed cycles elsewhere. We specialize in "poor responders" and difficult cases.
                             </p>
-                            <a href="#optimization" className="text-warm-coral font-bold text-sm hover:underline">Learn More →</a>
+                            <button onClick={() => setActiveModal('ivf-optimization')} className="mt-auto text-warm-coral font-bold text-sm hover:underline text-left w-max flex items-center gap-1 group/btn">
+                                Learn More <span className="material-icons text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
                         </div>
 
                         {/* Card 2: Male Fertility */}
-                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group">
+                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group flex flex-col h-full">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-deep-green">male</span>
                             </div>
                             <h3 className="font-display text-xl font-bold text-deep-green mb-3">Male Fertility</h3>
-                            <p className="text-text-muted text-sm leading-relaxed mb-6">
+                            <p className="text-text-muted text-sm leading-relaxed mb-6 flex-grow">
                                 40% of infertility is male-factor. We offer micro-TESE, advanced semen analysis, and DNA fragmentation treatment.
                             </p>
-                            <a href="#male-fertility" className="text-warm-coral font-bold text-sm hover:underline">Learn More →</a>
+                            <button onClick={() => setActiveModal('male-fertility')} className="mt-auto text-warm-coral font-bold text-sm hover:underline text-left w-max flex items-center gap-1 group/btn">
+                                Learn More <span className="material-icons text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
                         </div>
 
                         {/* Card 3: Donor Gametes */}
-                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group">
+                        <div className="bg-warm-ivory/50 p-8 rounded-2xl hover:bg-warm-ivory transition-colors border border-transparent hover:border-soft-sage/50 group flex flex-col h-full">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-deep-green">diversity_1</span>
                             </div>
                             <h3 className="font-display text-xl font-bold text-deep-green mb-3">Donor Program</h3>
-                            <p className="text-text-muted text-sm leading-relaxed mb-6">
+                            <p className="text-text-muted text-sm leading-relaxed mb-6 flex-grow">
                                 Ethical, anonymous, and legally compliant donor egg and sperm bank with rigorous screening.
                             </p>
-                            <a href="#donor-program" className="text-warm-coral font-bold text-sm hover:underline">Learn More →</a>
+                            <button onClick={() => setActiveModal('donor-program')} className="mt-auto text-warm-coral font-bold text-sm hover:underline text-left w-max flex items-center gap-1 group/btn">
+                                Learn More <span className="material-icons text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -667,6 +731,50 @@ export default function FertilityClinic() {
                 </div>
             </section>
 
+            {/* Modal Container for Targeted Solutions */}
+            {Object.entries(modalData).map(([id, data]) => (
+                <div key={id} aria-hidden={activeModal !== id} className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 transition-all duration-500 ${activeModal === id ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    <div className="fixed inset-0 bg-deep-green/60 backdrop-blur-sm transition-opacity" onClick={() => setActiveModal(null)}></div>
+                    <div className={`bg-white/95 backdrop-blur-2xl border border-white/40 shadow-[0_0_50px_rgba(0,0,0,0.15)] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-500 relative z-[101] ${activeModal === id ? 'scale-100 translate-y-0' : 'scale-95 translate-y-8'}`}>
+                        <button onClick={() => setActiveModal(null)} className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 bg-soft-sage/20 rounded-full flex items-center justify-center text-deep-green hover:bg-warm-coral hover:text-white transition-all z-20" aria-label="Close Modal">
+                            <span className="material-icons">close</span>
+                        </button>
+                        <div className="p-8 sm:p-12">
+                            <h2 className="font-display text-3xl sm:text-4xl font-bold text-deep-green mb-4 leading-tight">{data.title}</h2>
+                            <p className="text-soft-charcoal/80 text-lg sm:text-xl font-light leading-relaxed mb-10 italic">{data.intro}</p>
+
+                            <div className="space-y-8 mb-10">
+                                <div>
+                                    <h3 className="font-display text-2xl font-bold text-deep-green mb-3">{data.q1}</h3>
+                                    <p className="text-soft-charcoal leading-relaxed">{data.a1}</p>
+                                </div>
+                                <div>
+                                    <h3 className="font-display text-2xl font-bold text-deep-green mb-3">{data.q2}</h3>
+                                    <p className="text-soft-charcoal leading-relaxed">{data.a2}</p>
+                                </div>
+                            </div>
+
+                            <div className="bg-warm-ivory/50 rounded-2xl p-6 sm:p-8 mb-10 border border-soft-sage/30">
+                                <h4 className="font-display text-xl font-bold text-deep-green mb-4">{data.listTitle}</h4>
+                                <ul className="space-y-4">
+                                    {data.listItems.map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-3">
+                                            <span className="material-icons text-warm-coral text-xl shrink-0 mt-0.5">verified</span>
+                                            <span className="text-soft-charcoal text-balance">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="text-center sm:text-left">
+                                <button className="bg-warm-coral text-white font-bold py-4 px-8 rounded-xl hover:bg-deep-green transition-colors shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 uppercase tracking-wide text-sm w-full sm:w-auto">
+                                    {data.ctaText} <span className="material-icons text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
 
         </div>
     );
