@@ -401,7 +401,7 @@ export default function ChatButton() {
     return (
         <div
             data-no-booking-intercept="true"
-            className={`fixed right-3 sm:right-5 md:right-6 isolate z-[2147483000] transition-all duration-300 ${isFooterVisible ? 'bottom-28 md:bottom-28' : 'bottom-4 md:bottom-6'}`}
+            className={`fixed right-4 sm:right-6 md:right-8 isolate z-[2147483000] flex flex-col items-end transition-all duration-300 ${isFooterVisible ? 'bottom-28' : 'bottom-6 md:bottom-8'}`}
         >
             {!isOpen && showWelcomeNudge && (
                 <div className="mb-2 w-[min(17rem,calc(100vw-2rem))] rounded-2xl border border-[#BFE2FE]/75 bg-white/95 backdrop-blur-sm shadow-[0_10px_24px_rgba(47,62,70,0.14)] p-2.5">
@@ -441,7 +441,7 @@ export default function ChatButton() {
             )}
 
             {isOpen && (
-                <div className="mb-2 w-[calc(100vw-1.5rem)] sm:w-[23rem] rounded-3xl border border-[#8BA4BF]/30 bg-white shadow-[0_18px_40px_rgba(47,62,70,0.2)] overflow-hidden">
+                <div className="mb-4 w-[calc(100vw-2rem)] sm:w-[23rem] rounded-3xl border border-[#8BA4BF]/30 bg-white shadow-[0_18px_40px_rgba(47,62,70,0.2)] overflow-hidden flex flex-col pointer-events-auto">
                     <div className="px-3.5 py-3 bg-white border-b border-[#8BA4BF]/30 flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
                             <span className="w-8 h-8 rounded-full bg-[#ED5B2D] text-white inline-flex items-center justify-center">
@@ -493,7 +493,7 @@ export default function ChatButton() {
                         </div>
                     </div>
 
-                    <div className="max-h-[46vh] overflow-y-auto px-3 py-3 bg-white">
+                    <div className="max-h-[50vh] overflow-y-auto px-3 py-3 bg-white">
                         <div className="space-y-2.5">
                             {messages.map((message) => (
                                 <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
