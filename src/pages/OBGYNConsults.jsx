@@ -164,33 +164,33 @@ export default function OBGYNConsults() {
                         <p className="text-cadet-gray/70 max-w-2xl mx-auto">Select your primary health concern to find the right specialist immediately.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col h-full">
                             <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                 <span className="material-icons text-3xl">pregnant_woman</span>
                             </div>
                             <h3 className="text-xl font-bold text-cadet-gray mb-2 font-serif">How can I plan for a healthy pregnancy in Bangalore?</h3>
                             <p className="text-sm text-cadet-gray/70 mb-6">Planning a healthy pregnancy starts with expert pre-conception counseling, comprehensive fertility assessments, and personalized prenatal care planning. At My Stree in Indiranagar, our senior obstetricians guide you through every step of your fertility journey to ensure a safe, healthy conception and pregnancy.</p>
-                            <a className="inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
+                            <a className="mt-auto inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
                                 Consult an Expert <span className="material-icons text-sm ml-1">arrow_forward</span>
                             </a>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col h-full">
                             <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                 <span className="material-icons text-3xl">spa</span>
                             </div>
                             <h3 className="text-xl font-bold text-cadet-gray mb-2 font-serif">What is the best treatment for Hormonal Issues and PCOS in Indiranagar?</h3>
                             <p className="text-sm text-cadet-gray/70 mb-6">The most effective PCOS treatment requires expert medical management of irregular periods, hormonal acne, and weight concerns. Our specialists provide holistic, root-cause diagnostics and personalized treatment plans to restore your hormonal balance and support your overall well-being.</p>
-                            <a className="inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
+                            <a className="mt-auto inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
                                 Consult for PCOS <span className="material-icons text-sm ml-1">arrow_forward</span>
                             </a>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                        <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col h-full">
                             <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                 <span className="material-icons text-3xl">elderly_woman</span>
                             </div>
                             <h3 className="text-xl font-bold text-cadet-gray mb-2 font-serif">Where can I get expert Post-Menopausal care after age 45?</h3>
                             <p className="text-sm text-cadet-gray/70 mb-6">Comprehensive post-menopausal care involves routine bone density checks, tailored hormonal therapy, and advanced wellness screenings. Our senior gynecologists provide empathetic, world-class medical support to help women navigate life after 45 comfortably and healthily.</p>
-                            <a className="inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
+                            <a className="mt-auto inline-flex items-center text-primary font-bold text-sm hover:translate-x-1 transition-transform uppercase tracking-wider" href="#">
                                 Consult a Specialist <span className="material-icons text-sm ml-1">arrow_forward</span>
                             </a>
                         </div>
