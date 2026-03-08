@@ -85,7 +85,7 @@ export default function AboutUs() {
                         <div className="lg:w-2/3 space-y-6">
                             <div>
                                 <h3 className="font-display text-4xl text-gray-900 dark:text-white mb-1">Dr. Smitha A.P.</h3>
-                                <p className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Co-Founder & Chief Medical Officer</p>
+                                <p className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Founder & High Risk Obstetrician</p>
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded uppercase">MBBS</span>
                                     <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded uppercase">MS (OBG)</span>
@@ -120,7 +120,7 @@ export default function AboutUs() {
                                 />
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 dark:text-white">Dr. Surbhi Sinha</h3>
-                            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Lead Specialist</p>
+                            <p className="text-primary text-sm font-bold uppercase tracking-wider mb-3">Co-Founder & Fertility Specialist</p>
                             <div className="flex gap-2 mb-4">
                                 <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">MRCOG (UK)</span>
                                 <span className="px-2 py-0.5 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold border border-gray-100 dark:border-gray-600 rounded uppercase">OBGYN</span>

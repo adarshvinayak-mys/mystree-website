@@ -11,7 +11,7 @@ const doctorJasmine = '/drjasmineflora.webp';
 const experts = [
     {
         name: "Dr. Smitha A.P.",
-        specialty: "Gynecologist, Infertility Specialist & Obstetrician",
+        specialty: "Founder & High Risk Obstetrician",
         qualification: "High Risk Obstetrician and Fertility Specialist MBBS, MS, DNB(OBG) FFM FRM MBA",
         experience: "23+ years experience",
         languages: "English, Kannada, Tamil",
@@ -21,7 +21,7 @@ const experts = [
     },
     {
         name: "Dr. Surbhi Sinha",
-        specialty: "OBGYN & Fertility Specialist",
+        specialty: "Co-Founder & Fertility Specialist",
         qualification: "MBBS, MS, DNB, MRCOG (UK), FRM",
         experience: "10+ years experience",
         languages: "English, Hindi",
@@ -46,7 +46,7 @@ const experts = [
         experience: "24+ years experience",
         languages: "English, Hindi, Kannada, Tamil",
         image: doctorChaitra,
-        badgeText: "Fertility Expert",
+        badgeText: "₹900 Consultation",
         badgeColorClass: "bg-blue-50 text-blue-700"
     },
     {

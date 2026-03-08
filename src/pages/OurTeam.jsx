@@ -53,9 +53,9 @@ export default function OurTeam() {
                         </div>
 
                         <div className="w-full lg:w-1/2 order-2 lg:order-3 text-left pl-0 lg:pl-10">
-                            <span className="text-primary font-bold tracking-wider text-sm mb-2 block uppercase">Co-Founder & CMO</span>
+                            <span className="text-primary font-bold tracking-wider text-sm mb-2 block uppercase">Founder</span>
                             <h2 className="text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-2">Dr. Smitha A.P.</h2>
-                            <p className="text-lg lg:text-xl text-slate-500 mb-4 lg:mb-6 font-medium">High Risk Obstetrician & Fertility Specialist</p>
+                            <p className="text-lg lg:text-xl text-slate-500 mb-4 lg:mb-6 font-medium">Founder & High Risk Obstetrician</p>
                             <p className="text-slate-600 dark:text-gray-300 mb-4 lg:mb-6 leading-relaxed">
                                 Dr. Smitha specializes in High Risk Obstetrics and In-utero Fetal Programming with a keen interest in treatment of endocrine disorders, recurrent pregnancy loss, bad obstetric history and high risk pregnancy. She strongly believes in patient care that goes beyond the illness by holistically approaching the care with the right mix of evidence-based medicine and personalized care.
                             </p>
@@ -94,9 +94,9 @@ export default function OurTeam() {
                     {/* Founder 2: Dr. Surbhi Sinha (Text Left, Image Right) */}
                     <div id="dr-surbhi" className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20 group">
                         <div className="w-full lg:w-1/2 order-2 lg:order-1 text-left lg:text-right pr-0 lg:pr-10">
-                            <span className="text-secondary font-bold tracking-wider text-sm mb-2 block uppercase">Lead Specialist</span>
+                            <span className="text-secondary font-bold tracking-wider text-sm mb-2 block uppercase">Co-Founder</span>
                             <h2 className="text-3xl lg:text-4xl font-display font-extrabold text-slate-900 dark:text-white mb-2">Dr. Surbhi Sinha</h2>
-                            <p className="text-lg lg:text-xl text-slate-500 mb-4 lg:mb-6 font-medium">OBGYN & Fertility Expert</p>
+                            <p className="text-lg lg:text-xl text-slate-500 mb-4 lg:mb-6 font-medium">Co-Founder & Fertility Specialist</p>
                             <p className="text-slate-600 dark:text-gray-300 mb-6 lg:mb-8 leading-relaxed ml-auto">
                                 Renowned for her precision and empathy, Dr. Sinha is an expert in advanced surgical techniques and fertility solutions. She prioritizes faster recovery and minimal discomfort, combining cutting-edge tech with compassionate care.
                             </p>
