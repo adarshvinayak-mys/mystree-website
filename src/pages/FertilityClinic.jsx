@@ -108,8 +108,75 @@ export default function FertilityClinic() {
         doctor.services.includes(selectedService)
     );
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a holistic approach to fertility treatment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A holistic fertility approach integrates advanced medical interventions with stress-reducing therapies to treat the whole person. Our proprietary 'Fertility Fingerprint' protocol combines custom IVF treatments with therapeutic yoga, sound healing, expressive movement, and anti-inflammatory nutrition to naturally boost egg quality and improve blood flow."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What advanced diagnostic testing is used for IVF success?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We utilize cutting-edge molecular and genetic science to maximize IVF success rates. Our advanced diagnostics include Endometrial Receptivity Analysis (ERA) for exact implantation timing, PGT-A for embryo genetic screening, DFI to assess sperm DNA fragmentation, and reproductive immunology to manage immune responses hindering pregnancy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the best treatments for male infertility?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Male-factor issues account for 40% of all infertility cases. The most effective male fertility treatments include advanced semen analysis, DNA fragmentation treatment (DFI), and micro-TESE procedures to safely retrieve the healthiest sperm for use in our conventional IVF or ICSI cycles."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should a woman consider egg freezing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Women should proactively consider egg freezing in their late 20s to early 30s to preserve peak egg quality for future family planning. Our clinical egg freezing process provides peace of mind using safe, advanced cryopreservation technology before fertility naturally declines."
+                }
+            }
+        ]
+    };
+
+    const medicalClinicSchema = {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "My Stree Advanced Fertility Center",
+        "description": "Welcome to our advanced fertility center, where clinical precision meets profound empathy. Backed by 15+ years of clinical experience, an 85% success rate, and over 1,200+ babies born.",
+        "medicalSpecialty": ["Fertility", "Gynecology", "Obstetrics"],
+        "availableService": [
+            { "@type": "MedicalProcedure", "name": "IVF" },
+            { "@type": "MedicalProcedure", "name": "Micro-TESE" },
+            { "@type": "MedicalProcedure", "name": "ICSI" },
+            { "@type": "MedicalProcedure", "name": "PGT-A" }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "10000"
+        }
+    };
+
     return (
         <div className="font-display bg-warm-ivory text-soft-charcoal antialiased selection:bg-warm-coral/30 selection:text-warm-coral relative animate-fade-in-up ">
+            {/* SEO JSON-LD Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }}
+            />
 
             {/* Cinematic Hero Section */}
             <header className="relative w-full min-h-[90vh] overflow-hidden flex items-center">
@@ -124,11 +191,11 @@ export default function FertilityClinic() {
                 <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex items-center">
                     <div className="max-w-2xl animate-fade-in-up">
                         <span className="text-warm-coral font-bold tracking-widest uppercase text-sm mb-4 block">Advanced Fertility Care</span>
-                        <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-medium leading-tight text-deep-green mb-8">
-                            Your Journey,<br /> <span class="italic text-warm-coral/90">Our Science.</span>
+                        <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-deep-green mb-8">
+                            Advanced IVF & Holistic <br className="hidden md:block" /> <span className="italic text-warm-coral/90">Fertility Care Clinic</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-text-muted mb-10 max-w-lg leading-relaxed font-light">
-                            Where clinical precision meets profound empathy. Experience the luxury of feeling understood while receiving world-class IVF care.
+                        <p className="text-lg md:text-xl text-text-muted mb-10 max-w-2xl leading-relaxed font-light">
+                            Welcome to our advanced fertility center, where clinical precision meets profound empathy. Backed by <strong>15+ years of clinical experience</strong>, an <strong>85% success rate</strong>, and over <strong>1,200+ babies born</strong>, we specialize in world-class IVF and natural conception protocols. We treat the whole person, integrating cutting-edge reproductive biotechnology with compassionate, stress-reducing therapies.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:gap-4">
                             <button className="bg-gradient-to-r from-warm-coral to-primary-light text-white px-10 py-4 rounded-2xl font-semibold w-full sm:w-auto text-center shadow-lg hover:shadow-warm-coral/40 hover:-translate-y-1 transition-all">
@@ -207,31 +274,31 @@ export default function FertilityClinic() {
                     {/* Program Tiers */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {/* Basic Tier */}
-                        <div className="bg-white p-8 shadow-xl border border-soft-sage/30 rounded-2xl relative transition-transform hover:-translate-y-2">
+                        <div className="bg-white p-8 shadow-xl border border-soft-sage/30 rounded-2xl relative transition-transform hover:-translate-y-2 flex flex-col h-full">
                             <h3 className="font-display text-3xl text-deep-green mb-2">Basic Program</h3>
                             <p className="text-sm text-text-muted mb-2 font-bold uppercase tracking-wide">6 - 12 Weeks</p>
-                            <p className="text-sm text-text-muted mb-6">Foundational support for natural conception.</p>
-                            <ul className="space-y-3 mb-8">
+                            <p className="text-sm text-text-muted mb-6">Foundational support featuring an expert diet consultation, clinical cycle tracking, and stress management protocols.</p>
+                            <ul className="space-y-3 mb-8 flex-grow">
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Diet Consultation</li>
-                                <li className="flex items-center text-sm text-deep-green"><span class="material-icons text-warm-coral text-sm mr-2">check_circle</span> Cycle Tracking</li>
-                                <li className="flex items-center text-sm text-deep-green"><span class="material-icons text-warm-coral text-sm mr-2">check_circle</span> Stress Management</li>
+                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Clinical Cycle Tracking</li>
+                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Stress Management</li>
                             </ul>
-                            <a href="#book-basic" className="block w-full py-4 border border-deep-green text-deep-green hover:bg-deep-green hover:text-white transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Basic Program</a>
+                            <a href="#book-basic" className="mt-auto block w-full py-4 border border-deep-green text-deep-green hover:bg-deep-green hover:text-white transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Basic Program</a>
                         </div>
 
                         {/* Advanced Tier */}
-                        <div className="bg-white p-8 shadow-2xl border border-soft-sage rounded-2xl relative z-10 transition-transform hover:-translate-y-2 transform lg:-scale-105 lg:scale-100">
+                        <div className="bg-white p-8 shadow-2xl border border-soft-sage rounded-2xl relative z-10 transition-transform hover:-translate-y-2 transform lg:-scale-105 lg:scale-100 flex flex-col h-full">
                             <div className="absolute top-0 right-0 bg-warm-coral text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-xl uppercase tracking-wider shadow-sm">Most Chosen</div>
                             <h3 className="font-display text-3xl text-deep-green mb-2">Advanced Program</h3>
                             <p className="text-sm text-text-muted mb-2 font-bold uppercase tracking-wide">12 - 24 Weeks</p>
-                            <p className="text-sm text-text-muted mb-6">Comprehensive holistic & clinical integration.</p>
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Personalized Nutrition Plan</li>
+                            <p className="text-sm text-text-muted mb-6">Comprehensive integration including personalized anti-inflammatory nutrition, fertility yoga, acupuncture sessions, and targeted hormonal balancing.</p>
+                            <ul className="space-y-3 mb-8 flex-grow">
+                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Personalized Anti-inflammatory Nutrition</li>
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Fertility Yoga & Meditation</li>
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Acupuncture Sessions</li>
-                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Hormonal Balancing</li>
+                                <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Targeted Hormonal Balancing</li>
                             </ul>
-                            <a href="#book-advanced" className="block w-full py-4 bg-deep-green text-white hover:bg-opacity-90 transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Advanced Program</a>
+                            <a href="#book-advanced" className="mt-auto block w-full py-4 bg-deep-green text-white hover:bg-opacity-90 transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Advanced Program</a>
                         </div>
                     </div>
                 </div>
@@ -364,19 +431,19 @@ export default function FertilityClinic() {
             <section className="py-24 bg-warm-ivory">
                 <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
                     <span className="text-warm-coral font-bold tracking-widest uppercase text-xs mb-2 block">Transparent Options</span>
-                    <h2 className="font-display text-4xl font-bold text-deep-green">Choose Your Path</h2>
-                    <p className="text-text-muted mt-4 max-w-2xl mx-auto">Whether you need standard care or a complex investigation, our tiered programs ensure you only pay for what you need.</p>
+                    <h2 className="font-display text-4xl font-bold text-deep-green">Compare Our Fertility & IVF Treatment Programs</h2>
+                    <p className="text-text-muted mt-4 max-w-2xl mx-auto">Whether you need standard care or a complex clinical investigation, our tiered transparent programs ensure you receive precisely the care you need.</p>
                 </div>
                 <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Essential IVF */}
                     <div className="bg-white rounded-3xl p-10 border border-soft-sage/30 shadow-soft hover:shadow-xl transition-all group relative overflow-hidden flex flex-col h-full">
                         <div className="absolute top-0 left-0 w-2 h-full bg-soft-sage group-hover:bg-warm-coral transition-colors"></div>
-                        <h3 className="font-display text-3xl text-deep-green mb-4">Essential IVF</h3>
-                        <p className="text-text-muted mb-8 h-12">Standardized, high-quality care for straightforward cases.</p>
+                        <h3 className="font-display text-3xl text-deep-green mb-4">Essential IVF Package</h3>
+                        <p className="text-text-muted mb-8 h-12">Standardized, high-quality clinical care for straightforward cases.</p>
                         <ul className="space-y-4 mb-10 text-soft-charcoal/80 flex-grow">
                             <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Standard Stimulation Protocol</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Conventional IVF/ICSI</li>
-                            <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Blastocyst Culture</li>
+                            <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Blastocyst Culturing</li>
                         </ul>
                         <a href="#essential-ivf" className="mt-auto block w-full py-4 border border-deep-green text-deep-green text-center rounded-xl font-bold hover:bg-deep-green hover:text-white transition-all uppercase tracking-wider text-sm">View Package Details</a>
                     </div>
@@ -384,10 +451,10 @@ export default function FertilityClinic() {
                     {/* Signature Precision */}
                     <div className="bg-deep-green rounded-3xl p-10 shadow-2xl relative overflow-hidden flex flex-col h-full">
                         <div className="absolute top-0 right-0 bg-warm-coral text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">Most Recommended</div>
-                        <h3 className="font-display text-3xl text-white mb-4">Signature Precision</h3>
-                        <p className="text-soft-sage/80 mb-8 h-12">Advanced investigation for RIF, PCOS, or low ovarian reserve.</p>
+                        <h3 className="font-display text-3xl text-white mb-4">Signature Precision IVF</h3>
+                        <p className="text-soft-sage/80 mb-8 h-12">Advanced clinical investigation tailored for recurrent implantation failure (RIF), PCOS, or low ovarian reserve.</p>
                         <ul className="space-y-4 mb-10 text-white/90 flex-grow">
-                            <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> Full Hormonal Mapping & DFI</li>
+                            <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> Full Hormonal Mapping</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> Laser Assisted Hatching</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> EmbryoGlue® Transfer</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> Immune Protocol Support</li>
@@ -472,6 +539,47 @@ export default function FertilityClinic() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-deep-green/40 via-transparent to-transparent"></div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Semantic FAQ Section for Capsule Content AEO Strategy */}
+            <section className="py-24 bg-white border-t border-soft-sage/20 relative">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-soft-sage/10 rounded-full blur-3xl -z-10"></div>
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-1 gap-12 text-center lg:text-left">
+                    <div className="text-center mb-12">
+                        <span className="text-warm-coral font-bold tracking-widest uppercase text-xs mb-2 block">Common Questions</span>
+                        <h2 className="font-display text-4xl text-deep-green">Expert Fertility Answers</h2>
+                    </div>
+                </div>
+
+                <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-warm-ivory/50 p-8 rounded-2xl border border-soft-sage/30 shadow-sm hover:shadow-md transition-all">
+                        <h2 className="font-display text-2xl font-bold text-deep-green mb-4 leading-tight">What is a holistic approach to fertility treatment?</h2>
+                        <p className="text-soft-charcoal text-sm leading-relaxed text-balance">
+                            A holistic fertility approach integrates advanced medical interventions with stress-reducing therapies to treat the whole person. Our proprietary 'Fertility Fingerprint' protocol combines custom IVF treatments with therapeutic yoga, sound healing, expressive movement, and anti-inflammatory nutrition to naturally boost egg quality and improve blood flow.
+                        </p>
+                    </div>
+
+                    <div className="bg-warm-ivory/50 p-8 rounded-2xl border border-soft-sage/30 shadow-sm hover:shadow-md transition-all">
+                        <h2 className="font-display text-2xl font-bold text-deep-green mb-4 leading-tight">What advanced diagnostic testing is used for IVF success?</h2>
+                        <p className="text-soft-charcoal text-sm leading-relaxed text-balance">
+                            We utilize cutting-edge molecular and genetic science to maximize IVF success rates. Our advanced diagnostics include Endometrial Receptivity Analysis (ERA) for exact implantation timing, PGT-A for embryo genetic screening, DFI to assess sperm DNA fragmentation, and reproductive immunology to manage immune responses hindering pregnancy.
+                        </p>
+                    </div>
+
+                    <div className="bg-warm-ivory/50 p-8 rounded-2xl border border-soft-sage/30 shadow-sm hover:shadow-md transition-all">
+                        <h2 className="font-display text-2xl font-bold text-deep-green mb-4 leading-tight">What are the best treatments for male infertility?</h2>
+                        <p className="text-soft-charcoal text-sm leading-relaxed text-balance">
+                            Male-factor issues account for 40% of all infertility cases. The most effective male fertility treatments include advanced semen analysis, DNA fragmentation treatment (DFI), and micro-TESE procedures to safely retrieve the healthiest sperm for use in our conventional IVF or ICSI cycles.
+                        </p>
+                    </div>
+
+                    <div className="bg-warm-ivory/50 p-8 rounded-2xl border border-soft-sage/30 shadow-sm hover:shadow-md transition-all">
+                        <h2 className="font-display text-2xl font-bold text-deep-green mb-4 leading-tight">When should a woman consider egg freezing?</h2>
+                        <p className="text-soft-charcoal text-sm leading-relaxed text-balance">
+                            Women should proactively consider egg freezing in their late 20s to early 30s to preserve peak egg quality for future family planning. Our clinical egg freezing process provides peace of mind using safe, advanced cryopreservation technology before fertility naturally declines.
+                        </p>
                     </div>
                 </div>
             </section>
