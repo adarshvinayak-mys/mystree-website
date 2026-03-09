@@ -30,46 +30,46 @@ const reviews = [
 const topicDetails = {
     menstrual: {
         title: "Periods, But Make It Chill",
-        subtitle: "How can a teen gynecologist help with irregular periods and cycle tracking?",
+        subtitle: "Menstruation myths, cramps, cycle tracking — no more hush-hush.",
         icon: "water_drop",
         accent: "text-primary",
         bg: "bg-primary/10",
         border: "border-primary/30",
         concerns: ["Painful periods", "Heavy flow or irregular cycles", "Premenstrual symptoms"],
-        approach: "A teen gynecologist helps diagnose and treat the root causes of irregular periods, heavy bleeding, or severe cramps. At our Indiranagar clinic, we use medically guided cycle tracking and lifestyle adjustments to regulate your menstrual health safely, ensuring you experience pain-free, predictable cycles without anxiety.",
+        approach: "We assess cycle patterns, pain intensity, blood loss indicators, and lifestyle triggers to build a practical care plan. Support may include symptom tracking, nutrition inputs, and medical treatment when needed.",
         whenToConsult: "If pain affects school or daily life, cycles are very irregular, or bleeding feels excessive."
     },
     hormonal: {
         title: "Hormones Be Wildin’",
-        subtitle: "What are the signs of hormonal imbalance and PCOS in teenagers?",
+        subtitle: "Puberty is basically your body’s software update. Acne, growth spurts, random tears — we got you.",
         icon: "spa",
         accent: "text-cadet-gray",
         bg: "bg-uranian-blue/30",
         border: "border-uranian-blue",
         concerns: ["PCOS-related symptoms", "Acne and hair changes", "Mood and energy fluctuations"],
-        approach: "Common signs of teenage hormonal imbalance and PCOS include severe acne, sudden weight gain, irregular periods, and excessive hair growth. Our specialists provide expert PCOS management and hormonal balancing treatments tailored specifically for adolescents to naturally restore your body's software back to normal.",
+        approach: "Our team reviews symptoms, metabolic patterns, and cycle history in detail. Care plans combine adolescent gynecology inputs with nutrition and lifestyle guidance for long-term hormonal stability.",
         whenToConsult: "If symptoms are persistent for 2-3 cycles or beginning to impact confidence, sleep, or focus."
     },
     sexual: {
         title: "Situationships & Safe Love",
-        subtitle: "Where can teenagers get confidential sexual health advice in Bangalore?",
+        subtitle: "Crushes, consent, contraception, boundaries — not just Bollywood fantasy.",
         icon: "health_and_safety",
         accent: "text-teal-900",
         bg: "bg-mint/40",
         border: "border-mint",
         concerns: ["Contraception questions", "Safe boundaries and consent education", "Body changes and sexual wellness doubts"],
-        approach: "Teenagers can receive 100% confidential, judgement-free sexual health counseling at My Stree in Indiranagar. We provide expert medical advice on consent, safe sex practices, contraception options, and STI prevention, empowering young women to make informed, safe choices about their bodies.",
+        approach: "Consults are confidential, age-appropriate, and non-judgmental. We explain options clearly, answer sensitive questions respectfully, and provide a plan that prioritizes safety and comfort.",
         whenToConsult: "Any time you are unsure, anxious, or need private clarity before making health decisions."
     },
     mental: {
         title: "Brain on Vibes",
-        subtitle: "How does puberty affect adolescent mental health and wellness?",
+        subtitle: "Stress? Anxiety? Mood swings? Let’s talk “main character energy” without burnout.",
         icon: "psychology",
         accent: "text-purple-900",
         bg: "bg-lavender/40",
         border: "border-lavender",
         concerns: ["Stress and anxiety", "Body image concerns", "Mood changes linked to health issues"],
-        approach: "Puberty causes significant hormonal fluctuations that directly impact adolescent mental health, often leading to anxiety, mood swings, or burnout. We offer integrated holistic wellness and medical support to help teens navigate these emotional changes, giving you main character energy without the stress.",
+        approach: "You receive empathetic support with clear next steps. We integrate counseling-friendly communication, lifestyle corrections, and specialist referral when psychological care is needed.",
         whenToConsult: "If stress, low mood, or anxiety feels frequent, intense, or starts affecting academics and relationships."
     }
 };
@@ -155,22 +155,22 @@ export default function AdolescentHealth() {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div className="relative z-10 space-y-6 lg:col-span-7">
-                        <div className="inline-block transform -rotate-1 origin-bottom-left max-w-full">
-                            <span className="inline-block px-4 py-2 bg-mint text-cadet-gray text-[13px] md:text-sm font-bold border-2 border-cadet-gray rounded-lg shadow-[3px_3px_0px_#3a506b] font-hand">
-                                ✨ No Judgement Zone | Your Body, Your Rules.
+                        <div className="inline-block transform -rotate-1 origin-bottom-left">
+                            <span className="px-4 py-2 bg-mint text-cadet-gray text-sm font-bold border-2 border-cadet-gray rounded-lg shadow-[3px_3px_0px_#3a506b] font-hand">
+                                ✨ No Judgement Zone
                             </span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cadet-gray leading-[1.1] tracking-tight font-serif text-balance mt-4">
-                            Best Adolescent Gynaecology <br className="hidden md:block" />
-                            <span className="relative inline-block mt-2">
-                                & Teen Health Clinic in Indiranagar
+                        <h1 className="text-5xl md:text-7xl font-bold text-cadet-gray leading-[1.05] tracking-tight font-serif text-balance">
+                            Your Body,<br />
+                            <span className="relative inline-block">
+                                Your Rules.
                                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary" preserveAspectRatio="none" viewBox="0 0 100 10">
                                     <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3"></path>
                                 </svg>
                             </span>
                         </h1>
-                        <p className="text-lg md:text-xl text-cadet-gray max-w-2xl leading-relaxed font-medium mt-4">
-                            Adolescent health care that actually gets it. Located in the heart of Indiranagar, Bangalore, My Stree provides a 100% private, safe space for teenagers. Led by Bangalore’s top-rated specialist, Dr. Surbhi Sinha, our clinic offers expert, judgement-free medical care for everything from period problems and PCOS to mental wellness and sexual health.
+                        <p className="text-xl text-cadet-gray max-w-lg leading-relaxed font-medium">
+                            Adolescent health care that actually gets it. From <span className="bg-primary/20 px-1 rounded">period problems</span> to <span className="bg-uranian-blue/40 px-1 rounded">mental wellness</span>, we're here for you in Bangalore.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-6">
                             <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-cadet-gray shadow-[4px_4px_0px_#3a506b] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#3a506b] transition-all flex items-center justify-center gap-2 group">
@@ -283,8 +283,8 @@ export default function AdolescentHealth() {
                                     <span className={`material-icons text-3xl ${activeTopicData.accent}`}>{activeTopicData.icon}</span>
                                     <div>
                                         <p className="text-xs uppercase tracking-widest font-bold text-cadet-gray/70 mb-2">Adolescent Clinic Focus</p>
-                                        <h2 className="text-3xl font-bold font-serif text-cadet-gray leading-tight">{activeTopicData.title}</h2>
-                                        <h3 className="text-cadet-gray/90 mt-2 font-semibold text-lg">{activeTopicData.subtitle}</h3>
+                                        <h3 className="text-3xl font-bold font-serif text-cadet-gray leading-tight">{activeTopicData.title}</h3>
+                                        <p className="text-cadet-gray/80 mt-2">{activeTopicData.subtitle}</p>
                                     </div>
                                 </div>
                                 <button
@@ -345,14 +345,11 @@ export default function AdolescentHealth() {
                                 <span className="inline-block bg-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-cadet-gray border border-cadet-gray/30 mb-4">
                                     New for Teens
                                 </span>
-                                <h2 className="text-3xl md:text-4xl font-bold text-cadet-gray font-serif mb-4">
+                                <h3 className="text-3xl md:text-4xl font-bold text-cadet-gray font-serif mb-4">
                                     Parent & Child Confidential Consults
-                                </h2>
-                                <h3 className="text-lg font-bold text-cadet-gray mb-2">
-                                    How do structured parent and child gynecology consults work?
                                 </h3>
                                 <p className="text-cadet-gray/80 text-lg leading-relaxed">
-                                    For teens who feel awkward visiting a gynecologist alone, we offer structured parent-and-child consultations. The session begins together for reassurance and clarity, followed by protected one-on-one time between the teenager and Dr. Surbhi. This ensures private questions are answered safely while establishing clear health steps for both sides.
+                                    For teens who feel awkward visiting a gynae alone, we offer structured consults with both parent and child support. We begin together, then create protected one-on-one time so concerns can be discussed safely and privately.
                                 </p>
                             </div>
                             <div className="bg-white rounded-2xl border-2 border-cadet-gray p-6 w-full lg:w-[320px]">
@@ -377,79 +374,79 @@ export default function AdolescentHealth() {
                         <p className="text-xl text-primary font-hand mt-2 transform -rotate-1">Your health glow-up starts here ✨</p>
                     </div>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {/* Glow-Up Nutrition */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-mint rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">restaurant</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Glow-Up Nutrition</h3>
-                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Fuel your body, don’t fight it. We prioritize protein over crash diets to support developing metabolisms.</p>
-                        </li>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Fuel your body, don’t fight it. Protein &gt; crash diets. Always.</p>
+                        </div>
 
                         {/* Sleep Is the Real Flex */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-primary/20 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">bedtime</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Sleep Is the Real Flex</h3>
-                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Rest equals power. We guide teens on sleep hygiene to optimize brain development and reduce cortisol.</p>
-                        </li>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Pulling all-nighters? Not the flex you think it is. Rest = Power.</p>
+                        </div>
 
                         {/* Screen Time Detox Era */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-uranian-blue rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">phonelink_off</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Screen Time Detox </h3>
-                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Step away from comparison culture. We help teenagers establish healthy digital boundaries for mental clarity.</p>
-                        </li>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Doom scrolling? Comparison culture? Give your brain a break era.</p>
+                        </div>
 
                         {/* Move Your Body */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-mint/50 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">directions_run</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Move Your Body</h3>
                             <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Fitness that isn’t punishment. Move because it feels good.</p>
-                        </li>
+                        </div>
 
                         {/* Growth Mode Activated */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-yellow-100 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">straighten</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Growth Mode</h3>
                             <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Height, bones, strength — build the foundation now.</p>
-                        </li>
+                        </div>
 
                         {/* Shots & Shields */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group">
                             <div className="w-12 h-12 bg-primary/10 rounded-lg border-2 border-cadet-gray flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-cadet-gray">shield</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Shots & Shields</h3>
-                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Be untouchable. We administer essential adolescent vaccines, including the highly effective HPV vaccine, to build a lifelong foundation of health protection.</p>
-                        </li>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Vaccines, hygiene, basic health protection. Be untouchable.</p>
+                        </div>
 
                         {/* Red Flag Symptoms */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group border-rose-200">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:rotate-1 transition-transform group border-rose-200">
                             <div className="w-12 h-12 bg-rose-100 rounded-lg border-2 border-rose-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-rose-600">flag</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Red Flag Stats</h3>
                             <p className="text-sm text-cadet-gray/70 leading-relaxed italic">When to tell a adult — no ghosting your health.</p>
-                        </li>
+                        </div>
 
                         {/* Ask the Doc */}
-                        <li className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group border-primary/30">
+                        <div className="bg-white p-6 rounded-2xl border-2 border-cadet-gray shadow-sticker hover:-rotate-1 transition-transform group border-primary/30">
                             <div className="w-12 h-12 bg-primary/20 rounded-lg border-2 border-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span className="material-icons text-primary">local_hospital</span>
                             </div>
                             <h3 className="font-bold text-lg text-cadet-gray mb-2">Ask the Doc</h3>
-                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Stop Googling your symptoms. Get accurate, expert medical diagnoses from Bangalore's leading teen specialists.</p>
-                        </li>
-                    </ul>
+                            <p className="text-sm text-cadet-gray/70 leading-relaxed italic">Not just Google. Talk to someone who actually knows.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -471,17 +468,14 @@ export default function AdolescentHealth() {
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctlKe56NfafxJlTMh6lXhW8W1ozyc3X0I3-j0x4zuDw1KJEAV0d8ao0ffQfhLmavlWUihtf0ARowZG575RrKC07vszcmoNntVecPDY4OU8sMlvugRAf6bf92btBJ0rFjxBugh6iZIDb89ZIdA-k74M8gjbb1mo1YJBPsO7XgR109q7lmhGj_XIlv1DpkFOmsvR8Drmwuw_TPPv7VZGHyKTSiW9KKlZIMKwD56TRoq5uQPNtOufJsdIr46rK7r-4aC9SV6tIKYZ_Lc"
                                 />
                                 <div className="absolute -bottom-6 -right-6 z-20 bg-corn-silk p-4 border-2 border-cadet-gray rounded-xl shadow-sticker max-w-xs transform rotate-3">
-                                    <p className="font-hand text-sm font-bold text-cadet-gray">"Finally, a clinic that doesn't feel scary! Dr. Surbhi made me feel totally heard."</p>
-                                    <div className="flex text-primary text-sm mt-1 justify-end">
-                                        <span className="material-icons text-xs">star</span><span className="material-icons text-xs">star</span><span className="material-icons text-xs">star</span><span className="material-icons text-xs">star</span><span className="material-icons text-xs">star</span>
-                                    </div>
-                                    <p className="text-xs text-right mt-1 text-gray-500 font-bold">- Riya, 19 (Indiranagar, Bangalore)</p>
+                                    <p className="font-hand text-sm font-bold text-cadet-gray">"Finally, a clinic that doesn't feel scary!"</p>
+                                    <p className="text-xs text-right mt-2 text-gray-500">- Riya, 19</p>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full md:w-1/2 space-y-8">
                             <h2 className="text-4xl font-bold text-cadet-gray font-serif">
-                                Why Choose <span className="bg-primary/20 px-2 italic">My Stree</span><br className="hidden lg:block" /> for Teen Health in Indiranagar?
+                                Why <span className="bg-primary/20 px-2 italic">mystree</span>?
                             </h2>
                             <div className="space-y-6">
                                 <div className="flex gap-4 items-start group">
