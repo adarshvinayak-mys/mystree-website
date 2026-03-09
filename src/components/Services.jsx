@@ -7,30 +7,30 @@ import nutritionImage from '../assets/supabase/adolescent_health.png';
 const services = [
     {
         img: obgynImage,
-        title: "Expert OBGYN Consults",
-        desc: "Complete reproductive care from routine annual exams to managing complex gynecological conditions like PCOS, ovarian cysts, endometriosis, and pelvic pain.",
+        title: "OBGYN Consults",
+        desc: "Complete reproductive care for every life stage, from annual exams to complex conditions.",
         icon: "female",
         badge: "Most Common",
         link: "/services/obgyn"
     },
     {
         img: fertilityImage,
-        title: "Advanced Fertility Clinic",
-        desc: "Helping couples conceive naturally and clinically with IVF, IUI, and advanced fertility treatments, guided by internationally credentialed specialists.",
+        title: "Fertility Clinic",
+        desc: "Helping couples conceive with advanced fertility treatments and compassionate support.",
         icon: "water_drop",
         link: "/services/fertility"
     },
     {
         img: prenatalImage,
-        title: "Prenatal & Pregnancy Care",
-        desc: "Comprehensive monitoring and high-risk pregnancy care ensuring a safe, healthy journey for both mother and baby, from first trimester to delivery.",
+        title: "Prenatal Clinic",
+        desc: "Comprehensive care ensuring a healthy pregnancy for both mother and baby.",
         icon: "child_care",
         link: "/services/prenatal"
     },
     {
         img: nutritionImage,
-        title: "Targeted Nutrition Plans",
-        desc: "Personalized diet plans for daily health, PCOS management, hormonal balance, postpartum recovery, and menopause nutrition designed by clinical nutritionists.",
+        title: "Nutrition Plans",
+        desc: "Personalized diet plans for daily health, hormonal balance, and recovery.",
         icon: "nutrition",
         link: "/services/nutrition"
     }

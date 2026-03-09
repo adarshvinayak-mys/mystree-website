@@ -7,7 +7,7 @@ export default function HowItWorks() {
                     <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mt-2">
                         Your Journey to Better Health
                     </h2>
-                    <p className="text-gray-500 mt-2">Book your consultation in under 5 minutes — in person at Indiranagar or via secure video call.</p>
+                    <p className="text-gray-500 mt-2">Book your consultation in under 5 minutes</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -21,7 +21,7 @@ export default function HowItWorks() {
                         </div>
                         <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">1. Share Your Concern</h3>
                         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
-                            Tell us what's bothering you—irregular periods, pelvic pain, pregnancy planning, or hormonal concerns. No judgment, complete privacy.
+                            Tell us what's bothering you—irregular periods, pain, or pregnancy planning.
                         </p>
                     </div>
 
@@ -32,7 +32,7 @@ export default function HowItWorks() {
                         </div>
                         <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">2. Get Matched</h3>
                         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
-                            We instantly recommend the best available specialist—OBGYN, Fertility, Nutrition, or Mental Health—for your specific clinical needs.
+                            We'll instantly recommend the best available specialist for your specific needs.
                         </p>
                     </div>
 
@@ -43,7 +43,7 @@ export default function HowItWorks() {
                         </div>
                         <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">3. Start Consultation</h3>
                         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
-                            Connect via secure video call or visit our Indiranagar clinic. Get instant, personalized care plans and prescriptions on the same day.
+                            Connect via video call or visit the clinic. Get prescriptions and care plans instantly.
                         </p>
                     </div>
                 </div>
