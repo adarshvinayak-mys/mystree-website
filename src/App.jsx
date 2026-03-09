@@ -1,31 +1,32 @@
-import { BrowserRouter, Routes, Route, useLocation, useNavigate, useNavigationType } from 'react-router-dom';
-import { useEffect, useLayoutEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ChatButton from './components/ChatButton';
 import GlobalHealthCTAButton from './components/GlobalHealthCTAButton';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import LaunchCountdownWidget from './components/LaunchCountdownWidget';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-
-import OurTeam from './pages/OurTeam';
-import OBGYNConsults from './pages/OBGYNConsults';
-import AdolescentHealth from './pages/AdolescentHealth';
-import PrenatalClinic from './pages/PrenatalClinic';
-import FertilityClinic from './pages/FertilityClinic';
-import MenopausalClinic from './pages/MenopausalClinic';
-import NutritionCounselling from './pages/NutritionCounselling';
-import PhysiotherapyRecovery from './pages/PhysiotherapyRecovery';
-import DermatologySkinCare from './pages/DermatologySkinCare';
-import PsychologyPsychiatry from './pages/PsychologyPsychiatry';
-import Gallery from './pages/Gallery';
-import UpcomingEvents from './pages/UpcomingEvents';
-import Contact from './pages/Contact';
-import BookingGateway from './pages/BookingGateway';
-import BlogAndCommunity from './pages/BlogAndCommunity';
-import SoulTriage from './pages/SoulTriage';
-
+const Home = lazy(() => import('./pages/Home'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const OurTeam = lazy(() => import('./pages/OurTeam'));
+const Experts = lazy(() => import('./pages/Experts'));
+const OBGYNConsults = lazy(() => import('./pages/OBGYNConsults'));
+const AdolescentHealth = lazy(() => import('./pages/AdolescentHealth'));
+const PrenatalClinic = lazy(() => import('./pages/PrenatalClinic'));
+const FertilityClinic = lazy(() => import('./pages/FertilityClinic'));
+const MenopausalClinic = lazy(() => import('./pages/MenopausalClinic'));
+const NutritionCounselling = lazy(() => import('./pages/NutritionCounselling'));
+const PhysiotherapyRecovery = lazy(() => import('./pages/PhysiotherapyRecovery'));
+const DermatologySkinCare = lazy(() => import('./pages/DermatologySkinCare'));
+const PsychologyPsychiatry = lazy(() => import('./pages/PsychologyPsychiatry'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const UpcomingEvents = lazy(() => import('./pages/UpcomingEvents'));
+const Contact = lazy(() => import('./pages/Contact'));
+const BookingGateway = lazy(() => import('./pages/BookingGateway'));
+const BlogAndCommunity = lazy(() => import('./pages/BlogAndCommunity'));
+const SoulTriage = lazy(() => import('./pages/SoulTriage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -41,7 +42,13 @@ const Wrapper = ({ children }) => {
   return children
 }
 
-import Experts from './pages/Experts';
+function PageLoader() {
+  return (
+    <div className="flex min-h-[40vh] items-center justify-center bg-[#F8F4EC] px-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+      Loading page
+    </div>
+  );
+}
 
 export default function App() {
   return (
@@ -53,7 +60,6 @@ export default function App() {
 
 function AppContent() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const root = document.body;
@@ -202,7 +208,7 @@ function AppContent() {
       document.removeEventListener('click', handleBookingRedirect, true);
       document.removeEventListener('submit', handleFormSubmitRedirect, true);
     };
-  }, [location.pathname, navigate]);
+  }, [location.pathname]);
 
   const getPageFontClass = (pathname) => {
     if (pathname === '/') return 'page-font-home';
@@ -231,36 +237,37 @@ function AppContent() {
     <Wrapper>
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <Navbar />}
       <main className={`${!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') ? 'pt-20 ' : ''}overflow-x-hidden ${getPageFontClass(location.pathname)}`}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/team" element={<OurTeam />} />
-          <Route path="/experts" element={<Experts />} />
-          <Route path="/services/obgyn" element={<OBGYNConsults />} />
-          <Route path="/services/adolescent-health" element={<AdolescentHealth />} />
-          <Route path="/services/prenatal" element={<PrenatalClinic />} />
-          <Route path="/services/fertility" element={<FertilityClinic />} />
-          <Route path="/services/menopause" element={<MenopausalClinic />} />
-          <Route path="/services/nutrition" element={<NutritionCounselling />} />
-          <Route path="/services/physiotherapy" element={<PhysiotherapyRecovery />} />
-          <Route path="/services/dermatology" element={<DermatologySkinCare />} />
-          <Route path="/services/psychology" element={<PsychologyPsychiatry />} />
-          <Route path="/showcase/gallery" element={<Gallery />} />
-          <Route path="/showcase/events" element={<UpcomingEvents />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/booking-gateway" element={<BookingGateway />} />
-          <Route path="/blog" element={<BlogAndCommunity />} />
-          <Route path="/mystree-soul" element={<SoulTriage />} />
-        </Routes>
-
-
-
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/team" element={<OurTeam />} />
+            <Route path="/experts" element={<Experts />} />
+            <Route path="/services/obgyn" element={<OBGYNConsults />} />
+            <Route path="/services/adolescent-health" element={<AdolescentHealth />} />
+            <Route path="/services/prenatal" element={<PrenatalClinic />} />
+            <Route path="/services/fertility" element={<FertilityClinic />} />
+            <Route path="/services/menopause" element={<MenopausalClinic />} />
+            <Route path="/services/nutrition" element={<NutritionCounselling />} />
+            <Route path="/services/physiotherapy" element={<PhysiotherapyRecovery />} />
+            <Route path="/services/dermatology" element={<DermatologySkinCare />} />
+            <Route path="/services/psychology" element={<PsychologyPsychiatry />} />
+            <Route path="/showcase/gallery" element={<Gallery />} />
+            <Route path="/showcase/events" element={<UpcomingEvents />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/booking-gateway" element={<BookingGateway />} />
+            <Route path="/blog" element={<BlogAndCommunity />} />
+            <Route path="/mystree-soul" element={<SoulTriage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+          </Routes>
+        </Suspense>
       </main>
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <Footer />}
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <GlobalHealthCTAButton />}
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ScrollToTopButton />}
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ChatButton />}
-      <LaunchCountdownWidget />
+      {location.pathname === '/' && <LaunchCountdownWidget />}
 
     </Wrapper>
   );

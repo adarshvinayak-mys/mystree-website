@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor2 from '../assets/supabase/doctor2.jpg';
-import doctor3 from '../assets/supabase/doctor3.jpg';
+import doctor3 from '../assets/supabase/doctor3.webp';
 import DoctorCard from '../components/DoctorCard';
 
 const reviews = [

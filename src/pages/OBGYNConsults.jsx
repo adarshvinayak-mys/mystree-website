@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor2 from '../assets/supabase/doctor2.jpg';
 import doctorNiv from '../assets/supabase/nivetha-vishnuvardhan-mbbs-md.jpg';
 

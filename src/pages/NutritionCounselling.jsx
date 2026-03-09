@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import doctor3 from '../assets/supabase/doctor3.jpg';
-import nutritionHero from '../assets/supabase/nutritionpage.png';
-import nutritionPsychology from '../assets/supabase/nutritionpage2.png';
-import wm1 from '../assets/supabase/weightmanagement1.png';
-import wm2 from '../assets/supabase/weightmanagement2.png';
-import wm3 from '../assets/supabase/weightmanagement3.png';
-import wm4 from '../assets/supabase/weightmanagement4.png';
+import doctor3 from '../assets/supabase/doctor3.webp';
+import nutritionHero from '../assets/supabase/nutritionpage.webp';
+import nutritionPsychology from '../assets/supabase/nutritionpage2.webp';
+import wm1 from '../assets/supabase/weightmanagement1.webp';
+import wm2 from '../assets/supabase/weightmanagement2.webp';
+import wm3 from '../assets/supabase/weightmanagement3.webp';
+import wm4 from '../assets/supabase/weightmanagement4.webp';
 import nutrition1 from '../assets/supabase/nutrition1.jpg';
 import nutrition2 from '../assets/supabase/nutrition2.jpg';
 import nutrition3 from '../assets/supabase/nutrition3.jpg';
 import nutrition4 from '../assets/supabase/nutrition4.jpg';
-import weight12 from '../assets/supabase/weight12.png';
+import weight12 from '../assets/supabase/weight12.webp';
 import pcosMain from '../assets/supabase/pcos_hormonal_balance.png';
 
 const focusAreas = [
@@ -123,7 +123,7 @@ export default function NutritionCounselling() {
                                     "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=100",
                                     "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=100"
                                 ].map((url, i) => (
-                                    <img key={i} alt="Happy Client" className="w-10 h-10 rounded-full border-2 border-corn-silk object-cover" src={url} />
+                                    <img key={i} alt="Happy Client" className="w-10 h-10 rounded-full border-2 border-corn-silk object-cover" src={url} loading="lazy" decoding="async" />
                                 ))}
                                 <div className="w-10 h-10 rounded-full border-2 border-corn-silk bg-uranian-blue flex items-center justify-center text-xs font-bold text-cadet-gray">+500</div>
                             </div>
@@ -142,6 +142,9 @@ export default function NutritionCounselling() {
                                     alt="Healthy Indian Nutrition Plan"
                                     className="w-full h-full object-cover"
                                     src={nutritionHero}
+                                    loading="eager"
+                                    decoding="async"
+                                    fetchPriority="high"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#3a506b]/40 to-transparent"></div>
                             </div>
@@ -168,6 +171,8 @@ export default function NutritionCounselling() {
                                         src={area.image}
                                         alt={area.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms] grayscale-[0.1] group-hover:grayscale-0"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                     {/* Primary Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-75 transition-opacity"></div>
@@ -238,18 +243,18 @@ export default function NutritionCounselling() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-4">
                                         <div className="rounded-3xl overflow-hidden h-48 md:h-64 shadow-lg transform hover:-rotate-1 transition-all duration-500">
-                                            <img src={nutrition1} alt="Variation 1" className="w-full h-full object-cover" />
+                                            <img src={nutrition1} alt="Variation 1" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                         </div>
                                         <div className="rounded-3xl overflow-hidden h-32 md:h-48 shadow-lg transform hover:rotate-2 transition-all duration-500">
-                                            <img src={nutrition2} alt="Variation 2" className="w-full h-full object-cover" />
+                                            <img src={nutrition2} alt="Variation 2" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                         </div>
                                     </div>
                                     <div className="space-y-4 pt-8">
                                         <div className="rounded-3xl overflow-hidden h-32 md:h-48 shadow-lg transform hover:rotate-1 transition-all duration-500">
-                                            <img src={nutrition3} alt="Variation 3" className="w-full h-full object-cover" />
+                                            <img src={nutrition3} alt="Variation 3" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                         </div>
                                         <div className="rounded-3xl overflow-hidden h-48 md:h-64 shadow-lg transform hover:-rotate-2 transition-all duration-500">
-                                            <img src={nutrition4} alt="Variation 4" className="w-full h-full object-cover" />
+                                            <img src={nutrition4} alt="Variation 4" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                         </div>
                                     </div>
                                 </div>
@@ -342,6 +347,8 @@ export default function NutritionCounselling() {
                                 src={nutritionPsychology}
                                 alt="Mindful eating and psychology"
                                 className="w-full h-[500px] object-cover rounded-[2.5rem]"
+                                loading="lazy"
+                                decoding="async"
                             />
                             <div className="absolute inset-x-8 bottom-8 p-8 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-xl">
                                 <p className="text-primary font-bold text-sm uppercase tracking-widest mb-2">The Good Thought</p>
@@ -366,6 +373,8 @@ export default function NutritionCounselling() {
                                         alt="Priyanka Savina"
                                         className="w-full h-auto rounded-[2rem] relative shadow-lg"
                                         src={doctor3}
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </div>

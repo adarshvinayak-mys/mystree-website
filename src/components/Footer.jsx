@@ -85,20 +85,12 @@ export default function Footer() {
         </div>
 
         <div className="ms-footer__bottom">
-          <div className="ms-footer__newsletter">
-            <label htmlFor="ms-newsletter">Sign up for updates</label>
-            <form className="ms-footer__newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input id="ms-newsletter" type="email" placeholder="Email address" aria-label="Email address" />
-              <button type="submit">Join</button>
-            </form>
-          </div>
-
           <div className="ms-footer__social-legal">
             <div className="ms-footer__socials">
-              <a className="ms-footer__social" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a className="ms-footer__social" href="https://www.facebook.com/mystreeforyou" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
               </a>
-              <a className="ms-footer__social" href="https://www.youtube.com/@MyStreeForYou" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a className="ms-footer__social" href="https://www.youtube.com/@Mystreeforyou" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <i className="fa-brands fa-youtube" aria-hidden="true"></i>
               </a>
               <a className="ms-footer__social" href="https://www.instagram.com/mystreeforyou?igsh=MXhhOXY0aWxidGtwbQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -111,9 +103,9 @@ export default function Footer() {
             <div className="ms-footer__legal">
               <span>&copy; 2026 My Stree. All rights reserved.</span>
               <span className="ms-footer__pipe">|</span>
-              <a href="#">Privacy Policy</a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
               <span className="ms-footer__pipe">|</span>
-              <a href="#">Terms of Service</a>
+              <Link to="/terms-of-service">Terms of Service</Link>
             </div>
           </div>
         </div>

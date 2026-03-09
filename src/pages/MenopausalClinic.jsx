@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor2 from '../assets/supabase/doctor2.jpg';
-import doctor3 from '../assets/supabase/doctor3.jpg';
+import doctor3 from '../assets/supabase/doctor3.webp';
 import doctorPri from '../assets/supabase/drpriya.jpeg';
 import heroNew from '../assets/supabase/menopausal_wellness_hero_new_1771300852077.png';
 import DoctorCard from '../components/DoctorCard';

@@ -91,7 +91,7 @@ export default function Testimonials() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <a href="https://g.page/r/YOUR_GOOGLE_MAPS_LINK" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+                    <a href="https://maps.app.goo.gl/7w221ApXEqaGJ1yj7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-bold hover:underline">
                         <span>Read more on Google</span>
                         <span className="material-symbols-outlined text-sm">open_in_new</span>
                     </a>

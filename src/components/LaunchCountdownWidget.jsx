@@ -2,16 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
+const DISMISS_STORAGE_KEY = 'mystree_launch_widget_dismissed';
+
 export default function LaunchCountdownWidget() {
-    const [dismissed, setDismissed] = useState(false);
+    const [dismissed, setDismissed] = useState(() => window.localStorage.getItem(DISMISS_STORAGE_KEY) === 'true');
     const [scrolledAway, setScrolledAway] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
+        if (location.pathname !== '/') return undefined;
         const onScroll = () => setScrolledAway(window.scrollY > 40);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    }, [location.pathname]);
+
+    const handleDismiss = () => {
+        window.localStorage.setItem(DISMISS_STORAGE_KEY, 'true');
+        setDismissed(true);
+    };
 
     if (dismissed || location.pathname !== '/') return null;
 
@@ -36,7 +44,7 @@ export default function LaunchCountdownWidget() {
                     <div className="h-[3px] w-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #D4AF37 30%, #F5E6A3 50%, #D4AF37 70%, transparent 100%)' }} />
 
                     {/* Dismiss */}
-                    <button onClick={() => setDismissed(true)}
+                    <button onClick={handleDismiss}
                         className="absolute top-3 right-4 z-20 w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
                         aria-label="Dismiss">
                         <span className="material-icons text-lg" style={{ color: 'rgba(255,255,255,0.35)' }}>close</span>

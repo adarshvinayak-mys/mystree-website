@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor2 from '../assets/supabase/doctor2.jpg';
-import doctor3 from '../assets/supabase/doctor3.jpg';
+import doctor3 from '../assets/supabase/doctor3.webp';
 import adarsh from '../assets/supabase/adarsh.jpg';
 import bgImage from '../assets/supabase/background.jpg';
 

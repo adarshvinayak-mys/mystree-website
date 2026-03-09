@@ -67,16 +67,12 @@ export default function Facts() {
                 <p className="text-center text-gray-600 dark:text-gray-400">Did you know these fascinating facts about your body?</p>
             </div>
 
-            <div className="relative w-full">
-                {/* Gradient Masks for fading effect at edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-r from-corn-silk to-transparent dark:from-gray-900 z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-l from-corn-silk to-transparent dark:from-gray-900 z-10"></div>
-
-                <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-6 px-4">
-                    {[...facts, ...facts].map((fact, index) => (
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    {facts.map((fact) => (
                         <div
-                            key={index}
-                            className="w-[280px] md:w-[350px] flex-shrink-0 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-soft hover:shadow-xl transition-all duration-300 border border-orange-50 dark:border-gray-700 transform hover:-translate-y-1"
+                            key={fact.question}
+                            className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-soft hover:shadow-xl transition-all duration-300 border border-orange-50 dark:border-gray-700 transform hover:-translate-y-1"
                         >
                             <div className={`${fact.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-4 ${fact.color}`}>
                                 <span className="material-symbols-thin text-3xl">{fact.icon}</span>

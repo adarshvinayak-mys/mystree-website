@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import doctor1 from '../assets/supabase/doctor1.jpg'; // Dr. Surbhi
+import doctor1 from '../assets/supabase/doctor1.webp'; // Dr. Surbhi
 import doctor2 from '../assets/supabase/doctor2.jpg'; // Dr. Smitha
-import doctor3 from '../assets/supabase/doctor3.jpg'; // Priyanka
+import doctor3 from '../assets/supabase/doctor3.webp'; // Priyanka
 import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
 import eggFreezing1 from '../assets/supabase/egg_freezing_1.png';
 import eggFreezing2 from '../assets/supabase/egg_freezing_2.png';
@@ -422,25 +422,6 @@ export default function BlogAndCommunity() {
                         <Link to="/showcase/events" className="inline-flex items-center text-primary font-bold text-sm hover:text-orange-800 gap-1">
                             View Calendar <span className="material-symbols-outlined text-sm">calendar_month</span>
                         </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Newsletter */}
-            <section className="bg-[#FCF4D9] py-20 border-t border-[#8BA4BF]/35">
-                <div className="container px-6 mx-auto">
-                    <div className="bg-[#FCF4D9] rounded-2xl p-10 lg:p-16 text-center border border-[#8BA4BF]/35 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF833C]/20 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#E97451]/20 rounded-full blur-3xl -ml-10 -mb-10"></div>
-                        <div className="relative z-10">
-                            <h2 className="font-display text-3xl lg:text-5xl text-gray-900 mb-4">Stay Informed. Stay Empowered.</h2>
-                            <p className="text-gray-500 mb-8 max-w-lg mx-auto">Get the latest medical insights, community stories, and wellness tips delivered directly to your inbox.</p>
-                            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-                                <input className="flex-grow px-5 py-3 rounded-lg bg-white border border-gray-200 text-gray-800 focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder-gray-400 text-sm shadow-sm outline-none" placeholder="Enter your email address" required="" type="email" />
-                                <button className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-orange-700 transition-colors shadow-lg shadow-orange-500/30" type="submit">Subscribe</button>
-                            </form>
-                            <p className="text-xs text-gray-400 mt-4">We respect your privacy. Unsubscribe at any time.</p>
-                        </div>
                     </div>
                 </div>
             </section>

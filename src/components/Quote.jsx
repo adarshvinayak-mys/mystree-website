@@ -28,8 +28,8 @@ export default function Quote() {
 
             {/* Medical Icon Pattern Background */}
             <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
-                <div className="grid grid-cols-6 md:grid-cols-12 gap-12 p-8 transform -rotate-6 scale-110">
-                    {[...Array(48)].map((_, i) => (
+                <div className="grid grid-cols-4 gap-10 p-8 transform -rotate-6 scale-110 md:grid-cols-6">
+                    {[...Array(12)].map((_, i) => (
                         <div key={i} className="flex justify-center items-center">
                             <span className="material-symbols-thin text-white text-5xl">
                                 {["cardiology", "female", "water_drop", "monitor_heart", "psychology", "medication", "stethoscope", "nutrition"][i % 8]}

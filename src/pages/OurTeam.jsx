@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import doctor2 from '../assets/supabase/doctor2.jpg';
-import doctor3 from '../assets/supabase/doctor3.jpg';
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor3 from '../assets/supabase/doctor3.webp';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctorNiv from '../assets/supabase/nivetha-vishnuvardhan-mbbs-md.jpg';
 import doctorPri from '../assets/supabase/drpriya.jpeg';
 import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';

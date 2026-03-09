@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 
-import doctor1 from '../assets/supabase/doctor1.jpg';
+import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor2 from '../assets/supabase/doctor2.jpg';
-import doctor3 from '../assets/supabase/doctor3.jpg'; // Priyanka
+import doctor3 from '../assets/supabase/doctor3.webp'; // Priyanka
 import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
 import fert1 from '../assets/supabase/fert1.jpg';
 import fert3 from '../assets/supabase/fert3.jpg';
@@ -244,6 +244,9 @@ export default function FertilityClinic() {
                             alt="Expectant couple in sunlit room"
                             className="w-full h-full object-cover object-[center_20%] opacity-90"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbWqU06nEVQHMraJjPpsYE4L0w9U1H635ybgl3WhmNIPp9b3U4EmBQ61wHXMYNp48m8TWQevIW01JDVcWFYBwqrGMSBgaczDASR0H87YWbvMBwneVXyCcim5J42fgokQut302uAZhJkAqNVWdcC9yG15O_80qhowborbmUJJCAB2oh2t_OkxuaVzrO9jLhjamaEn-eRakZ-PKoF_RXavOmaWE6fBigzO942p0vgQYDtzZTir3mSgHy4Y5uXR5I-vFQ0WUNSpgKVEFA"
+                            loading="eager"
+                            decoding="async"
+                            fetchPriority="high"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-warm-ivory via-warm-ivory/60 to-transparent"></div>
                     </div>
@@ -403,6 +406,8 @@ export default function FertilityClinic() {
                                             alt="Understanding consultation"
                                             className="w-full h-64 object-cover rounded-xl filter sepia-[0.2] saturate-[.8]"
                                             src={fert1}
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div className="bg-warm-ivory border-2 border-soft-sage w-12 h-12 rounded-full flex items-center justify-center text-deep-green font-bold text-xl mx-auto mb-6 lg:mb-8 shadow-sm relative z-20">1</div>
@@ -418,6 +423,8 @@ export default function FertilityClinic() {
                                             alt="Tailoring treatment"
                                             className="w-full h-64 object-cover rounded-xl filter sepia-[0.2] saturate-[.8]"
                                             src={fert3}
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div className="bg-warm-ivory border-2 border-soft-sage w-12 h-12 rounded-full flex items-center justify-center text-deep-green font-bold text-xl mx-auto mb-6 lg:mb-8 shadow-sm relative z-20">2</div>
@@ -433,6 +440,8 @@ export default function FertilityClinic() {
                                             alt="Precision execution"
                                             className="w-full h-64 object-cover rounded-xl filter sepia-[0.2] saturate-[.8]"
                                             src={fert4}
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </div>
                                     <div className="bg-warm-ivory border-2 border-soft-sage w-12 h-12 rounded-full flex items-center justify-center text-deep-green font-bold text-xl mx-auto mb-6 lg:mb-8 shadow-sm relative z-20">3</div>
@@ -601,6 +610,8 @@ export default function FertilityClinic() {
                                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
                                     alt="Confident professional woman smiling"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 saturate-[0.9]"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-deep-green/40 via-transparent to-transparent"></div>
                             </div>
