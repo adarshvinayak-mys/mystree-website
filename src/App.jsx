@@ -164,18 +164,29 @@ function AppContent() {
   useEffect(() => {
     const bookingPattern = /\b(book|appointment|consult|consultation|reserve|rsvp|scheduling|session|package|assessment|start|enroll|register|talk|join|begin|healing|physiotherapy|rehab|rehabilitation|treatment)\b/i;
     const hrefPattern = /(book|appointment|consult|reserve|rsvp|scheduling|session|package|assessment|#)/i;
+    const isDoctorSpecificBookingLink = (href) => {
+      if (!href) return false;
+      try {
+        const parsed = new URL(href, window.location.origin);
+        return /^\/booking\/appointment\/\d+\/?$/i.test(parsed.pathname);
+      } catch {
+        return /\/booking\/appointment\/\d+\/?/i.test(href);
+      }
+    };
 
     const hasBookingIntent = (element) => {
       if (!element) return false;
       const text = (element.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
       const ariaLabel = (element.getAttribute?.('aria-label') || '').toLowerCase();
       const title = (element.getAttribute?.('title') || '').toLowerCase();
-      const href = (element.getAttribute?.('href') || '').toLowerCase();
+      const rawHref = element.getAttribute?.('href') || '';
+      const href = rawHref.toLowerCase();
       const isDirectContactLink =
         href.startsWith('tel:') ||
         href.startsWith('mailto:') ||
         href.includes('wa.me/') ||
         href.includes('api.whatsapp.com/');
+      if (isDoctorSpecificBookingLink(rawHref)) return false;
       if (isDirectContactLink) return false;
       return bookingPattern.test(text) || bookingPattern.test(ariaLabel) || bookingPattern.test(title) || hrefPattern.test(href);
     };

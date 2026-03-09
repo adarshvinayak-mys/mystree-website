@@ -4,52 +4,6 @@ import doctor1 from '../assets/supabase/doctor1.webp';
 import doctor3 from '../assets/supabase/doctor3.webp';
 import DoctorCard from '../components/DoctorCard';
 
-const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What are the most effective clinical treatments for adult acne and scarring?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The most effective treatments for adult hormonal acne and post-acne scarring include targeted hormonal therapy, precision laser resurfacing, and advanced mark-fading protocols. Our clinical dermatologists customize these treatments to eliminate root bacterial causes, reduce inflammation, and permanently restore a clear, glass-skin complexion." }
-        },
-        {
-            "@type": "Question",
-            "name": "How can I safely reduce fine lines and boost skin collagen?",
-            "acceptedAnswer": { "@type": "Answer", "text": "To safely reduce fine lines and naturally boost collagen, our clinic utilizes highly advanced anti-aging therapies. We recommend a customized combination of medical-grade skin tightening procedures and collagen-boosting injectables that provide timeless radiance and firm, hydrated skin without invasive surgery." }
-        },
-        {
-            "@type": "Question",
-            "name": "What is the best dermatological treatment for pigmentation and melasma?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The best clinical treatments for severe pigmentation, melasma, and sun damage involve advanced pigment and texture therapies. Our expert dermatologists deploy customized chemical peels, precision microneedling, and laser toning sessions to safely correct dark spots and achieve an even, radiant skin tone." }
-        },
-        {
-            "@type": "Question",
-            "name": "How do dermatologists repair a damaged or sensitive skin barrier?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Dermatologists repair a compromised skin barrier through deep clinical moisturizing protocols and targeted sensitivity management. By utilizing advanced barrier fortification therapies, we lock in essential hydration, repair cellular damage, and protect the skin from environmental stressors to ensure long-lasting health." }
-        },
-        {
-            "@type": "Question",
-            "name": "What are the top doctor-recommended facial rejuvenation treatments?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Our board-certified dermatologists highly recommend the patented HydraFacial protocol, PRP skin rejuvenation, and medi-facial brightening treatments. These top doctor favorites deliver immediate clinical results, combining deep medical exfoliation with advanced serums to maximize skin clarity, radiance, and overall cellular health." }
-        }
-    ]
-};
-
-const medicalClinicSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "My Stree Advanced Dermatology & Skin Care Clinic",
-    "description": "Expert Dermatology Clinic in Indiranagar, Bangalore: Advanced Acne, Anti-Aging & Skin Care. 10,000+ successful patient treatments by board-certified dermatologists.",
-    "medicalSpecialty": ["Dermatology"],
-    "availableService": [
-        { "@type": "MedicalProcedure", "name": "Hormonal Acne Treatment & Laser Resurfacing" },
-        { "@type": "MedicalProcedure", "name": "Anti-Aging & Collagen Boosting" },
-        { "@type": "MedicalProcedure", "name": "Pigmentation & Melasma Treatment" },
-        { "@type": "MedicalProcedure", "name": "HydraFacial & PRP Skin Rejuvenation" }
-    ],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "10000" }
-};
 
 export default function DermatologySkinCare() {
     useEffect(() => {
@@ -113,9 +67,7 @@ export default function DermatologySkinCare() {
     };
 
     return (
-        <div className="font-display text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-corn-silk min-h-screen">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
+        <div className="font-display text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative bg-corn-silk min-h-screen ">
             <style>{`
                 .bg-gradient-flame {
                     background: linear-gradient(90deg, #ed592c 0%, #FF833C 100%);
@@ -166,14 +118,14 @@ export default function DermatologySkinCare() {
                         </motion.div>
 
                         <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-cadet-gray leading-[1.1] tracking-tight font-serif">
-                            Expert Dermatology Clinic <br />
+                            Wear Your Skin With <br />
                             <span className="italic text-burnt-sienna relative inline-block">
-                                Indiranagar, Bangalore.
+                                Pride.
                             </span>
                         </motion.h1>
 
                         <motion.p variants={fadeInUp} className="text-xl text-cadet-gray/80 max-w-lg leading-relaxed font-medium">
-                            Welcome to My Stree, Indiranagar's premier advanced dermatology clinic. Backed by board-certified dermatologists and a proven track record of over <strong>10,000+ successful patient treatments</strong>, we provide clinically proven therapies for every skin tone and texture. From severe acne and pigmentation correction to timeless anti-aging, we reveal your healthiest, most radiant self.
+                            Expert dermatological care for every tone, texture, and story. Reveal your healthiest, most radiant self.
                         </motion.p>
 
                         <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -289,32 +241,29 @@ export default function DermatologySkinCare() {
                         viewport={{ once: true }}
                         variants={fadeInUp}
                     >
-                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block italic">Real Results | Local Insights</span>
+                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block italic">Real Results</span>
                         <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif">The Wall of Radiance</h2>
-                        <p className="text-cadet-gray/70 mt-4">Trusted by patients across Indiranagar &amp; Bangalore.</p>
+                        <p className="text-cadet-gray/70 mt-4">Actual experiences from our wonderful clinical patients.</p>
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                text: "I've dealt with adult acne for years, and nothing seemed to work. After a few sessions at this dermatology clinic in Indiranagar, my skin has cleared up significantly. The professional care and follow-ups are exceptional.",
+                                text: "I've dealt with adult acne for years, and nothing seemed to work. After a few sessions here, my skin has cleared up significantly. The professional care and follow-ups are exceptional.",
                                 author: "Sneha P.",
-                                location: "Indiranagar, Bangalore",
-                                focus: "Acne Therapy Success",
+                                focus: "Acne Therapy",
                                 initial: "S"
                             },
                             {
-                                text: "The anti-aging treatments are subtle but so effective. I love that the dermatologists focus on overall skin health and natural radiance rather than just quick fixes. My skin feels incredibly firm and hydrated.",
+                                text: "The anti-aging treatments are subtle but so effective. I love that the focus is on skin health and natural radiance rather than just quick fixes. My skin feels firm and hydrated.",
                                 author: "Ananya M.",
-                                location: "Bangalore",
-                                focus: "Timeless Radiance & Anti-Aging",
+                                focus: "Timeless Radiance",
                                 initial: "A"
                             },
                             {
-                                text: "Dealing with pigmentation was a huge blow to my confidence. The personalized laser toning treatment plan here addressed the root cause. My skin tone is so much more even now!",
+                                text: "Dealing with pigmentation was a huge blow to my confidence. The personalized treatment plan here addressed the root cause. My skin tone is so much more even now!",
                                 author: "Kavita R.",
-                                location: "Bangalore",
-                                focus: "Pigmentation & Melasma Care",
+                                focus: "Pigmentation Care",
                                 initial: "K"
                             }
                         ].map((t, i) => (
@@ -333,10 +282,7 @@ export default function DermatologySkinCare() {
                                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary font-bold text-sm shadow-sm">
                                         {t.initial}
                                     </div>
-                                    <div>
-                                        <span className="font-bold text-cadet-gray text-sm block">{t.author}</span>
-                                        <span className="text-xs text-primary font-bold uppercase tracking-wider">{t.location}</span>
-                                    </div>
+                                    <span className="font-bold text-cadet-gray text-sm">{t.author}</span>
                                 </div>
                             </motion.div>
                         ))}
@@ -354,62 +300,50 @@ export default function DermatologySkinCare() {
                         viewport={{ once: true }}
                         variants={fadeInUp}
                     >
-                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Targeted Dermatological Treatments | Capsule Q&amp;A</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif mb-6">Targeted Dermatological Treatments (What Hurts? How Can We Help?)</h2>
+                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Tailored Treatments</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif mb-6">Your Skin, Our Expertise</h2>
                         <p className="text-cadet-gray/70 max-w-2xl mx-auto text-lg">Targeted solutions designed to restore your skin's natural balance and beauty.</p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
                         {[
                             {
-                                title: "What are the most effective clinical treatments for adult acne and scarring?",
-                                capsule: "The most effective treatments for adult hormonal acne and post-acne scarring include targeted hormonal therapy, precision laser resurfacing, and advanced mark-fading protocols. Our clinical dermatologists customize these treatments to eliminate root bacterial causes, reduce inflammation, and permanently restore a clear, glass-skin complexion.",
+                                title: "Acne & Scarring",
                                 icon: "face_retouching_natural",
                                 bgIcon: "healing",
-                                items: ["Hormonal Acne Treatment", "Laser Resurfacing", "Post-Acne Mark Fading"],
-                                cta: "Consult an Acne Specialist"
+                                items: ["Hormonal Acne Treatment", "Laser Resurfacing", "Post-Acne Mark Fading"]
                             },
                             {
-                                title: "How can I safely reduce fine lines and boost skin collagen?",
-                                capsule: "To safely reduce fine lines and naturally boost collagen, our clinic utilizes highly advanced anti-aging therapies. We recommend a customized combination of medical-grade skin tightening procedures and collagen-boosting injectables that provide timeless radiance and firm, hydrated skin without invasive surgery.",
+                                title: "Anti-Aging & Glow",
                                 icon: "auto_awesome",
                                 bgIcon: "hourglass_empty",
                                 items: ["Fine Line Reduction", "Collagen Boosting", "Skin Tightening"],
-                                cta: "Consult for Anti-Aging",
                                 shift: true
                             },
                             {
-                                title: "What is the best dermatological treatment for pigmentation and melasma?",
-                                capsule: "The best clinical treatments for severe pigmentation, melasma, and sun damage involve advanced pigment and texture therapies. Our expert dermatologists deploy customized chemical peels, precision microneedling, and laser toning sessions to safely correct dark spots and achieve an even, radiant skin tone.",
+                                title: "Pigmentation & Melasma",
                                 icon: "blur_on",
                                 bgIcon: "wb_sunny",
-                                items: ["Dark Spot Correction", "Sun Damage Repair", "Even Tone Therapy & Chemical Peels"],
-                                cta: "Consult for Pigmentation"
+                                items: ["Dark Spot Correction", "Sun Damage Repair", "Even Tone Therapy"]
                             },
                             {
-                                title: "How do dermatologists repair a damaged or sensitive skin barrier?",
-                                capsule: "Dermatologists repair a compromised skin barrier through deep clinical moisturizing protocols and targeted sensitivity management. By utilizing advanced barrier fortification therapies, we lock in essential hydration, repair cellular damage, and protect the skin from environmental stressors to ensure long-lasting health.",
+                                title: "Hydration & Barrier Repair",
                                 icon: "shield",
                                 bgIcon: "water_drop",
                                 items: ["Deep Moisturizing", "Sensitivity Management", "Barrier Fortification"],
-                                cta: "Consult for Barrier Repair",
                                 shift: true
                             },
                             {
-                                title: "What are the top doctor-recommended facial rejuvenation treatments?",
-                                capsule: "Our board-certified dermatologists highly recommend the patented HydraFacial protocol, PRP skin rejuvenation, and medi-facial brightening treatments. These top doctor favorites deliver immediate clinical results, combining deep medical exfoliation with advanced serums to maximize skin clarity, radiance, and overall cellular health.",
+                                title: "Doctor Favorites",
                                 icon: "favorite",
                                 bgIcon: "spa",
-                                items: ["HydraFacial Protocol", "PRP Skin Rejuvenation", "Medi-Facial Brightening"],
-                                cta: "Book a Doctor Favorite"
+                                items: ["HydraFacial Protocol", "PRP Skin Rejuvenation", "Medi-Facial Brightening"]
                             },
                             {
                                 title: "Pigment & Texture Therapies",
-                                capsule: "Advanced pigment and texture therapies are essential for correcting uneven skin tone caused by sun exposure and hormonal changes. Our expert therapists use precision chemical peels, microneedling, and targeted laser toning to safely rejuvenate skin texture and restore a naturally even, luminous complexion.",
                                 icon: "texture",
                                 bgIcon: "blur_on",
                                 items: ["Chemical Peels", "Microneedling", "Laser Toning Sessions"],
-                                cta: "Consult for Skin Texture",
                                 shift: true
                             }
                         ].map((treatment, index) => (
@@ -428,18 +362,14 @@ export default function DermatologySkinCare() {
                                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary">
                                         <span className="material-icons text-3xl">{treatment.icon}</span>
                                     </div>
-                                    <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif leading-snug">{treatment.title}</h3>
-                                    <p className="text-cadet-gray/70 text-sm leading-relaxed mb-4">{treatment.capsule}</p>
-                                    <ul className="text-cadet-gray/80 mb-6 leading-relaxed space-y-1">
+                                    <h3 className="text-2xl font-bold text-cadet-gray mb-3 font-serif">{treatment.title}</h3>
+                                    <div className="text-cadet-gray/80 mb-6 leading-relaxed">
                                         {treatment.items.map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2 text-sm font-semibold text-primary/80">
-                                                <span className="material-icons text-xs text-primary">check_circle</span>
-                                                {item}
-                                            </li>
+                                            <span key={i} className="block mb-1 text-sm font-semibold text-primary/80">• {item}</span>
                                         ))}
-                                    </ul>
+                                    </div>
                                     <a className="inline-flex items-center text-primary font-bold hover:translate-x-2 transition-transform cursor-pointer">
-                                        {treatment.cta} <span className="material-icons ml-1 text-sm">arrow_forward</span>
+                                        Consult <span className="material-icons ml-1 text-sm">arrow_forward</span>
                                     </a>
                                 </div>
                             </motion.div>

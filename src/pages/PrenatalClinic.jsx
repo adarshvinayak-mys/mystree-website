@@ -8,64 +8,22 @@ const reviews = [
     {
         name: "Charles Samuel",
         content: "Dr. Smitha was an anchor of trust, guidance, and compassion. Her expertise and professionalism are truly unmatched.",
-        location: "Expert Pregnancy Care, Bangalore",
+        location: "Bangalore",
         rating: 5
     },
     {
-        name: "K.L. Sudha",
-        content: "High-risk IVF pregnancy handled very calmly. She solved last-minute issues in delivery very cleverly. My family completely trusted her.",
-        location: "High-Risk IVF & Delivery, Indiranagar",
+        name: "K L SUDHA",
+        content: "High risk IVF pregnancy handled very calmly. She solved last minute issues in delivery very cleverly. My family completely trusted her.",
+        location: "Bangalore",
         rating: 5
     },
     {
         name: "J.N. Surekha",
-        content: "She really took care of me during pregnancy + Delivery even post-delivery. Always available for help on one call.",
-        location: "Comprehensive Postpartum Care, HAL 2nd Stage",
+        content: "She really took care of me during pregnancy + Delivery even post delivery. Always available for help on one call.",
+        location: "Bangalore",
         rating: 5
     }
 ];
-
-const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What is included in pre-pregnancy counseling?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pre-pregnancy counseling lays the strongest foundation for a healthy conception. At My Stree in Bangalore, our experts provide comprehensive fertility assessments, genetic counseling, lifestyle optimization plans, and targeted folic acid therapy to ensure your body is fully prepared for a safe pregnancy journey." }
-        },
-        {
-            "@type": "Question",
-            "name": "What tests are done in the first trimester of pregnancy?",
-            "acceptedAnswer": { "@type": "Answer", "text": "First-trimester care establishes your critical pregnancy baseline. Our prenatal specialists conduct early viability and dating ultrasounds, personalized nutritional planning to safely manage morning sickness, and initial genetic screening to accurately monitor early fetal health and maternal well-being." }
-        },
-        {
-            "@type": "Question",
-            "name": "How is fetal growth monitored in the second trimester?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Between weeks 13 and 27, we utilize advanced medical technology for rigorous fetal growth monitoring. This crucial phase includes detailed structural anomaly scans, precision fetal cardiac assessments, and routine milestone checks to ensure the optimal physiological development of your baby." }
-        },
-        {
-            "@type": "Question",
-            "name": "How do you manage high-risk pregnancies in the third trimester?",
-            "acceptedAnswer": { "@type": "Answer", "text": "For weeks 28 to 40, our clinical focus shifts to high-risk readiness and safe labor preparation. We manage complex maternal conditions through frequent growth scans, non-stress tests (NST), and evidence-based monitoring to ensure a completely safe and secure birthing experience." }
-        }
-    ]
-};
-
-const medicalClinicSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "My Stree Prenatal Care Clinic",
-    "description": "Best Prenatal Care & Pregnancy Clinic in Indiranagar, Bangalore. 15+ years of clinical excellence, 4.9/5 patient rating, 5,000+ healthy babies delivered.",
-    "medicalSpecialty": ["Obstetrics", "Perinatology", "Gynecology"],
-    "availableService": [
-        { "@type": "MedicalProcedure", "name": "Prenatal Care" },
-        { "@type": "MedicalProcedure", "name": "Fetal Growth Monitoring" },
-        { "@type": "MedicalProcedure", "name": "High-Risk Pregnancy Management" },
-        { "@type": "MedicalProcedure", "name": "Non-Stress Test (NST)" }
-    ],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "5000" }
-};
 
 export default function PrenatalClinic() {
     const [scrolled, setScrolled] = useState(false);
@@ -139,9 +97,7 @@ export default function PrenatalClinic() {
     );
 
     return (
-        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
+        <div className="font-display bg-corn-silk text-cadet-gray overflow-x-hidden min-h-screen selection:bg-primary/30 selection:text-primary ">
             <style>{`
                 .font-serif-display {
                     font-family: 'Playfair Display', 'Cormorant Garamond', serif;
@@ -542,13 +498,16 @@ export default function PrenatalClinic() {
                             <div className="space-y-3 fade-in-up delay-100">
                                 <p className="text-orange-600 font-semibold text-sm tracking-widest uppercase">Where Life Begins</p>
                                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-gray-900 font-serif-display">
-                                    Best Prenatal Care &amp; Pregnancy Clinic in Indiranagar
+                                    Nurturing Your <br />
+                                    <span className="font-serif italic text-gradient-warm">Miracle</span> Within
                                 </h1>
                             </div>
 
-                            {/* Description — GEO / E-E-A-T entity injection */}
+                            {/* Description */}
                             <p className="text-lg text-gray-600 leading-relaxed max-w-md fade-in-up delay-200 text-pretty">
-                                Welcome to My Stree, Indiranagar's top-rated prenatal care clinic, dedicated to nurturing your miracle within. Backed by <strong className="text-gray-800">15+ years of clinical excellence</strong>, a <strong className="text-gray-800">4.9/5 patient rating</strong>, and over <strong className="text-gray-800">5,000+ healthy babies delivered</strong>, our senior obstetricians provide world-class, compassionate care. From the first heartbeat to the first breath, we offer evidence-based fetal monitoring, high-risk pregnancy management, and holistic wellness — every step of the way.
+                                Experience the warmth of expert care as you journey through motherhood.
+                                From the first heartbeat to the first breath, we're here in Indiranagar —
+                                <strong className="text-gray-800"> every step of the way</strong>.
                             </p>
 
                             {/* CTA Buttons */}
@@ -698,7 +657,7 @@ export default function PrenatalClinic() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                     <div className="text-center mb-8 relative z-10">
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Your 9 Month Path</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">The Mother's Journey: Expert Prenatal Care for All Trimesters</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">The Mother's Journey</h2>
                     </div>
                     <div className="relative">
                         <div className="timeline-line"></div>
@@ -736,9 +695,9 @@ export default function PrenatalClinic() {
                                     </div>
                                 </div>
                                 <div className="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-bold mb-4">Weeks 0-12</div>
-                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">What is included in pre-pregnancy counseling?</h3>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Early Care / Preconceptional Counseling</h3>
                                 <p className="text-gray-600 text-lg mb-4">
-                                    Pre-pregnancy counseling lays the strongest foundation for a healthy conception. At My Stree in Bangalore, our experts provide comprehensive fertility assessments, genetic counseling, lifestyle optimization plans, and targeted folic acid therapy to ensure your body is fully prepared for a safe pregnancy journey.
+                                    Laying the strongest foundation before conception. We guide you through health optimizations to ensure your body is ready for a healthy pregnancy.
                                 </p>
                                 <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-primary/10">
                                     <span className="material-icons-round text-primary text-sm">medical_information</span>
@@ -751,9 +710,9 @@ export default function PrenatalClinic() {
                         <div className="relative mb-8 md:mb-12 md:grid md:grid-cols-2 md:gap-8 items-center group card-entrance" style={{ animationDelay: '0.1s' }}>
                             <div className="md:text-right pl-12 md:pl-0 pr-0 md:pr-12 mb-8 md:mb-0 relative">
                                 <div className="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-bold mb-4">Weeks 1-12</div>
-                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">What tests are done in the first trimester of pregnancy?</h3>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">First Trimester Care</h3>
                                 <p className="text-gray-600 text-lg mb-4">
-                                    First-trimester care establishes your critical pregnancy baseline. Our prenatal specialists conduct early viability and dating ultrasounds, personalized nutritional planning to safely manage morning sickness, and initial genetic screening to accurately monitor early fetal health and maternal well-being.
+                                    Establishing the baseline with early viability scans, nutritional planning to manage morning sickness, and initial genetic screening.
                                 </p>
                                 <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-primary/10">
                                     <span className="material-icons-round text-primary text-sm">verified</span>
@@ -815,9 +774,9 @@ export default function PrenatalClinic() {
                                     </div>
                                 </div>
                                 <div className="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-bold mb-4">Weeks 13-27</div>
-                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">How is fetal growth monitored in the second trimester?</h3>
+                                <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Fetal Growth Monitoring</h3>
                                 <p className="text-gray-600 text-lg mb-4">
-                                    Between weeks 13 and 27, we utilize advanced medical technology for rigorous fetal growth monitoring. This crucial phase includes detailed structural <strong>Anomaly Scans</strong>, precision <strong>Fetal Cardiac Assessments</strong>, and routine milestone checks to ensure the optimal physiological development of your baby.
+                                    Rigorous tracking including <strong>Anomaly Scan</strong>, <strong>Fetal Cardiac Assessment</strong>, and precise <strong>Fetal Growth</strong> checks. Our specialists ensure every milestone is met.
                                 </p>
                                 <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-primary/10">
                                     <span className="material-icons-round text-primary text-sm">location_on</span>
@@ -830,9 +789,9 @@ export default function PrenatalClinic() {
                         <div className="relative md:grid md:grid-cols-2 md:gap-8 items-center group card-entrance" style={{ animationDelay: '0.4s' }}>
                             <div className="md:text-right pl-12 md:pl-0 pr-0 md:pr-12 mb-8 md:mb-0 relative">
                                 <div className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-bold mb-4 font-serif">Weeks 28-40</div>
-                                <h3 className="text-3xl font-bold text-cadet-gray mb-3 group-hover:text-primary transition-colors font-serif">How do you manage high-risk pregnancies in the third trimester?</h3>
+                                <h3 className="text-3xl font-bold text-cadet-gray mb-3 group-hover:text-primary transition-colors font-serif">High-Risk Readiness</h3>
                                 <p className="text-cadet-gray/80 text-lg mb-4">
-                                    For weeks 28 to 40, our clinical focus shifts to high-risk readiness and safe labor preparation. We manage complex maternal conditions through frequent growth scans, non-stress tests (NST), and evidence-based monitoring to ensure a completely safe and secure birthing experience.
+                                    Finalizing delivery plans with a focus on safety. We specialize in managing complex conditions to ensure a safe birthing experience.
                                 </p>
                                 <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-primary/10">
                                     <span className="material-icons-round text-primary text-sm">local_hospital</span>
@@ -868,38 +827,37 @@ export default function PrenatalClinic() {
             <section className="py-6 md:py-8 bg-white/50 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-6">
-                        <h2 className="text-4xl font-bold text-gray-900 font-serif">Why Choose My Stree for Holistic Pregnancy Wellness?</h2>
-                        <p className="mt-3 text-gray-600 max-w-2xl mx-auto">Beyond standard clinical checks, we integrate comprehensive physical and mental wellness to ensure a completely balanced pregnancy journey.</p>
+                        <h2 className="text-4xl font-bold text-gray-900 font-serif">Why Choose mystree?</h2>
                     </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <li className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
                             <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <span className="material-icons-round text-3xl">volunteer_activism</span>
                             </div>
                             <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif">Compassionate Care</h3>
                             <p className="text-cadet-gray/80 leading-relaxed">
-                                We believe in listening first. Your emotional well-being is treated with the same priority as your physical health, creating a nurturing environment for you and your baby.
+                                We believe in listening first. Your emotional well-being is as important as your physical health, creating a nurturing environment for you and your baby.
                             </p>
-                        </li>
-                        <li className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
                             <div className="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-6 text-secondary">
                                 <span className="material-icons-round text-3xl">analytics</span>
                             </div>
-                            <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif">Evidence-Based Monitoring</h3>
+                            <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif">Evidence-based Monitoring</h3>
                             <p className="text-cadet-gray/80 leading-relaxed">
-                                All risk assessments and fetal monitoring are grounded in global medical best practices, utilizing the latest technology for precise, reliable results.
+                                Utilizing the latest in medical technology for fetal growth monitoring and risk assessment, grounded in global best practices.
                             </p>
-                        </li>
-                        <li className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
+                        </div>
+                        <div className="bg-white p-8 rounded-3xl shadow-soft border border-primary/10 hover:shadow-lg transition-all hover:border-primary/30">
                             <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <span className="material-icons-round text-3xl">spa</span>
                             </div>
-                            <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif">Holistic Guidance &amp; Yoga</h3>
+                            <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif">Holistic Guidance</h3>
                             <p className="text-cadet-gray/80 leading-relaxed">
-                                We provide specialized pelvic floor strengthening, prenatal yoga, and expert <strong>Lamaze</strong> birthing classes, plus custom nutrition diet plans designed to support fetal development and maternal energy.
+                                Beyond clinical checks, we integrate nutrition, <strong>Lamaze</strong>, <strong>Birthing Classes</strong>, yoga, and mental wellness to ensure a completely balanced pregnancy journey.
                             </p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -958,8 +916,7 @@ export default function PrenatalClinic() {
             {/* Testimonials Section */}
             <section className="py-16 bg-white/50 border-t border-primary/10">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 text-center">
-                    <h2 className="text-2xl font-bold text-gray-800 font-serif mb-2">Stories of Joy</h2>
-                    <p className="text-gray-500 text-sm mb-8">Trusted by Mothers in Indiranagar, Bangalore</p>
+                    <h3 className="text-2xl font-bold text-gray-800 font-serif mb-8">Stories of Joy</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {reviews.map((review, index) => (
                             <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100 text-left hover:shadow-md transition-shadow">
@@ -970,7 +927,6 @@ export default function PrenatalClinic() {
                                 </div>
                                 <p className="text-gray-600 text-sm italic mb-4 leading-relaxed">"{review.content}"</p>
                                 <p className="text-xs font-bold text-primary">- {review.name}</p>
-                                <p className="text-xs text-gray-400 mt-0.5">Service: {review.location}</p>
                             </div>
                         ))}
                     </div>
@@ -982,40 +938,40 @@ export default function PrenatalClinic() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-6">
                         <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Local Insights</span>
-                        <h2 className="text-4xl font-bold text-gray-900 font-serif">Indiranagar Maternity &amp; Clinic FAQs</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 font-serif">Moms in Indiranagar Ask Us</h2>
                         <p className="mt-4 text-gray-600">Specific answers for our Bangalore community.</p>
                     </div>
                     <div className="space-y-4">
                         <div className="bg-white rounded-2xl shadow-sm border border-primary/10 overflow-hidden group">
                             <details className="group p-6 cursor-pointer">
                                 <summary className="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
-                                    <span>How does Bangalore traffic affect emergency maternity transport to My Stree?</span>
+                                    <span>How does Bangalore traffic affect emergency transport?</span>
                                     <span className="material-icons-round text-primary transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div className="mt-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-                                    We proactively manage Bangalore traffic concerns by partnering with dedicated 24/7 ambulance services stationed near our 13th Main Indiranagar clinic. For high-risk pregnancies, our specialists establish clear emergency transport protocols and alternate routing via 100 Feet Road to ensure rapid, safe medical access during peak transit hours.
+                                    We have partnered with a dedicated private ambulance service stationed at 100ft Road to bypass peak traffic bottlenecks. For residents within 3km of Indiranagar, our average response time is under 12 minutes, even during rush hour.
                                 </div>
                             </details>
                         </div>
                         <div className="bg-white rounded-2xl shadow-sm border border-primary/10 overflow-hidden group">
                             <details className="group p-6 cursor-pointer">
                                 <summary className="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
-                                    <span>Which hospitals in Indiranagar do you partner with for deliveries?</span>
+                                    <span>Which Indiranagar hospitals do you partner with?</span>
                                     <span className="material-icons-round text-primary transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div className="mt-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-                                    My Stree partners with top-tier, NABH-accredited multi-specialty maternity hospitals in and around Indiranagar and HAL 2nd Stage for all surgical deliveries and neonatal intensive care (NICU) requirements. Dr. Smitha A.P. personally oversees your hospital admission and delivery, ensuring seamless continuity of expert medical care.
+                                    We have direct admitting privileges at Cloudnine Hospital (Old Airport Road) and Manipal Hospital. Our doctors will be with you during delivery at these facilities, ensuring seamless continuity of care from our clinic to the labor room.
                                 </div>
                             </details>
                         </div>
                         <div className="bg-white rounded-2xl shadow-sm border border-primary/10 overflow-hidden group">
                             <details className="group p-6 cursor-pointer">
                                 <summary className="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
-                                    <span>Are prenatal yoga classes held at your Indiranagar clinic?</span>
+                                    <span>Are prenatal yoga classes held at the clinic?</span>
                                     <span className="material-icons-round text-primary transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div className="mt-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-                                    Yes, we conduct expert-led prenatal yoga classes directly at our holistic wellness center in Indiranagar. These specialized sessions focus on pelvic floor strengthening, guided Lamaze breathwork, and physical wellness tailored for each trimester, ensuring expecting mothers maintain optimal physical and emotional health throughout their pregnancy journey.
+                                    Yes! Our "Tree of Life" yoga studio is located on the terrace floor, offering fresh air and views of Indiranagar's canopy. We offer morning and evening batches specifically designed for each trimester.
                                 </div>
                             </details>
                         </div>
