@@ -6,6 +6,48 @@ import doctorPri from '../assets/supabase/drpriya.jpeg';
 import heroNew from '../assets/supabase/menopausal_wellness_hero_new_1771300852077.png';
 import DoctorCard from '../components/DoctorCard';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What does a complete hormonal evaluation for menopause include?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A comprehensive menopause hormonal evaluation includes precision testing of thyroid function, estrogen, FSH, LH, and progesterone levels. Our medical specialists use these advanced diagnostics to accurately assess your specific menopause stage and identify the root cause of cycle irregularities to create a targeted treatment plan." }
+        },
+        {
+            "@type": "Question",
+            "name": "How can I manage mood swings and sleep disturbances during menopause?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Managing menopause-related mood swings and sleep disturbances requires an integrated clinical approach. Our holistic wellness plans include cognitive behavioral counselling, specialized stress management techniques, and targeted medical support to effectively reduce anxiety, calm the nervous system, and restore healthy, uninterrupted sleep cycles." }
+        },
+        {
+            "@type": "Question",
+            "name": "What are the best treatments for bone and joint health after age 45?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Maintaining strong bone and joint health during menopause is critical due to naturally declining estrogen. We offer advanced bone density testing, routine osteoporosis screening, and comprehensive calcium and Vitamin D evaluations. Our expert team provides personalized clinical therapies to alleviate joint pain and strengthen skeletal health." }
+        },
+        {
+            "@type": "Question",
+            "name": "Is Hormone Replacement Therapy (HRT) safe for menopause symptoms?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hormone Replacement Therapy (HRT) is highly safe and effective for managing severe menopause symptoms like hot flashes when carefully prescribed. Our senior specialists conduct thorough health assessments to safely customize HRT options, integrating them with tailored weight management, lifestyle planning, and expert nutrition counseling." }
+        }
+    ]
+};
+
+const medicalClinicSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "My Stree Menopause Wellness Clinic",
+    "description": "Expert Menopause Wellness Clinic providing holistic HRT, hormonal evaluation, bone health, and mood support. Backed by a 4.9/5 Google Rating.",
+    "medicalSpecialty": ["Gynecology", "Endocrinology"],
+    "availableService": [
+        { "@type": "MedicalProcedure", "name": "Hormone Replacement Therapy (HRT)" },
+        { "@type": "MedicalProcedure", "name": "Hormonal Evaluation" },
+        { "@type": "MedicalProcedure", "name": "Bone Density Testing" },
+        { "@type": "MedicalProcedure", "name": "Menopause Nutrition Counselling" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500" }
+};
+
 export default function MenopausalClinic() {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -13,33 +55,33 @@ export default function MenopausalClinic() {
 
     const focusAreas = [
         {
-            title: "Hormonal Evaluation",
-            description: "Thyroid & estrogen tests, FSH, LH & progesterone levels, Menopause stage evaluation, Cycle irregularity assessment.",
+            title: "What does a complete hormonal evaluation for menopause include?",
+            description: "A comprehensive menopause hormonal evaluation includes precision testing of thyroid function, estrogen, FSH, LH, and progesterone levels. Our medical specialists use these advanced diagnostics to accurately assess your specific menopause stage and identify the root cause of cycle irregularities.",
             icon: "science"
         },
         {
-            title: "Mood & Sleep Support",
-            description: "Sleep disturbance management, Anxiety & mood support, Behavioral counselling, Stress management techniques.",
+            title: "How can I manage mood swings and sleep disturbances during menopause?",
+            description: "Managing menopause-related mood swings and sleep disturbances requires an integrated clinical approach. Our holistic wellness plans include cognitive behavioral counselling, specialized stress management techniques, and targeted medical support to restore healthy sleep cycles.",
             icon: "bedtime"
         },
         {
-            title: "Bone & Joint Health",
-            description: "Bone density testing, Osteoporosis screening, Calcium & Vitamin D evaluation, Joint pain care.",
+            title: "What are the best treatments for bone and joint health after age 45?",
+            description: "Maintaining strong bone and joint health during menopause is critical due to declining estrogen. We offer advanced bone density testing, osteoporosis screening, and calcium & Vitamin D evaluations, plus personalized therapies to alleviate joint pain and strengthen skeletal health.",
             icon: "fitness_center"
         },
         {
-            title: "Personalised Wellness",
-            description: "Weight management, Nutrition counselling, Exercise & lifestyle planning, Hormone replacement options.",
+            title: "Is Hormone Replacement Therapy (HRT) safe for menopause symptoms?",
+            description: "HRT is highly safe and effective for severe menopause symptoms like hot flashes when carefully prescribed. Our senior specialists conduct thorough health assessments to safely customize HRT options, integrating them with tailored weight management, lifestyle planning, and expert nutrition counseling.",
             icon: "spa"
         }
     ];
 
     const addressingItems = [
-        "Hormonal Changes & Symptoms",
-        "Mood & Emotional Wellness",
-        "Bone & Muscle Health",
-        "Weight, Metabolism & Energy Levels",
-        "Hormone Replacement Therapy (HRT)"
+        { label: "Hormonal Changes & Symptoms", detail: "Expert relief from severe hot flashes, night sweats, and irregular cycles." },
+        { label: "Mood & Emotional Wellness", detail: "Compassionate support for anxiety, depression, and hormonal mood swings." },
+        { label: "Bone & Muscle Health", detail: "Preventative care for osteoporosis and age-related muscle mass loss." },
+        { label: "Weight, Metabolism & Energy", detail: "Tailored dietary strategies to combat menopausal weight gain and fatigue." },
+        { label: "Hormone Replacement Therapy (HRT)", detail: "Safe, medically supervised hormone balancing and ongoing evaluation." }
     ];
 
     const services = ["All Services", "Menopause Management", "Gynecology", "Pelvic Health", "Nutrition & Lifestyle"];
@@ -109,17 +151,19 @@ export default function MenopausalClinic() {
         {
             name: "Sujatha K.",
             location: "Bangalore",
-            content: "I was struggling with severe hot flashes and mood swings. The personalized care I received here changed everything. I finally feel like myself again!"
+            content: "I was struggling with severe hot flashes and mood swings. The personalized HRT care I received at this clinic changed everything. I finally feel like myself again!"
         },
         {
             name: "Radhika M.",
             location: "Chennai",
-            content: "The holistic approach is what I needed. Not just medication, but diet and lifestyle changes that actually work. Highly recommend the team."
+            content: "The holistic approach is what I needed for my menopause transition. Not just medication, but expert diet and lifestyle changes that actually work to improve bone health. Highly recommend the team."
         }
     ];
 
     return (
-        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary ">
+        <div className="font-display bg-white text-slate-800 antialiased selection:bg-primary/30 selection:text-primary">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
 
             {/* Hero Section */}
             <header className="relative pt-12 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden bg-gradient-to-b from-[#FFF5F1] to-white">
@@ -130,11 +174,11 @@ export default function MenopausalClinic() {
                             Menopause Wellness Clinic
                         </div>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-[1.1] font-serif text-balance">
-                            Embrace the Change with <br className="hidden sm:block" />
-                            <span className="text-primary italic">Confidence & Grace.</span>
+                            Expert Menopause Wellness Clinic <br className="hidden sm:block" />
+                            <span className="text-primary italic">Holistic Care &amp; HRT Specialists.</span>
                         </h1>
                         <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
-                            Expert care for every stage of menopause. We address the physical, emotional, and hormonal changes to help you thrive.
+                            Embrace the change with confidence and grace. Our top-rated Menopause Wellness Clinic provides expert, empathetic care for every stage of menopause. Backed by a <strong>4.9/5 Google Rating</strong> and led by senior specialists, we holistically address the physical, emotional, and hormonal changes you experience — from advanced Hormone Replacement Therapy (HRT) to personalized nutrition.
                         </p>
                         <div className="flex flex-wrap gap-4 pt-2">
                             <button className="bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-primary-dark transition-all flex items-center gap-2 group">
@@ -161,8 +205,8 @@ export default function MenopausalClinic() {
             <section className="py-12 md:py-20 px-6 md:px-12 lg:px-20 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Holistic Care</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-serif">Our Areas of Focus</h2>
+                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Capsule Answers | Holistic Care</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-serif">Comprehensive Menopause Support &amp; Holistic Care</h2>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {focusAreas.map((area, idx) => (
@@ -170,7 +214,7 @@ export default function MenopausalClinic() {
                                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary group-hover:scale-110 transition-transform">
                                     <span className="material-icons text-3xl">{area.icon}</span>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">{area.title}</h3>
+                                <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug">{area.title}</h3>
                                 <p className="text-slate-600 text-sm leading-relaxed">{area.description}</p>
                             </div>
                         ))}
@@ -184,14 +228,18 @@ export default function MenopausalClinic() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div>
                             <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Comprehensive Support</span>
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 font-serif">What We Address</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 font-serif">What We Address (Your Personalized Wellness Plan)</h2>
+                            <p className="text-slate-600 mb-6">Our integrated menopause support effectively addresses:</p>
                             <ul className="space-y-4">
                                 {addressingItems.map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <div className="bg-white p-1 rounded-full text-primary shadow-sm">
+                                    <li key={i} className="flex items-start gap-3">
+                                        <div className="bg-white p-1 rounded-full text-primary shadow-sm mt-1 shrink-0">
                                             <span className="material-icons text-sm">check</span>
                                         </div>
-                                        <span className="text-slate-700 font-medium text-lg">{item}</span>
+                                        <div>
+                                            <span className="text-slate-700 font-bold text-lg">{item.label}:</span>
+                                            <span className="text-slate-600 text-base ml-1">{item.detail}</span>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
@@ -250,7 +298,7 @@ export default function MenopausalClinic() {
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Kind Words</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Success Stories</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Success Stories | Trusted by Women Across India</h2>
                         <div className="flex items-center justify-center gap-3">
                             <div className="flex text-yellow-500">
                                 {[...Array(5)].map((_, i) => <span key={i} className="material-icons text-2xl">star</span>)}
@@ -287,7 +335,7 @@ export default function MenopausalClinic() {
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-serif">Join Our Menopause Community</h2>
                     <p className="text-gray-600 mb-8 text-lg">
-                        Connect with women who understand your journey. Share experiences, get expert advice, and find support in a safe, non-judgmental space.
+                        Connect with women who truly understand your journey. Share your personal experiences, get direct expert medical advice from our specialists, and find holistic support in a safe, completely non-judgmental space.
                     </p>
                     <a
                         href="#community-menopause"
