@@ -11,6 +11,8 @@ const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "My Stree",
+    "logo": "https://my-stree.com/mystreelogo.svg",
+    "image": "https://my-stree.com/mystreelogo.svg",
     "description": "Best Women's Healthcare Clinic & OBGYN in Indiranagar, Bangalore. Trusted by 10,000+ women. 4.9/5 Google Rating. 15+ senior specialists.",
     "aggregateRating": {
         "@type": "AggregateRating",
