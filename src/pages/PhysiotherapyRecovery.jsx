@@ -1,40 +1,91 @@
 import React, { useEffect } from 'react';
 import doctorJasmine from '../assets/supabase/drpriya.jpeg'; // Using existing asset for Dr. Jasmine Priyadarshini as used in other files
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How does Pregnancy Mobility Care help during trimesters?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pregnancy mobility care provides essential prenatal posture support and trimester-safe movement to safely manage back load. At our Indiranagar clinic, our expert physiotherapists design customized routines that strengthen the pelvic floor, effectively reducing lower back pain and preparing your body for a healthy, safe delivery." }
+        },
+        {
+            "@type": "Question",
+            "name": "What conditions does Pelvic Floor Therapy treat?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pelvic floor therapy effectively treats urinary incontinence, severe pelvic pain, and core instability. Our specialized female physiotherapy utilizes advanced biomechanical techniques to restore your pelvic floor strength, helping women regain complete bladder control and live a comfortable, pain-free life." }
+        },
+        {
+            "@type": "Question",
+            "name": "How do Urodynamics and Bladder Rehab work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Urodynamics and bladder rehabilitation involve guided bladder training, active urge control strategies, and personalized leakage prevention plans. Our expert therapists identify the exact root cause of urinary incontinence to build a resilient, fully functional bladder system tailored to your unique female anatomy." }
+        },
+        {
+            "@type": "Question",
+            "name": "What is included in Postnatal Recovery physiotherapy?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Postnatal recovery physiotherapy focuses on safe diastasis recti repair, C-section scar mobility, and deep pelvic reconnection. We provide expert, postpartum-specialized rehabilitation in a highly private environment to help new mothers rebuild their core strength and regain full body mobility after childbirth." }
+        }
+    ]
+};
+
+const medicalClinicSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "My Stree Pelvic Health & Women's Physiotherapy",
+    "description": "Expert Pelvic Health & Women's Physiotherapy in Indiranagar, Bangalore. 800+ pain-free lives transformed by Dr. Jasmine Priyadarshini.",
+    "medicalSpecialty": ["PhysicalTherapy", "ObstetricsGynecology"],
+    "availableService": [
+        { "@type": "MedicalProcedure", "name": "Pregnancy Mobility Care" },
+        { "@type": "MedicalProcedure", "name": "Pelvic Floor Therapy" },
+        { "@type": "MedicalProcedure", "name": "Urodynamics & Bladder Rehabilitation" },
+        { "@type": "MedicalProcedure", "name": "Postnatal Recovery Physiotherapy" }
+    ]
+};
+
 const treatmentAreas = [
     {
-        title: "Pregnancy Mobility Care",
+        title: "How does Pregnancy Mobility Care help during trimesters?",
+        capsule: "Pregnancy mobility care provides essential prenatal posture support and trimester-safe movement to safely manage back load. At our Indiranagar clinic, our expert physiotherapists design customized routines that strengthen the pelvic floor, reducing lower back pain and preparing your body for a healthy delivery.",
         points: ["Prenatal posture support", "Trimester-safe movement", "Back load management"],
         icon: "pregnant_woman",
-        tag: "pregnancy"
+        tag: "pregnancy",
+        cta: "Consult for Pregnancy Care"
     },
     {
-        title: "Pelvic Floor Therapy",
+        title: "What conditions does Pelvic Floor Therapy treat?",
+        capsule: "Pelvic floor therapy effectively treats urinary incontinence, severe pelvic pain, and core instability. Our specialized female physiotherapy utilizes advanced biomechanical techniques to restore your pelvic floor strength, helping women regain complete bladder control and live a comfortable, pain-free life.",
         points: ["Core stability", "Incontinence care", "Pelvic pain relief"],
         icon: "spa",
-        tag: "female"
+        tag: "female",
+        cta: "Consult for Pelvic Health"
     },
     {
-        title: "Urodynamics & Bladder Rehab",
+        title: "How do Urodynamics and Bladder Rehab work?",
+        capsule: "Urodynamics and bladder rehabilitation involve guided bladder training, active urge control strategies, and personalized leakage prevention plans. Our expert therapists identify the exact root cause of urinary incontinence to build a resilient, fully functional bladder system tailored to your unique female anatomy.",
         points: ["Bladder training", "Urge control strategies", "Leakage prevention plans"],
         icon: "water_drop",
-        tag: "monitor_heart"
+        tag: "monitor_heart",
+        cta: "Consult for Bladder Rehab"
     },
     {
-        title: "Postnatal Recovery",
+        title: "What is included in Postnatal Recovery physiotherapy?",
+        capsule: "Postnatal recovery physiotherapy focuses on safe diastasis recti repair, C-section scar mobility, and deep pelvic reconnection. We provide expert, postpartum-specialized rehabilitation in a highly private environment to help new mothers rebuild their core strength and regain full body mobility after childbirth.",
         points: ["Diastasis recti repair", "C-section scar mobility", "Pelvic reconnection"],
         icon: "baby_changing_station",
-        tag: "pregnant_woman"
+        tag: "pregnant_woman",
+        cta: "Consult for Postnatal Recovery"
     }
 ];
 
 export default function PhysiotherapyRecovery() {
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    });
 
     return (
         <div className="font-display bg-corn-silk text-cadet-gray antialiased selection:bg-primary/30 selection:text-primary relative ">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
 
             {/* Hero Section */}
             <header className="relative overflow-hidden pt-8 pb-12 px-6 md:px-12 lg:px-20 bg-corn-silk">
@@ -50,16 +101,16 @@ export default function PhysiotherapyRecovery() {
                             </div>
                         </div>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cadet-gray leading-[1.1] tracking-tight font-serif">
-                            Move Freely. <br />
+                            Expert Pelvic Health &amp; Women&apos;s <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF833C] to-[#ed592c] relative">
-                                Live Pain-Free.
+                                Physiotherapy in Indiranagar
                                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-uranian-blue z-[-1]" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.00026 6.99997C38.5003 2.99999 154.5 -3.50002 198 6.99997" stroke="currentColor" strokeWidth="3"></path>
                                 </svg>
                             </span>
                         </h1>
                         <p className="text-lg md:text-xl text-cadet-gray/80 max-w-lg leading-relaxed font-medium">
-                            Restore Movement. Reduce Pain. Regain Strength. Expert physiotherapy tailored for women.
+                            Restore movement, reduce pain, and regain your strength. Welcome to My Stree, Bangalore's premier pelvic health and physiotherapy center tailored exclusively for women. Backed by our track record of transforming <strong>800+ pain-free lives</strong>, our expert therapists, including <strong>Dr. Jasmine</strong>, specialize in female biomechanics.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <a href="https://my-stree.com/booking" className="inline-flex px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-[#d0461f] hover:scale-105 transition-all duration-300 items-center justify-center gap-2 group">
@@ -115,8 +166,8 @@ export default function PhysiotherapyRecovery() {
             <section className="py-12 px-6 md:px-12 lg:px-20 relative bg-corn-silk">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Specialized Treatments</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif mb-6">What Hurts? How Can We Help?</h2>
+                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Specialized Treatments | Capsule Q&amp;A</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif mb-6">Specialized Treatments: What Hurts &amp; How Can We Help?</h2>
                         <p className="text-cadet-gray/70 max-w-2xl mx-auto text-lg">We don't just treat symptoms. We find the root cause and help you build a resilient body.</p>
                     </div>
 
@@ -130,14 +181,15 @@ export default function PhysiotherapyRecovery() {
                                     <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                                         <span className="material-icons text-3xl">{area.icon}</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold text-cadet-gray mb-3 font-serif">{area.title}</h3>
+                                    <h3 className="text-xl font-bold text-cadet-gray mb-3 font-serif leading-snug">{area.title}</h3>
+                                    <p className="text-cadet-gray/70 text-sm leading-relaxed mb-4">{area.capsule}</p>
                                     <div className="text-cadet-gray/80 mb-6 space-y-1">
                                         {area.points.map((p, i) => (
                                             <span key={i} className="block text-sm font-semibold opacity-90">• {p}</span>
                                         ))}
                                     </div>
                                     <button className="inline-flex items-center text-primary font-bold hover:translate-x-2 transition-transform">
-                                        Consult <span className="material-icons ml-1 text-sm">arrow_forward</span>
+                                        {area.cta} <span className="material-icons ml-1 text-sm">arrow_forward</span>
                                     </button>
                                 </div>
                             </div>
@@ -169,22 +221,22 @@ export default function PhysiotherapyRecovery() {
                                 <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif mb-6">The Women-First Difference</h2>
                             </div>
                             <p className="text-cadet-gray/80 text-lg leading-relaxed">
-                                Women’s bodies go through unique changes—from pregnancy to menopause. Generic physiotherapy often overlooks hormonal impacts on connective tissues and recovery rates.
-                            </p>
-                            <p className="text-cadet-gray/80 text-lg leading-relaxed">
-                                At <span className="font-serif font-bold text-cadet-gray">My Stree</span>, we specialize in female biomechanics. Whether you're recovering from childbirth, managing pelvic pain, or dealing with age-related joint issues, our approach is empathetic, specialized, and holistic.
+                                Women's bodies undergo unique biomechanical changes—from pregnancy to menopause. Generic physiotherapy often overlooks how hormonal shifts impact connective tissues and recovery rates. At <span className="font-serif font-bold text-cadet-gray">My Stree</span>, our approach is empathetic, specialized, and holistic:
                             </p>
                             <ul className="space-y-4 pt-4">
                                 {[
-                                    "Hormonal-Health Aware Therapy",
-                                    "Private & Comfortable Environment",
-                                    "Postpartum-Specialized Rehabilitation"
+                                    { label: "Hormonal-Health Aware Therapy", detail: "We adjust your physical therapy protocols based on your unique hormonal and metabolic profile." },
+                                    { label: "Postpartum-Specialized Rehabilitation", detail: "Expert, gentle techniques specifically designed for the healing postpartum body, including C-section and vaginal delivery recoveries." },
+                                    { label: "Private & Comfortable Environment", detail: "A safe, non-judgmental space in Bangalore dedicated solely to women's intimate health and core rebuilding." }
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <span className="bg-primary/10 p-1.5 rounded-full text-primary">
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="bg-primary/10 p-1.5 rounded-full text-primary mt-1 shrink-0">
                                             <span className="material-icons text-sm">check</span>
                                         </span>
-                                        <span className="text-cadet-gray font-medium">{item}</span>
+                                        <div>
+                                            <span className="text-cadet-gray font-bold">{item.label}: </span>
+                                            <span className="text-cadet-gray/80">{item.detail}</span>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
@@ -219,8 +271,9 @@ export default function PhysiotherapyRecovery() {
             <section className="py-24 bg-white px-6 md:px-12 lg:px-20 relative">
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-16">
-                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Success Stories</span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif">Stories of Strength & Healing</h2>
+                        <span className="text-primary font-bold tracking-wide uppercase text-xs mb-3 block">Success Stories | Local Insights</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-cadet-gray font-serif">Stories of Strength &amp; Healing</h2>
+                        <p className="text-cadet-gray/60 mt-3">Trusted by women across Indiranagar &amp; Bangalore</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -228,13 +281,15 @@ export default function PhysiotherapyRecovery() {
                             {
                                 text: "After my C-section, I felt so disconnected from my core. Dr. Jasmine's guidance and specific exercises helped me regain my strength and posture within weeks. I feel like myself again!",
                                 author: "Anjali S.",
+                                location: "Indiranagar, Bangalore",
                                 condition: "Postnatal Recovery",
                                 initial: "A"
                             },
                             {
                                 text: "I was hesitant about pelvic floor therapy, but Dr. Jasmine made me feel so at ease. The improvement in my core strength and bladder control has been life-changing.",
                                 author: "Ridhi G.",
-                                condition: "Pelvic Health",
+                                location: "Bangalore",
+                                condition: "Pelvic Health & Incontinence",
                                 initial: "R"
                             }
                         ].map((t, i) => (
@@ -246,7 +301,10 @@ export default function PhysiotherapyRecovery() {
                                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary font-bold text-sm shadow-sm">
                                         {t.initial}
                                     </div>
-                                    <span className="font-bold text-cadet-gray text-sm">{t.author}</span>
+                                    <div>
+                                        <span className="font-bold text-cadet-gray text-sm block">{t.author}</span>
+                                        <span className="text-xs text-primary font-bold uppercase tracking-wider">{t.location}</span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
