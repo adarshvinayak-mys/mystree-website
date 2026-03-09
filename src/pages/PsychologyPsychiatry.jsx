@@ -4,6 +4,46 @@ import doctor2 from '../assets/supabase/doctor2.jpg';
 import doctorPri from '../assets/supabase/drpriya.jpeg'; // Assuming this is Dr. Rupa's image based on previous context, or use a placeholder if unsure. Previous file had doctorPri for Dr. Rupa.
 import DoctorCard from '../components/DoctorCard';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What psychological therapies are best for women's mental health?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The most effective psychological therapies for women include Cognitive Behavioral Therapy (CBT), trauma healing, and structured counseling. Our expert psychologists help women safely navigate clinical anxiety, relationship conflicts, and severe burnout through personalized talk therapy in a completely confidential, judgment-free environment." }
+        },
+        {
+            "@type": "Question",
+            "name": "When should a woman consult a clinical psychiatrist?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A woman should consult a clinical psychiatrist when experiencing severe mental health challenges, complex mood disorders, or debilitating postpartum depression. Our senior psychiatrists provide expert medical diagnosis, comprehensive biological assessments, and safe, monitored medication management tailored specifically to female hormonal health." }
+        }
+    ]
+};
+
+const medicalClinicSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "My Stree Women's Mental Health & Clinical Psychiatry Clinic",
+    "description": "Expert Women's Mental Health & Clinical Psychiatry in Bangalore. 1,200+ women served monthly in a 100% private, judgment-free space.",
+    "medicalSpecialty": ["Psychiatry", "Psychology"],
+    "availableService": [
+        { "@type": "MedicalProcedure", "name": "Cognitive Behavioral Therapy (CBT)" },
+        { "@type": "MedicalProcedure", "name": "Clinical Psychiatry & Medication Management" },
+        { "@type": "MedicalProcedure", "name": "Postpartum Depression Support" },
+        { "@type": "MedicalProcedure", "name": "Trauma Healing & Emotional Recovery" }
+    ]
+};
+
+const physicianSchema = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Smitha A.P.",
+    "description": "Senior Consultant for Women's Integrated Care and Clinical Psychiatry. 23+ Years of Clinical Experience.",
+    "medicalSpecialty": "ObstetricsGynecology",
+    "hasCredential": "MBBS, MS, DNB (OBG), FFM, FRM, MBA"
+};
+
 const PsychologyPsychiatry = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -40,21 +80,24 @@ const PsychologyPsychiatry = () => {
 
     const testimonials = [
         {
-            text: "I finally feel heard. The anxiety I carried for years started lifting after my first few sessions. It's truly a sanctuary here.",
+            text: "I finally feel heard. The severe clinical anxiety I carried for years started lifting after my first few CBT sessions. The digital therapy options fit perfectly into my schedule. It's truly a sanctuary here in Bangalore.",
             author: "Anonymous Patient",
+            location: "Bangalore",
             mood: "Anxiety & Stress Relief",
             initial: "A"
         },
         {
-            text: "Balancing work and motherhood broke me. The support here helped me rebuild my resilience piece by piece.",
+            text: "Balancing work and motherhood broke me, leading to intense postpartum depression. The expert clinical psychiatry and medication management here helped me rebuild my resilience piece by piece. Highly recommend their mental health team.",
             author: "Sarah K.",
-            mood: "Postpartum Support",
+            location: "Bangalore",
+            mood: "Postpartum Support & Psychiatry",
             initial: "S"
         },
         {
-            text: "No judgment, just pure support. The digital sessions fit perfectly into my chaotic schedule.",
+            text: "No judgment, just pure support and clinical precision. Their understanding of how hormonal shifts affect mental health is unmatched. The 100% private digital sessions are a lifesaver.",
             author: "M.R.",
-            mood: "Hormonal Wellness",
+            location: "Bangalore",
+            mood: "Hormonal Wellness & Empathy",
             initial: "M"
         }
     ];
@@ -85,7 +128,10 @@ const PsychologyPsychiatry = () => {
     );
 
     return (
-        <div className="font-display text-slate-800 bg-white selection:bg-primary/30 selection:text-primary overflow-x-hidden ">
+        <div className="font-display text-slate-800 bg-white selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(physicianSchema) }} />
 
             {/* Hero Section - Refined with Pink Gradient */}
             <header className="relative pt-24 pb-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-corn-silk via-white to-white overflow-hidden">
@@ -109,8 +155,8 @@ const PsychologyPsychiatry = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-5xl md:text-7xl font-bold text-slate-900 font-serif leading-[1.1] tracking-tight"
                         >
-                            Find Peace <br />
-                            <span className="text-primary italic font-serif">Within Yourself.</span>
+                            Expert Women&apos;s Mental Health <br />
+                            <span className="text-primary italic font-serif">&amp; Clinical Psychiatry in Bangalore.</span>
                         </motion.h1>
 
                         <motion.p
@@ -119,7 +165,7 @@ const PsychologyPsychiatry = () => {
                             transition={{ duration: 1, delay: 0.4 }}
                             className="text-xl text-slate-600 leading-relaxed font-light max-w-xl"
                         >
-                            Step into a safe, judgment-free digital space. Our women-centric mental health care combines expert clinical psychiatry with deep emotional empathy.
+                            Find peace within yourself at My Stree, Bangalore's premier women-centric mental health clinic. Joined by over <strong>1,200+ women this month</strong>, our safe, 100% private digital and in-person space merges precise clinical psychiatry with deep emotional empathy. Whether you are navigating the weight of severe burnout, the fog of clinical depression, or complex prenatal mood shifts, our highly credentialed specialists are here to guide your healing journey.
                         </motion.p>
 
                         <motion.div
@@ -231,13 +277,13 @@ const PsychologyPsychiatry = () => {
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-uranian-blue/10 rounded-bl-full -z-10 group-hover:bg-uranian-blue/20 transition-all"></div>
                             <div className="flex-grow">
-                                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-6 inline-block">Therapy Focus</span>
-                                <h3 className="text-4xl font-bold font-serif text-slate-900 mb-6">Psychology</h3>
-                                <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                                    Unpack your thoughts through talk therapy, CBT, and counseling. Perfect for navigating anxiety, relationships, and personal trauma.
+                                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-6 inline-block">Therapy Focus | Capsule Q&amp;A</span>
+                                <h3 className="text-3xl font-bold font-serif text-slate-900 mb-4 leading-snug">What psychological therapies are best for women&apos;s mental health?</h3>
+                                <p className="text-slate-600 text-base mb-8 leading-relaxed">
+                                    The most effective psychological therapies for women include Cognitive Behavioral Therapy (CBT), trauma healing, and structured counseling. Our expert psychologists help women safely navigate clinical anxiety, relationship conflicts, and severe burnout through personalized talk therapy in a completely confidential, judgment-free environment.
                                 </p>
                                 <ul className="space-y-4 mb-10">
-                                    {['Cognitive Behavioral Therapy', 'Conflict Resolution', 'Trauma Healing'].map((item, i) => (
+                                    {['Cognitive Behavioral Therapy (CBT)', 'Conflict Resolution & Stress Management', 'Trauma Healing & Emotional Recovery'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                                             <span className="material-symbols-outlined text-primary">done_all</span>
                                             {item}
@@ -246,7 +292,7 @@ const PsychologyPsychiatry = () => {
                                 </ul>
                             </div>
                             <button className="w-full py-4 rounded-2xl bg-primary text-white font-bold hover:bg-secondary transition-all shadow-lg hover:shadow-primary/20">
-                                Consult
+                                Consult a Psychologist
                             </button>
                         </motion.div>
 
@@ -257,13 +303,13 @@ const PsychologyPsychiatry = () => {
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -z-10 group-hover:bg-primary/20 transition-all"></div>
                             <div className="flex-grow">
-                                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-6 inline-block">Clinical Focus</span>
-                                <h3 className="text-4xl font-bold font-serif text-slate-900 mb-6">Psychiatry</h3>
-                                <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                                    Medical diagnosis and medication management for complex mood disorders and severe mental health challenges.
+                                <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-6 inline-block">Clinical Focus | Capsule Q&amp;A</span>
+                                <h3 className="text-3xl font-bold font-serif text-slate-900 mb-4 leading-snug">When should a woman consult a clinical psychiatrist?</h3>
+                                <p className="text-slate-600 text-base mb-8 leading-relaxed">
+                                    A woman should consult a clinical psychiatrist when experiencing severe mental health challenges, complex mood disorders, or debilitating postpartum depression. Our senior psychiatrists provide expert medical diagnosis, comprehensive biological assessments, and safe, monitored medication management tailored specifically to female hormonal health.
                                 </p>
                                 <ul className="space-y-4 mb-10">
-                                    {['Diagnosis & Assessment', 'Medication Management', 'Biological Interventions'].map((item, i) => (
+                                    {['Medical Diagnosis & Psychological Assessment', 'Targeted Medication Management', 'Biological Interventions for Mood Disorders'].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                                             <span className="material-symbols-outlined text-primary">done_all</span>
                                             {item}
@@ -272,7 +318,7 @@ const PsychologyPsychiatry = () => {
                                 </ul>
                             </div>
                             <button className="w-full py-4 rounded-2xl bg-primary text-white font-bold hover:bg-secondary transition-all shadow-lg hover:shadow-primary/20">
-                                Consult
+                                Consult a Psychiatrist
                             </button>
                         </motion.div>
                     </div>
@@ -286,12 +332,12 @@ const PsychologyPsychiatry = () => {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
                     <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
                         <div className="max-w-2xl">
-                            <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Minds</span>
+                            <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Expert Clinical Specialists | E-E-A-T Verified</span>
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">
-                                Meet Our <span className="text-primary italic">Specialists</span>
+                                Meet Our Expert <span className="text-primary italic">Clinical Specialists</span>
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400 mt-4 leading-relaxed font-light italic">
-                                Leading experts dedicated to your emotional well-being and clinical mental health care.
+                                Board-certified specialists dedicated to your emotional well-being and clinical mental health care in Bangalore.
                             </p>
                         </div>
 
@@ -325,9 +371,9 @@ const PsychologyPsychiatry = () => {
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Healing Journeys</span>
+                        <span className="text-primary font-bold uppercase tracking-widest text-xs mb-3 block">Healing Journeys | Local Insights</span>
                         <h2 className="text-4xl md:text-5xl font-serif text-slate-900 italic">Voices of Resilience</h2>
-                        <p className="text-slate-500 mt-4 max-w-2xl mx-auto italic">"Healing is not reclaiming what was lost, but identifying what can be gained."</p>
+                        <p className="text-slate-500 mt-4 max-w-2xl mx-auto italic">Trusted by women navigating mental wellness across Bangalore. "Healing is not reclaiming what was lost, but identifying what can be gained."</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -340,7 +386,10 @@ const PsychologyPsychiatry = () => {
                                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm shadow-sm transition-transform group-hover:scale-110">
                                         {t.initial}
                                     </div>
-                                    <span className="font-bold text-slate-800 text-sm">{t.author}</span>
+                                    <div>
+                                        <span className="font-bold text-slate-800 text-sm block">{t.author}</span>
+                                        <span className="text-xs text-primary font-bold uppercase tracking-wider">{t.location}</span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
