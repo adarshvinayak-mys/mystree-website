@@ -148,12 +148,12 @@ export default function Hero() {
 
 
 
-                        <h1 className="font-display text-5xl lg:text-7xl font-bold leading-[1.1] text-slate-900 dark:text-white">
-                            Best Women's Healthcare Clinic &amp; OBGYN <br />
-                            <span className="text-primary italic font-medium pr-2">in Indiranagar | My Stree.</span>
+                        <h1 className="font-display text-3xl sm:text-4xl lg:text-7xl font-bold leading-[1.15] text-slate-900 dark:text-white">
+                            Best Women's Healthcare Clinic &amp; OBGYN{' '}
+                            <span className="text-primary italic font-medium">in Indiranagar | My Stree.</span>
                         </h1>
 
-                        <p className="text-lg lg:text-xl text-secondary dark:text-slate-400 max-w-lg leading-relaxed font-light">
+                        <p className="text-base lg:text-xl text-secondary dark:text-slate-400 max-w-lg leading-relaxed font-light">
                             Welcome to My Stree, your sanctuary for holistic women's wellness in the heart of Indiranagar. Trusted by over <strong>10,000+ women</strong> and maintaining a flawless <strong>4.9/5 Google Rating</strong>, our team of <strong>15+ senior specialists</strong> provides complete reproductive care—from adolescence to menopause.
                         </p>
 
