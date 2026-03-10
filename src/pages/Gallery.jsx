@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { CalendarDays, Expand, ImageIcon, Images, Layers3 } from 'lucide-react';
 import { fetchCmsJson, formatCmsDate, resolveCmsMediaUrl } from '../lib/cmsApi';
 
 const buildGalleryGroups = (items) => {
@@ -7,16 +8,18 @@ const buildGalleryGroups = (items) => {
   const indexByKey = new Map();
 
   items.forEach((item) => {
-    const key = (item.group_name || '').trim().toLowerCase() || `single-${item.id}`;
-    const title = item.group_name?.trim() || item.title;
+    const normalizedGroupName = (item.group_name || '').trim();
+    const key = normalizedGroupName ? normalizedGroupName.toLowerCase() : `single-${item.id}`;
     const existingIndex = indexByKey.get(key);
 
     if (existingIndex === undefined) {
       groups.push({
         key,
-        title,
+        type: normalizedGroupName ? 'group' : 'single',
+        title: normalizedGroupName || item.title,
         description: item.group_description || item.caption || '',
         coverImageUrl: item.image_url,
+        previewItems: [item],
         categories: item.category ? [item.category] : [],
         items: [item],
       });
@@ -26,6 +29,9 @@ const buildGalleryGroups = (items) => {
 
     const group = groups[existingIndex];
     group.items.push(item);
+    if (group.previewItems.length < 3) {
+      group.previewItems.push(item);
+    }
     if (item.category && !group.categories.includes(item.category)) {
       group.categories.push(item.category);
     }
@@ -106,17 +112,47 @@ export default function Gallery() {
               key={group.key}
               type="button"
               onClick={() => setSelectedGroup(group)}
-              className="group overflow-hidden rounded-[2rem] bg-white text-left shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1"
+              className="group overflow-hidden rounded-[2rem] bg-white text-left shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-72 overflow-hidden bg-slate-100">
-                <img
-                  src={resolveCmsMediaUrl(group.coverImageUrl)}
-                  alt={group.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm">
+                {group.type === 'group' ? (
+                  <div className="relative h-full w-full bg-[radial-gradient(circle_at_top,_rgba(199,88,33,0.18),_transparent_48%),linear-gradient(180deg,#fdf7ef_0%,#f5efe7_100%)] p-5">
+                    <div className="relative h-full">
+                      {group.previewItems.slice(0, 3).reverse().map((item, index) => (
+                        <img
+                          key={item.id}
+                          src={resolveCmsMediaUrl(item.image_url)}
+                          alt={item.alt_text || item.title}
+                          className="absolute left-0 top-0 h-full rounded-[1.5rem] object-cover shadow-xl ring-1 ring-white/80"
+                          style={{
+                            width: `calc(100% - ${index * 26}px)`,
+                            transform: `translate(${index * 18}px, ${index * 12}px) scale(${1 - index * 0.04})`,
+                            zIndex: index + 1,
+                          }}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ))}
+                      <div className="absolute bottom-4 right-4 z-10 inline-flex items-center gap-2 rounded-full bg-slate-900/85 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white shadow-lg">
+                        <Layers3 size={14} /> Group
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <img
+                      src={resolveCmsMediaUrl(group.coverImageUrl)}
+                      alt={group.title}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute bottom-4 right-4 rounded-full bg-white/92 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-700 shadow-sm">
+                      <span className="inline-flex items-center gap-2"><ImageIcon size={14} /> Single</span>
+                    </div>
+                  </>
+                )}
+                <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm">
                   {group.items.length} image{group.items.length > 1 ? 's' : ''}
                 </div>
               </div>
@@ -128,7 +164,10 @@ export default function Gallery() {
                     </span>
                   ))}
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
+                <div className="flex items-start justify-between gap-3">
+                  <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
+                  {group.type === 'group' ? <Images className="mt-1 text-primary" size={18} /> : <ImageIcon className="mt-1 text-primary" size={18} />}
+                </div>
                 {group.description ? <p className="text-sm leading-6 text-slate-600">{group.description}</p> : null}
                 <p className="text-sm font-semibold text-primary">Open gallery</p>
               </div>
@@ -190,13 +229,17 @@ export default function Gallery() {
                         className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 shadow-sm transition hover:bg-white"
                         onClick={() => setSelectedImage(item)}
                       >
-                        Expand
+                        <span className="inline-flex items-center gap-2"><Expand size={13} /> Expand</span>
                       </button>
                     </div>
                     <div className="space-y-3 p-5">
                       <div className="flex flex-wrap gap-2">
                         {item.category ? <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">{item.category}</span> : null}
-                        {item.taken_at ? <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">{formatCmsDate(item.taken_at)}</span> : null}
+                        {item.taken_at ? (
+                          <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                            <CalendarDays size={12} /> {formatCmsDate(item.taken_at)}
+                          </span>
+                        ) : null}
                       </div>
                       <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
                       {item.caption ? <p className="text-sm leading-6 text-slate-600">{item.caption}</p> : null}
@@ -255,14 +298,14 @@ export default function Gallery() {
 
                 {selectedImage.caption ? (
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Caption</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Description</p>
                     <p className="text-sm leading-7 text-white/80">{selectedImage.caption}</p>
                   </div>
                 ) : null}
 
                 {selectedImage.group_description ? (
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Collection Notes</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Collection Note</p>
                     <p className="text-sm leading-7 text-white/80">{selectedImage.group_description}</p>
                   </div>
                 ) : null}
