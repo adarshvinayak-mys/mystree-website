@@ -183,11 +183,11 @@ const MENTAL_HEALTH_CRISIS_TERMS = [
 ];
 
 const BASE_ACTIONS = {
-    book: { id: 'book', label: 'Book Appointment (opens)', kind: 'external', value: BOOKING_URL, ack: 'Opening booking for you now.' },
-    whatsapp: { id: 'whatsapp', label: 'Chat on WhatsApp (opens)', kind: 'external', value: WHATSAPP_URL, ack: 'Opening WhatsApp support now.' },
-    service: { id: 'service-discovery', label: 'Search Services & Doctors', kind: 'reply', value: 'service-discovery' },
-    call: { id: 'call', label: 'Call Clinic Now (Tap to Dial)', kind: 'phone', value: CONTACT_PHONE, ack: 'Connecting your call to My Stree.' },
-    doctors: { id: 'doctors', label: 'View All Specialists', kind: 'navigate', value: '/team', ack: 'Opening our specialists page.' }
+    book: { id: 'book', label: 'Book Appointment', kind: 'external', value: BOOKING_URL, ack: 'Opening booking for you now.' },
+    whatsapp: { id: 'whatsapp', label: 'WhatsApp Support', kind: 'external', value: WHATSAPP_URL, ack: 'Opening WhatsApp support now.' },
+    service: { id: 'service-discovery', label: 'Find Services', kind: 'reply', value: 'service-discovery' },
+    call: { id: 'call', label: 'Call Clinic', kind: 'phone', value: CONTACT_PHONE, ack: 'Connecting your call to My Stree.' },
+    doctors: { id: 'doctors', label: 'Our Specialists', kind: 'navigate', value: '/team', ack: 'Opening our specialists page.' }
 };
 
 const PRIMARY_ACTION_ORDER = ['book', 'whatsapp', 'service', 'call', 'doctors'];
@@ -244,7 +244,7 @@ function createDoctorActions(doctor) {
             ack: `Opening ${doctor.name}'s profile.`
         },
         {
-            label: `Book with ${doctor.name} (opens)`,
+            label: `Book with ${doctor.name}`,
             kind: 'external',
             value: doctor.bookingUrl,
             ack: `Opening booking for ${doctor.name}.`
@@ -716,22 +716,22 @@ export default function ChatButton() {
             )}
 
             {isOpen && (
-                <div className="mb-2 sm:mb-4 w-[min(23rem,calc(100vw-0.75rem))] max-h-[82vh] rounded-2xl sm:rounded-3xl border border-[#8BA4BF]/30 bg-white shadow-[0_18px_40px_rgba(47,62,70,0.2)] overflow-hidden flex flex-col pointer-events-auto">
-                    <div className="px-3.5 py-3 bg-white border-b border-[#8BA4BF]/30 flex items-center justify-between gap-2">
+                <div className="mb-2 sm:mb-4 w-[min(23rem,calc(100vw-0.75rem))] max-h-[82vh] rounded-2xl border border-[#D6E0EA] bg-[#FCFEFF] shadow-[0_20px_45px_rgba(15,23,42,0.16)] overflow-hidden flex flex-col pointer-events-auto">
+                    <div className="px-4 py-3.5 bg-[#FCFEFF] border-b border-[#DCE5EE] flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
                             <span className="w-8 h-8 rounded-full bg-[#ED5B2D] text-white inline-flex items-center justify-center">
                                 <span className="material-symbols-outlined text-[17px]">support_agent</span>
                             </span>
                             <div>
-                                <p className="text-[12px] font-extrabold text-[#2F3E46] leading-tight">MyStree Care Assistant</p>
-                                <p className="text-[10px] text-[#2F3E46]/75 leading-tight">Quick care guidance</p>
+                                <p className="text-[13px] font-extrabold text-[#1E293B] leading-tight tracking-tight">MyStree Care Assistant</p>
+                                <p className="text-[10.5px] text-[#475569] leading-tight">Quick care guidance</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-1">
                             <button
                                 type="button"
                                 onClick={resetChat}
-                                className="w-7 h-7 rounded-full bg-white hover:bg-[#F8FCFF] text-[#2F3E46] inline-flex items-center justify-center transition-colors"
+                                className="w-7 h-7 rounded-full bg-transparent hover:bg-[#F1F5F9] text-[#334155] inline-flex items-center justify-center transition-colors"
                                 aria-label="Reset chat"
                             >
                                 <span className="material-symbols-outlined text-[16px]">refresh</span>
@@ -739,7 +739,7 @@ export default function ChatButton() {
                             <button
                                 type="button"
                                 onClick={() => setIsOpen(false)}
-                                className="w-7 h-7 rounded-full bg-white hover:bg-[#F8FCFF] text-[#2F3E46] inline-flex items-center justify-center transition-colors"
+                                className="w-7 h-7 rounded-full bg-transparent hover:bg-[#F1F5F9] text-[#334155] inline-flex items-center justify-center transition-colors"
                                 aria-label="Close chat"
                             >
                                 <span className="material-symbols-outlined text-[16px]">close</span>
@@ -747,19 +747,19 @@ export default function ChatButton() {
                         </div>
                     </div>
 
-                    <div className="px-3 py-2.5 bg-white border-b border-[#8BA4BF]/20">
-                        <p className="text-[11px] font-semibold text-[#2F3E46]/90 mb-1">Quick access</p>
-                        <div className="grid grid-flow-col auto-cols-max sm:grid-flow-row sm:grid-cols-3 gap-1.5 overflow-x-auto sm:overflow-visible pb-1">
+                    <div className="px-3.5 py-3 bg-[#F8FBFF] border-b border-[#DCE5EE]">
+                        <p className="text-[11px] font-semibold text-[#334155] mb-2">Quick access</p>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                             {getPrimaryQuickActions().map((action) => (
                                 <button
                                     key={`quick-${action.label}`}
                                     type="button"
                                     onClick={() => handleAction(action)}
-                                    className={`px-2.5 py-2 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-semibold text-center transition-all whitespace-nowrap ${action.id === 'book'
-                                        ? 'bg-[#ED5B2D] text-white font-bold hover:brightness-95'
+                                    className={`min-h-[38px] px-3 py-2 rounded-xl text-[10.5px] leading-tight font-semibold text-center transition-all ${action.id === 'book'
+                                        ? 'bg-[#ED5B2D] text-white font-bold shadow-[0_6px_14px_rgba(237,91,45,0.24)] hover:brightness-95'
                                         : action.id === 'whatsapp'
-                                            ? 'bg-[#25D366] text-white font-bold hover:brightness-95'
-                                            : 'bg-white border border-[#8BA4BF]/35 text-[#2F3E46] hover:bg-[#BFE2FE]/45'
+                                            ? 'bg-[#25D366] text-white font-bold shadow-[0_6px_14px_rgba(37,211,102,0.2)] hover:brightness-95'
+                                            : 'bg-white border border-[#C9D7E5] text-[#334155] hover:bg-[#EEF5FC]'
                                         }`}
                                 >
                                     {action.label}
@@ -768,25 +768,25 @@ export default function ChatButton() {
                         </div>
                     </div>
 
-                    <div className="flex-1 min-h-0 overflow-y-auto px-3 py-3 bg-white">
+                    <div className="flex-1 min-h-0 overflow-y-auto px-3.5 py-3 bg-[#F6F9FC]">
                         <div className="space-y-2.5">
                             {messages.map((message) => (
                                 <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div
                                         className={`max-w-[92%] sm:max-w-[90%] px-3 py-2 rounded-2xl shadow-sm ${message.role === 'user'
                                             ? 'bg-[#ED5B2D] text-white rounded-br-md'
-                                            : 'bg-white border border-[#8BA4BF]/25 text-[#2F3E46] rounded-bl-md'
+                                            : 'bg-white border border-[#D4DEE8] text-[#334155] rounded-bl-md'
                                             }`}
                                     >
                                         <p className="text-[12.5px] leading-relaxed">{message.text}</p>
                                         {message.actions?.length > 0 && (
-                                            <div className="mt-2 grid grid-cols-1 sm:flex sm:flex-wrap gap-1.5">
+                                            <div className="mt-2 flex flex-wrap gap-1.5">
                                                 {message.actions.map((action, index) => (
                                                     <button
                                                         key={`${message.id}-${index}-${action.label}`}
                                                         type="button"
                                                         onClick={() => handleAction(action)}
-                                                        className="px-2.5 py-2 sm:py-1.5 rounded-full border border-[#8BA4BF]/35 bg-[#BFE2FE]/35 text-[#2F3E46] text-[10px] sm:text-[10.5px] font-semibold hover:bg-[#BFE2FE]/65 transition-colors w-full sm:w-auto text-left sm:text-center break-words"
+                                                        className="px-2.5 py-1.5 rounded-lg border border-[#C9D7E5] bg-[#EDF4FB] text-[#334155] text-[10.5px] font-semibold hover:bg-[#E3EEF9] transition-colors"
                                                     >
                                                         {action.label}
                                                     </button>
@@ -800,18 +800,18 @@ export default function ChatButton() {
                         </div>
                     </div>
 
-                    <form onSubmit={handleSend} className="px-3 py-3 border-t border-[#8BA4BF]/30 bg-white">
+                    <form onSubmit={handleSend} className="px-3.5 py-3 border-t border-[#DCE5EE] bg-[#FCFEFF]">
                         <div className="flex items-center gap-2">
                             <input
                                 type="text"
                                 value={input}
                                 onChange={(event) => setInput(event.target.value)}
                                 placeholder="Ask about symptoms, services, booking..."
-                                className="flex-1 rounded-full border border-[#8BA4BF]/35 bg-white px-3 py-2 text-[12px] sm:text-[12.5px] text-[#2F3E46] placeholder:text-[#8BA4BF] focus:outline-none focus:ring-2 focus:ring-[#A7C7E7]"
+                                className="flex-1 rounded-full border border-[#C9D7E5] bg-white px-3 py-2 text-[12px] sm:text-[12.5px] text-[#334155] placeholder:text-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#BFD4EA]"
                             />
                             <button
                                 type="submit"
-                                className="w-9 h-9 rounded-full bg-gradient-to-r from-[#ED5B2D] to-[#FF833C] text-white inline-flex items-center justify-center shadow-md hover:brightness-95 transition-all"
+                                className="w-10 h-10 rounded-full bg-[#ED5B2D] text-white inline-flex items-center justify-center shadow-[0_8px_18px_rgba(237,91,45,0.3)] hover:bg-[#db542a] transition-all"
                                 aria-label="Send message"
                             >
                                 <span className="material-symbols-outlined text-[17px]">send</span>
@@ -830,7 +830,7 @@ export default function ChatButton() {
                     setIsOpen((prev) => !prev);
                     setShowWelcomeNudge(false);
                 }}
-                className={`group ${isOpen ? 'hidden sm:inline-flex' : 'inline-flex'} w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-[0_8px_30px_rgb(16,185,129,0.35)] items-center justify-center hover:scale-105 transition-all duration-300 ${!isOpen && showWelcomeNudge ? 'ring-4 ring-[#BFE2FE]/70 ring-offset-2 ring-offset-white' : ''}`}
+                className={`group ${isOpen ? 'hidden sm:inline-flex' : 'inline-flex'} w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-[#ED5B2D] to-[#FF833C] text-white shadow-[0_8px_28px_rgba(237,91,45,0.34)] items-center justify-center hover:scale-105 transition-all duration-300 ${!isOpen && showWelcomeNudge ? 'ring-4 ring-[#FFD8C8]/80 ring-offset-2 ring-offset-white' : ''}`}
                 aria-label={isOpen ? 'Close care assistant chat' : 'Open care assistant chat'}
             >
                 <span className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 inline-flex items-center justify-center backdrop-blur-sm ${!isOpen && showWelcomeNudge ? 'animate-pulse' : ''}`}>
