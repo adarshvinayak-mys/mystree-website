@@ -1,15 +1,5 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-const gallery1 = '/mystreeevent1.webp';
-const gallery2 = '/mystreeevent2.webp';
-const gallery3 = '/mystreeevent3.webp';
-const gallery4 = '/blog/blog1.webp';
-const gallery5 = '/blog/blog2.webp';
-const gallery6 = '/blog/blog3.webp';
-const gallery7 = '/blog/blog4.webp';
-const gallery8 = '/blog/blog5.webp';
-const gallery9 = '/blog/blog6.webp';
-const gallery10 = '/blog/blog7.webp';
 
 const Gallery = () => {
     useEffect(() => {
@@ -22,16 +12,16 @@ const Gallery = () => {
     const categories = ['All', 'Facilities', 'Happy Moms', 'Our Tech', 'Team'];
 
     const galleryItems = [
-        { id: 1, category: 'Facilities', title: 'Modern Reception', image: gallery1 },
-        { id: 2, category: 'Team', title: 'Expert Consultation', image: gallery2 },
-        { id: 3, category: 'Happy Moms', title: 'Joyful Moments', image: gallery3 },
-        { id: 4, category: 'Our Tech', title: 'Advanced Diagnostics', image: gallery4 },
-        { id: 5, category: 'Our Tech', title: 'Clinical Precision', image: gallery5 },
-        { id: 6, category: 'Team', title: 'Care Coordination', image: gallery6 },
-        { id: 7, category: 'Facilities', title: 'Serene Hallways', image: gallery7 },
-        { id: 8, category: 'Facilities', title: 'Patient Suites', image: gallery8 },
-        { id: 9, category: 'Facilities', title: 'Therapeutic Lounges', image: gallery9 },
-        { id: 10, category: 'Facilities', title: 'Wellness Spaces', image: gallery10 }
+        { id: 1, category: 'Facilities', title: 'Modern Reception', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.18.jpeg" },
+        { id: 2, category: 'Team', title: 'Expert Consultation', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19%20(1).jpeg" },
+        { id: 3, category: 'Happy Moms', title: 'Joyful Moments', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19.jpeg" },
+        { id: 4, category: 'Our Tech', title: 'Advanced Diagnostics', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20%20(1).jpeg" },
+        { id: 5, category: 'Our Tech', title: 'Clinical Precision', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20.jpeg" },
+        { id: 6, category: 'Team', title: 'Care Coordination', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21%20(2).jpeg" },
+        { id: 7, category: 'Facilities', title: 'Serene Hallways', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21%20(1).jpeg" },
+        { id: 8, category: 'Facilities', title: 'Patient Suites', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.21.jpeg" },
+        { id: 9, category: 'Facilities', title: 'Therapeutic Lounges', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.22%20(1).jpeg" },
+        { id: 10, category: 'Facilities', title: 'Wellness Spaces', image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.22.jpeg" }
     ];
 
     const filteredItems = filter === 'All' ? galleryItems : galleryItems.filter(item => item.category === filter);
@@ -93,7 +83,7 @@ const Gallery = () => {
                                     onClick={() => setSelectedImage(item)}
                                     className="relative group overflow-hidden rounded-[2.5rem] cursor-pointer break-inside-avoid shadow-sm"
                                 >
-                                    <img src={item.image} alt={item.title} className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+                                    <img src={item.image} alt={item.title} className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center text-center p-8 backdrop-blur-sm">
                                         <span className="material-symbols-outlined text-white text-5xl mb-4">zoom_in</span>
                                         <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
@@ -137,8 +127,6 @@ const Gallery = () => {
                                 src={selectedImage.image}
                                 alt={selectedImage.title}
                                 className="w-full h-full object-contain rounded-2xl shadow-2xl"
-                                loading="eager"
-                                decoding="async"
                             />
                             <div className="mt-6 text-center">
                                 <h3 className="text-2xl font-bold text-white mb-1 font-serif">{selectedImage.title}</h3>
@@ -160,12 +148,12 @@ const Gallery = () => {
                         </div>
                         <div className="md:w-2/3 space-y-12">
                             {[
-                                { title: "Patient Success: Overcoming PCOS", date: "Jan 12", image: gallery3 },
-                                { title: "Clinical Standards in Lab Care", date: "Jan 05", image: gallery4 }
+                                { title: "Patient Success: Overcoming PCOS", date: "Jan 12", image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.19.jpeg" },
+                                { title: "Clinical Standards in Lab Care", date: "Jan 05", image: "https://my-stree.com/assets/gallery/WhatsApp%20Image%202026-01-05%20at%2011.54.20%20(1).jpeg" }
                             ].map((p, i) => (
                                 <motion.div key={i} whileHover={{ x: 10 }} className="flex gap-8 group cursor-pointer">
                                     <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-md">
-                                        <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform group-hover:scale-110" loading="lazy" decoding="async" />
+                                        <img src={p.image} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
                                     </div>
                                     <div className="flex flex-col justify-center">
                                         <span className="text-slate-400 text-xs font-bold mb-2 uppercase">{p.date} • Featured Post</span>

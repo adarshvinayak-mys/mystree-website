@@ -1,27 +1,27 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import doctor1 from '../assets/supabase/doctor1.webp'; // Dr. Surbhi
-import doctor2 from '../assets/supabase/doctor2.jpg'; // Dr. Smitha
-import doctor3 from '../assets/supabase/doctor3.webp'; // Priyanka
-import doctorChaitra from '../assets/supabase/DrChaitraNayak.jpg';
-import eggFreezing1 from '../assets/supabase/egg_freezing_1.png';
-import eggFreezing2 from '../assets/supabase/egg_freezing_2.png';
-import eggFreezing3 from '../assets/supabase/egg_freezing_3.png';
-import blog1 from '../assets/supabase/blog1.jpg';
-import blog2 from '../assets/supabase/blog2.jpg';
-import blog3 from '../assets/supabase/blog3.jpg';
-import blog4 from '../assets/supabase/blog4.jpg';
-import blog5 from '../assets/supabase/blog5.jpg';
-import blog6 from '../assets/supabase/blog6.jpg';
-import blog7 from '../assets/supabase/blog7.jpg';
-import blog8 from '../assets/supabase/blog8.jpg';
-import blog9 from '../assets/supabase/blog9.jpg';
-import blog10 from '../assets/supabase/blog10.jpg';
-import mystreee1 from '../assets/supabase/mystreee1.jpg';
-import doctorPri from '../assets/supabase/drpriya.jpeg';
+import doctor1 from '../assets/doctor1.jpg'; // Dr. Surbhi
+import doctor2 from '../assets/doctor2.jpg'; // Dr. Smitha
+import doctor3 from '../assets/doctor3.jpg'; // Priyanka
+import doctorChaitra from '../assets/DrChaitraNayak.jpg';
+import eggFreezing1 from '../assets/blog/egg_freezing_1.png';
+import eggFreezing2 from '../assets/blog/egg_freezing_2.png';
+import eggFreezing3 from '../assets/blog/egg_freezing_3.png';
+import blog1 from '../assets/blog/blog1.jpg';
+import blog2 from '../assets/blog/blog2.jpg';
+import blog3 from '../assets/blog/blog3.jpg';
+import blog4 from '../assets/blog/blog4.jpg';
+import blog5 from '../assets/blog/blog5.jpg';
+import blog6 from '../assets/blog/blog6.jpg';
+import blog7 from '../assets/blog/blog7.jpg';
+import blog8 from '../assets/blog/blog8.jpg';
+import blog9 from '../assets/blog/blog9.jpg';
+import blog10 from '../assets/blog/blog10.jpg';
+import mystreee1 from '../assets/blog/mystreee1.jpg';
+import doctorPri from '../assets/drpriya.jpeg';
 // Reuse imported doctorChaitra for the first new blog
-const doctorJasmineUrl = '/drjasmineflora.webp';
+const doctorJasmineUrl = "https://my-stree.com/assets/doctors/Dr-Jasmine-Flora.png";
 
 export default function BlogAndCommunity() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -208,13 +208,13 @@ export default function BlogAndCommunity() {
     });
 
     return (
-        <div className="bg-[#FCF4D9] text-[#2F3E46] font-body antialiased ">
+        <div className="bg-ivory text-text-main font-body antialiased pb-32 lg:pb-0">
             {/* Massive Hero Section for Featured Editorial */}
-            <section className="relative w-full min-h-[85vh] flex flex-col justify-center bg-[#BFE2FE] group cursor-pointer overflow-hidden pt-36 pb-24 lg:py-32" onClick={() => { setIsModalOpen(true); setCurrentSlide(0); }}>
+            <section className="relative w-full min-h-[85vh] flex flex-col justify-center bg-[#0a0a0a] group cursor-pointer overflow-hidden pt-36 pb-24 lg:py-32" onClick={() => { setIsModalOpen(true); setCurrentSlide(0); }}>
                 {/* Background Decorative */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 right-0 w-[600px] lg:w-[800px] h-[600px] lg:h-[800px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
-                    <div className="absolute bottom-0 left-0 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-[#E97451]/12 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+                    <div className="absolute bottom-0 left-0 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-secondary/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
                 </div>
 
                 {/* Content Layout */}
@@ -223,34 +223,34 @@ export default function BlogAndCommunity() {
                         {/* Text Content */}
                         <div className="w-full lg:w-1/2 text-left order-2 lg:order-1">
                             <div className="flex flex-wrap items-center gap-4 mb-6 sm:mb-8">
-                                <span className="px-4 py-1.5 bg-[#ED5B2D]/15 backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-[#2F3E46] rounded-full border border-[#ED5B2D]/35 shadow-sm">
+                                <span className="px-4 py-1.5 bg-primary/20 backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-white rounded-full border border-primary/30 shadow-sm">
                                     Featured Editorial
                                 </span>
-                                <span className="text-[#8BA4BF] text-sm font-medium tracking-wide border-l border-[#8BA4BF]/50 pl-4">Oct 24, 2023</span>
+                                <span className="text-white/60 text-sm font-medium tracking-wide border-l border-white/20 pl-4">Oct 24, 2023</span>
                             </div>
 
-                            <h1 className="font-display text-5xl sm:text-6xl lg:text-[72px] text-[#2F3E46] leading-[1.05] tracking-tight mb-6 sm:mb-8 group-hover:text-[#ED5B2D] transition-colors duration-500">
+                            <h1 className="font-display text-5xl sm:text-6xl lg:text-[72px] text-white leading-[1.05] tracking-tight mb-6 sm:mb-8 group-hover:text-primary transition-colors duration-500">
                                 Egg Freezing: <br />
-                                <span className="italic font-light text-[#ED5B2D]">Is It Worth The Hype?</span>
+                                <span className="italic font-light text-primary">Is It Worth The Hype?</span>
                             </h1>
 
-                            <p className="text-lg md:text-xl text-[#5A7070] font-light mb-8 sm:mb-10 leading-relaxed max-w-xl">
+                            <p className="text-lg md:text-xl text-gray-300 font-light mb-8 sm:mb-10 leading-relaxed max-w-xl">
                                 The pause in biological ageing offers hope for women balancing personal and professional goals. But what lies beneath the reward? We explore the treatment, outcomes, and emotions behind the decision.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
                                 <button
-                                    className="flex items-center justify-center gap-3 bg-[#ED5B2D] text-white group-hover:bg-[#FF833C] transition-all duration-300 px-8 py-4 sm:py-5 rounded-full font-bold text-base shadow-xl"
+                                    className="flex items-center justify-center gap-3 bg-white text-gray-900 group-hover:bg-primary group-hover:text-white transition-all duration-300 px-8 py-4 sm:py-5 rounded-full font-bold text-base shadow-xl"
                                     onClick={(e) => { e.stopPropagation(); setIsModalOpen(true); setCurrentSlide(0); }}
                                 >
                                     Read Full Article <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
                                 </button>
 
                                 <div className="flex items-center gap-4">
-                                    <img src={doctor2} alt="Dr. Smitha A.P." className="w-12 h-12 rounded-full object-cover border-2 border-[#8BA4BF]/40" loading="lazy" decoding="async" />
+                                    <img src={doctor2} alt="Dr. Smitha A.P." className="w-12 h-12 rounded-full object-cover border-2 border-white/20" loading="lazy" decoding="async" />
                                     <div>
-                                        <p className="font-bold text-[#2F3E46] text-sm">Dr. Smitha A.P.</p>
-                                        <p className="text-xs text-[#ED5B2D] uppercase tracking-wider font-bold">Chief Medical Officer</p>
+                                        <p className="font-bold text-white text-sm">Dr. Smitha A.P.</p>
+                                        <p className="text-xs text-primary uppercase tracking-wider font-bold">Chief Medical Officer</p>
                                     </div>
                                 </div>
                             </div>
@@ -258,14 +258,13 @@ export default function BlogAndCommunity() {
 
                         {/* Image Container */}
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
-                            <div className="relative w-full rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(139,164,191,0.45)] border border-[#8BA4BF]/30 bg-[#FCF4D9] group-hover:-translate-y-2 transition-transform duration-500">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 bg-[#f7f5ef] group-hover:-translate-y-2 transition-transform duration-500">
                                 <img
                                     src={blog1}
                                     alt="Egg Freezing Article"
-                                    className="w-full h-auto object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
+                                    className="w-full h-full object-cover object-center transform transition-transform duration-[2s] ease-out group-hover:scale-105"
                                     fetchPriority="high"
                                     decoding="sync"
-                                    loading="eager"
                                 />
                             </div>
                         </div>
@@ -274,7 +273,7 @@ export default function BlogAndCommunity() {
             </section>
 
             {/* Filter & Search Bar */}
-            <section className="py-8 bg-[#FCF4D9] border-b border-[#8BA4BF]/40 sticky top-20 z-40 shadow-sm">
+            <section className="py-8 bg-white border-b border-gray-200 sticky top-20 z-40 shadow-sm">
                 <div className="container px-6 mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 space-y-4 md:space-y-0">
                         <div className="flex items-center gap-3 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -306,7 +305,7 @@ export default function BlogAndCommunity() {
             </section>
 
             {/* Articles Grid */}
-            <section className="py-20 bg-[#BFE2FE]/55">
+            <section className="py-20 bg-background-light">
                 <div className="container px-6 mx-auto">
                     <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
                         {filteredArticles.length > 0 ? (
@@ -340,13 +339,13 @@ export default function BlogAndCommunity() {
                         )}
                     </div>
                     <div className="mt-16 text-center">
-                        <button className="px-8 py-3 border border-[#8BA4BF]/50 text-[#5A7070] font-bold uppercase tracking-widest text-xs rounded hover:border-[#ED5B2D] hover:text-[#ED5B2D] transition-colors hover:bg-[#BFE2FE]/40">Load More Stories</button>
+                        <button className="px-8 py-3 border border-gray-300 text-gray-600 font-bold uppercase tracking-widest text-xs rounded hover:border-primary hover:text-primary transition-colors hover:bg-orange-50">Load More Stories</button>
                     </div>
                 </div>
             </section>
 
             {/* Quote Section */}
-            <section className="py-24 bg-[#FCF4D9] border-y border-[#8BA4BF]/35">
+            <section className="py-24 bg-white border-y border-gray-100">
                 <div className="container px-6 mx-auto">
                     <div className="max-w-4xl mx-auto text-center relative">
                         <span className="material-symbols-outlined text-6xl text-primary/10 absolute -top-10 -left-10 lg:-left-20 rotate-180">format_quote</span>
@@ -364,7 +363,7 @@ export default function BlogAndCommunity() {
             </section>
 
             {/* Community Circles */}
-            <section className="py-24 bg-[#BFE2FE]/45">
+            <section className="py-24 bg-background-light">
                 <div className="container px-6 mx-auto">
                     <div className="flex justify-between items-end mb-12">
                         <div>
@@ -377,44 +376,44 @@ export default function BlogAndCommunity() {
                     </div>
                     <div className="grid lg:grid-cols-3 gap-8">
                         {/* Card 1 */}
-                        <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
+                        <div className="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Virtual</div>
+                                <div className="bg-secondary/10 text-secondary px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Virtual</div>
                                 <span className="text-gray-400 text-sm font-bold">Nov 15</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">PCOS Support Circle</h3>
                             <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">A safe, judgment-free space to share experiences and learn management strategies from Dr. Surbhi Sinha.</p>
                             <div className="mt-auto border-t border-gray-50 pt-6 flex justify-between items-center">
                                 <span className="text-xs text-gray-400 font-medium">10:00 AM - 11:30 AM EST</span>
-                                <button className="bg-[#ED5B2D] text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#FF833C] transition-colors">RSVP</button>
+                                <button className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary transition-colors">RSVP</button>
                             </div>
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
+                        <div className="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="bg-[#FF833C]/15 text-[#ED5B2D] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">In-Person</div>
+                                <div className="bg-orange-50 text-orange-800 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">In-Person</div>
                                 <span className="text-gray-400 text-sm font-bold">Nov 22</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">Prenatal Yoga Workshop</h3>
                             <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">Join our certified wellness lead for a gentle session focusing on breathwork and pelvic floor health.</p>
                             <div className="mt-auto border-t border-gray-50 pt-6 flex justify-between items-center">
                                 <span className="text-xs text-gray-400 font-medium">9:00 AM - 10:30 AM</span>
-                                <button className="bg-[#ED5B2D] text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#FF833C] transition-colors">RSVP</button>
+                                <button className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary transition-colors">RSVP</button>
                             </div>
                         </div>
 
                         {/* Card 3 */}
-                        <div className="bg-[#FCF4D9] rounded-2xl border border-[#8BA4BF]/35 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
+                        <div className="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl transition-shadow flex flex-col h-full group">
                             <div className="flex justify-between items-start mb-6">
-                                <div className="bg-[#E97451]/15 text-[#E97451] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Webinar</div>
+                                <div className="bg-secondary/10 text-secondary px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Webinar</div>
                                 <span className="text-gray-400 text-sm font-bold">Dec 05</span>
                             </div>
                             <h3 className="font-display text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors">Fertility Facts & Myths</h3>
                             <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">Demystifying reproductive health with our expert panel. Q&A session included for all attendees.</p>
                             <div className="mt-auto border-t border-gray-50 pt-6 flex justify-between items-center">
                                 <span className="text-xs text-gray-400 font-medium">6:00 PM - 7:00 PM EST</span>
-                                <button className="bg-[#ED5B2D] text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#FF833C] transition-colors">RSVP</button>
+                                <button className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary transition-colors">RSVP</button>
                             </div>
                         </div>
                     </div>
@@ -426,6 +425,25 @@ export default function BlogAndCommunity() {
                 </div>
             </section>
 
+            {/* Newsletter */}
+            <section className="bg-white py-20 border-t border-gray-100">
+                <div className="container px-6 mx-auto">
+                    <div className="bg-corn-silk/50 rounded-2xl p-10 lg:p-16 text-center border border-orange-100 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100/50 rounded-full blur-3xl -mr-10 -mt-10"></div>
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -ml-10 -mb-10"></div>
+                        <div className="relative z-10">
+                            <h2 className="font-display text-3xl lg:text-5xl text-gray-900 mb-4">Stay Informed. Stay Empowered.</h2>
+                            <p className="text-gray-500 mb-8 max-w-lg mx-auto">Get the latest medical insights, community stories, and wellness tips delivered directly to your inbox.</p>
+                            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                                <input className="flex-grow px-5 py-3 rounded-lg bg-white border border-gray-200 text-gray-800 focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder-gray-400 text-sm shadow-sm outline-none" placeholder="Enter your email address" required="" type="email" />
+                                <button className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-orange-700 transition-colors shadow-lg shadow-orange-500/30" type="submit">Subscribe</button>
+                            </form>
+                            <p className="text-xs text-gray-400 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Carousel Modal */}
             <AnimatePresence>
                 {isModalOpen && (
@@ -433,14 +451,14 @@ export default function BlogAndCommunity() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#8BA4BF]/90 backdrop-blur-xl p-4 lg:p-12"
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl p-4 lg:p-12"
                         onClick={closeModal}
                     >
                         <div className="relative w-full max-w-5xl h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
                             {/* Close Button */}
                             <button
                                 onClick={closeModal}
-                                className="absolute top-4 right-4 z-20 text-[#FCF4D9]/80 hover:text-[#FCF4D9] transition-colors bg-[#2F3E46]/35 rounded-full p-2"
+                                className="absolute top-4 right-4 z-20 text-white/50 hover:text-white transition-colors bg-black/50 rounded-full p-2"
                             >
                                 <span className="material-symbols-outlined text-3xl">close</span>
                             </button>
@@ -512,7 +530,7 @@ export default function BlogAndCommunity() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#8BA4BF]/70 backdrop-blur-sm p-4 sm:p-6 lg:p-12"
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 sm:p-6 lg:p-12"
                         onClick={() => setSelectedArticle(null)}
                     >
                         <motion.div
@@ -520,7 +538,7 @@ export default function BlogAndCommunity() {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: 50, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-[#FCF4D9] rounded-3xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
+                            className="bg-white rounded-3xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Close Button */}
@@ -534,7 +552,7 @@ export default function BlogAndCommunity() {
                             <div className="overflow-y-auto custom-scrollbar flex-1 pb-12">
                                 <div className="w-full h-[30vh] sm:h-[40vh] relative">
                                     <img src={selectedArticle.image} alt={selectedArticle.title} className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#8BA4BF]/70 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     <div className="absolute bottom-6 left-6 right-6">
                                         <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-xs font-bold uppercase tracking-wider text-white rounded-md mb-3 inline-block">
                                             {selectedArticle.category}
