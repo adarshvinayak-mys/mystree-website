@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchCmsJson, formatCmsDate, resolveCmsMediaUrl } from '../lib/cmsApi';
 
 const fallbackHero = '/sanctuary_hero_bg_v2_1771307980803.webp';
@@ -26,17 +26,15 @@ export default function UpcomingEvents() {
       .finally(() => setLoading(false));
   }, []);
 
-  const hero = useMemo(() => events[0] || null, [events]);
-
   return (
     <div className="min-h-screen bg-[#FCF4D9] text-[#1b110e]">
       <section className="relative min-h-[56vh] overflow-hidden px-6 py-24 text-white md:px-10 lg:px-20">
         <div className="absolute inset-0 bg-black/45" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${resolveCmsMediaUrl(hero?.cover_image_url) || fallbackHero})` }}
+          style={{ backgroundImage: `url(${fallbackHero})` }}
         />
-        <div className="relative z-10 mx-auto max-w-5xl pt-16">
+        <div className="relative z-10 mx-auto max-w-5xl pt-16 [text-shadow:0_2px_12px_rgba(0,0,0,0.35)]">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">Events</p>
           <h1 className="max-w-3xl text-5xl font-black leading-tight md:text-7xl">Gatherings, workshops, and community-led healing spaces</h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85 md:text-xl">
