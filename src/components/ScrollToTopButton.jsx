@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTopButton() {
+    const location = useLocation();
     const [isVisible, setIsVisible] = useState(false);
     const [isChatOpen, setIsChatOpen] = useState(false);
+    const [isFooterVisible, setIsFooterVisible] = useState(false);
 
     // Show button when page is scrolled down
     const toggleVisibility = () => {
@@ -27,6 +30,19 @@ export default function ScrollToTopButton() {
     }, []);
 
     useEffect(() => {
+        const footer = document.querySelector('.ms-footer');
+        if (!footer) return undefined;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsFooterVisible(entry.isIntersecting),
+            { threshold: 0.08 }
+        );
+
+        observer.observe(footer);
+        return () => observer.disconnect();
+    }, [location.pathname]);
+
+    useEffect(() => {
         const onChatToggle = (event) => {
             setIsChatOpen(Boolean(event.detail?.open));
         };
@@ -36,7 +52,7 @@ export default function ScrollToTopButton() {
     }, []);
 
     return (
-        <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40">
+        <div className={`fixed right-4 md:right-6 z-40 transition-all duration-300 ${isFooterVisible ? 'bottom-40 md:bottom-44' : 'bottom-20 md:bottom-24'}`}>
             <button
                 type="button"
                 onClick={scrollToTop}

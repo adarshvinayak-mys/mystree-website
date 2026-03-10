@@ -3,7 +3,6 @@ import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ChatButton from './components/ChatButton';
-import GlobalHealthCTAButton from './components/GlobalHealthCTAButton';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import LaunchCountdownWidget from './components/LaunchCountdownWidget';
 const Home = lazy(() => import('./pages/Home'));
@@ -275,7 +274,6 @@ function AppContent() {
         </Suspense>
       </main>
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <Footer />}
-      {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <GlobalHealthCTAButton />}
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ScrollToTopButton />}
       {!location.pathname.startsWith('/mystree-soul') && !location.pathname.startsWith('/soul-triage') && <ChatButton />}
       {location.pathname === '/' && <LaunchCountdownWidget />}
