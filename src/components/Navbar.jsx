@@ -131,7 +131,7 @@ export default function Navbar() {
                             </button>
                             <div className="absolute top-full left-0 w-48 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
                                 <ul className="space-y-1">
-                                    <li><Link to="/showcase/events" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/events' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Upcoming Events</Link></li>
+                                    <li><Link to="/showcase/events" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/events' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Events</Link></li>
                                     <li><Link to="/showcase/gallery" className={`block px-4 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 text-slate-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-semibold text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary bg-orange-50 dark:bg-slate-700' : ''}`}>Gallery</Link></li>
                                 </ul>
                             </div>
@@ -238,7 +238,7 @@ export default function Navbar() {
                                     animate={{ height: isShowcaseOpen ? 'auto' : 0, opacity: isShowcaseOpen ? 1 : 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <Link to="/showcase/events" className={`block py-2 pl-4 text-sm ${location.pathname === '/showcase/events' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Upcoming Events</Link>
+                                    <Link to="/showcase/events" className={`block py-2 pl-4 text-sm ${location.pathname === '/showcase/events' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Events</Link>
                                     <Link to="/showcase/gallery" className={`block py-2 pl-4 text-sm ${location.pathname === '/showcase/gallery' ? 'text-primary font-bold' : 'text-slate-600 dark:text-gray-400 hover:text-primary'}`} onClick={() => setIsOpen(false)}>Gallery</Link>
                                 </motion.div>
                             </div>
