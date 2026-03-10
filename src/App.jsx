@@ -24,6 +24,7 @@ const UpcomingEvents = lazy(() => import('./pages/UpcomingEvents'));
 const Contact = lazy(() => import('./pages/Contact'));
 const BookingGateway = lazy(() => import('./pages/BookingGateway'));
 const BlogAndCommunity = lazy(() => import('./pages/BlogAndCommunity'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 const SoulTriage = lazy(() => import('./pages/SoulTriage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
@@ -239,7 +240,7 @@ function AppContent() {
     if (pathname === '/showcase/events') return 'page-font-events';
     if (pathname === '/contact') return 'page-font-contact';
     if (pathname === '/booking-gateway') return 'page-font-contact';
-    if (pathname === '/blog') return 'page-font-blog';
+    if (pathname === '/blog' || pathname.startsWith('/blog/')) return 'page-font-blog';
     if (pathname === '/mystree-soul') return 'page-font-soul';
     return 'page-font-home';
   };
@@ -268,6 +269,7 @@ function AppContent() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/booking-gateway" element={<BookingGateway />} />
             <Route path="/blog" element={<BlogAndCommunity />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/mystree-soul" element={<SoulTriage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
