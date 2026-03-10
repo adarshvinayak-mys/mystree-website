@@ -10,6 +10,23 @@
     Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: https: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.fly.dev; frame-src https://www.google.com https://maps.google.com; upgrade-insecure-requests"
   }
 
+  @legacy_admin_login path /booking/admin-login
+  redir @legacy_admin_login /admin/login 308
+
+  @legacy_admin path_regexp legacy_admin ^/booking/admin(?P<rest>/?.*)$
+  redir @legacy_admin /admin{re.legacy_admin.rest} 308
+
+  @admin path /admin /admin/*
+  handle @admin {
+    header X-Robots-Tag "noindex, nofollow"
+    basic_auth {
+      {$ADMIN_GATE_USER} {$ADMIN_GATE_HASH}
+    }
+    reverse_proxy https://booking-frontend.fly.dev {
+      header_up Host booking-frontend.fly.dev
+    }
+  }
+
   @booking path /booking /booking/*
   handle @booking {
     reverse_proxy https://booking-frontend.fly.dev {
