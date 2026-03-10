@@ -32,7 +32,7 @@ export default function UpcomingEvents() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">Upcoming Events</p>
           <h1 className="max-w-3xl text-5xl font-black leading-tight md:text-7xl">Gatherings, workshops, and community-led healing spaces</h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85 md:text-xl">
-            Live event programming is now powered from the admin panel. Published updates appear here automatically.
+            Discover upcoming workshops, conversations, and community gatherings curated around women’s health and wellbeing.
           </p>
         </div>
       </section>

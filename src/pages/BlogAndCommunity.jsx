@@ -37,7 +37,7 @@ export default function BlogAndCommunity() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Blog & Community</p>
           <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight md:text-7xl">Stories, insights, and clinical perspectives from MyStree</h1>
           <p className="mt-6 max-w-2xl text-lg text-[#5A7070]">
-            Published posts from the admin panel appear here automatically. Search by title, excerpt, or author.
+            Explore thoughtful articles, expert perspectives, and community stories across women’s health, healing, and care.
           </p>
           <div className="mt-8 max-w-md">
             <input

@@ -1,10 +1,46 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { fetchCmsJson, resolveCmsMediaUrl } from '../lib/cmsApi';
+import { fetchCmsJson, formatCmsDate, resolveCmsMediaUrl } from '../lib/cmsApi';
+
+const buildGalleryGroups = (items) => {
+  const groups = [];
+  const indexByKey = new Map();
+
+  items.forEach((item) => {
+    const key = (item.group_name || '').trim().toLowerCase() || `single-${item.id}`;
+    const title = item.group_name?.trim() || item.title;
+    const existingIndex = indexByKey.get(key);
+
+    if (existingIndex === undefined) {
+      groups.push({
+        key,
+        title,
+        description: item.group_description || item.caption || '',
+        coverImageUrl: item.image_url,
+        categories: item.category ? [item.category] : [],
+        items: [item],
+      });
+      indexByKey.set(key, groups.length - 1);
+      return;
+    }
+
+    const group = groups[existingIndex];
+    group.items.push(item);
+    if (item.category && !group.categories.includes(item.category)) {
+      group.categories.push(item.category);
+    }
+    if (!group.description && (item.group_description || item.caption)) {
+      group.description = item.group_description || item.caption || '';
+    }
+  });
+
+  return groups;
+};
 
 export default function Gallery() {
   const [items, setItems] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -17,12 +53,17 @@ export default function Gallery() {
       .finally(() => setLoading(false));
   }, []);
 
+  const groups = useMemo(() => buildGalleryGroups(items), [items]);
+
   const categories = useMemo(() => {
     const values = Array.from(new Set(items.map((item) => item.category).filter(Boolean)));
     return ['All', ...values];
   }, [items]);
 
-  const filteredItems = filter === 'All' ? items : items.filter((item) => item.category === filter);
+  const filteredGroups = useMemo(() => {
+    if (filter === 'All') return groups;
+    return groups.filter((group) => group.categories.includes(filter));
+  }, [filter, groups]);
 
   return (
     <div className="min-h-screen bg-[#fffaf2] pb-24 text-slate-900">
@@ -32,7 +73,7 @@ export default function Gallery() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">Gallery</p>
           <h1 className="mt-4 text-5xl font-black tracking-tight md:text-7xl">Moments, spaces, and stories from MyStree</h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-            Published gallery items from the admin panel appear here automatically.
+            A visual archive of the clinic, community moments, and the spaces that shape the MyStree experience.
           </p>
         </div>
       </header>
@@ -53,31 +94,43 @@ export default function Gallery() {
 
         {loading ? <p className="text-sm text-slate-500">Loading gallery...</p> : null}
         {error ? <p className="text-sm text-red-600">{error}</p> : null}
-        {!loading && !error && !filteredItems.length ? (
+        {!loading && !error && !filteredGroups.length ? (
           <div className="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
             No published gallery items yet.
           </div>
         ) : null}
 
-        <div className="columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3">
-          {filteredItems.map((item) => (
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {filteredGroups.map((group) => (
             <button
-              key={item.id}
+              key={group.key}
               type="button"
-              onClick={() => setSelectedImage(item)}
-              className="group block w-full break-inside-avoid overflow-hidden rounded-[2rem] bg-white text-left shadow-sm ring-1 ring-slate-200"
+              onClick={() => setSelectedGroup(group)}
+              className="group overflow-hidden rounded-[2rem] bg-white text-left shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1"
             >
-              <img
-                src={resolveCmsMediaUrl(item.image_url)}
-                alt={item.alt_text || item.title}
-                className="h-auto w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="space-y-2 p-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">{item.category || 'Gallery'}</div>
-                <h2 className="text-xl font-bold text-slate-900">{item.title}</h2>
-                {item.caption ? <p className="text-sm leading-6 text-slate-600">{item.caption}</p> : null}
+              <div className="relative h-72 overflow-hidden bg-slate-100">
+                <img
+                  src={resolveCmsMediaUrl(group.coverImageUrl)}
+                  alt={group.title}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm">
+                  {group.items.length} image{group.items.length > 1 ? 's' : ''}
+                </div>
+              </div>
+              <div className="space-y-3 p-6">
+                <div className="flex flex-wrap gap-2">
+                  {group.categories.map((category) => (
+                    <span key={`${group.key}-${category}`} className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+                      {category}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="text-2xl font-bold text-slate-900">{group.title}</h2>
+                {group.description ? <p className="text-sm leading-6 text-slate-600">{group.description}</p> : null}
+                <p className="text-sm font-semibold text-primary">Open gallery</p>
               </div>
             </button>
           ))}
@@ -85,26 +138,141 @@ export default function Gallery() {
       </section>
 
       <AnimatePresence>
+        {selectedGroup ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] overflow-y-auto bg-black/70 p-4 md:p-8"
+            onClick={() => {
+              setSelectedImage(null);
+              setSelectedGroup(null);
+            }}
+          >
+            <motion.div
+              initial={{ y: 24, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 24, opacity: 0 }}
+              className="mx-auto max-w-6xl rounded-[2rem] bg-white shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-6 py-5 md:px-8">
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Gallery Collection</p>
+                  <h2 className="text-3xl font-black text-slate-900">{selectedGroup.title}</h2>
+                  {selectedGroup.description ? <p className="max-w-2xl text-sm leading-6 text-slate-600">{selectedGroup.description}</p> : null}
+                </div>
+                <button
+                  type="button"
+                  className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+                  onClick={() => {
+                    setSelectedImage(null);
+                    setSelectedGroup(null);
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="grid gap-5 p-6 md:grid-cols-2 xl:grid-cols-3 md:p-8">
+                {selectedGroup.items.map((item) => (
+                  <article key={item.id} className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[#fffaf2] shadow-sm">
+                    <div className="relative h-64 overflow-hidden bg-slate-100">
+                      <img
+                        src={resolveCmsMediaUrl(item.image_url)}
+                        alt={item.alt_text || item.title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <button
+                        type="button"
+                        className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-700 shadow-sm transition hover:bg-white"
+                        onClick={() => setSelectedImage(item)}
+                      >
+                        Expand
+                      </button>
+                    </div>
+                    <div className="space-y-3 p-5">
+                      <div className="flex flex-wrap gap-2">
+                        {item.category ? <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">{item.category}</span> : null}
+                        {item.taken_at ? <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">{formatCmsDate(item.taken_at)}</span> : null}
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                      {item.caption ? <p className="text-sm leading-6 text-slate-600">{item.caption}</p> : null}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {selectedImage ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+            className="fixed inset-0 z-[110] overflow-y-auto bg-black/90 p-4 md:p-8"
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="max-w-5xl overflow-hidden rounded-[2rem] bg-white shadow-2xl"
+              exit={{ scale: 0.96, opacity: 0 }}
+              className="mx-auto grid max-w-6xl gap-0 overflow-hidden rounded-[2rem] bg-[#111] shadow-2xl lg:grid-cols-[1.2fr_0.8fr]"
               onClick={(event) => event.stopPropagation()}
             >
-              <img src={resolveCmsMediaUrl(selectedImage.image_url)} alt={selectedImage.alt_text || selectedImage.title} className="max-h-[70vh] w-full object-cover" />
-              <div className="space-y-2 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">{selectedImage.category || 'Gallery'}</p>
-                <h2 className="text-2xl font-bold text-slate-900">{selectedImage.title}</h2>
-                {selectedImage.caption ? <p className="text-sm leading-6 text-slate-600">{selectedImage.caption}</p> : null}
+              <div className="flex items-center justify-center bg-black p-4 md:p-8">
+                <img
+                  src={resolveCmsMediaUrl(selectedImage.image_url)}
+                  alt={selectedImage.alt_text || selectedImage.title}
+                  className="max-h-[75vh] w-full rounded-[1.5rem] object-contain"
+                />
+              </div>
+              <div className="space-y-5 bg-[#171717] p-6 text-white md:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Image Details</p>
+                    <h3 className="text-3xl font-black">{selectedImage.title}</h3>
+                  </div>
+                  <button
+                    type="button"
+                    className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/5"
+                    onClick={() => setSelectedImage(null)}
+                  >
+                    Close
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {selectedImage.group_name ? <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">{selectedImage.group_name}</span> : null}
+                  {selectedImage.category ? <span className="rounded-full bg-primary/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">{selectedImage.category}</span> : null}
+                  {selectedImage.taken_at ? <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">{formatCmsDate(selectedImage.taken_at)}</span> : null}
+                </div>
+
+                {selectedImage.caption ? (
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Caption</p>
+                    <p className="text-sm leading-7 text-white/80">{selectedImage.caption}</p>
+                  </div>
+                ) : null}
+
+                {selectedImage.group_description ? (
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Collection Notes</p>
+                    <p className="text-sm leading-7 text-white/80">{selectedImage.group_description}</p>
+                  </div>
+                ) : null}
+
+                {selectedImage.alt_text ? (
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Alt Text</p>
+                    <p className="text-sm leading-7 text-white/80">{selectedImage.alt_text}</p>
+                  </div>
+                ) : null}
               </div>
             </motion.div>
           </motion.div>
