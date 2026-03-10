@@ -96,7 +96,7 @@ export default function Navbar() {
                         <img
                             src={mystreelogo}
                             alt="MyStree Logo"
-                            className="h-12 sm:h-14 w-auto object-contain"
+                            className="h-[3.6rem] sm:h-[4.2rem] w-auto object-contain"
                             loading="eager"
                             decoding="async"
                             fetchPriority="high"

@@ -27,6 +27,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 const SoulTriage = lazy(() => import('./pages/SoulTriage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -272,6 +273,7 @@ function AppContent() {
             <Route path="/mystree-soul" element={<SoulTriage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
