@@ -189,9 +189,9 @@ export default function PhysiotherapyRecovery() {
                                 ))}
                             </ul>
                             <div className="pt-4">
-                                <button className="border-2 border-cadet-gray text-cadet-gray px-8 py-3 rounded-full font-bold hover:bg-cadet-gray hover:text-white transition-all">
+                                <a href="/team" className="inline-flex border-2 border-cadet-gray px-8 py-3 rounded-full font-bold text-cadet-gray hover:bg-cadet-gray hover:text-white transition-all">
                                     Meet Our Team
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

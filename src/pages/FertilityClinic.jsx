@@ -137,9 +137,6 @@ export default function FertilityClinic() {
                             <button className="bg-gradient-to-r from-warm-coral to-primary-light text-white px-10 py-4 rounded-2xl font-semibold w-full sm:w-auto text-center shadow-lg hover:shadow-warm-coral/40 hover:-translate-y-1 transition-all">
                                 Start Your Assessment
                             </button>
-                            <button className="bg-white border border-soft-sage text-deep-green hover:bg-soft-sage/20 px-10 py-4 rounded-2xl font-semibold transition w-full sm:w-auto text-center">
-                                Watch Our Story
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -210,7 +207,8 @@ export default function FertilityClinic() {
                     {/* Program Tiers */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {/* Basic Tier */}
-                        <div className="bg-white p-8 shadow-xl border border-soft-sage/30 rounded-2xl relative transition-transform hover:-translate-y-2">
+                        <div className="group relative bg-white/85 p-8 shadow-xl border border-soft-sage/30 rounded-2xl opacity-75 saturate-50">
+                            <div className="absolute right-5 top-5 rounded-full bg-warm-coral/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-sm">Coming Soon</div>
                             <h3 className="font-display text-3xl text-deep-green mb-2">Basic Program</h3>
                             <p className="text-sm text-text-muted mb-2 font-bold uppercase tracking-wide">6 - 12 Weeks</p>
                             <p className="text-sm text-text-muted mb-6">Foundational support for natural conception.</p>
@@ -219,12 +217,12 @@ export default function FertilityClinic() {
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Cycle Tracking</li>
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Stress Management</li>
                             </ul>
-                            <a href="#book-basic" className="block w-full py-4 border border-deep-green text-deep-green hover:bg-deep-green hover:text-white transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Basic Program</a>
+                            <span title="This feature will be available soon." aria-disabled="true" className="block w-full cursor-not-allowed rounded-xl border border-deep-green/30 bg-deep-green/5 py-4 text-center font-medium uppercase tracking-wide text-deep-green/55">Book Basic Program</span>
                         </div>
 
                         {/* Advanced Tier */}
-                        <div className="bg-white p-8 shadow-2xl border border-soft-sage rounded-2xl relative z-10 transition-transform hover:-translate-y-2 transform lg:-scale-105 lg:scale-100">
-                            <div className="absolute top-0 right-0 bg-warm-coral text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-xl uppercase tracking-wider shadow-sm">Most Chosen</div>
+                        <div className="group relative z-10 transform rounded-2xl border border-soft-sage bg-white/85 p-8 shadow-2xl opacity-75 saturate-50 lg:-scale-105 lg:scale-100">
+                            <div className="absolute right-5 top-5 rounded-full bg-warm-coral/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-sm">Coming Soon</div>
                             <h3 className="font-display text-3xl text-deep-green mb-2">Advanced Program</h3>
                             <p className="text-sm text-text-muted mb-2 font-bold uppercase tracking-wide">12 - 24 Weeks</p>
                             <p className="text-sm text-text-muted mb-6">Comprehensive holistic & clinical integration.</p>
@@ -234,7 +232,7 @@ export default function FertilityClinic() {
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Acupuncture Sessions</li>
                                 <li className="flex items-center text-sm text-deep-green"><span className="material-icons text-warm-coral text-sm mr-2">check_circle</span> Hormonal Balancing</li>
                             </ul>
-                            <a href="#book-advanced" className="block w-full py-4 bg-deep-green text-white hover:bg-opacity-90 transition-colors text-center font-medium uppercase tracking-wide rounded-xl">Book Advanced Program</a>
+                            <span title="This feature will be available soon." aria-disabled="true" className="block w-full cursor-not-allowed rounded-xl bg-deep-green/20 py-4 text-center font-medium uppercase tracking-wide text-deep-green/55">Book Advanced Program</span>
                         </div>
                     </div>
                 </div>
@@ -378,8 +376,9 @@ export default function FertilityClinic() {
                 </div>
                 <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Essential IVF */}
-                    <div className="bg-white rounded-3xl p-10 border border-soft-sage/30 shadow-soft hover:shadow-xl transition-all group relative overflow-hidden flex flex-col h-full">
-                        <div className="absolute top-0 left-0 w-2 h-full bg-soft-sage group-hover:bg-warm-coral transition-colors"></div>
+                    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-soft-sage/30 bg-white/85 p-10 opacity-75 saturate-50 shadow-soft transition-all">
+                        <div className="absolute right-5 top-5 rounded-full bg-warm-coral/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-sm">Coming Soon</div>
+                        <div className="absolute top-0 left-0 h-full w-2 bg-soft-sage"></div>
                         <h3 className="font-display text-3xl text-deep-green mb-4">Essential IVF</h3>
                         <p className="text-text-muted mb-8 h-12">Standardized, high-quality care for straightforward cases.</p>
                         <ul className="space-y-4 mb-10 text-soft-charcoal/80 flex-grow">
@@ -387,12 +386,12 @@ export default function FertilityClinic() {
                             <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Conventional IVF/ICSI</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-soft-sage text-sm">check_circle</span> Blastocyst Culture</li>
                         </ul>
-                        <a href="#essential-ivf" className="mt-auto block w-full py-4 border border-deep-green text-deep-green text-center rounded-xl font-bold hover:bg-deep-green hover:text-white transition-all uppercase tracking-wider text-sm">View Package Details</a>
+                        <span title="This feature will be available soon." aria-disabled="true" className="mt-auto block w-full cursor-not-allowed rounded-xl border border-deep-green/30 bg-deep-green/5 py-4 text-center text-sm font-bold uppercase tracking-wider text-deep-green/55">View Package Details</span>
                     </div>
 
                     {/* Signature Precision */}
-                    <div className="bg-deep-green rounded-3xl p-10 shadow-2xl relative overflow-hidden flex flex-col h-full">
-                        <div className="absolute top-0 right-0 bg-warm-coral text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">Most Recommended</div>
+                    <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-deep-green/90 p-10 opacity-75 saturate-50 shadow-2xl">
+                        <div className="absolute right-5 top-5 rounded-full bg-warm-coral/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-sm">Coming Soon</div>
                         <h3 className="font-display text-3xl text-white mb-4">Signature Precision</h3>
                         <p className="text-soft-sage/80 mb-8 h-12">Advanced investigation for RIF, PCOS, or low ovarian reserve.</p>
                         <ul className="space-y-4 mb-10 text-white/90 flex-grow">
@@ -401,7 +400,7 @@ export default function FertilityClinic() {
                             <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> EmbryoGlue® Transfer</li>
                             <li className="flex items-center gap-3"><span className="material-icons text-warm-coral text-sm">verified</span> Immune Protocol Support</li>
                         </ul>
-                        <a href="#signature-ivf" className="mt-auto block w-full py-4 bg-warm-coral text-white text-center rounded-xl font-bold hover:bg-white hover:text-deep-green transition-all uppercase tracking-wider text-sm shadow-lg">View Signature Plan</a>
+                        <span title="This feature will be available soon." aria-disabled="true" className="mt-auto block w-full cursor-not-allowed rounded-xl bg-warm-coral/30 py-4 text-center text-sm font-bold uppercase tracking-wider text-white/70 shadow-lg">View Signature Plan</span>
                     </div>
                 </div>
             </section>
@@ -422,7 +421,7 @@ export default function FertilityClinic() {
                             <p className="text-text-muted text-sm leading-relaxed mb-6">
                                 For those who have failed cycles elsewhere. We specialize in "poor responders" and difficult cases.
                             </p>
-                            <a href="#optimization" className="text-warm-coral font-bold text-sm hover:underline">Learn More →</a>
+                            <span title="This feature will be available soon." aria-disabled="true" className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-warm-coral/10 px-3 py-1.5 text-sm font-bold text-warm-coral/55"> <span className="material-icons text-base opacity-60">schedule</span> Essential IVF <span className="uppercase tracking-[0.16em] text-[10px]">Coming Soon</span></span>
                         </div>
 
                         {/* Card 2: Male Fertility */}
@@ -434,7 +433,7 @@ export default function FertilityClinic() {
                             <p className="text-text-muted text-sm leading-relaxed mb-6">
                                 40% of infertility is male-factor. We offer micro-TESE, advanced semen analysis, and DNA fragmentation treatment.
                             </p>
-                            <a href="#male-fertility" className="text-warm-coral font-bold text-sm hover:underline">Learn More →</a>
+                            <span title="This feature will be available soon." aria-disabled="true" className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-warm-coral/10 px-3 py-1.5 text-sm font-bold text-warm-coral/55"> <span className="material-icons text-base opacity-60">schedule</span> Signature Precision <span className="uppercase tracking-[0.16em] text-[10px]">Coming Soon</span></span>
                         </div>
 
                         {/* Card 3: Donor Gametes */}

@@ -18,7 +18,7 @@ const buildGalleryGroups = (items) => {
         type: normalizedGroupName ? 'group' : 'single',
         title: normalizedGroupName || item.title,
         description: item.group_description || item.caption || '',
-        coverImageUrl: item.image_url,
+        coverImageUrl: item.medium_image_url || item.image_url,
         previewItems: [item],
         categories: item.category ? [item.category] : [],
         items: [item],
@@ -129,19 +129,19 @@ export default function Gallery() {
                       <div className="absolute left-4 top-4 z-20 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary shadow-sm">
                         {group.items.length} image{group.items.length > 1 ? 's' : ''}
                       </div>
-                      <div className="absolute bottom-5 left-4 right-4 top-11">
+                      <div className="absolute bottom-8 left-4 right-4 top-11">
                         {group.previewItems.slice(0, 3).map((item, index) => (
                           <div
                             key={item.id}
                             className="absolute inset-x-0 top-0 bottom-0"
                             style={{
-                              transform: `translateY(${index * 12}px)`,
+                              transform: `translateY(${index * 10}px)`,
                               zIndex: 3 - index,
                             }}
                           >
                             <div className="h-full w-full overflow-hidden rounded-[1.3rem] bg-slate-100 shadow-[0_18px_35px_rgba(15,23,42,0.16)] ring-1 ring-black/5 transition-transform duration-500 group-hover:-translate-y-1">
                               <img
-                                src={resolveCmsMediaUrl(item.image_url)}
+                                src={resolveCmsMediaUrl(item.medium_image_url || item.image_url)}
                                 alt={item.alt_text || item.title || 'Gallery image'}
                                 className="h-full w-full object-cover"
                                 loading="lazy"
@@ -238,7 +238,7 @@ export default function Gallery() {
                   <article key={item.id} className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-[#fffaf2] shadow-sm">
                     <div className="relative h-72 overflow-hidden bg-slate-100">
                       <img
-                        src={resolveCmsMediaUrl(item.image_url)}
+                        src={resolveCmsMediaUrl(item.medium_image_url || item.image_url)}
                         alt={item.alt_text || item.title || 'Gallery image'}
                         className="h-full w-full object-cover"
                         loading="lazy"

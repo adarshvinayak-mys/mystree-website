@@ -132,10 +132,6 @@ const PsychologyPsychiatry = () => {
                                 <span>Begin Your Healing</span>
                                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </button>
-                            <button className="bg-white text-slate-700 border-2 border-slate-100 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-sm">
-                                <span className="material-icons text-primary-light">psychology</span>
-                                Free Assessment
-                            </button>
                         </motion.div>
 
                         {/* Social Proof Sticker */}

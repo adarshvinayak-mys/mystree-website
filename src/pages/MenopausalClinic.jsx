@@ -290,7 +290,7 @@ export default function MenopausalClinic() {
                         Connect with women who understand your journey. Share experiences, get expert advice, and find support in a safe, non-judgmental space.
                     </p>
                     <a
-                        href="#community-menopause"
+                        href="https://wa.me/916366573772?text=Hi%20My%20Stree%2C%20I%20want%20to%20enquire%20about%20the%20Menopause%20Community"
                         className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-primary-dark transition-all hover:-translate-y-1"
                     >
                         <span>Join the Circle</span>

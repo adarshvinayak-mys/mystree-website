@@ -343,7 +343,7 @@ export default function OurTeam() {
                         <span className="text-primary font-bold tracking-wider text-sm uppercase mb-3 block">Why Choose Us</span>
                         <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 dark:text-white mb-6">Why Our Leadership Matters</h2>
                         <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
-                            Our founding team combines decades of medical expertise with a modern vision for healthcare delivery, ensuring every patient feels seen, heard, and cared for.
+                            Our team combines decades of medical expertise with a modern vision for healthcare delivery, ensuring every patient feels seen, heard, and cared for.
                         </p>
                     </div>
 

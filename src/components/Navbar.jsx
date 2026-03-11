@@ -127,7 +127,7 @@ export default function Navbar() {
                         </div>
                         <div className="relative group">
                             <button className={`flex items-center gap-1 nav-link py-4 ${isActive('/showcase') ? 'active' : ''}`}>
-                                Show Case <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
+                                Highlights <span className="material-icons text-base group-hover:rotate-180 transition-transform">expand_more</span>
                             </button>
                             <div className="absolute top-full left-0 w-48 bg-white dark:bg-slate-800 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 dark:border-gray-700">
                                 <ul className="space-y-1">
@@ -230,7 +230,7 @@ export default function Navbar() {
                             </div>
                             <div className="border-b border-gray-100 dark:border-gray-800">
                                 <button onClick={() => setIsShowcaseOpen(!isShowcaseOpen)} className={`flex items-center justify-between w-full py-2 text-left ${location.pathname.startsWith('/showcase') ? 'text-primary font-bold' : 'hover:text-primary'}`}>
-                                    Show Case <span className={`material-icons text-base transition-transform ${isShowcaseOpen ? 'rotate-180' : ''}`}>expand_more</span>
+                                    Highlights <span className={`material-icons text-base transition-transform ${isShowcaseOpen ? 'rotate-180' : ''}`}>expand_more</span>
                                 </button>
                                 <motion.div
                                     className="overflow-hidden"

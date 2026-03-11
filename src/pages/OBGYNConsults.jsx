@@ -206,9 +206,6 @@ export default function OBGYNConsults() {
                             <span className="text-primary font-bold tracking-wide uppercase text-xs mb-2 block">Clinical Services</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-cadet-gray font-serif">Comprehensive Gynaecology</h2>
                         </div>
-                        <a className="px-6 py-2 border border-cadet-gray text-cadet-gray rounded-full hover:bg-cadet-gray hover:text-white transition-all text-sm font-semibold" href="#">
-                            View Full Service Menu
-                        </a>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Service Item 1 */}
